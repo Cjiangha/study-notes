@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="example">
+
+        {{fullName }}
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    /*  
+        计算属性 vs 侦听属性
+
+        Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据变动：侦听属性。
+        当你有一些数据需要随着其它数据变动而变动时，你很容易滥用 watch
+        通常更好的做法是使用计算属性而不是命令式的 watch 回调。
+
+        计算属性的 setter
+        computed{
+            xxx:{
+                get:function(){
+                    return xxx
+                }
+                set:function(){
+                    
+                }
+            }
+        }
+
+    */
+
+    var vm = new Vue({
+      el: "#example",
+      data: {
+          firstName:'foo',
+          lastName: 'Bar',
+      },
+      watch:{
+        fullName: function(){
+            return this.firstName + ' ' + this.lastName
+        }
+      },
+      computed:{
+        fullName:{
+            //getter
+            get : function(){
+                return this.firstName + ' ' + this.lastName
+            },
+            //setter
+
+            // 现在再运行 vm.fullName = 'John Doe' 时，setter 会被调用，
+            //  vm.firstName 和 vm.lastName 也会相应地被更新。
+            set: function(newVal){
+                var names = newVal.split(' ')
+                console.log(names)
+                this.firstName = names[0]
+                this.lastName = names[names.length - 1]
+            }
+        }
+      }
+    });
+ 
+    vm.fullName = 'John Doe'
+    console.log(vm.lastName)
+    console.log(vm.firstName)
+    console.log(vm.fullName)
+ </script>
+</html>
