@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <h5>没有防抖的input</h5>
+    <input type="text" id="unDEbounce" style="width: 200px;height: 20px;" />
+
+    <h5>防抖后的input</h5>
+    <input type="text" id="debounce" style="width: 200px;height: 20px;" />
+
+    <h5>节流后的input</h5>
+    <input type="text" id="throttle" style="width: 200px;height: 20px;" />
+</body>
+<script>
+    /* 
+    * 函数防抖(debounce)
+    在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时。
+    个人理解 函数防抖就是法师发技能的时候要读条，技能读条没完再按技能就会重新读条。
+
+    * 函数节流(throttle)
+    规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，
+    只有一次生效。
+    个人理解 函数节流就是fps游戏的射速，就算一直按着鼠标射击，也只会在规定射速内射出子弹。
+
+    总结
+    * 函数防抖喝函数节流都是防止某一事件频繁出发，但是两兄弟之间的原里却不一样
+    * 函数防抖是某一段时间内只执行一次，而函数节流是间隔时间执行。
+
+    结合应用场景
+    * debounce
+        search搜索联想，用户在不断输入值时，用防抖来节约请求资源。
+        window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次
+    
+    * throttle
+        鼠标不断点击触发，mousedown(单位时间内只触发一次)
+        监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断
+
+    链接 https://juejin.cn/post/6844903669389885453
+
+
+ */
+
+
+    //模拟一段ajax的请求
+    function ajax(content) {
+        console.log('ajax', content, new Date().toTimeString())
+    }
+    let inputa = document.getElementById('unDEbounce')
+
+    inputa.addEventListener('keyup', function (e) {
+        ajax(e.target.value, '-----', new Date().Format('HH:mm:ss'))
+    })
+
+    //1、 防抖
+    function debounce(fun, delay) {
+        return function (args) {
+            let that = this;
+            let _args = args;
+            clearTimeout(fun.id)
+            fun.id = setTimeout(function () {
+                fun.call(that, _args);
+            }, delay)
+        }
+    }
+    //防抖的ajax
+    let debounceAjax = debounce(ajax, 500)
+    let inputb = document.getElementById('debounce')
+    inputb.addEventListener('keyup', function (e) {
+        debounceAjax(e.target.value)
+    })
+
+    let biu = function () {
+        console.log('biu biu biu')
+    }
+
+    let boom = function () {
+        console.log('boom boom boom')
+    }
+
+    // setInterval(debounce(biu,500), 1000);
+    // setInterval(debounce(boom,2000), 1000);
+
+    // 2、节流
+    function throttle(fun,delay){
+        let last, deferTimer
+        return function(args){
+            let that = this
+            let _args=arguments
+            let now = +new Date()
+            //判断是否有last
+            if(last && now <last + delay){
+                clearTimeout(deferTimer)
+                deferTimer = setTimeout(() => {
+                    last = now 
+                    fun.apply(that,_args)
+                }, delay);
+            }else{//
+                last = now 
+                fun.apply(that,_args)
+            }
+        }
+    }
+
+    let throttleAjax = throttle(ajax,1000)
+
+    let inputc = document.getElementById('throttle');
+    inputc.addEventListener('keyup',function(e){
+        throttleAjax(e.target.value)
+    })
+
+    let biubiu = function () {
+        console.log('biu biu biu', new Date().toTimeString())
+    }
+    // setInterval(throttle(biubiu,1000),10)
+
+
+</script>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        /*  */
+        /* @media screen and (min-width: 240px) {
+        html,
+        body,
+        button,
+        input,
+        select,
+        textarea {
+          font-size: 9px;
+        }
+      }
+
+      @media screen and (min-width: 320px) {
+        html,
+        body,
+        button,
+        input,
+        select,
+        textarea {
+          font-size: 12px;
+        }
+      }
+
+      @media screen and (min-width: 360px) {
+        html,
+        body,
+        button,
+        input,
+        select,
+        textarea {
+          font-size: 13.5px;
+        }
+      }
+
+      @media screen and (min-width: 375px) {
+        html,
+        body,
+        button,
+        input,
+        select,
+        textarea {
+          font-size: 14.0625px;
+        }
+      } */
+
+        html {
+            font-size: 10vw;
+        }
+    </style>
+</head>
+
+<body>
+    1111111111
+</body>
+<script>
+    // 可以参见网址 https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Responsive_Design
+
+    // 3种方式
+    // 1、媒体查询, 设定每种屏幕对应的font-size
+    // 2、js设置html的font-size大小
+    // 3、使用vw设置，vw也是一个相对单位，100vw等于屏幕宽度
+
+    // 优缺点 
+    // 第一种，需要设置需要每种屏幕都设置对应的font-size,这些font-size都是根据比例算出来的，比较繁琐，而且还有可能漏掉某些屏幕尺寸，不推荐。
+    // 第二种用js设置，比较方便，现在大部分网站采用这种方式。
+    // 第三种通过css的vw来设置，也很方便，而且不用写css，但是兼容性还不是特别好。综合推荐使用第二种。
+
+                                  
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 + "px";
+    // console.log(document.documentElement.clientWidth / 750 + "px");
+</script>
+
+</html>
