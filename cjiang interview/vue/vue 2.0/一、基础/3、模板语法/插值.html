@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: block;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            background-color: aqua;
+            border: 1px solid #ccc;
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <span>Message:{{msg}}</span>
+        <span v-once>这个将不会改变: {{ msg }}</span>
+        <span>num + 1 : {{num+1}}</span>
+        <span>{{ok?'yes':'no'}}</span>
+        <span>{{msg.split('').reverse().join('')}}</span>
+        
+        
+        <!-- 不会生效 -->
+        <!-- 这是语句，不是表达式 -->
+        <!-- {{ var a = 1 }} -->
+        <!-- 流控制也不会生效，请使用三元表达式 -->
+        <!-- {{ if (ok) { return message } }} -->
+        <p v-if="seen">现在你看到我了</p>
+        <a v-bind:href="url">...</a>
+        <a v-on:click="doSomething">...</a>
+
+
+        <!-- 引用这个vue文件的方式不可以执行以下的方法   -->
+        <!-- <a v-on:[eventName]="doSomething"> ... </a> -->
+        <!-- <a v-bind:[attributeName]="url"> ... </a> -->
+
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            msg: 'I m message',
+            num: 2,
+            ok: true,
+            seen:true,
+            url:'https://www.baidu.com',
+            eventName:'focus',
+            attributeName:'href'
+        },
+        methods: {
+            doSomething(){
+                alert('点我')
+            }
+        }
+
+    })
+</script>
+
+</html>

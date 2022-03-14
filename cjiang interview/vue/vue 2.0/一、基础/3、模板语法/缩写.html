@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            display: block;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- v-bind 缩写 -->
+        <a v-bind:href="url" style="color: red;">点我跳转</a>
+        <a v-bind:href="url">...</a>
+        <a :href="url">...</a>
+        <a :[key]="url"> ... </a>
+
+        <!-- v-on缩写 -->
+        <a v-on:click="doSomething">click</a>
+        <!-- 缩写 -->
+        <a @click="doSomething">click</a>
+        <!-- 动态参数的缩写 (2.6.0+) -->
+        <a @[event]="doSomething"> click </a>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            url: 'https://www.baidu.com',
+            key: 'href',
+            event:'click'
+        },
+        methods: {
+            doSomething(){
+                alert('click')
+            }
+
+        }
+    })
+
+    // 
+</script>
+
+</html>
