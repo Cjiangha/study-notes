@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app">
-        <ul>
-            <!-- items 源数据的数组  item 别迭代数组的别名 -->
-            <li v-for="item in items" :key="item.message">
-                {{ item.message }}
-            </li>
-        </ul>
+      <ul>
+        <!-- items 源数据的数组  item 别迭代数组的别名 -->
+        <li v-for="item in items" :key="item.message">{{ item.message }}</li>
+      </ul>
 
-        <ul>
-            <!-- items 源数据的数组  item 别迭代数组的别名 -->
-            <li v-for="(item,index) in items" :key="item.message">
-                parentMessage: {{parentMessage}}
-                <br>
-                index值：{{index}}
-                <br>
-                key的值：{{item.message}}
-            </li>
-        </ul>
+      <ul>
+        <!-- items 源数据的数组  item 别迭代数组的别名 -->
+        <li v-for="(item,index) in items" :key="item.message">
+          parentMessage: {{parentMessage}}
+          <br />
+          index值：{{index}}
+          <br />
+          key的值：{{item.message}}
+        </li>
+      </ul>
 
-        <ul class="demo">
-            <li v-for="value in object">
-                {{ value }}
-            </li>
-        </ul>
+      <ul class="demo">
+        <li v-for="value in object">{{ value }}</li>
+      </ul>
 
-        <div v-for="item in items" v-bind:key="item.id">
-            <!-- 内容 -->
-            {{item.message}}
-        </div>
+      <div v-for="item in items" v-bind:key="item.id">
+        <!-- 内容 -->
+        {{item.message}}
+      </div>
 
+      <ul class="demo">
+        <li v-for="n in evenNumbers">{{ n }}</li>
+      </ul>
 
-        <ul class="demo">
-            <li v-for="n in evenNumbers">{{ n }}</li>
-        </ul>
+      <ul v-for="set in sets" class="set">
+        <li v-for="n in even(set)">{{ n }}</li>
+      </ul>
     </div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
     /*
         1、用 v-for 把一个数组对应为一组元素
         2、在 v-for 里使用对象
@@ -79,51 +77,68 @@
             
     */
 
-
     var vm = new Vue({
-        el: '#app',
-        data: {
-            numbers: [ 1, 2, 3, 4, 5 ],
-            parentMessage: 'Parent',
-            items: [{
-                    message: 'Foo',
-                    id: '1'
-                },
-                {
-                    message: 'Bar',
-                    id: '2'
-                },
-                {
-                    message: 'ttz',
-                    id: '3'
-                },
-                {
-                    message: 'tty',
-                    id: '4'
-                }
-            ],
-            items2: [{
-                    message: 'Foo'
-                },
-                {
-                    message: 'Bar'
-                }
-            ],
-            object: {
-                title: 'How to do lists in Vue',
-                author: 'Jane Doe',
-                publishedAt: '2016-04-10'
-            }
+      el: "#app",
+      data: {
+        numbers: [1, 2, 3, 4, 5],
+        parentMessage: "Parent",
+        items: [
+          {
+            message: "Foo",
+            id: "1",
+          },
+          {
+            message: "Bar",
+            id: "2",
+          },
+          {
+            message: "ttz",
+            id: "3",
+          },
+          {
+            message: "tty",
+            id: "4",
+          },
+        ],
+        items2: [
+          {
+            message: "Foo",
+          },
+          {
+            message: "Bar",
+          },
+        ],
+        object: {
+          title: "How to do lists in Vue",
+          author: "Jane Doe",
+          publishedAt: "2016-04-10",
         },
+        sets: [
+          [1, 2, 3, 4, 5],
+          [6, 7, 8, 9, 10],
+        ],
+      },
+      methods: {
+        even: function (numbers) {
+          return numbers.filter(function (number) {
+            return number % 2 === 0;
+          });
+            //  set in sets
+            //  even(set)
+        },
+      },
+      created:function(){
+        a = this.even( [6, 7, 8, 9, 10])
+        console.log(a)
+      },
 
-        computed:{
-            evenNumbers:function(){
-                return this.numbers.filter(function(number){
-                    return number % 2 === 0
-                })
-            }
-        }
-    })
-</script>
-
+      computed: {
+        evenNumbers: function () {
+          return this.numbers.filter(function (number) {
+            return number % 2 === 0;
+          });
+        },
+      },
+    });
+  </script>
 </html>
