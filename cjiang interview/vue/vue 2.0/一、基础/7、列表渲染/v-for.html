@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- items 源数据的数组  item 别迭代数组的别名 -->
+            <li v-for="item in items" :key="item.message">
+                {{ item.message }}
+            </li>
+        </ul>
+
+        <ul>
+            <!-- items 源数据的数组  item 别迭代数组的别名 -->
+            <li v-for="(item,index) in items" :key="item.message">
+                parentMessage: {{parentMessage}}
+                <br>
+                index值：{{index}}
+                <br>
+                key的值：{{item.message}}
+            </li>
+        </ul>
+
+        <ul class="demo">
+            <li v-for="value in object">
+                {{ value }}
+            </li>
+        </ul>
+
+        <div v-for="item in items" v-bind:key="item.id">
+            <!-- 内容 -->
+            {{item.message}}
+        </div>
+
+
+        <ul class="demo">
+            <li v-for="n in evenNumbers">{{ n }}</li>
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    /*
+        1、用 v-for 把一个数组对应为一组元素
+        2、在 v-for 里使用对象
+        3、维护状态
+            这个默认的模式是高效的，但是只适用于不依赖子组件状态或临时 
+            DOM 状态 (例如：表单输入值) 的列表渲染输出。
+
+            ！！！！！不要使用对象或数组之类的非基本类型值作为 v-for 的 key。
+            请用字符串或数值类型的值。
+
+        4、变更方法
+            https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+            push() : 往数组后面插入一个元素
+            pop() ： 往素组后面删除一个元素
+            shift() ： 删除第一个元素
+            unshift() ： 将一个或者多个元素添加到数组的开头
+            splice()    通过删除或替换现有元素或者原地添加新的元素来修改数组,
+                        并以数组形式返回被修改的内容。此方法会改变原数组。
+            sort()  ： 用原地算法对数组的元素进行排序，并返回数组。默认排序
+                        顺序是在将元素转换为字符串，然后比较它们的UTF-16代码单元值序列时构建的
+            reverse() :反转   方法将数组中元素的位置颠倒，并返回该数组。数组的第一个元素会变成
+                      最后一个，数组的最后一个元素变成第一个。该方法会改变原数组。
+            filter() : 创建一个新数组, 其包含通过所提供函数实现的测试的所有元素
+         
+         
+            vm.items = vm.items.filter(function (item) {
+                    return item.message.match(/Foo/)
+            })
+                      
+            
+    */
+
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            numbers: [ 1, 2, 3, 4, 5 ],
+            parentMessage: 'Parent',
+            items: [{
+                    message: 'Foo',
+                    id: '1'
+                },
+                {
+                    message: 'Bar',
+                    id: '2'
+                },
+                {
+                    message: 'ttz',
+                    id: '3'
+                },
+                {
+                    message: 'tty',
+                    id: '4'
+                }
+            ],
+            items2: [{
+                    message: 'Foo'
+                },
+                {
+                    message: 'Bar'
+                }
+            ],
+            object: {
+                title: 'How to do lists in Vue',
+                author: 'Jane Doe',
+                publishedAt: '2016-04-10'
+            }
+        },
+
+        computed:{
+            evenNumbers:function(){
+                return this.numbers.filter(function(number){
+                    return number % 2 === 0
+                })
+            }
+        }
+    })
+</script>
+
+</html>

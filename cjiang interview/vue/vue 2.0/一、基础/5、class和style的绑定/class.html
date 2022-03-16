@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <base href="http://www.qq.com/">
+
+    <div id="app">
+        <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">1</div>
+        <!-- 对象语法 -->
+        <div v-bind:class="classObject">对象语法</div>
+
+        <!-- 数组语法 -->
+        <div v-bind:class="[activeClass, errorClass]">数组语法</div>
+        <div v-bind:class="[isActive?activeClass:'',errorClass]"></div>
+        <div v-bind:class="[{active : isActive },errorClass]"></div>
+
+        <my-component v-bind:class="{active:isActive}"></my-component>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            isActive:true,
+            hasError:false,
+            // classObject:{
+            //     active:true,
+            //     static:true,
+            //     'text-danger':false
+            // },
+            error:null,
+            activeClass:'active',
+            errorClass:'text-danger'
+        },
+        computed:{
+            classObject:function(){
+                return {
+                    active:this.isActive && !this.error,
+                    'text-danger':this.error && this.error.type === 'fatal'
+                }
+            }
+        },
+        created:function(){
+            console.log(this.error && this.error.type === 'fatal')
+        },
+    })
+
+    vm.component('my-component',{
+        template:`<p class="foo bar">Hi</p>`
+    })
+</script>
+
+</html>
