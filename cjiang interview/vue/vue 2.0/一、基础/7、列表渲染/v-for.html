@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="app">
-      <ul>
-        <!-- items 源数据的数组  item 别迭代数组的别名 -->
-        <li v-for="item in items" :key="item.message">{{ item.message }}</li>
-      </ul>
+        <ul>
+            <!-- items 源数据的数组  item 别迭代数组的别名 -->
+            <li v-for="item in items" :key="item.message">{{ item.message }}</li>
+        </ul>
 
-      <ul>
-        <!-- items 源数据的数组  item 别迭代数组的别名 -->
-        <li v-for="(item,index) in items" :key="item.message">
-          parentMessage: {{parentMessage}}
-          <br />
-          index值：{{index}}
-          <br />
-          key的值：{{item.message}}
+        <ul>
+            <!-- items 源数据的数组  item 别迭代数组的别名 -->
+            <li v-for="(item,index) in items" :key="item.message">
+                parentMessage: {{parentMessage}}
+                <br />
+                index值：{{index}}
+                <br />
+                key的值：{{item.message}}
+            </li>
+        </ul>
+
+        <ul class="demo">
+            <li v-for="value in object">{{ value }}</li>
+        </ul>
+
+        <div v-for="item in items" v-bind:key="item.id">
+            <!-- 内容 -->
+            {{item.message}}
+        </div>
+
+        <!-- 显示过滤/排序后的结果 -->
+        <ul class="demo">
+            <li v-for="n in evenNumbers">{{ n }}</li>
+        </ul>
+
+        <ul v-for="set in sets" class="set">
+            <li v-for="n in even(set)">{{ n }}</li>
+        </ul>
+
+        <!-- 在 v-for 里使用值范围 -->
+        <div>
+            <span v-for="n in 10">{{ n }} </span>
+        </div>
+
+        <!-- 在 <template> 上使用 v-for -->
+
+        <ul>
+            <template v-for="item in items">
+                <li>{{ item.msg }}</li>
+                <li class="divider" role="presentation"></li>
+            </template>
+        </ul>
+
+        <li v-for="todo in todos1" v-if="!todo.isComplete">
+            {{ todo }}
         </li>
-      </ul>
 
-      <ul class="demo">
-        <li v-for="value in object">{{ value }}</li>
-      </ul>
-
-      <div v-for="item in items" v-bind:key="item.id">
-        <!-- 内容 -->
-        {{item.message}}
-      </div>
-
-      <ul class="demo">
-        <li v-for="n in evenNumbers">{{ n }}</li>
-      </ul>
-
-      <ul v-for="set in sets" class="set">
-        <li v-for="n in even(set)">{{ n }}</li>
-      </ul>
     </div>
-  </body>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  <script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
     /*
         1、用 v-for 把一个数组对应为一组元素
         2、在 v-for 里使用对象
@@ -55,7 +76,8 @@
             ！！！！！不要使用对象或数组之类的非基本类型值作为 v-for 的 key。
             请用字符串或数值类型的值。
 
-        4、变更方法
+        4、数组更新检测
+            * 变更方法
             https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
             push() : 往数组后面插入一个元素
             pop() ： 往素组后面删除一个元素
@@ -73,72 +95,97 @@
             vm.items = vm.items.filter(function (item) {
                     return item.message.match(/Foo/)
             })
-                      
-            
+           * 替换数组 
+           例如 filter()、concat() 和 slice()  
+           *注意事项
+            由于 JavaScript 的限制，Vue 不能检测数组和对象的变化。
+            深入响应式原理中有相关的讨论
+            （https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9）         
+         5、显示过滤/排序后的结果（见上HTML）
+         6、在 v-for 里使用值范围
+         7、在 <template> 上使用 v-for
+         8、v-for 与 v-if 一同使用
+         9、在组件上使用 v-for（未完成.........）
+
     */
 
     var vm = new Vue({
-      el: "#app",
-      data: {
-        numbers: [1, 2, 3, 4, 5],
-        parentMessage: "Parent",
-        items: [
-          {
-            message: "Foo",
-            id: "1",
-          },
-          {
-            message: "Bar",
-            id: "2",
-          },
-          {
-            message: "ttz",
-            id: "3",
-          },
-          {
-            message: "tty",
-            id: "4",
-          },
-        ],
-        items2: [
-          {
-            message: "Foo",
-          },
-          {
-            message: "Bar",
-          },
-        ],
-        object: {
-          title: "How to do lists in Vue",
-          author: "Jane Doe",
-          publishedAt: "2016-04-10",
-        },
-        sets: [
-          [1, 2, 3, 4, 5],
-          [6, 7, 8, 9, 10],
-        ],
-      },
-      methods: {
-        even: function (numbers) {
-          return numbers.filter(function (number) {
-            return number % 2 === 0;
-          });
-            //  set in sets
-            //  even(set)
-        },
-      },
-      created:function(){
-        a = this.even( [6, 7, 8, 9, 10])
-        console.log(a)
-      },
+        el: "#app",
+        data: {
+            numbers: [1, 2, 3, 4, 5],
+            parentMessage: "Parent",
+            items: [{
+                    message: "Foo",
+                    id: "1",
+                },
+                {
+                    message: "Bar",
+                    id: "2",
+                },
+                {
+                    message: "ttz",
+                    id: "3",
+                },
+                {
+                    message: "tty",
+                    id: "4",
+                },
+            ],
+            items2: [{
+                    message: "Foo",
+                },
+                {
+                    message: "Bar",
+                },
+            ],
+            object: {
+                title: "How to do lists in Vue",
+                author: "Jane Doe",
+                publishedAt: "2016-04-10",
+            },
+            sets: [
+                [1, 2, 3, 4, 5],
+                [6, 7, 8, 9, 10],
+            ],
+            todos1: [{
+                    id: 1,
+                    title: 'Do the dishes',
+                    isComplete:false
+                },
+                {
+                    id: 2,
+                    title: 'Take out the trash',
+                    isComplete:true
+                },
+                {
+                    id: 3,
+                    title: 'Mow the lawn'
+                }
+            ]
 
-      computed: {
-        evenNumbers: function () {
-          return this.numbers.filter(function (number) {
-            return number % 2 === 0;
-          });
         },
-      },
+        methods: {
+            even: function (numbers) {
+                return numbers.filter(function (number) {
+                    return number % 2 === 0;
+                });
+                //  set in sets
+                //  even(set)
+            },
+        },
+        created: function () {
+            a = this.even([6, 7, 8, 9, 10])
+            // console.log(a)
+        },
+
+        computed: {
+            evenNumbers: function () {
+                return this.numbers.filter(function (number) {
+                    return number % 2 === 0;
+                });
+            },
+        },
     });
-  </script>
+</script>
+
 </html>
