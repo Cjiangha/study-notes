@@ -32,8 +32,10 @@
         <!-- 不会生效 -->
         <!-- 这是语句，不是表达式 -->
         <!-- {{ var a = 1 }} -->
+
         <!-- 流控制也不会生效，请使用三元表达式 -->
         <!-- {{ if (ok) { return message } }} -->
+        
         <p v-if="seen">现在你看到我了</p>
         <a v-bind:href="url">...</a>
         <a v-on:click="doSomething">...</a>
