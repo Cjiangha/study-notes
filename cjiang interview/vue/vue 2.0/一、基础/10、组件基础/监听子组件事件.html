@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="blog-posts-events-demo">
+        <div :style="{ fontSize: postFontSize + 'em' }">
+            <!-- <blog-post  v-on:enlarge-text="postFontSize += 0.1"  v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></blog-post> -->
+
+            <blog-post  v-on:enlarge-text="postFontSize += $event"  v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></blog-post>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    // $emit()
+    Vue.component('blog-post', {
+        props: ['post'],
+        template: `
+            <div class="blog-post">
+              <h3>{{ post.title }}</h3>
+              <button v-on:click="$emit('enlarge-text',0.1)">Enlarge text </button>
+              <div v-html="post.content"></div>
+            </div>
+            `
+    })
+
+    new Vue({
+        el: '#blog-posts-events-demo',
+        data: {
+            posts: [ {
+                title:'标题1',
+                content:'内容1'
+
+            } ,
+            {
+                title:'标题2',
+                content:'内容2'
+
+            } ,
+            {
+                title:'标题3',
+                content:'内容3'
+            } ],
+            postFontSize: 1
+        }
+    })
+</script>
+
+</html>

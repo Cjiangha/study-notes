@@ -52,10 +52,10 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script>
     /*
-        1、监听事件
-        2、事件处理方法
-        3、内联处理器中的方法
-        5、事件修饰符
+        * 监听事件
+        * 事件处理方法
+        * 内联处理器中的方法
+        * 事件修饰符
             .stop
             .prevent
             .capture
@@ -65,7 +65,7 @@
 
             case:<a v-on:click.stop="doThis"></a>
 
-        6、按键修饰符
+        * 按键修饰符
         Vue 提供了绝大多数常用的按键码的别名：
             .enter
             .tab
@@ -79,8 +79,8 @@
 
             case:<input v-on:keyup.enter="submit">
 
-        7、
-        可以用如下修饰符来实现仅在按下相应按键时才触发鼠标或键盘事件的监听器。
+        
+        * 可以用如下修饰符来实现仅在按下相应按键时才触发鼠标或键盘事件的监听器。
             .ctrl
             .alt
             .shift
@@ -97,7 +97,7 @@
             case:
             <!-- Alt + C -->
             <input v-on:keyup.alt.67="clear">
-       8、鼠标按钮修饰符
+       * 鼠标按钮修饰符
             .left
             .right
             .middle
