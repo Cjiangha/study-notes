@@ -56,24 +56,28 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script>
   /*
-    * 基本示例
-    * 组件的复用
+    1、基本示例
+    因为组件是可复用的 Vue 实例，所以它们与 new Vue 接收相同的选项，
+      例如 data、computed、watch、methods 以及生命周期钩子等。
+      仅有的例外是像 el 这样根实例特有的选项。
+    2、组件的复用
     * data 必须是一个函数
         一个组件的 data 选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝：
-    * 组件的组织
+    3、组件的组织
         全局注册和局部注册。至此，我们的组件都只是通过 Vue.component 全局注册的：
         Vue.component('my-component-name', {
           // ... options ...
         })
-    * 通过 Prop 向子组件传递数据
+    4、通过 Prop 向子组件传递数据
         Prop 是你可以在组件上注册的一些自定义 attribute。
         当一个值传递给一个 prop attribute 的时候，它就变成了那个组件实例的一个 property。
         为了给博文组件传递一个标题，我们可以用一个 props 选项将其包含在该组件可接受的 prop 列表中：
 
         
-    * 单个根元素
+    5、单个根元素
 
       遇到 every component must have a single root element 报错 在 外部包裹一个root 即<div></div>即可。
+      
         <h3>{{ title }}</h3>
         <div v-html="content"></div>
        然而如果你在模板中尝试这样写，Vue 会显示一个错误，并解释道 every component must have a single root element (每个组件必须只有一个根元素)。
@@ -83,25 +87,43 @@
           <div v-html="content"></div>
        </div>
 
-    * 监听子组件事件
-       
+    6、监听子组件事件
+      * 使用事件抛出一个值
+      * 在组件上使用 v-model(未看 看不是很懂)
+
+
        子组件  $emit('enlarge-text')"
        父组件  <blog-post
                   v-on:enlarge-text="postFontSize += 0.1"
                </blog-post>
-       父组件  $emit('enlarge-text')"
+
+       父组件  $emit('enlarge-text',10)"
        子组件  <blog-post
-                  v-on:enlarge-text="postFontSize += 0.1"
+                  v-on:enlarge-text="postFontSize += $event"
                </blog-post>
 
 
+    7、 通过插槽分发内容
+        注册一个组件
+        组件root: <div><slot></div>
+        父亲节点使用  
+        <root>
+          abc //我是插槽
+        <root>
 
-    * 使用事件抛出一个值
-    * 在组件上使用 v-model
-    * 通过插槽分发内容
     * 动态组件
+          <component v-bind:is="currentTabComponent"></component>
+
+          使用computed 判断动态组件的值是否和is attribute的参数 一致
+           computed: {
+            currentTabComponent: function () {
+                return "tab-" + this.currentTab.toLowerCase(); // 判断当前动态组件的值
+            }
+          }
+
     * 解析 DOM 模板时的注意事项
   
+
   */
   // 定义一个名为 button-counter 的新组件
   Vue.component("button-counter", {
@@ -128,7 +150,7 @@
                v-bind:comments="post.comments">
    */ 
 
-   // 定义一个名为 blog-post 的新组件，第二版本
+   // 定义一个名为 blog-post 的新组件，第二版本,props可以是多个数组的字符串。
    Vue.component('blog-post', {
     props: ['title','content','publishedAt','comments'],
     template: `<div class="blog-post">
