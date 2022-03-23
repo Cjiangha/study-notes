@@ -15,6 +15,13 @@
             <blog-post  v-on:enlarge-text="postFontSize += $event"  v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></blog-post>
         </div>
     </div>
+
+    <div id="demo2">
+        <div :style="{ fontSize: postFontSize + 'em' }">
+            <!-- <blog-post  v-on:enlarge-text="postFontSize += 0.1"  v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></blog-post> -->
+            <blog-post  v-on:enlarge-text="postFontSize += $event"  v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></blog-post>
+        </div>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script>
@@ -48,6 +55,14 @@
                 content:'内容3'
             } ],
             postFontSize: 1
+        }
+    })
+
+
+    new Vue({
+        el:'#demo2',
+        data:{
+
         }
     })
 </script>

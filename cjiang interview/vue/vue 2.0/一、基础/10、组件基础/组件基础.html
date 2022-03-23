@@ -69,6 +69,8 @@
         Prop 是你可以在组件上注册的一些自定义 attribute。
         当一个值传递给一个 prop attribute 的时候，它就变成了那个组件实例的一个 property。
         为了给博文组件传递一个标题，我们可以用一个 props 选项将其包含在该组件可接受的 prop 列表中：
+
+        
     * 单个根元素
 
       遇到 every component must have a single root element 报错 在 外部包裹一个root 即<div></div>即可。
@@ -80,8 +82,19 @@
           <h3>{{ title }}</h3>
           <div v-html="content"></div>
        </div>
+
     * 监听子组件事件
        
+       子组件  $emit('enlarge-text')"
+       父组件  <blog-post
+                  v-on:enlarge-text="postFontSize += 0.1"
+               </blog-post>
+       父组件  $emit('enlarge-text')"
+       子组件  <blog-post
+                  v-on:enlarge-text="postFontSize += 0.1"
+               </blog-post>
+
+
 
     * 使用事件抛出一个值
     * 在组件上使用 v-model
