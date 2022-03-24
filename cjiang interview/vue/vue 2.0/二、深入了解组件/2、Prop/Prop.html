@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+        <blog-post post-title="hello!"></blog-post>
+    </div>
+  </body>
+  <script src="../vue.js"></script>
+  <script>
+    /*
+        1、Prop 的大小写 (camelCase vs kebab-case)
+        2、Prop 类型
+    
+         *  字符串数组props
+          props:['title','likes','isPublished','commentIds','author']
+        * 对象 props
+         props:{
+             title:String,
+             likes:Number,
+             isPublished:Boolean,
+             commentIds:Array,
+             author:Object,
+             callback:Function,
+             contactsPromise:Promise //or any other constructor
+         }
+    }
+    */    
+    Vue.component("blog-post", {
+      // 在 JavaScript 中是 camelCase 的
+      props: ["postTitle"],
+      template: "<h3>{{ postTitle }}</h3>",
+    });
+    new Vue({
+        el:'#app'
+    })
+
+   
+
+
+  </script>
+</html>
