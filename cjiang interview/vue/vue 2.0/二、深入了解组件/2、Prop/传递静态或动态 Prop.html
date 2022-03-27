@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <blog-post title="My journey with Vue"></blog-post> -->
+
+      <!-- 即便 `42` 是静态的，我们仍然需要 `v-bind` 来告诉 Vue -->
+      <!-- 这是一个 JavaScript 表达式而不是一个字符串。-->
+      <!-- <blog-post v-bind:likes="post.likes"></blog-post> -->
+
+      <!-- 用一个变量进行动态赋值。-->
+      <blog-post v-bind:likes="post.likes"></blog-post>
+
+      <!-- 这个组件没有注册到 -->
+      <blog-boolean is-published="true"></blog-boolean>
+
+      <blog-array comment-ids="[234, 266, 273]"></blog-array>
+
+      <blog-object
+        v-bind:author="{
+        name: 'Veronica',
+        company: 'Veridian Dynamics'
+       }"
+      ></blog-object>
+    </div>
+  </body>
+  <script src="../vue.js"></script>
+  <script>
+    /*
+  
+         3、传递静态或动态 Prop
+            传入一个数字
+            传入一个布尔值
+            传入一个数组
+            传入一个对象
+            传入一个对象的所有的property
+    }
+    */
+    Vue.component("blog-post", {
+      // 在 JavaScript 中是 camelCase 的
+      props: {
+        likes: String,
+      },
+      template: `
+        <div>
+            <h2>传入一个字符串</h2>
+            <p>{{ likes }}</p>
+        </div>
+      `,
+    });
+
+    Vue.component("blog-boolean", {
+      // 在 JavaScript 中是 camelCase 的
+      props: {
+        isPublished: Boolean,
+      },
+      template: `
+      <div>
+         <h2>传入一个Boolean</h2>
+         <p v-show="isPublished"></p>
+      </div>`,
+    });
+
+    Vue.component("blog-array", {
+      // 在 JavaScript 中是 camelCase 的
+      props: {
+        commentIds: Array,
+      },
+      template: `
+        <div>
+            <h2>传入一个数组</h2>
+            <p>{{commentIds}}</p>
+            <p>根据操作之后在Vue的props值为数组的时候在template里面进行使用的时候，它的属性值是String的:
+                会报错 ：
+                Invalid prop: type check failed for prop "commentIds". Expected Array, got String with value "[234, 266, 273]"
+            </p>
+            <br/>
+            <p>{{typeof commentIds}}</p>
+        </div>
+      `,
+    });
+
+    Vue.component("blog-object", {
+      // 在 JavaScript 中是 camelCase 的
+      props: {
+        author: Object,
+      },
+      template: `
+        <div>
+            <h2>传入一个对象</h2>
+            <p class="author">{{author}}</p>
+        </div>
+      `,
+        created:function(){
+            let author = document.getElementsByClassName('author')
+            console.log(author)
+        }
+    });
+
+
+
+
+    new Vue({
+      el: "#app",
+      data: function () {
+        return {
+          post: {
+            likes: "I like Vue",
+          },
+        };
+      },
+    });
+  </script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+        <my-component v-on:my-event="doSomething"></my-component>
+    </div>
+  </body>
+  <script src="../vue.js"></script>
+  <script>
+
+      Vue.component('myComponent',{
+            created(){
+                console.log()
+                console.log('我是my-component 组件触发的更新')
+            },
+            template:`<div v-on:click="$emit('myEvent')">我是template</div>`
+      })
+
+      new Vue({
+          el:'#app',
+          methods:{
+            doSomething:function(){
+                console.log('doSomething')
+            }
+          }
+      })
+  </script>
+</html>
