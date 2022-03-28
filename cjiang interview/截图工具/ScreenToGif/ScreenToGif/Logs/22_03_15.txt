@@ -1,0 +1,19 @@
+► Title - 
+	Automatic clean up
+▬ Message - 
+	Access to the path '81.png' is denied.
+○ Type - 
+	System.UnauthorizedAccessException
+♦ [Version] Date/Hour - 
+	[2.18] 03/15/2022 17:20:00
+▲ Source - 
+	mscorlib
+▼ TargetSite - 
+	Void DeleteHelper(System.String, System.String, Boolean, Boolean, WIN32_FIND_DATA ByRef)
+♠ StackTrace - 
+   at System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound, WIN32_FIND_DATA& data)
+   at System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   at ScreenToGif.Model.ApplicationViewModel.ClearTemporaryFilesTask()
+
+----------------------------------
+

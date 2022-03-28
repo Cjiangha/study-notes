@@ -32,6 +32,19 @@
             }
         }
 
+        https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+        底层：
+       Object.defineProperty()回调中的get 和 set
+       Object.defineProperty(myclass.prototype, "x", {
+        get() {
+          return value;
+        },
+        set(x) {
+          value = x;
+        }
+      });
+
+
     */
 
     var vm = new Vue({
