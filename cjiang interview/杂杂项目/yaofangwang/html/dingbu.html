@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dingbu.css">
+    <link rel="stylesheet" href="lib/inconfig/iconfont.css">
+
+    <style>
+        /* .celan {
+            width: 20px;
+            height: 20px;
+            background: red;
+            position: absolute;
+        } */
+    </style>
+</head>
+
+<body>
+    <div style="width: 100%;"></div>
+
+    <!-- 顶部信息 -->
+    <div class="trusted-head-box">
+        <div class="ts-bg1">
+            <div class="cun floatleft">
+                <div class="floatleft pdt1">
+
+                </div>
+            </div>
+            <div class="floatleft">该网站已经认证联盟认证为可信网站，请放心访问 </div>
+
+
+            <div class="floatright right clearfix">
+                <!-- 了解详情 -->
+                <div>
+                    <a target="_blank" pa_from="123" href="###" class=" detail-link"> 了解详情&gt;</a>
+                </div>
+                <!-- 最右边logo -->
+                <div class="pinpaiguanwang ">
+                </div>
+            </div>
+
+        </div>
+        <div class="bg">
+            <ul class="ts-bg2 clearfix">
+                <li class="mar-ll"></li>
+                <li class="mar-l"><i></i><span>网站安全检测</span></li>
+                <li class="mar-l"><i></i><span>身份证明信息</span></li>
+                <li class="mar-l"><i></i><span>ICP备案审查</span></li>
+                <li class="mar-l"><i></i><a href="###">工商登记信息</a></li>
+                <li class="mar-l"><i></i><span>业务资质许可</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 引入fix样式 -->
+    <div class="fixbig">
+        <div style="color: black; width:100px;
+            height:100px; position: absolute; right: 0;
+            top: 0;">购物车</div>
+
+        <div class="right-fix">
+            <!-- 隐藏按钮 -->
+            <div class="hide"></div>
+            <div class="show"></div>
+
+            <ul>
+                <li>
+                    <i class="iconfont person-logo ">
+                        &#xe629; <p class="huachu">最近浏览</p>
+                    </i>
+                    <em></em>
+
+                </li>
+                <li>
+                    <i class=" iconfont inventory  ">&#xe623;</i>
+                    <div class="txt" style="position: relative;">
+                        需求清单
+
+                    </div>
+                    <span class="cart_num">0</span>
+                </li>
+                <li class="heart"> <i class="iconfont">&#xe624; <p class="huachu"></p></i> </li>
+                <li><i class="iconfont">&#xe606; <p class="huachu"></p></i></li>
+                <li><i class="iconfont">&#xe60b; <p class="huachu"></p></i></li>
+                <li><i class="iconfont">&#xe67b; <p class="huachu"></p></i></li>
+                <li><i class="iconfont">&#xe648; <p class="huachu"></p></i></li>
+
+                <li style="margin-top: 100px;" class="xiangshang">
+                    <i class="iconfont">&#xe614; <p class="huachu"></p></i>
+                </li>
+                <li><i class="iconfont">&#xe646; <p class="huachu"></p></i></li>
+                <li><i class="iconfont">&#xe6fa; <p class="huachu"></p></i></li>
+            </ul>
+
+        </div>
+    </div>
+
+
+    <!-- content头 -->
+
+</body>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script>
+
+    // 点击隐藏按钮 上方东西隐藏；  点击出现按钮，上面东西出现
+    $('.hide').click(function () {
+        $('.hide').css('display', 'none');
+        $('.trusted-head-box').css('display', 'none');
+        $('.show').css('display', 'block');
+    })
+    $('.show').click(function () {
+        $('.hide').css('display', 'block');
+        $('.trusted-head-box').css('display', 'block');
+        $('.show').css('display', 'none');
+    })
+
+
+    $('.right-fix .hide').click(function () {
+        $('.trusted-head-box').css('display', 'none');
+        $('.right-fix .hide').css('display', 'none');
+        $('.right-fix .show').css('display', 'block');
+    })
+    $('.right-fix .show').click(function () {
+        $('.trusted-head-box').css('display', 'block');
+        $('.right-fix .hide').css('display', 'block');
+        $('.right-fix .show').css('display', 'none');
+
+    })
+
+    // 鼠标移入事件
+    // $('.right-fix').on('mouseenter', 'li i', function () {
+    //     alert(1);
+    //     $(this).siblings().find($('p')).animate({ 'left': '50px' });
+    // })
+
+
+    $('.huachu').css('display', 'none');
+    // $('.right-fix').on('mouseenter', 'ul li i', function () {
+    //     let width = $(this).parent().innerWidth();
+    //     $(this).children().animate({
+    //         'right': `${width}px`
+    //     }, 500).css('display', 'block');
+    // }).on('mouseleave', 'ul li i', function () {
+    //     let width = $(this).parent().innerWidth();
+    //     $(this).children().animate({
+    //         'right': '-39px'
+    //     }, 500).css('display', 'none');
+    // })
+
+
+    $('.right-fix').on('hover', 'ul li i', function () {
+        $(this).parent().css('background', 'rgb(229,59,70)');
+
+    });
+    let istrue = true;
+    $('.txt').click(function () {
+        if (istrue) {
+            $('.fixbig').animate({
+                right: '0'
+            })
+            $(this).parent().css('background', '#58bc58');
+        }
+        else {
+            $('.fixbig').animate({
+                right: '-200px'
+            })
+            $(this).parent().css('background', '');
+        }
+        istrue = !istrue;
+    })
+
+    $(".xiangshang").click(function () {
+        $('body,html').animate({ scrollTop: 0 }, 100);
+        return false;
+    });  
+</script>
+
+</html>

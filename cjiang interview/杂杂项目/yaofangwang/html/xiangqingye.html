@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        .main {
+            width: 1200px;
+            height: 100%;
+            margin: auto;
+        }
+
+        .detail_top {
+            margin-bottom: 20px;
+            background: #f8f8f8;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../lib/inconfig/iconfont.css">
+    <link rel="stylesheet" href="../css/05xiangqingmain.css">
+    <link rel="stylesheet" href="../css/fangdajing.css">
+</head>
+
+<body>
+    <div class="ding">
+
+    </div>
+    <div class="head">
+
+    </div>
+
+    <div class="mmm">
+        <div class="detail_top">
+            <div class="container clearfix">
+                <!-- 最上方的列表 -->
+                <div class="breadcrumb">
+                    <a href="###">药房网</a>
+                    <b>></b>
+                    <a href="###">重大疾病、肿瘤、肺癌 </a>
+                    <b>></b>
+                    <a href="###">肿瘤 </a>
+                    <b>></b>
+                    <a href="###">其他病症</a>
+                    <b>></b>
+                </div>
+                <!-- 左侧商品图和标题、介绍等 -->
+                <div class="sideleft">
+                    <div class="wrap" id="wrap">
+                        <div class="biger">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="imgs">
+                            <div class="main" id="main">
+                                <!-- <img src="" alt=""> -->
+                                <!-- <div class="mask" id="mask"></div> -->
+                            </div>
+                            <div class="bottom">
+                                <p class="prev">&lt;</p>
+                                <div class="box">
+                                    <ul class="smaller">
+                                        <!-- <li><img src="" alt=""></li> -->
+                                    </ul>
+                                </div>
+                                <p class="next">&gt;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comCodCol clearfix">
+                        <h1>商品编码：<span id="bianma">112384</span></h1>
+                        <ul class="">
+                            <!-- 收藏 -->
+                            <li><a href="javascript:;"><i class="iconfont ">&#xe624;</i>收藏</a></li>
+                            <li class="share_click">
+                                <a href="###">
+                                    <i class="iconfont">&#xe605;</i> 分享
+                                    <b class="iconfont">&#xe60a;
+                                    </b>
+                                </a>
+
+                                <!-- 分享的内容 -->
+                                <div class="share_con" style="display: none;">
+                                    <div>
+                                        <img src="../images/share.jpg" alt=""></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="desc">
+                        <div class="branddesc">
+                            <p>
+                                <span>郑重声明：</span>尊敬的顾客，药房网受各门店委托为其发布药品信息。您的用药需求信息提交后，将由离您较近的药房网门店为您提<a
+                                    class="more iconfont ">&#xe60a;全部</a>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 中间详情页加入购物车 -->
+                <div class="middle_property" id="middle_property">
+                    <!-- <h1>小柴胡颗粒</h1>
+
+                        <p class="title" style="color:#CD6E00;height:auto;font-size:15px;">解表散热，舒肝和胃
+                            胸胁苦满，食欲不振，心烦喜呕，口苦咽干。
+                        </p>
+                        <p>规 格： 10g*6袋 / 盒
+                            <br> 商品编码：112384
+                            <br> 批准文号：国药准字Z36020674
+                            <br> 生产厂家：江西汪氏药业有限公司
+                        </p>
+
+                        <dl>
+                            <dt>
+                                <span>会 员 价：</span>
+                                <strong>￥10.40</strong>
+                                <input type="hidden" id="price" value="10.40">
+                            </dt>
+                            <dd>
+                                <span>促销信息：</span>
+                                <strong>
+                                    <b>
+                                        <i>包邮</i>
+                                        购买本店商品满199元免基础配送费，偏远地区除外
+                                    </b>
+                                </strong>
+                            </dd>
+                        </dl> -->
+                    <div class="select">
+                        <!-- <dl>
+                            <dt>配 送 至:</dt>
+                            <dd>请选择</dd>
+                        </dl>
+                        <dl>
+                            <dt>数 量:</dt>
+                            <dd>
+                                <div class="num">
+                                    <span class="minus">-</span>
+                                    <input class="am-num-text" id="numInp" type="text" value="1">
+                                    <span class="plus">+</span>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                库 存:
+                            </dt>
+                            <dd>
+                                <span id="newKuc">9999</span>
+                            </dd>
+                        </dl>
+                        <a href="###" class="confirm_btn1 btnCart">
+                            <i class="iconfont" style="display: inline-block;width:20px;">&#xe682;
+                            </i> 加入需求清单
+                        </a> -->
+                    </div>
+
+                </div>
+                <div class="right_property">
+                    <!-- 标题 -->
+                    <h1 style="height: auto;padding: 2px 10px;">苏州仁和药房网嘉德医药科技有限公司
+                    </h1>
+                    <dl>
+                        <dd class="right_baozheng">
+                            <span><i class="iconfont ">&#xe607;</i><b>正品保障</b></span>
+                            <span><i class="iconfont ">&#xe62b;</i><b>品牌授权</b></span>
+                            <span><i class="iconfont ">&#xe660;</i><b>平台认证</b></span>
+                            <span><i class="iconfont "> &#xe645;</i><b>天天省钱</b></span>
+                        </dd>
+                        <dt>
+                            <a href="javascript:;" class="Shake"><i class="iconfont ">&#xe60b;
+                                </i>客服咨询</a>
+                            <a href="javascript:;" class="dpfx"><i class="iconfont ">&#xe614;
+                                </i>我要分享</a>
+                        </dt>
+                    </dl>
+                    <div class="tempWrap">
+                        <ul>
+                            <li>食品经营许可证：JY13205060033386</li>
+                            <li>营业执照：91320506778651680P</li>
+                            <li>药品经营许可证：苏DA5123004更</li>
+                            <li>食品经营许可证：JY13205060033386</li>
+                            <li>营业执照：91320506778651680P</li>
+                        </ul>
+                    </div>
+                    <div style="margin: 20px;text-align: left; color:#ccc;">
+                        地址：江苏省苏州吴中经济开发区碧波街6号
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+    
+    <!-- 吸顶菜单 介绍查看说明书等等 -->
+    <div class="fixe_goods">
+        <div class="fixe_goods_div">
+            <div class="flex-left">
+                <div class="fixe_good">
+                    <img src="../images/xiding_img.jpg" alt="小柴胡颗粒" title="小柴胡颗粒">
+                    <div>
+                        <span>RX<i>[特例]</i>小柴胡颗粒</span>
+                        <span>￥9.30</span>
+                    </div>
+                </div>
+                <input type="button" value="查看药品说明书" class="shuomingshu">
+            </div>
+            <div class="flex-right">
+                <ul>
+                    <li class="last">
+                        <i class="iconfont ">&#xe624;</i>
+                        <p>
+                            <span>客户服务电话</span>
+                            <b>400-650-9988</b>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class=" iconfont">&#xe624;</i>
+                            <p>
+                                <span style="color:#999;">欢迎使用</span>
+                                <b>在线药师</b>
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--广告  .商品足迹 -->
+    <div class="container detail_bottom clearfix">
+        <div class="columnLeft">
+            <!-- 广告图 -->
+            <div class="brand_image">
+                <div class="brand_image">
+                    <a href="###" target="_blank" name="__ad_category_left_ad">
+                        <img style="width:202px;" src="../images/list-left-img.jpg" title="清爽过夏天 冰点低价" alt="清爽过夏天"></a>
+                </div>
+                <div class="brand_image">
+                    <a href="###" target="_blank" name="__ad_category_left_ad">
+                        <img style="width:202px;" src="../images/list-left-img2.jpg" title="清爽过夏天 冰点低价" alt="清爽过夏天"></a>
+                </div>
+            </div>
+
+            <!-- 浏览记录 -->
+            <div class="hotProductList">
+                <h3>浏览记录</h3>
+                <!-- 热销商品 -->
+                <div class="hot_pro_list">
+                    <div class="hot_pro_row">
+                        <img src="../images/hot-item.jpg" alt="">
+                        <b>小柴胡颗粒</b>
+                        <i>￥15.00</i>
+                    </div>
+                    <div class="hot_pro_row">
+                        <img src="../images/hot-item.jpg" alt="">
+                        <b>小柴胡颗粒</b>
+                        <i>￥15.00</i>
+                    </div>
+                    <div class="hot_pro_row">
+                        <img src="../images/hot-item.jpg" alt="">
+                        <b>小柴胡颗粒</b>
+                        <i>￥15.00</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columnRight">
+            <div class="suit">
+                <ul class="tonglei">
+                    <li class="on"><a href="###">同类推荐</a></li>
+                </ul>
+                <div class="list_common">
+                    <dl>
+                        <dt> <img src="../images/xqlist1.jpg" alt=""> </dt>
+                        <dd>
+                            <span>
+                                <i>￥100</i>
+                                <b>包邮</b>
+                            </span>
+                            <strong>
+                                通宣理肺丸(运动员慎用)
+                                <br>
+                                6g*10丸
+                            </strong>
+                        </dd>
+                    </dl>
+
+                    <dl>
+                        <dt> <img src="../images/xqlist1.jpg" alt=""> </dt>
+                        <dd>
+                            <span>
+                                <i>￥100</i>
+                                <b>包邮</b>
+                            </span>
+                            <strong>
+                                通宣理肺丸(运动员慎用)
+                                <br>
+                                6g*10丸
+                            </strong>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt> <img src="../images/xqlist1.jpg" alt=""> </dt>
+                        <dd>
+                            <span>
+                                <i>￥100</i>
+                                <b>包邮</b>
+                            </span>
+                            <strong>
+                                通宣理肺丸(运动员慎用)
+                                <br>
+                                6g*10丸
+                            </strong>
+                        </dd>
+                    </dl>
+
+                </div>
+            </div>
+
+            <!-- 下方商品信息说明书等.. -->
+            <div class="detail_parameter">
+                <ul class="tonglei">
+                    <li class="on"><a href="###">同类推荐</a></li>
+                    <li><a href="###">商品评论(100)</a></li>
+                    <li><a href="###">关于药房网</a></li>
+                    <li><a href="###">售后说明</a></li>
+                    <li><a href="###">健康好文</a></li>
+                </ul>
+                <div class="tab_box">
+                    <!--  1 -->
+                    <div class="instructions">
+                        <img src="../images/xuanxuanka/x1.png" alt="">
+                    </div>
+                    <!-- 2 -->
+                    <div class="productComment" style="display:none">
+                        <img src="../images/xuanxuanka/x2.png" alt="">
+                    </div>
+                    <!-- 3 -->
+                    <div class="productComment_top" style="display:none">
+                        <img src="../images/xuanxuanka/x3.png" alt="">
+                    </div>
+                    <!-- 4 -->
+                    <div class="about" style="display:none">
+                        <img src="../images/xuanxuanka/x4.png" alt="">
+                    </div>
+                    <!-- 5 -->
+                    <div class="afterSaleService" style="display:none">
+                        <img src="../images/xuanxuanka/x5.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <div class="foot">
+
+    </div>
+
+</body>
+<script src="../js/j-common.js"></script>
+<script src="../js/jquery-1.10.1.min.js"></script>
+<script src="../js/xiangqing.js"></script>
+<script src="../lib/magniglass.js"></script>
+<script src="../js/05xiangqingmain.js"></script>
+<script>
+    (function () {
+        $('.ding').load('0405list-xq-dingbu.html', function () {
+            //吸顶菜单
+            $(window).scroll(function () {
+                let otop = $('.detail_top').innerHeight() + 310;
+                if ($(window).scrollTop().toFixed(0) - 0 >= otop) {
+                    $('.fixe_goods').css('display', 'block').css('position', 'fixed');
+
+                }
+                else if ($(window).scrollTop() < otop) {
+                    $('.fixe_goods').css('display', 'none').css('position', 'fixed');
+                }
+            })
+
+        });
+
+        // 头部导航事件
+        $('.head').load('0405header.html', function () {
+            $('.pullDownList').css('display', 'none');
+            $('.daohang2 .content h1').on('mouseover', function () {
+                $('.pullDownList').css('display', 'block');
+            }).on('mouseout', function () {
+                $('.pullDownList').css('display', 'none');
+            })
+        });
+        $('.foot').load('0405list-xq-footer.html');
+    })();
+
+    
+</script>
+
+</html>

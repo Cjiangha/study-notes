@@ -1,0 +1,155 @@
+@charset "utf-8";
+body, ul, p {
+	padding: 0;
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+.wrap img {
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+}
+
+.wrap, .wrap2 {
+	width: 330px;
+	height: 424px;
+	position: absolute;
+}
+
+#wrap {
+	/* margin-bottom: 50px; */
+	position: relative;
+}
+
+.imgs {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.main {
+	position: relative;
+	overflow: hidden;
+	padding: 4px;
+	width: 330px;
+	height: 330px;
+	border: 1px solid #dadada;
+}
+
+.bottom {
+	width: 398px;
+	height: 72px;
+	position: relative;
+	margin: 10px 0;
+}
+
+.bottom p {
+	text-align: center;
+	line-height: 72px;
+	background: #777;
+	float: left;
+}
+
+.bottom .prev {
+	/* background: #ccc; */
+	width: 30px;
+	height: 70px;
+	cursor: pointer;
+}
+
+.bottom .next {
+	width: 30px;
+	height: 70px;
+	cursor: pointer;
+}
+
+.box {
+	width: 270px;
+	height: 72px;
+	overflow: hidden;
+	position: relative;
+	float: left;
+}
+
+/* .bottom .prev{
+	position: absolute;
+	left: 0px;
+	top: 0;
+}
+.bottom .next{
+	position: absolute;
+	right:0 ;
+	top: 0;
+} */
+
+.smaller {
+	/* position: relative; */
+	overflow: hidden;
+	width: 400px;
+	height: 72px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.smaller li {
+	position: relative;
+	float: left;
+	padding: 2px;
+	width: 65px;
+	height: 65px;
+	border: 2px solid white;
+	cursor: pointer;
+	margin-right: 25px;
+}
+
+.smaller li:active {
+	border-color: #ff6a00;
+}
+
+.smaller li:first-child {
+	margin-left: 0;
+}
+
+.smaller .current {
+	border-color: #ff6a00;
+}
+
+.biger {
+	position: absolute;
+	top: 0;
+	right: -400px;
+	overflow: hidden;
+	display: none;
+	left: 330px;
+	width: 500px;
+	height: 330px;
+	/* z-index: 10; */
+}
+
+.mask {
+	position: absolute;
+	display: none;
+	left: 0;
+	top: 0;
+	width: 100px;
+	height: 100px;
+	/* background: url('../images/mask-bg.png') repeat; */
+	cursor: crosshair;
+	background: orange;
+	opacity: 0.5;
+}
+
+.biger img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200%;
+	height: 200%;
+}

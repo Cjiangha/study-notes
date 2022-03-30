@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#lunbo, #box {
+    width: 600px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 放图片的 */
+
+.imglist {
+    width: 100%;
+    height: 100%;
+}
+
+.imglist li {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    /* transition: 1s; */
+}
+
+.imglist li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.light {
+    width: 600px;
+    height: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    text-align: center;
+    /* margin: 10px auto; */
+}
+
+.light span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* 左右按钮 */
+
+.posibtn {
+    width: 600px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -50px;
+}
+
+.posibtn .prev {
+    display: none;
+    background: url(../images/banner/slideV2.png) 0px -144px no-repeat;
+    width: 40px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 12;
+    height: 80px;
+    margin-top: -40px;
+    opacity: 0.8;
+}
+
+.posibtn .next {
+    display: none;
+    background: url(../images/banner/slideV2.png) -53px -144px no-repeat;
+    width: 40px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 12;
+    height: 80px;
+    margin-top: -40px;
+    opacity: 0.8;
+}
+
+.posibtn .next:hover, .posibtn .prev:hover {
+    opacity: 1;
+}
+
+.posibtn p::selection {
+    background: transparent;
+}
+
+/* .posibtn div:nth-child(1) {
+    left: 10px;
+}
+
+.posibtn div:nth-child(2) {
+    right: 10px;
+} */
+
+.light .active {
+    background: rgb(134, 49, 119);
+}

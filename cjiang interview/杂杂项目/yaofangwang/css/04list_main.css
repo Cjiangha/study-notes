@@ -1,0 +1,381 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #5b5b5b;
+  line-height: 30px;
+}
+
+.content::after {
+  clear: both;
+  content: '';
+  display: block;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.content {
+  margin: auto;
+  width: 1200px;
+  height: 100%;
+}
+
+.content .breadcrumb {
+  line-height: 30px;
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+.content .columnLeft {
+  float: left;
+  width: 200px;
+  height: 3000px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+}
+
+.content .columnLeft .classify_fold > div h2 {
+  font-size: 14px;
+  background: #f7f7f7;
+  padding: 0 20px;
+  color: #5b5b5b;
+  line-height: 38px;
+  cursor: pointer;
+  border-bottom: 1px solid #dedede;
+  border-top: 0;
+}
+
+.content .columnLeft .classify_fold > div ul {
+  border-bottom: 1px solid #dedede;
+  padding: 10px 10px 10px 40px;
+  font-size: 12px;
+}
+
+.content .columnLeft .classify_fold > div ul li {
+  color: #5b5b5b;
+  display: block;
+  line-height: 30px;
+}
+
+.content .columnLeft .hotProductList {
+  border: 1px solid #e9e9e9;
+  margin-bottom: 20px;
+}
+
+.content .columnLeft .hotProductList h3 {
+  background: #f7f7f7;
+  height: 40px;
+  line-height: 40px;
+  color: #5b5b5b;
+  font-weight: normal;
+  padding: 0 20px;
+  font-size: 18px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.content .columnLeft .hotProductList .hot_pro_list {
+  padding: 40px 15px 0;
+}
+
+.content .columnLeft .hotProductList .hot_pro_list .hot_pro_row {
+  display: block;
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.content .columnLeft .hotProductList .hot_pro_list .hot_pro_row img {
+  width: 165px;
+}
+
+.content .columnLeft .hotProductList .hot_pro_list .hot_pro_row i {
+  display: block;
+  color: #e53b46;
+  padding: 5px 0;
+}
+
+.content .columnLeft .brand_image {
+  margin-bottom: 20px;
+}
+
+.content .columnLeft .brand_image img {
+  width: 202px;
+}
+
+.content .columnRight::after {
+  clear: both;
+  content: '.';
+  display: block;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.content .columnRight {
+  float: right;
+  width: 977px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+}
+
+.content .columnRight .selectTitle {
+  line-height: 40px;
+  background: #f7f7f7;
+  padding: 0 15px;
+  border-left: 1px solid #e9e9e9;
+  border-right: 1px solid #e9e9e9;
+}
+
+.content .columnRight .selectTitle i {
+  font-size: 16px;
+  color: #FF0000;
+  margin-right: 16px;
+}
+
+.content .columnRight .selectTitle span {
+  display: inline-block;
+  background: #fff;
+  padding: 0 10px;
+  height: 23px;
+  line-height: 23px;
+}
+
+.content .columnRight .selectTitle strong {
+  font-size: 14px;
+  color: #FF0000;
+}
+
+.content .columnRight .selectList {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.content .columnRight .selectList dl {
+  position: relative;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.content .columnRight .selectList dl dt {
+  float: left;
+  width: 95px;
+  text-align: right;
+  padding: 7px 0;
+}
+
+.content .columnRight .selectList dl .s_value {
+  margin-left: 95px;
+  padding: 10px 85px 10px 10px;
+  overflow: hidden;
+}
+
+.content .columnRight .selectList dl .s_value .checkList {
+  width: 660px;
+  margin-top: -4px;
+}
+
+.content .columnRight .selectList dl .s_value .checkList label {
+  float: left;
+  cursor: pointer;
+  width: 60px;
+  margin-right: 45px;
+  color: #0c69ae;
+  white-space: nowrap;
+  zoom: 1;
+  line-height: 25px;
+}
+
+.content .columnRight .selectList dl .s_value .checkList label a {
+  display: inline-block;
+  color: #0c69ae;
+}
+
+.content .columnRight .selectList dl .s_value .checkList label a:hover {
+  color: #f35d60;
+}
+
+.content .columnRight .selectList dl .s_ext {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 70px;
+}
+
+.content .columnRight .selectList dl .s_ext a {
+  display: inline-block;
+  width: 40px;
+  padding: 0 5px;
+  height: 22px;
+  line-height: 21px;
+  border: 1px solid #2382c9;
+  color: #0c69ae;
+}
+
+.content .columnRight .s_more {
+  text-align: center;
+  position: relative;
+  top: -1px;
+  border-top: 1px solid #ddd;
+}
+
+.content .columnRight .s_more span {
+  position: relative;
+  display: inline-block;
+  margin-top: -1px;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #FFF #DDD #DDD;
+  background: #fff;
+  cursor: pointer;
+  color: #666;
+}
+
+.content .columnRight .classiftyBanner {
+  margin: 25px 0;
+}
+
+.content .columnRight .classiftyBanner img {
+  width: 977px;
+  height: 80px;
+}
+
+.content .columnRight .fLine {
+  margin-bottom: 25px;
+  background: #f7f7f7;
+  border: 1px solid #e9e9e9;
+  height: 40px;
+  line-height: 40px;
+  color: #5b5b5b;
+  font-size: 14px;
+}
+
+.content .columnRight .fLine .fSort {
+  float: left;
+  width: 220px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.content .columnRight .fLine .fSort a {
+  float: left;
+  padding: 0 15px;
+  border-right: 1px solid #e9e9e9;
+  height: 40px;
+  color: #5b5b5b;
+}
+
+.content .columnRight .fLine .topPage {
+  float: right;
+  padding-right: 5px;
+}
+
+.content .columnRight .fLine .topPage .fp_total {
+  color: #e53b46;
+  font-weight: bold;
+}
+
+.content .columnRight .fLine .topPage .fp_text {
+  color: #5b5b5b;
+  margin-left: 25px;
+  margin-right: 5px;
+}
+
+.content .columnRight .fLine .topPage b {
+  color: #e53b46;
+}
+
+.content .columnRight .classitfy_drug_list {
+  display: block;
+}
+
+.content .columnRight .classitfy_drug_list .drug_item:hover {
+  border-color: #ccc;
+}
+
+.content .columnRight .classitfy_drug_list .drug_item {
+  float: left;
+  width: 200px;
+  margin: 0 5px;
+  margin-bottom: 5px;
+  padding: 20px 15px;
+  border: 1px solid #fff;
+}
+
+.content .columnRight .classitfy_drug_list .drug_item .drug_item_img {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.content .columnRight .classitfy_drug_list .drug_item .drug_item_img a img {
+  width: 200px;
+  height: 200px;
+}
+
+.content .columnRight .classitfy_drug_list .drug_item i {
+  display: block;
+  color: #e53b46;
+  font-size: 18px;
+}
+
+.content .columnRight .classitfy_drug_list .drug_item > a {
+  width: 200px;
+  height: 22px;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content .columnRight .classitfy_drug_list .drug_item span {
+  color: #5b5b5b;
+  display: block;
+  padding-top: 10px;
+  font-size: 12px;
+  overflow: hidden;
+  width: 190px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.content .columnRight .classitfy_drug_list .drug_item .drug_action {
+  margin-top: 15px;
+}
+
+.content .columnRight .classitfy_drug_list .drug_item .drug_action a {
+  float: left;
+  cursor: pointer;
+  padding: 0 10px;
+  height: 27px;
+  color: #ff6666;
+  border: 1px solid #ddd;
+  font-size: 12px;
+}
+
+.content .columnRight .classitfy_drug_list .drug_item .drug_action a i {
+  display: inline-block;
+  font-size: 13px;
+}
+
+.content .columnRight .classitfy_drug_list .paging {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.content .columnRight .classitfy_drug_list .paging a {
+  display: inline-block;
+  padding: 0 10px;
+  border: 1px solid #e9e9e9;
+  margin-right: 5px;
+  color: #4095d4;
+  line-height: 25px;
+  height: 25px;
+}

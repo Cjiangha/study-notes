@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+}
+
+#lunbo1, #lunbo2, #lunbo3, #lunbo4 {
+    width: 605px;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+
+.clear {
+    clear: both;
+    height: 0;
+    line-height: 0;
+    font-size: 1px;
+}
+
+.imageul {
+    width: 1210px;
+    position: absolute;
+}
+
+.imageul li {
+    float: left;
+    height: 100%;
+}
+
+.imageul img {
+    width: 605px;
+    height: 280px;
+}
+
+.light2 {
+    width: 120px;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    margin-left: -30px;
+}
+
+.light2 span {
+    display: inline-block;
+    float: left;
+    background: white;
+    margin-right: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.light2 .on {
+    background: #5b5b5b;
+    filter: alpha(opacity=100);
+    opacity: 1;
+}

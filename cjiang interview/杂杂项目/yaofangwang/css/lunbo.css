@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+#box {
+    z-index: 1;
+}
+
+#box, #lunbo1, #lunbo2, #lunbo3, #lunbo4, #box3 {
+    width: 600px;
+    height: 300px;
+    float: left;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#box {
+    margin: auto;
+}
+
+/* 放图片的 */
+
+.imglist {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.imglist li {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    /* transition: 1s; */
+}
+
+.imglist li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.light {
+    width: 600px;
+    height: 30px;
+    position: absolute;
+    overflow: hidden;
+    bottom: 15px;
+    left: 0;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.light span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d8d8d8;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* 左右按钮 */
+
+.posibtn {
+    width: 600px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -50px;
+}
+
+.posibtn .prev {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    background: #ccc;
+    opacity: 0.5;
+    cursor: pointer;
+    font-size: 50px;
+    line-height: 100px;
+}
+
+.posibtn .next {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    background: #ccc;
+    opacity: 0.5;
+    cursor: pointer;
+    font-size: 50px;
+    line-height: 100px;
+}
+
+.posibtn p::selection {
+    background: transparent;
+}
+
+.posibtn div:nth-child(1) {
+    left: 10px;
+}
+
+.posibtn div:nth-child(2) {
+    right: 10px;
+}
+
+.light .active {
+    background: #0674b3;
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
