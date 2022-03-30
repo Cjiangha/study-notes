@@ -1,0 +1,18 @@
+► Title - 
+	Check for update task
+▬ Message - 
+	The remote server returned an error: (403) Forbidden.
+○ Type - 
+	System.Net.WebException
+♦ [Version] Date/Hour - 
+	[2.18] 12/21/2021 16:32:22
+▲ Source - 
+	System
+▼ TargetSite - 
+	System.Net.WebResponse GetResponse()
+♠ StackTrace - 
+   at System.Net.HttpWebRequest.GetResponse()
+   at ScreenToGif.Model.ApplicationViewModel.UpdateTask()
+
+----------------------------------
+

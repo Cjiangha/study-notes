@@ -1,0 +1,90 @@
+► Title - 
+	Check for update task
+▬ Message - 
+	Unable to connect to the remote server
+○ Type - 
+	System.Net.WebException
+♦ [Version] Date/Hour - 
+	[2.18] 08/21/2020 12:58:39
+▲ Source - 
+	System
+▼ TargetSite - 
+	System.Net.WebResponse GetResponse()
+♠ StackTrace - 
+   at System.Net.HttpWebRequest.GetResponse()
+   at ScreenToGif.Model.ApplicationViewModel.UpdateTask()
+
+▬▬ Message - 
+	由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 54.169.195.247:443
+○○ Type - 
+	System.Net.Sockets.SocketException
+▲▲ Source - 
+	System
+▼▼ TargetSite - 
+	Void DoConnect(System.Net.EndPoint, System.Net.SocketAddress)
+♠♠ StackTrace - 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+----------------------------------
+
+► Title - 
+	Check for update task
+▬ Message - 
+	Unable to connect to the remote server
+○ Type - 
+	System.Net.WebException
+♦ [Version] Date/Hour - 
+	[2.18] 08/21/2020 20:13:53
+▲ Source - 
+	System
+▼ TargetSite - 
+	System.Net.WebResponse GetResponse()
+♠ StackTrace - 
+   at System.Net.HttpWebRequest.GetResponse()
+   at ScreenToGif.Model.ApplicationViewModel.UpdateTask()
+
+▬▬ Message - 
+	由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 13.250.94.254:443
+○○ Type - 
+	System.Net.Sockets.SocketException
+▲▲ Source - 
+	System
+▼▼ TargetSite - 
+	Void DoConnect(System.Net.EndPoint, System.Net.SocketAddress)
+♠♠ StackTrace - 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+----------------------------------
+
+► Title - 
+	Check for update task
+▬ Message - 
+	Unable to connect to the remote server
+○ Type - 
+	System.Net.WebException
+♦ [Version] Date/Hour - 
+	[2.18] 08/21/2020 20:15:32
+▲ Source - 
+	System
+▼ TargetSite - 
+	System.Net.WebResponse GetResponse()
+♠ StackTrace - 
+   at System.Net.HttpWebRequest.GetResponse()
+   at ScreenToGif.Model.ApplicationViewModel.UpdateTask()
+
+▬▬ Message - 
+	由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 13.250.94.254:443
+○○ Type - 
+	System.Net.Sockets.SocketException
+▲▲ Source - 
+	System
+▼▼ TargetSite - 
+	Void DoConnect(System.Net.EndPoint, System.Net.SocketAddress)
+♠♠ StackTrace - 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+----------------------------------
+
