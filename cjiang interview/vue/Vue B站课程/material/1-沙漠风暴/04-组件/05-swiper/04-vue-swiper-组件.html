@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="lib/swiper/js/swiper.js"></script>
+  <link rel="stylesheet" href="lib/swiper/css/swiper.css">
+  <script src="lib/vue.js"></script>
+  <script src="./module/vueswiper.js"></script>
+</head>
+<body>
+  <div id="box">
+    <swiper v-if="datalist.length" :loop="false">
+      <swiper-item v-for="data in datalist" :key="data">
+        <img :src="data"/>
+      </swiper-item>
+    </swiper>
+
+    <!-- <swiper :key="datalist.length"></swiper> -->
+  </div>
+
+  <script>
+
+    new Vue({
+      el:'#box',
+      data:{
+          datalist:[]
+        
+      },
+      mounted(){
+        setTimeout(()=>{
+          this.datalist = ["https://static.maizuo.com/pc/v5/usr/movie/e856bdc65507b99800f22e47801fa781.jpg",
+            "https://static.maizuo.com/pc/v5/usr/movie/47aa5a3ad2ebff403d073288e4365694.jpg",
+            "https://static.maizuo.com/pc/v5/usr/movie/8b0755547313706883acc771bda7709d.jpg"
+          ]
+        },2000)
+      }
+    })
+  </script>
+</body>
+</html>

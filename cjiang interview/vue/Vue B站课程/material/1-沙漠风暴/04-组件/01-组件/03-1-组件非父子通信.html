@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+
+<script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+      <child1></child1>
+      <child2></child2>
+    </div>
+    
+    <script type="text/javascript">
+        //中央事件总线 bus
+        var bus = new Vue()
+        // bus.$on("kerwin")   // 监听事件
+        // bus.$emit("kerwin") //触发事件
+
+
+
+        Vue.component("child1",{
+          template:`
+            <div>child1</div>
+          `,
+          
+          //child1 组件 创建完成， 并且渲染到dom节点上
+          mounted(){
+            console.log("moutend","8个生命周期中一个，组件上树后触发")
+
+            bus.$on("kerwin",(data)=>{
+              console.log("child1监听的函数",data)
+            })
+          }
+        })
+
+        Vue.component("child2",{
+          template:`
+            <div>child2
+              <button @click="handleClick">click</button>  
+            </div>
+          `,
+          methods:{
+            handleClick(){
+              bus.$emit("kerwin","1111111111111111111")
+            }
+          }
+        })
+
+        var vm = new Vue({
+          el:"#box",
+          methods: {
+           
+          }
+        })
+    </script>
+</body>
+</html>

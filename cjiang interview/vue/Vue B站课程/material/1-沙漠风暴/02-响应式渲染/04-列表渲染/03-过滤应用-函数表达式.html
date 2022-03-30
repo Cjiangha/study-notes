@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <!-- input change事件区别 -->
+      <input type="text"  v-model="mytext"/>
+      <ul>
+          <li v-for="data in test()" :key="data">
+              {{data}}
+          </li>
+      </ul>
+
+      <!-- {{ test() }} -->
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                mytext:"",
+                datalist:["aaa","add","bbb","bbc","ccc","ddd","eee","ade"],
+               
+            },
+            methods:{
+                test(){
+                    console.log("test--------------")
+
+                    
+
+                    return this.datalist.filter(item=> item.includes(this.mytext) )
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .red{
+      background-color: red;
+    }
+
+    .yellow{
+      background-color: yellow;
+    }
+    .aa{
+
+    }
+    .bb{
+
+    }
+    .cc{
+
+    }
+    .dd{
+
+    }
+
+  </style>
+  <script src="lib/vue.js"></script>
+</head>
+<body>
+  <div id="box">
+     <div :class="classobj">动态切换class-1-对象</div>
+     <div :class="classarr">动态切换class-2-数组</div>
+
+     <div :style="styleobj">动态切换style-1-对象</div>
+     <div :style="stylearr">动态切换style-2-数组</div>
+  </div>
+
+  <script>
+      var vm = new Vue({
+        el:"#box",
+        data:{
+          classobj:{
+            aa:true,
+            bb:true,
+            cc:false
+          },
+          classarr:["aa","bb"],
+          styleobj:{
+            backgroundColor:'red'
+          },
+          stylearr:[{backgroundColor:"yellow"}]
+        }
+      })
+
+      // vue2 解决方案， Vue.set(对象,属性，true) Vue.set(vm.classobj,"dd",true)
+
+      // vue3 支持动态增加属性的拦截
+  </script>
+</body>
+</html>

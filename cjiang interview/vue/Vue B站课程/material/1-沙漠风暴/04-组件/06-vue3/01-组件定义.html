@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.next.js"></script>
+</head>
+<body>
+    <div id="box">
+        {{myname}}
+
+        <navbar myname="aaaa">
+            <div>111111111111111</div>
+        </navbar>
+
+        <sidebar></sidebar>
+    </div>
+
+    <script >
+        // console.log(Vue.component)
+        var obj = {
+            data(){
+                return {
+                    myname:"kerwin"
+                }
+            },
+            methods:{
+
+            },
+            computed:{
+
+            },
+            created(){
+                console.log("created")
+            },
+            beforeMount(){
+
+            },
+            mounted(){
+                console.log("mounted")
+            },
+            //生命周期替换
+            // beforeDestroy(){
+            //     console.log("beforedestory")
+            // },
+            // destroyed(){
+
+            // }
+
+            beforeUnmount(){
+
+            },
+            unmounted(){
+                
+            }
+        }
+
+        var app = Vue.createApp(obj)
+
+        app.component("navbar",{
+                props:["myname"],
+                template:`
+                    <div>
+                        navbar-{{myname}}
+                        <slot></slot>
+                    </div>
+                `  
+        })
+        app.component("sidebar",{
+            template:`<div>
+                sidebar
+            </div>`
+        })
+        app.mount("#box")
+
+        // vue2 (类，this)
+        // vue3 类（>90% 一样）， hooks(函数式)
+</script>
+</body>
+</html>

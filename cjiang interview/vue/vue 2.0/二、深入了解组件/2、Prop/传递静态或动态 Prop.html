@@ -14,19 +14,19 @@
       <!-- <blog-post v-bind:likes="post.likes"></blog-post> -->
 
       <!-- 用一个变量进行动态赋值。-->
-      <blog-post v-bind:likes="post.likes"></blog-post>
+      <!-- <blog-post v-bind:likes="post.likes"></blog-post> -->
 
       <!-- 这个组件没有注册到 -->
-      <blog-boolean is-published="true"></blog-boolean>
+      <!-- <blog-boolean is-published="true"></blog-boolean> -->
 
       <blog-array comment-ids="[234, 266, 273]"></blog-array>
 
-      <blog-object
+      <!-- <blog-object
         v-bind:author="{
         name: 'Veronica',
         company: 'Veridian Dynamics'
        }"
-      ></blog-object>
+      ></blog-object> -->
     </div>
   </body>
   <script src="../vue.js"></script>
@@ -69,10 +69,18 @@
     Vue.component("blog-array", {
       // 在 JavaScript 中是 camelCase 的
       props: {
-        commentIds: Array,
+        commentIds: {
+          type:Array
+        }
+      },
+      data:function(){
+        return{
+          a: this.commentIds
+        }
       },
       template: `
         <div>
+          {{a}}
             <h2>传入一个数组</h2>
             <p>{{commentIds}}</p>
             <p>根据操作之后在Vue的props值为数组的时候在template里面进行使用的时候，它的属性值是String的:

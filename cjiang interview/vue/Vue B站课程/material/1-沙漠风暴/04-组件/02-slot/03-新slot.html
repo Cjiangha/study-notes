@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='lib/vue.js'></script>
+</head>
+<body>
+  <div id="box">
+    <!-- 当前组件或者节点 在哪个模板中，就能访问哪个模板状态 -->
+    <child>
+        <template v-slot:a>
+            <div>1111111111</div>
+        </template>
+
+       <template #b>
+        2222222222222222222
+       </template>
+
+       <div slot="c">33333333333333</div>
+       <div>44444444444444</div>
+    </child>
+
+    <navbar>
+      <template #left>
+        <button >aaa</button>
+      </template>
+      <template #right>
+        <i class="iconfont icon-all">字体图标</i>
+      </template>
+    </navbar>
+
+  </div>
+
+  <script>
+    // 插槽的意义 ： 扩展组件能力， 提高组件的复用性
+    Vue.component("navbar",{
+      template:`
+      
+        <div>
+           <slot name="left"></slot>
+           <span>navbar</span>  
+           <slot name="right"></slot>
+        </div>
+      `
+    })
+
+
+    // 单个插槽， <slot></slot>
+    // 具名插槽  <slot name="a"></slot>
+    Vue.component("child",{
+      template:`
+        <div>
+          child
+          <slot name="a"></slot>
+          <slot name="b"></slot>
+          <slot name="c"></slot>
+          <slot></slot>
+        </div>
+      `
+    })
+    new Vue({
+      el:"#box"
+    })
+  </script>
+</body>
+</html>

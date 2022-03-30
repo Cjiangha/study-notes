@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>fetch</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script type="text/javascript" src="lib/vue.js"></script>
+    <style>
+        li {
+            overflow: hidden;
+            list-style: none;
+            padding: 10px;
+        }
+
+        li img {
+            float: left;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <button @click="handleFetch">ajax-fetch11</button>
+
+        <ul>
+            <li v-for="data in datalist" :key="data.filmId">
+                <img :src="data.poster"/>
+                {{data.name}}
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: "#box",
+            data: {
+                datalist:[]
+            },
+            methods: {
+                handleFetch() {
+                    fetch("./json/maizuo.json")
+                        .then(res => res.json())
+                        .then(res => {
+                            console.log(res.data.films)
+
+                            this.datalist = res.data.films
+                        })
+                        .catch(err => {
+                            console.log(err)
+                        })
+
+                    // fetch("https://m.vip.com/server.html?rpc&method=pageCache&f=www&_=1563946036520",{
+                    //     method:"post",
+                    //     headers:{
+                    //         "Content-Type":"application/json"
+                    //     },
+                    //     body:JSON.stringify({
+                    //         name:"kerwin",
+                    //         age:100
+                    //     })
+                    // }).then(res => res.json()).then(res => {
+                    //     console.log(res)
+                    // });
+
+                }
+            }
+        })
+
+
+        /*
+        /*
+          get  url路径  ?name=kerwin&age=100    
+          post body请求体 ， 
+            （1）x-www-formurlencoded , name=kerwin&age=100
+             (2) json ,     `{"name":"kerwin",age:100}`
+        
+
+
+
+        // post-1
+        fetch("**",{
+             method:'post',
+             headers: {
+                "Content‐Type": "application/x‐www‐form‐urlencoded"
+             },
+            body: "name=kerwin&age=100",      
+        }).then(res=>res.json()).then(res=>{console.log(res)});
+      
+        // post-2
+         fetch("https://m.vip.com/server.html?rpc&method=pageCache&f=www&_=1563946036520",{
+             method:'post',
+             headers: {
+                "Content‐Type": "application/json"
+             },
+             body: JSON.stringify({
+                 name:"kerin",
+                 age:100
+             })
+        }).then(res=>res.json()).then(res=>{console.log(res)});
+       */
+
+
+        /*
+            函数表达式， --模糊查询，购物车金额===>计算属性-根据依赖计算结果的
+            函数表达式传参 --图片转换 ====> 过滤器-数据格式化
+        */
+    </script>
+</body>
+
+</html>
+
+<!-- http://p1.meituan.net/w.h/moviemachine/5cbf9a626b7ed27c96ca3c748655b3ec2550103.jpg
+
+https://p1.meituan.net/moviemachine/5cbf9a626b7ed27c96ca3c748655b3ec2550103.jpg@1l_1e_1c_128w_180h -->
