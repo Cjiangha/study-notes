@@ -24,7 +24,6 @@
     */ 
       Vue.component('myComponent',{
             created(){
-                console.log()
                 console.log('我是my-component 组件触发的更新')
             },
             template:`<div v-on:click="$emit('my-evnet')">我是template</div>`

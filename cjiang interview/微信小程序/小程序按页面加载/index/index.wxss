@@ -1,0 +1,66 @@
+.margin-left{
+  margin-left: 80rpx;
+}
+
+
+.list-item{
+  width: 720rpx;
+  height: 420rpx;
+  background-color: rgb(123, 153,177);
+  margin:20rpx auto;
+  border-radius: 30rpx;
+  box-shadow: 12rpx 12rpx rgba(213 ,223, 230,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list-item-top{
+  padding-top: 44rpx;
+}
+
+.list-item-top .one{
+  width: 70rpx;
+  height: 10rpx;
+  background-color: rgb(255, 255, 255);
+}
+
+.list-item-top view{
+  display: block;
+  line-height: 100rpx;
+  color: rgb(255,255,255);
+  font-size: 44rpx;
+}
+
+.list-item-bottom{
+  background-color: rgb(255, 255, 255);
+  height: 150rpx;
+  width: 100%;
+  border-radius: 30rpx;
+
+}
+
+.list-item-bottom .auto{
+  width: 100%;
+  margin: 48rpx  auto;
+}
+
+.list-item-bottom,.name{
+    font-size: 40rpx;
+}
+
+.list-item-bottom view{
+  display: inline-block;
+}
+.list-item-bottom .gender{
+  margin-left: 50rpx;
+}
+
+.list-item-bottom button{
+  display: inline;
+  height: 80rpx;
+  width: 230rpx;
+  border: 1px solid #ccc;
+  font-size: 24rpx;
+  margin-left: 200rpx;
+}
