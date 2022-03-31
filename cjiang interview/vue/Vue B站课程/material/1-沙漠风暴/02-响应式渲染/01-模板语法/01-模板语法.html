@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="lib/vue.js"></script>
+  <!-- <script src="lib/vue.next.js"></script> -->
+  <style>
+    .myred{
+      background-color: red;
+    }
+    .myyellow{
+      background-color: yellow;
+    }
+
+    .hidden{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+      {{myname}}--{{myage}}
+
+      <button @click="handleMyClick()">click1</button>
+      <button v-on:click="handleMyClick()">click2</button>
+
+      <div :class="whichColor">动态切换class</div>
+
+      <img v-bind:src="whichSrc"/>
+
+      <div :class=" isHidden?'hidden':'' ">动态显示和隐藏-class</div>
+
+      <!-- 指令 -->
+      <div v-show="isShow">动态显示和隐藏-指令</div>
+      <div v-if="isCreated">动态创建和删除-指令</div>
+
+      <ul>
+        <li v-for="(item,index) in datalist">
+          {{item}}--{{index}}
+        </li>
+      </ul>
+  </div>
+  <script>
+
+    new Vue({
+       el: "#box",
+       // 所有状态
+       data: {
+         myname: 'kerwin',// 状态
+         myage: 100,
+         whichColor:"myred",
+         whichSrc:"",
+         isHidden:false,
+
+         isShow:true,
+         isCreated:true,
+
+         datalist:["1111","222","333","4444","5555"]
+        },
+       //事件处理函数
+       methods:{
+        handleMyClick () {
+          this.myname = 'xiaoming'
+          this.myage = 18
+
+          this.whichColor = "myyellow"
+
+          // this.whichSrc  ="https://github.com/yyx990803.png"
+          // console.log("click")
+
+          this.isHidden = !this.isHidden
+
+          this.isShow = !this.isShow
+
+          this.isCreated = !this.isCreated
+        }
+       }
+     })
+
+    //  `aaaaaa${myname}`
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <!-- input change事件区别 -->
+      <input type="text" @input="handleInput" v-model="mytext"/>
+      <ul>
+          <li v-for="data in datalist" :key="data">
+              {{data}}
+          </li>
+      </ul>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                mytext:"",
+                datalist:["aaa","add","bbb","bbc","ccc","ddd","eee","ade"],
+                originList:["aaa","add","bbb","bbc","ccc","ddd","eee","ade"]
+            },
+            methods:{
+                handleInput(){
+                    console.log("input",this.mytext)
+
+                    // es5 filter 
+                  
+                    setTimeout(()=>{
+                        this.datalist = this.originList.filter(item=> item.includes(this.mytext) )
+
+                    },2000)
+                    // console.log(newlist)
+
+                }
+            }
+        })
+
+        var arr =["aaa","add","bbb","bbc","ccc","ddd","eee","ade"]
+
+        var newlist = arr.filter(item=> item.includes("a") )
+
+        console.log(newlist,arr)
+    </script>
+</body>
+</html>

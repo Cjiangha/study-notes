@@ -1,0 +1,176 @@
+.footer{
+    width: 100%;
+    height: 100%;
+}
+.footer_top{
+    width: 100%;
+    background: #4095d4;
+    .twentyfour{
+        width: 100%;
+        // border-bottom: 1px solid  pink;
+        border-bottom: 1px solid #2382c9;
+        color: white;
+        .content{
+            width:1200px;
+            padding: 30px 0;
+            margin:auto;
+            .twentyfour_left{
+                margin-left: 140px;
+                border-right: 1px solid #2382c9;
+                float: left;
+                display: flex;
+                i{
+                    display: inline-block;
+                    font-size: 50px;
+                    color:white ;
+                    background: #4095d4;
+                }
+                >div{
+                    height: 54px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    span:nth-child(1){
+                        font-size: 22px;
+                        float: left;
+                        padding: 0 20px;
+                    }
+                    span:nth-child(2){
+                        color: #e5cb3b;
+                        display: block;
+                        padding: 0 20px;
+                    }
+                }
+            }
+            .twentyfour_right{
+                width: 430px;
+                float: left;
+                padding-left: 30px;
+                display: flex;
+                justify-content: space-between;
+                span{
+                    line-height: 58px;
+                }
+                span:nth-child(1){
+                    font-size: 22px;
+                }
+                span:nth-child(2){
+                    font-size: 14px;
+                }
+                span:nth-child(3){
+                    font-size: 14px;
+                }
+            }
+         
+        }
+    }
+    .QRcodeandservice{
+        padding: 20px 0;
+        color: white;
+        .content{
+            width: 1200px;
+            margin: auto;
+            .code{  
+                float: left;
+                width: 340px;
+                padding-right: 70px;
+                text-align: center;
+                border-right: 1px solid #2382c9;
+                display: flex;
+                justify-content: space-between;
+                
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 173px;
+                    font-size: 14px;
+                }  
+            }
+            .service{
+                width: 680px;
+                padding-left: 62px;
+                float: left;
+                display: flex;
+                justify-content: space-between;
+                color: white;
+                dl{
+                    display: flex;
+                    flex-direction: column;
+                    dt{
+                        font-size: 18px;
+                        margin-bottom: 20px;
+                    }
+                    dd{
+                       
+                        a{
+                            display: block;
+                            font-size: 12px;
+                            line-height: 22px;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer_bottom{
+    height: 100%;
+    .flex{
+        height: 75px;
+    line-height: 75px;
+    width: 605px;
+    margin:0 auto;
+            li{
+            color: #bc871f;
+            font-size: 18px;
+            float: left;
+            width: 25%; 
+                i{
+                    display: inline-block;
+                    font-size: 38px;
+                    color: #bc871f;
+                    margin-right: 10px;
+                    vertical-align: middle;
+                }
+                span{
+                    display: inline-block;
+                    line-height:  40px;
+                    height: 40px;
+                }
+        }
+    }
+    .beian{
+        padding-top: 10px;
+        border-top: 1px solid #d1d1d1;
+        margin:auto;
+        text-align: center; 
+        height: 100%;
+        line-height: 25px;
+        position: relative;
+        .content{
+            width: 1200px;
+            margin: auto;
+            a{
+                display: inline-block;
+                color:black;
+            }
+            >div{
+                padding-top: 10px;
+                font-size: 12px;
+            }
+        }
+        p{
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+    .picpic{
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }   
+}

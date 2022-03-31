@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="lib/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+       <input type="text" ref="mytext"/>
+       <input type="password" ref="mypassword"/>
+       <div ref="mydiv">111111</div>
+       <button @click="handleAdd">add</button>
+       <child ref="mychild"></child>
+    </div>
+    <script>
+
+      Vue.component("child",{
+        data(){
+          return {
+            myname:"child-111111111111111111111"
+          }
+        },
+        template:`<div>
+          child---{{myname}}  
+        </div>`
+      })
+
+      new Vue({
+        el:"#box",
+        methods:{
+          handleAdd(){
+            // console.log(this.$refs.mytext,this.$refs.mypassword,this.$refs.mydiv)
+            // console.log(this.$refs.mychild.myname)
+
+            this.$refs.mychild.myname="child-2222222222222222"
+          }
+        }
+      })
+
+      /*
+        ref -绑定dom节点，拿到的就是 dom对象
+        ref -绑定组件，拿到的就是 组件对象
+      */
+    </script>
+</body>
+</html>

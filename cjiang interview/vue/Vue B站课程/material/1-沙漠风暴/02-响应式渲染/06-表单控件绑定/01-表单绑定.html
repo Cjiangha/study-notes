@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="lib/vue.js"></script>
+</head>
+
+<body>
+  <div id="box">
+    {{mytext}}
+    <textarea v-model="mytext"></textarea>
+
+    <div>
+      <div>用户名：<input v-model="mytext"/></div>
+      <input type="checkbox" v-model="isRemember"/> 记住用户名
+      <button @click="handleLogin">登录</button>
+    </div>
+
+
+    <div>
+       <h2>注册页面-兴趣爱好</h2>
+       <input type="checkbox" v-model="checkList" value="vue"/>   vue
+       <input type="checkbox" v-model="checkList" value="react"/>   react
+       <input type="checkbox" v-model="checkList" value="wx"/>   小程序
+    </div>
+
+    {{checkList}}
+
+
+    <div>
+      <h2>性别选择</h2>
+
+      <input type="radio" v-model="select" value="a"/> 男
+      <input type="radio" v-model="select" value="b"/> 女
+    </div>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: "#box",
+      data: {
+        mytext: localStorage.getItem("username"),
+        isRemember:true,
+        checkList:[],
+        select:"a"
+      },
+      methods:{
+        handleLogin(){
+          if(this.isRemember){
+            localStorage.setItem("username",this.mytext)
+          }
+
+          console.log(this.mytext,this.checkList,this.select)
+        }
+      }
+    })
+
+
+    /*
+        vue 架构模式??
+    
+        mvc, mvvm(双向数据绑定)
+
+        v--> dom模板
+        m---> data 
+        vm--->vue实例
+        
+        angular mvw
+        */
+
+  </script>
+</body>
+
+</html>
+

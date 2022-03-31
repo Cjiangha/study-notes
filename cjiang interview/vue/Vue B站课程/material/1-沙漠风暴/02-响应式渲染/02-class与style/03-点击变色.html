@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.js"></script>
+
+    <style>
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="(item,index) in datalist" :class=" current===index?'active':'' " @click="handleClick(index)">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                current:0,
+                datalist:["1111","2222","333"]
+            },
+            methods:{
+                handleClick(index){
+                    // console.log(index)
+                    this.current = index
+                }
+            }
+        })
+    </script>
+</body>
+</html>

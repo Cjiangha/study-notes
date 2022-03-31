@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>fetch</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="lib/vue.js"></script>
+<script src="lib/axios.js"></script>
+<style>
+    li{
+        overflow: hidden;
+        list-style: none;
+        padding:10px;
+    }
+    li img {
+        float:left;
+        width: 100px;
+    }
+</style>
+</head>
+<body>
+    <div id="box">
+      <button @click="handleClick()">ajax - axios</button>
+
+      <ul>
+          <li v-for="data in datalist" :key="data.filmId">
+            <img :src="data.poster"/>
+            <div>{{data.name}}</div>
+            <div>观众评分：{{data.grade}}</div>
+          </li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+        
+     
+       new Vue({
+           el:"#box",
+           data:{
+               datalist:[]
+           },
+           methods:{
+            handleClick(){
+              axios.get("./json/maizuo.json").then(res=>{
+                //   console.log()
+                this.datalist  =res.data.data.films
+              })
+            }
+           }
+       })
+
+       /*
+       
+          get  url路径  ？name=kerwin&age=100    
+          post body请求体 ， 
+            （1）x-www-formurlencoded , name=kerwin&age=100
+             (2) json ,     `{"name":"kerwin",age:100}`
+        
+        axios.post("****","name=kerwin&age=100") // (1)
+        axios.post("****",{name:"kerwin",age:100}) //(2)
+       
+       */
+    </script>
+</body>
+</html>

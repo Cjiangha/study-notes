@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="lib/vue.js"></script>
+    <script src="lib/axios.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <button @click="handleAjax">click-ajax</button>
+
+        <ul>
+            <li v-for="item in datalist" :key="item.id">
+                <img :src="item.img | imgFilter1 | imgFilter2"/>
+                {{item.nm}}
+            </li>
+        </ul>
+    </div>
+
+    <script >
+        Vue.filter("imgFilter1",(url)=>{
+          return url.replace('w.h/','')
+        })
+        Vue.filter("imgFilter2",(url)=>{
+          return url+'@1l_1e_1c_128w_180h'
+        })
+
+        new Vue({
+            el:"#box",
+            data:{
+                datalist:[]
+            },
+            methods:{
+                handleAjax(){
+                    axios.get("./json/maoyan.json").then(res=>{
+                        console.log(res.data.movieList)
+                        this.datalist = res.data.movieList
+
+                        //for 处理
+                    })
+                }
+            }
+        })
+        // vue3 过滤器不支持
+    </script>
+</body>
+
+</html>
+
+<!-- http://p0.meituan.net/w.h/movie/e2ecb7beb8dadc9f07f2fad9820459f92275588.jpg
+
+https://p0.meituan.net/movie/e2ecb7beb8dadc9f07f2fad9820459f92275588.jpg@1l_1e_1c_128w_180h -->

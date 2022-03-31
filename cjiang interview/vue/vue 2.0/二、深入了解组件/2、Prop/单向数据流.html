@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+        <blog-size v-bind:size="num"></blog-size>
+        <blog-post v-bind:initial-counter="obj"></blog-post>
+    </div>
+  </body>
+  <script src="../vue.js"></script>
+  <script>
+    //    4、单向数据流
+    Vue.component("blog-size", {
+      props: {
+          size:String
+      },
+      computed: {
+        normalizedSize: function () {
+          return this.size.trim().toLowerCase();
+        },
+      },
+      template:
+      `
+        <div>{{normalizedSize}}</div>
+      `
+    });
+
+    Vue.component("blog-post", {
+      props: {
+        initialCounter: Object,
+      },
+      data: function () {
+        return {
+          counter: this.initialCounter,
+        };
+      },
+      template: `
+        <div>{{counter}}</div>
+      `,
+    });
+
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        obj: {
+          v: 1,
+          b: 2,
+          c: 4,
+        },
+        num:' ab b b b'
+      },
+    });
+  </script>
+</html>
