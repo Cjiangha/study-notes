@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <my-button @click.native="handleClick"></my-button>
+    </div>
+
+    <div id="app2">
+      <my-input @focus="handleFocus"></my-input>
+    </div>
+  </body>
+  <script src="../vue.js"></script>
+  <script>
+    /*
+        不理解看别入理解文章：
+           https://www.cnblogs.com/nys013/p/13653292.html
+
+        有三种方法：
+            使用native修饰符
+            使用$emit分发事件
+            使用$listeners
+
+        拓展：
+           当我们使用 $attrs 和 $listeners 时，my-input就相当于一个完全透明包裹器了。
+           怎么理解这句话呢？
+           　　——前面我们已经知道了  v-on = $listeners  会把 所有父组件绑定到该子组件上的事件都放在该元素上
+           　　　　而使用  v-bind = $attrs  会把 除在props中声明了的，除style和class 的父传子的参数 都放在该元素上。
+           那么 当我们同时使用两者放到某个元素上时 ，就已经把父组件所有放在子组件标签（my-input）上的属性、事件， 全都放在了该元素上
+           此时，事件调用、属性获取都不再有障碍， my-input 不就可以理解成是透明的了嘛~
+
+
+
+      
+    */
+    Vue.component("my-button", {
+      template: `<button>点击</button>`,
+    });
+
+    const vm = new Vue({
+      el: "#app",
+      methods: {
+        handleClick() {
+          console.log("click");
+        },
+      },
+    });
+
+    /*
+        第一个参数为分发的事件名，在这里为focus，也可改别的，
+        只需要与父组件中给子组件标签上绑定的事件名一致即可
+
+        第二个参数为给父组件该事件传的参数，我们在父组件中的该事件回调中就可接受到。
+        所以我们一般想将子组件的数据传给父组件，完成父子组件间的通信，就可使用$emit。
+    
+    
+    */
+    // 1、使用$emit分发事件
+    // Vue.component("my-input", {
+    //   template: `
+    //      <label for="">
+    //         label:
+    //         <input type="text"  @focus='$emit("focus","子组件的value")' style="border:1px #ccc solid;">
+    //     </label>
+    // `,
+    // });
+
+    // 2、在input上使用 v-on="$listeners" ，就是将所有的事件监听器指向这个input元素。
+    // Vue.component("my-input", {
+    //   template: `
+    //     <label for="">
+    //        label:
+    //        <input type="text" v-on='$listeners'>    
+    //     /label>
+    // `,
+    // });
+
+
+
+    /*
+        inputListeners是一个计算属性，返回的是一个对象，是将 $listeners 和 
+        你重写的事件的对象 合并的对象还有，在这里重写监听器，还是用到了$emit，
+        每个监听器都得到event对象，我们可以取出event.target.value传给父组件
+        最后，父组件就能在focus时触发事件，并得到子组件传来的值了
+    
+    */ 
+    Vue.component("my-input", {
+      template: `
+        <label for="">
+           label:
+           <input type="text" v-on='inputListeners'>  
+           {{inputListeners}}  
+        </label>
+         `,
+        computed:{
+            inputListeners(){
+                return Object.assign({},this.$listener,{
+                    focus:event=>{
+                        this.$emit('focus',event.target.value)
+                    }
+                })
+            }
+        }
+
+
+    });
+
+    const vm2 = new Vue({
+      el: "#app2",
+      methods: {
+        handleFocus(value) {
+          console.log("focus...", value); //focus... 子组件的value
+        },
+      },
+    });
+  </script>
+</html>
