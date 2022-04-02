@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app1">
+      <input v-model="price" />
+    </div>
+
+    <div id="app2"> <input-price v-model="price"></input-price> </div>
+
+    <div id="app3">
+      <!-- <price-input v-model="price"></price-input> -->
+
+      <!-- 手动实现了v-model双向绑定 -->
+      <!-- 3、父组件的input事件被触发，将传来的值赋给父组件的变量price -->
+      <!-- 4、父组件value的值绑定到price -->
+      <price-input :value="price" @input="onInput"></price-input>
+      <p>{{price}}</p>
+    </div>
+  </body>
+  <script src="../vue.js"></script>
+  <script>
+    /*
+    链接 ：  https://www.cnblogs.com/wind-lanyan/p/7899428.html
+
+
+    一个组件上的 v-model 默认会利用名为 value 的 prop 和名为 input 的事件，
+    但是像单选框、复选框等类型的输入控件可能会将 value attribute 用于不同的目的。
+    model 选项可以用来避免这样的冲突：
+
+    
+    */
+
+    const vm1 = new Vue({
+      el: "#app1",
+      data: {
+        price: "",
+      },
+    });
+
+    // 自定义表单输入组件
+    Vue.component('input-price',{
+      template:`<input type="text" />`
+    })
+
+    const vm2 = new Vue({
+      el: "#app2",
+      data: {
+        price: "",
+      },
+    });
+
+    Vue.component("price-input", {
+      // 5、将父组件的value值通过props传递给子组件
+      // 1、当有数据输入时触发了该组件的input事件
+      template:
+        '<input :value="value" @input="updateVal($event.target.value)" type="text">',
+      props: ["value"],
+      methods: {
+        updateVal: function (val) {
+          // 2、手动触发父组件的input事件并将值传给父组件
+          this.$emit("input", val);
+        },
+      },
+    });
+    var vm3 = new Vue({
+      el: "#app3",
+      data: {
+        price: "123123",
+      },
+      methods: {
+        onInput: function (val) {
+          this.price = val;
+        },
+      },
+    });
+  </script>
+</html>
