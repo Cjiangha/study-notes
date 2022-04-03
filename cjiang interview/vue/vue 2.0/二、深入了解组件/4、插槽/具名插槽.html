@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 引用插槽 -->
+        <base-layout>
+            <template v-slot:header>
+              <h1>这是头部header插槽内容</h1>
+            </template>
+            
+            <template v-slot:default>
+              <p>这是默认插槽的内容</p>
+            </template>
+            
+            <template v-slot:footer>
+              <p style="color: red;">这是footer插槽内容</p>
+            </template>
+            
+          </base-layout>
+    </div>
+        
+        <!-- 定义组件间模板 -->
+        <template id="layout">
+          <div>
+            <header>
+              <!-- 定义具名插槽 -->
+              <slot name="header"></slot>
+            </header>
+            <main>
+              <slot></slot>
+            </main>
+            <footer>
+              <slot name="footer"></slot>
+            </footer>
+          </div>
+        </template>
+</body>
+<script src="../vue.js"></script>
+<script>
+  var app = new Vue({
+        el: "#app",
+        components:{
+          // 局部注册组件,
+          //  Base  
+          BaseLayout: {
+            template: "#layout"
+          }
+        }
+      })
+
+
+    
+</script>
+</html>

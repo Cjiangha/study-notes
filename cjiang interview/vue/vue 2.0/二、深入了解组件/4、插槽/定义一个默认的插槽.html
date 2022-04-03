@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+      <div id="app">
+        <mainview></mainview>
+      </div>
+
+      <!-- 组件模板 -->
+<template id="view">
+	<div>
+		<slot>
+			<button type="button">插槽默认值</button>
+        </slot>
+    </div>
+</template>
+
+
+  </body>
+  <script src="../vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      components: {
+        // view注册为一个局部组件
+        mainview: {
+          template: "#view",
+        },
+      },
+    });
+    console.log(app)
+  </script>
+</html>
