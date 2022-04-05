@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /*
+            https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol
+             Symbol()
+               symbol 是一种基本数据类型 （primitive data type）
+               Symbol()函数会返回symbol类型的值，该类型具有静态属性和静态方法。
+               它的静态属性会暴露几个内建的成员对象；它的静态方法会暴露全局的symbol注册，
+               且类似于内建对象类，但作为构造函数来说它并不完整，因为它不支持语法："new Symbol()"。
+    */
+
+    //    mdn 代码案例：
+    typeof Symbol() === "symbol";
+    typeof Symbol("foo") === "symbol";
+    typeof Symbol.iterator === "symbol";
+    console.log(
+      typeof Symbol() === "symbol",
+      typeof Symbol("foo") === "symbol",
+      typeof Symbol.iterator === "symbol"
+    );
+
+    const symbol1 = Symbol();
+    const symbol2 = Symbol(42);
+    const symbol3 = Symbol("foo");
+
+    console.log(typeof symbol1);
+    // expected output: "symbol"
+
+    console.log(symbol2 === 42);
+    // expected output: false
+
+    console.log(symbol3.toString());
+    // expected output: "Symbol(foo)"
+
+    console.log(Symbol("foo") === Symbol("foo"));
+    // expected output: false
+  </script>
+</html>

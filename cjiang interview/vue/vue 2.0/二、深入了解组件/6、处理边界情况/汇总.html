@@ -4,20 +4,98 @@
     <title>Vue Component Blog Post Example</title>
     <script src="../vue.js"></script>
   </head>
-  <body>
-    <div id="dynamic-component-demo"></div>
 
-    <script>
-      /*
-            读 文章 
+  <body>
+    <div id="app">
+      <div ref="myref">我是div</div>
+      <Son ref="myson"></Son>
+    </div>
+  </body>
+  <script>
+    /*
+            读 文章
             https://blog.csdn.net/m0_46374969/article/details/120335088
             【Vue】—处理边界情况
+
+            1、边界处理—$ref
+               1）挂载的节点可以使用
+               2）组件的节点也可以使用,并获取到改节点的相应的信息
+            2、获取根实例—$root
+
+            3、获取父级组件实例—$parent
+
+            4、依赖注入
+               provide：Object | () => Object
+               inject：Array<string> | { [key: string]: string | Symbol | Object }
+
        */
-        
 
+    Vue.component("Son", {
+      // inject: ['count','name'],
 
+      // inject: {
+      //   foo: {  from: 'bar',default: "foo" },
+      // },
+      inject: {
+        count:{},
+        name:{},
+        foo: {
+          from: "bar",
+          default: () => [1, 2, 3],
+        },
+      },
+      template: `<div>123123</div>`,
+      created() {
+        console.log(111);
+      },
+      mounted() {
+        // 获取父级组件实例—$parent
+        console.log("----$root----", this.$root);
+        console.log("----$parent----", this.$parent);
+        console.log(this.count); // => "bar"
+        console.log(this.name);
+        console.log(this.foo);
+      },
+    });
 
-   
-    </script>
-  </body>
+    const s = Symbol();
+
+    var vm = new Vue({
+      el: "#app",
+      mounted() {
+        // 1、$refs
+        console.log(this.$refs.myref.innerHTML);
+        console.log(this.$refs.myson.$el);
+        this.$refs.myson.$el.innerHTML = "修改2222";
+
+        //2、$root
+        console.log("----$root----", this.$root);
+        console.log(
+          "----this.$root.$el.innerHTML----",
+          this.$root.$el.innerHTML
+        );
+        console.log(
+          "----this.$root.$el.innerText----",
+          this.$root.$el.innerText
+        );
+        // this.$root
+      },
+
+      //两种写法 provide：Object | () => Object
+      // provide: {
+      //   "count":1234567,
+      //   'name':'xiaoming',
+      //   [s]: 'foo'
+      // },
+      provide: function () {
+        return {
+          bar:'Im bar',
+          foo:'123456',
+          count: 1234567,
+          name: "xiaoming",
+          [s]: "foo",
+        };
+      },
+    });
+  </script>
 </html>

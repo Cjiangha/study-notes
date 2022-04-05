@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script src="vue.js"></script>
+  <script>
+    /*
+
+        1、基础
+            混入 (mixin) 提供了一种非常灵活的方式，
+            来分发 Vue 组件中的可复用功能。
+            一个混入对象可以包含任意组件选项。当组件使用混入对象时，
+            所有混入对象的选项将被“混合”进入该组件本身的选项。
+        2、选项合并
+        3、全局混入
+        4、自定义选项合并策略
+
+
+
+    */
+
+    // 定义一个混入对象
+    var myMixin = {
+      created: function () {
+        this.hello();
+      },
+      methods: {
+        hello: function () {
+          console.log("hello from mixin!");
+        },
+      },
+    };
+
+    // 定义一个使用混入对象的组件
+    var Component = Vue.extend({
+      mixins: [myMixin],
+    });
+
+    var component = new Component(); // => "hello from mixin!"
+
+    
+  </script>
+</html>

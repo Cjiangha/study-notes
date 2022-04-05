@@ -91,8 +91,7 @@
       * 使用事件抛出一个值
       * 在组件上使用 v-model(未看 看不是很懂)
 
-
-       父组件的值传递给子组之间
+       总结的子传父，其实是子组件丢了一个事件给父组件调用
        子组件  $emit('enlarge-text')"
        父组件  <blog-post
                   v-on:enlarge-text="postFontSize += 0.1"

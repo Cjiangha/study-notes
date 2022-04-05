@@ -1,4 +1,4 @@
-<scroll-view scroll-y="true" bindscroll="upupup" id="scrollContainer" style="overflow:scroll;" >
+<scroll-view class="scroll" scroll-y="true"  id="scrollContainer"  bindscrolltolower="scrolltoLower">
   <view  class="list-item" wx:for="{{teacherinformation}}" wx:for-index="itemName.id" wx:for-item="itemName" wx:key="id">
     <view class="list-item-top">
       <view class="one margin-left"></view>
@@ -15,5 +15,8 @@
     </view>
   </view>
 </scroll-view>
+
+  <loading class="{{istrue?'active':'hideden'}}" id="the-id"></loading>
+ 
 
 
