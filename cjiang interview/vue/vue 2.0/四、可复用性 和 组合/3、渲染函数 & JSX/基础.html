@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <anchored-heading :level="3">
+        Hello world! Hello world! Hello world!
+      </anchored-heading>
+
+      <test> </test>
+    </div>
+  </body>
+  <script src="../vue.js"></script>
+
+  <script type="text/x-template" id="anchored-heading-template">
+    <h1 v-if="level === 1">
+      <slot></slot>
+    </h1>
+    <h2 v-else-if="level === 2">
+      <slot></slot>
+    </h2>
+    <h3 v-else-if="level === 3">
+      <slot></slot>
+    </h3>
+    <h4 v-else-if="level === 4">
+      <slot></slot>
+    </h4>
+    <h5 v-else-if="level === 5">
+      <slot></slot>
+    </h5>
+    <h6 v-else-if="level === 6">
+      <slot></slot>
+    </h6>
+  </script>
+
+  <script>
+    /*
+        参考文章
+        https://blog.csdn.net/atu1111/article/details/122058433
+
+        文章观点 
+          * 使用过Vue.js的朋友都知道，好像大部分时间都在使用template的方式来创建HTML，
+                  因为vue提供了v-if、v-for等一系列的控制指令，让我们开发体验轻松又愉悦。
+                * 但除此之外，其实Vue.js还提供了render()函数来创建HTML。
+                  让我们可以通过JS逻辑代码，更灵活的创建HTML。
+                * 如同vue官网的例子所说：在封装文章标题的<Title>组件时，不确定最终生成的，
+                  具体是h1~h6的标签。这个时候，如果用v-if做判断，
+                  那么代码量太大，但用render()函数来实现就很简单。.
+
+
+        我：
+        1、渲染函数 & JSX
+            使用模板  <script type="text/x-template" id="anchored-heading-template">  会导致代码过于冗长而不利于使用。
+
+            基础
+              
+            
+      
+      */
+
+    Vue.component("anchored-heading", {
+      template: "#anchored-heading-template",
+      props: {
+        level: {
+          type: Number,
+          required: true,
+        },
+      },
+    });
+
+    
+    // 使用render
+    Vue.component("<test", {
+      render: function (createElement) {
+        return createElement(
+          "h" + this.level, // 标签名称
+          this.$slots.default // 子节点数组
+        );
+      },
+      mounted(){
+        this.$slots.default // 子节点数组
+        console.log(  this.$slots.default)
+      },
+      props: {
+        level: {
+          type: Number,
+          required: true,
+        },
+      },
+    });
+
+
+
+    new Vue({
+      el: "#app",
+    });
+
+  </script>
+</html>
