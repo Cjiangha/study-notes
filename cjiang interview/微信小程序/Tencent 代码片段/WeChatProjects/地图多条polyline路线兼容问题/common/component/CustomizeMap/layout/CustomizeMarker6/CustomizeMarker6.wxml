@@ -1,0 +1,13 @@
+
+<wxs module='proputil'>
+var propsInfo={_1:{src:"customizeParams.iconPath"}};module.exports.getProps=function(o){return propsInfo[o]};
+</wxs>
+
+<wxs module="m">
+var anyui = require("../../../../../_anyui/utils/helper.wxs");
+module.exports._expId1 = function (textStyle) {return anyui.processStyle(textStyle);;};</wxs>
+<cover-view class="_wrap_1nqvt_1 anyui_cover-view" className="_wrap_1nqvt_1 anyui_cover-view" wx:if="{{__ready__}}" marker-id="{{customizeParams.markerId}}">
+     <cover-image class="icon-img" className="icon-img" __slots="{{ []}}" anyuiProps="{{proputil.getProps('_1')}}" bindparentmounted="returnRef" style="{{imgStyle}}" src="{{customizeParams.iconPath}}"></cover-image>
+     <cover-view class="_text_1nqvt_7 anyui_cover-view" className="_text_1nqvt_7 anyui_cover-view" style="{{m._expId1(textStyle, _a_)}}">{{customizeParams.text}}</cover-view>
+     </cover-view>
+   

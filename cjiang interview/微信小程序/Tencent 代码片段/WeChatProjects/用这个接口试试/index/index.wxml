@@ -1,0 +1,5 @@
+<view>
+  <map id="map" latitude="22.522807" longitude="113.935338" bindregionchange="change"></map>
+  <button bindtap="tap">TEST</button>
+  <text>{{log}}</text>
+</view>

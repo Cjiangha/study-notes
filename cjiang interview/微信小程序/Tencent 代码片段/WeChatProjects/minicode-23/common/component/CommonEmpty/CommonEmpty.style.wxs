@@ -1,0 +1,9 @@
+
+        function wrap () {
+            var classInfo = {"common-empty":"_common-empty_1wk86_1","empty-img":"_empty-img_1wk86_11","empty-title":"_empty-title_1wk86_15","empty-desc":"_empty-desc_1wk86_21"};
+            return classInfo;
+        }
+        module.exports = {
+            wrap: wrap
+        }
+    

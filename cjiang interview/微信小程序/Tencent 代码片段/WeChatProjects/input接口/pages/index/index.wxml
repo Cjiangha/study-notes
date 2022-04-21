@@ -1,0 +1,7 @@
+<view>
+  <block wx:for="{{40}}" wx:key="index">
+    <input name="input{{item}}" placeholder="文字"/>
+  </block>
+  <button type="primary" bindtap="gorequest">提交</button>
+  <view style="padding-bottom:100rpx;"></view>
+</view>

@@ -1,0 +1,98 @@
+<view aria-role="dialog" aria-modal="true">
+    <view class="weui-mask weui-transition {{show ? 'weui-transition_show' : ''}}" bindtap="close" aria-role="button" aria-label="关闭"></view>
+    <view
+      class="weui-half-screen-dialog weui-transition pl-0 pr-0 bdr-0 {{show ? 'weui-transition_show' : ''}} {{wrap1 ? 'weui-half-screen-dialog_btn-wrap' : ''}}"
+      style="min-height: 0rpx !important">
+      <!-- 标题 -->
+      <view class="weui-half-screen-dialog__hd" style="min-height: 0rpx !important">
+        <view class="weui-half-screen-dialog__hd__side" bindtap="close">
+          <view aria-role="button" class="weui-icon-btn">关闭<i class="weui-icon-close-thin"></i></view>
+        </view>
+        <!-- 搜索 -->
+        <view class="wi-100x dis-f pt-32 pb-32">
+          <view
+            bindtap="close"
+            class="wi-20x ta-c silver fs-32 ht-60 lh-60">取消</view>
+          <view class="wi-60x ht-60 bdr-12 bd pr">
+            <!-- 出现问题的搜索框 当前组件样式是通过weui粘贴而来 传参控制该组件显隐 -->
+            <!-- 当该组件显示的时候 当前输入框会自动获取焦点 唤起软键盘 -->
+            <!-- 并且 该组件引入的父级页面 首次进入 任意点击页面位置 均会唤起软键盘 且页面被顶到最上方 -->
+            <input
+              class="weui-input wi-100x ht-60 fs-28 pl-16 pr-60 bs-bx"
+              placeholder="{{placeholder}}"
+              model:value="{{searchValue}}"
+              bindfocus="focuesInopu"
+              bindconfirm="searchComplete"/>
+            <text bintap="searchComplete" class="iconfont icon-search fs-26 pa tp-12 rt-12 silver"></text>
+          </view>
+          <view 
+            bindtap="submit"
+            class="wi-20x ta-c primary fs-32 ht-60 lh-60">确定</view>
+        </view>
+      </view>
+      <!-- 文本展示 -->
+      <view class="wi-100x of-a">
+        <!-- 文本展示 滚动 -->
+        <scroll-view
+          scroll-y="true"
+          style="height: 600rpx;"
+          enhanced="{{true}}"
+          show-scrollbar="{{true}}"
+          lower-threshold="47"
+          bindscrolltolower="scrollBottom">
+          <!-- 数据列表 -->
+          <view
+            class="pl-30 pr-30 of-a"
+            wx:if="{{!loading && list && list.length > 0}}">
+            <view
+              wx:for="{{list}}"
+              wx:key="index"
+              data-item="{{item}}"
+              bindtap="listClick"
+              class="pt-24 pb-24 dis-f ai-c jc-sb {{index === 0 ? 'bt bb' : (index === list.length - 1 ? '' : 'bb')}}">
+              <!-- 管理员 -->
+              <text
+                wx:if="{{getRoleId * 1 < 2 || getRoleId * 1 === 4}}"
+                class="to-1 fs-32 {{selected.isActive(item, activeList, fields) ? 'fw-600 black' : 'silver fw-500'}}">{{item[fields.title]}}</text>
+              <!-- 非管理员 -->
+              <text
+                wx:else
+                class="to-1 fs-32 {{selected.isActive(item, activeList, fields) ? 'fw-600 black' : 'silver fw-500'}}">{{item.project[fields.title]}}</text>
+              <icon wx:if="{{selected.isActive(item, activeList, fields)}}" class="icon-small pl-24 pr-24" type="success_no_circle" color="" size="20"></icon>
+            </view>
+          </view>
+          <!-- 空状态 -->
+          <view
+            wx:elif="{{!loading && list.length === 0}}"
+            class="wi-100x ht-100x dis-f ai-c jc-c">
+            <fo-empty></fo-empty>
+          </view>
+          <!-- 加载中 -->
+          <view
+            wx:elif="{{loading}}"
+            class="wi-100x ht-100x dis-f ai-c jc-c pa tp-0 lf-0 z-100">
+            <view
+              aria-role="img"
+              class="weui-primary-loading fs-80">
+              <view class="weui-primary-loading__dot"></view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+</view>
+<wxs module="selected">
+  /* 判断是否为选中项
+  * e : 当前数据
+  * list ：选中数据
+  * fields ：自定义字段
+  */
+  module.exports.isActive = function (e, list, fields) {
+    for (var i = 0; i < list.length; i ++ ) {
+      if (list[i][[fields.id]] * 1 === e[[fields.id]] * 1) {
+        return true
+      }
+    }
+    return false
+  }
+</wxs>

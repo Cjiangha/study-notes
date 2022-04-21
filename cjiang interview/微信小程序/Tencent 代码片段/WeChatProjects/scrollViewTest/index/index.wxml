@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>Horizontal Scroll\n横向滚动\n 单独设置 scroll-x="true"</text>
+        <button bindtap="onclickView" data-id="scroll-view_V" >scrollTo({left:300})</button>
+      </view>
+      <view class="page-section-spacing">
+        <scroll-view class="scroll-view_H"
+        scroll-x="true"
+        id="scroll-view_V"
+        enhanced= "true"
+        style="height: 300rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" 
+        bindscroll="scroll" 
+        scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view id="demo1" class="scroll-view-item_H demo-text-1"></view>
+          <view id="demo2"  class="scroll-view-item_H demo-text-2"></view>
+          <view id="demo3" class="scroll-view-item_H demo-text-3"></view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>Horizontal Scroll\n横向滚动\n 同时设置 scroll-x="true" 和 scroll-y="true" scrollTo({left:300}) 无效果 </text>
+        <button bindtap="onclickView" data-id="scroll-view_H" >scrollTo({left:300})</button>
+      </view>
+      <view class="page-section-spacing">
+        <scroll-view class="scroll-view_H" id="scroll-view_H" 
+        scroll-x="true"
+        scroll-y="true"
+        enhanced= "true"
+         bindscroll="scroll" style="width: 100%">
+          <view id="demo1" class="scroll-view-item_H demo-text-1"></view>
+          <view id="demo2"  class="scroll-view-item_H demo-text-2"></view>
+          <view id="demo3" class="scroll-view-item_H demo-text-3"></view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

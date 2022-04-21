@@ -1,0 +1,4 @@
+{
+  "usingComponents": { "common-pop-up": "../CommonPopUp/CommonPopUp" },
+  "component": true
+}

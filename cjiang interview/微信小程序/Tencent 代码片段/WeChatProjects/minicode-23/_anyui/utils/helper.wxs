@@ -1,0 +1,109 @@
+/* eslint-disable */
+// wx 对象 key 不能带引号，而对于需要带引号的场景一般是（'-'）字符所需
+// 为满足这种场景，编译时去掉引号并将 - 变为 __o__, 运行时转回来
+
+/* eslint-disable */
+
+function _processObjKey(key, bool) {
+  if (key.match('__o__')) {
+    var reg = getRegExp('__o__', 'g')
+    key = key.replace(reg, '-')
+  }
+  if (bool) {
+    var len = key.length
+    var newKey = key[0]
+    var zValue = ('z').charCodeAt(0)
+    for (var i = 0; i < (len - 1); i++) {
+      var tempV = key[i + 1]
+      if (tempV !== tempV.toLowerCase()) {
+        newKey += '-'
+        newKey += key[i + 1].toLowerCase()
+      } else {
+        newKey += key[i + 1]
+      }
+    }
+    key = newKey
+  }
+  return key
+}
+
+function _eachObj(obj, cb) {
+  var rawJson = JSON.stringify(obj)
+  var reg = getRegExp('"(\w|-|_)+":', 'g')
+  var matchArr = rawJson.match(reg)
+  if (matchArr) {
+    for (var i = 0; i < matchArr.length; i++) {
+      var objKey = matchArr[i]
+      objKey = objKey.substring(1)
+      objKey = objKey.replace('":', '')
+      cb && cb(objKey, obj[objKey])
+    }
+  }
+}
+
+function _eachArray(arr, cb) {
+  for (var i = 0; i < arr.length; i++) {
+    cb(arr[i], i)
+  }
+}
+/**
+ * <view style='headerStyle' v-show='isShow'>
+ * <view :style='[headerStyle', {display: isShow ? '' : 'none}]' v-show='isShow'>
+*/
+function processStyle(v) {
+  if (!v) {
+    return ''
+  }
+  var str = ''
+  if (v.constructor === 'Array') {
+    _eachArray(v, function (key) {
+      str += processStyle(key)
+    })
+  } else if (typeof v === 'object') {
+    _eachObj(v, function (key, value) {
+      if(value !== undefined){
+        str += _processObjKey(key, true)
+        str += ':'
+        str += value
+        str += ';'
+      }
+    })
+  } else {
+    if(str){
+      var regex = getRegExp(';$', 'g');
+      str += regex.test(v) ? '' : ';'
+    }else{
+      str += v + ";";
+    }
+  }
+  return str
+}
+
+function processClass(v, classWrapObj) {
+  classWrapObj = classWrapObj || {}
+  if (!v) {
+    return ''
+  }
+  var str = ''
+  // array
+  if (v.constructor === 'Array') {
+    _eachArray(v, function (key) {
+      str += ' '
+      str += processClass(key, classWrapObj)
+    })
+  } else if (typeof v === 'object') {
+    _eachObj(v, function (key, value) {
+      if (value) {
+        str += ' '
+        var _key = _processObjKey(key)
+        str += classWrapObj[_key] || _key
+      }
+    })
+  } else {
+    str += classWrapObj[v] || v
+  }
+  return str
+}
+
+module.exports.processStyle = processStyle
+module.exports.processClass = processClass

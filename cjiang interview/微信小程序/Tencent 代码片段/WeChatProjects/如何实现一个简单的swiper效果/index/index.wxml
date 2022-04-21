@@ -1,0 +1,13 @@
+<image src="../sss.livp"></image>
+<view class="container">
+  <swiper indicator-dots="{{false}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="140rpx" next-margin="140rpx" bindchange="currentHandle" circular="{{true}}" class="swiper-out">
+    <block>
+      <swiper-item class="swp-item {{current === index ?'active-item': ''}}" wx:for="{{punchList}}" wx:key="{{index}}">
+        <view class="slide-image" style=" background: url({{item.bannerUrl}}) no-repeat center center;background-size: 100% 100%;" id="{{index}}"></view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="swp-dot">
+    <view class="square-12 m-r-8 {{current === index ?'active': ''}}" wx:for="{{punchList}}" wx:key="{{index}}"></view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+page ._check_box_pv405_1 {
+  width: 670rpx;
+  height: 93rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+page ._cancel-reason-images_pv405_12 {
+  position: absolute;
+  right: -32rpx;
+  top: 25rpx;
+  height: 40rpx;
+  width: 40rpx;
+  margin: 0 30rpx;
+}

@@ -1,0 +1,9 @@
+
+        function wrap () {
+            var classInfo = {"cp-group-space":"_cp-group-space_11ras_1","mini":"_mini_11ras_7"};
+            return classInfo;
+        }
+        module.exports = {
+            wrap: wrap
+        }
+    

@@ -1,0 +1,3 @@
+<view class="intro">
+  <button bindtap="info">打开文件</button>
+</view>

@@ -1,0 +1,6 @@
+
+<wxs module='proputil'>
+var propsInfo={_1:{"bind:iconClick":"refreshIconClick_custHd_1"}};module.exports.getProps=function(o){return propsInfo[o]};
+</wxs>
+<refresh-icon className="{{className || ''}}" __slots="{{ []}}" bind:iconClick="refreshIconClick_custHd_1" wx:if="{{__ready__}}" anyuiProps="{{proputil.getProps('_1')}}" bindparentmounted="returnRef"></refresh-icon>
+   

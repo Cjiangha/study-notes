@@ -1,0 +1,32 @@
+map {
+  height: 100vh;
+  width: 100vw;
+}
+
+.panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 15rpx rgba(0, 0, 0, .2);
+  background-color: #fff;
+  padding: 20rpx;
+}
+
+.panel-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider-text {
+  font-size: 28rpx;
+  width: 140rpx;
+  text-align: center;
+}
+
+.slider-pro {
+  width: calc(100% - 140rpx * 2);
+}

@@ -1,0 +1,64 @@
+
+<wxs module="m">
+var anyui = require("../_anyui/utils/helper.wxs");
+module.exports._expId1 = function (show, animation) {return anyui.processClass({
+  'anyui-popup-show': show,
+  'anyui-animation': animation
+});;};
+module.exports._expId2 = function (enableComponentOverlayer) {return anyui.processClass({
+  'anyui-popup-mask': true,
+  'AF-COMPONENT-OVERLAYER': enableComponentOverlayer
+});;};
+module.exports._expId3 = function (zIndex) {return anyui.processStyle({
+  'z-index': zIndex
+});;};
+module.exports._expId4 = function (enableComponentOverlayer, position) {return anyui.processClass([{
+  'anyui-popup-content': true,
+  'AF-COMPONENT-OVERLAYER': enableComponentOverlayer
+}, "anyui-popup-".concat(position)]);;};
+module.exports._expId5 = function (zIndex) {return anyui.processStyle({
+  'z-index': zIndex
+});;};
+module.exports._expId6 = function (show, animation) {return anyui.processClass({
+  'anyui-popup-show': show,
+  'anyui-animation': animation
+});;};
+module.exports._expId7 = function (enableComponentOverlayer) {return anyui.processClass({
+  'anyui-popup-mask': true,
+  'AF-COMPONENT-OVERLAYER': enableComponentOverlayer
+});;};
+module.exports._expId8 = function (zIndex) {return anyui.processStyle({
+  'z-index': zIndex
+});;};
+module.exports._expId9 = function (enableComponentOverlayer, position) {return anyui.processClass([{
+  'anyui-popup-content': true,
+  'AF-COMPONENT-OVERLAYER': enableComponentOverlayer
+}, "anyui-popup-".concat(position)]);;};
+module.exports._expId10 = function (zIndex) {return anyui.processStyle({
+  'z-index': zIndex
+});;};</wxs>
+<view class="anyui_view {{className || ''}}" wx:if="{{__ready__}}">
+     <view class="anyui-popup {{m._expId1(show, animation, _a_)}} anyui_view" wx:if="{{disableScroll}}" catchtouchmove="preventTouchMove">
+       <view class="{{m._expId2(enableComponentOverlayer, _a_)}} anyui_view" wx:if="{{mask && isMaskShow}}" bindtap="onMaskTap" style="{{m._expId3(zIndex, _a_)}}" disable-scroll="{{disableScroll}}">
+         <!-- 支付宝端IOS必须有文本才能阻止事件穿透,并且透明度不能为0 -->
+         <view style="opacity: 0.000001; color: rgba(0, 0, 0, 0.75)" class="anyui_view">placeholder</view>
+         </view>
+       <view class="{{m._expId4(enableComponentOverlayer, position, _a_)}} anyui_view" wx:if="{{isMaskShow}}" style="{{m._expId5(zIndex, _a_)}}">
+         <block wx:if="{{ !__slotObj['default'] }}"></block>
+         <slot>
+           </slot>
+         </view>
+       </view>
+     <view class="anyui-popup {{m._expId6(show, animation, _a_)}} anyui_view" wx:if="{{!disableScroll}}">
+       <view class="{{m._expId7(enableComponentOverlayer, _a_)}} anyui_view" wx:if="{{mask && isMaskShow}}" bindtap="onMaskTap" style="{{m._expId8(zIndex, _a_)}}" disable-scroll="{{disableScroll}}">
+         <!-- 支付宝端IOS必须有文本才能阻止事件穿透,并且透明度不能为0 -->
+         <view style="opacity: 0.000001; color: rgba(0, 0, 0, 0.75)" class="anyui_view">placeholder</view>
+         </view>
+       <view class="{{m._expId9(enableComponentOverlayer, position, _a_)}} anyui_view" wx:if="{{isMaskShow}}" style="{{m._expId10(zIndex, _a_)}}">
+         <block wx:if="{{ !__slotObj['default'] }}"></block>
+         <slot>
+           </slot>
+         </view>
+       </view>
+     </view>
+   

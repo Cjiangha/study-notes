@@ -1,0 +1,9 @@
+
+        function wrap () {
+            var classInfo = {"airport-transfer-status-card":"_airport-transfer-status-card_1l7p5_1","car-logo-wrap":"_car-logo-wrap_1l7p5_7","car-logo":"_car-logo_1l7p5_7","car-image":"_car-image_1l7p5_21","title-wrap":"_title-wrap_1l7p5_24","main-title":"_main-title_1l7p5_29","main-title-text":"_main-title-text_1l7p5_36","common-text":"_common-text_1l7p5_39","scheduled-time":"_scheduled-time_1l7p5_49","tip":"_tip_1l7p5_53","notice":"_notice_1l7p5_56","notice-text":"_notice-text_1l7p5_59","selected-cp":"_selected-cp_1l7p5_66","selected-cp__title":"_selected-cp__title_1l7p5_73","selected-cp__content":"_selected-cp__content_1l7p5_79","cp-item":"_cp-item_1l7p5_85","cp-item__image":"_cp-item__image_1l7p5_91","cp-item__text":"_cp-item__text_1l7p5_95","selected-cp__bottom":"_selected-cp__bottom_1l7p5_101"};
+            return classInfo;
+        }
+        module.exports = {
+            wrap: wrap
+        }
+    

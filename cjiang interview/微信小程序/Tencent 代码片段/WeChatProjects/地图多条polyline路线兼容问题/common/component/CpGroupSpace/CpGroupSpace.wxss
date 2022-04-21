@@ -1,0 +1,11 @@
+page ._cp-group-space_11ras_1 {
+  widows: 100%;
+  height: 16rpx;
+  background-color: #edf1f7;
+  margin: 0 -40rpx;
+}
+
+page ._cp-group-space_11ras_1._mini_11ras_7 {
+  height: 1px;
+  background-color: #E5E5E5;
+}

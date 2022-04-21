@@ -1,0 +1,20 @@
+<view class="container">
+    <view class="pic-box">
+        <image class="test-image" src="{{beforeMakeUpImg}}"></image> 
+        <view> ==> </view>
+        <image class="test-image" src="{{afterMakeUpImg}}"></image>
+   </view>
+    <view class="color-group">
+        <view class="color-item" catchtap="upPicHandle">上传照片</view>
+        <view class="color-item" catchtap="tryLipstickPic">看效果</view>
+    </view>
+    <view wx:if="{{errData.Code}}">
+        <view>接口调用成功：但是有错误返回：</view>
+        <view>{{errData.Code}}</view>
+        <view>{{errData.Message}}</view>
+    </view>
+    <view wx:if="{{failData}}">
+      <view>接口调用失败</view>
+      <view>{{failData}}}</view>
+    </view>
+ </view>

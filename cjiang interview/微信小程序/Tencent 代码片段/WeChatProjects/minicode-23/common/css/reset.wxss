@@ -1,0 +1,16 @@
+/* @余良 */
+
+/* 容器组件（具有flex布局特性）：view */
+
+/* 文本容器组件：text */
+
+/* todo 页面引入后，这个页面内的所有组件都生效；组件引入后，使用该组件所有页面都生效；这是有问题的，华华在解决 */
+
+.anyui_view {
+  display: flex;
+  flex-direction: row;
+}
+
+.anyui-flex-column {
+  flex-direction: column;
+}

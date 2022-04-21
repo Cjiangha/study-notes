@@ -1,0 +1,2 @@
+<!--find/find.wxml-->
+<view bindtap="fn">我是find页面</view>

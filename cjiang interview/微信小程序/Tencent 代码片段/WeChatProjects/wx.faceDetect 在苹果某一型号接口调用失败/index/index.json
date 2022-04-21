@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "face-detect":"../components/face-detect"
+  }
+}

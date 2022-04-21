@@ -1,0 +1,7 @@
+<!--test/test.wxml-->
+<text bindtap="ud" style="background-color: aqua;">点我更新</text>
+<view>
+  <view> 我是numA :  {{numA}}</view>
+  <view> 我是numB : {{numB}} </view>
+  <view> sum :  {{sum}}</view>
+</view>

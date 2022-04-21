@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "refresh-icon": "../../../../../common/component/widgets/RefreshIcon/RefreshIcon"
+  },
+  "component": true
+}

@@ -1,0 +1,7 @@
+<view style="display: flex; flex-direction: column; align-items: center;">
+  <view style="margin-top: 40rpx;">从 A 跳转 B </view>
+  <button bind:tap="navToB">跳转B小程序</button>
+
+  <view style="margin-top: 40rpx;">从 B 跳转 C</view>
+  <button bindtap="navToC">跳转C小程序</button>
+</view>

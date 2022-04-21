@@ -1,0 +1,6 @@
+<!-- <view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view> -->
+<!-- isShow没有在data中定义，这是传入的应该是undefined -->
+<!-- <my-view show="{{isShow}}"></my-view> -->
+
+
+<web-view src="https://www.liketon.cn/agreement/agreement1.html"></web-view>

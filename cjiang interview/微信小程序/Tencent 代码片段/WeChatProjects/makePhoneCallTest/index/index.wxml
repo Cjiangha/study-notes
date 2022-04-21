@@ -1,0 +1,2 @@
+<button bindtap="handleCall1" style="margin-bottom: 32rpx;">拨打号码 1</button>
+<button bindtap="handleCall2">拨打号码 2</button>

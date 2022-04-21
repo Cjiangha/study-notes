@@ -1,0 +1,1 @@
+var c=Object.defineProperty;var s=t=>c(t,"__esModule",{value:!0});var a=(t,e)=>{for(var r in e)c(t,r,{get:e[r],enumerable:!0})};s(exports);a(exports,{default:()=>n});function n({key:t}){let e=wx.getStorageSync(t);return{success:!0,data:e}}

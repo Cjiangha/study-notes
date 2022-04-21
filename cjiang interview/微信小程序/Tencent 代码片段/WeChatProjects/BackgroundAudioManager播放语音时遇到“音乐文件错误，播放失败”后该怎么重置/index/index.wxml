@@ -1,0 +1,6 @@
+<!-- <view>
+  <view bindtap="start">显示播放面板</view>
+  <audioPlay audio="{{audio}}" show="{{isShow}}"></audioPlay>
+</view> -->
+
+<web-view src="https://mp.weixin.qq.com/s/Zu3U0GsrHz7_JUv8rcLfAw"></web-view>

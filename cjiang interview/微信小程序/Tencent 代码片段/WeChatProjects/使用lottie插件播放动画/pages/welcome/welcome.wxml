@@ -1,0 +1,4 @@
+
+<view class="mid"  bindtap="getUserProfile">
+  <canvas  id="lottiejs-canvas" canvas-id="lottiejs-canvas" class="lottiejs-canvas" type="2d"></canvas>
+</view>

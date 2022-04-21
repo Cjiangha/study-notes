@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "customize-map": "../CustomizeMap/CustomizeMap/CustomizeMap"
+  },
+  "component": true
+}

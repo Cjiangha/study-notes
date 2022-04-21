@@ -1,0 +1,8 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+
+.log-title {
+  margin-top: 40rpx;
+}

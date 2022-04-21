@@ -1,0 +1,1 @@
+<view bindtap="dianwo" style="width: 100px; height: 100px; line-height:100px;background-color: aqua; text-align: center;">点我获取 </view>

@@ -1,0 +1,16 @@
+
+<video  
+      id="myVideo" 
+      src="{{url}}" 
+      binderror="videoErrorCallback" 
+      danmu-list="{{danmuList}}" 
+      autoplay="true" 
+      enable-danmu 
+      danmu-btn 
+      show-center-play-btn='{{false}}' 
+      show-play-btn="{{true}}" 
+      controls
+      picture-in-picture-mode="{{['push', 'pop']}}"
+      bindenterpictureinpicture='bindVideoEnterPictureInPicture'
+      bindleavepictureinpicture='bindVideoLeavePictureInPicture'
+    ></video>

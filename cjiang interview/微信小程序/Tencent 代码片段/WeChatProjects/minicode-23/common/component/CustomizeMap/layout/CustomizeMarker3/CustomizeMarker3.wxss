@@ -1,0 +1,44 @@
+page ._wrap_1lv3r_1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+page ._content_1lv3r_7 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 26rpx;
+  height: 80rpx;
+  border-radius: 30px;
+  background-color: white;
+}
+
+page ._content__left-main_1lv3r_16 {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #000000;
+}
+
+page ._content__left-sub_1lv3r_21 {
+  font-size: 18rpx;
+  color: #686868;
+}
+
+page ._content__main-text_1lv3r_25 {
+  font-size: 26rpx;
+  color: #000000;
+}
+
+page ._vertical-line_1lv3r_30 {
+  width: 1px;
+  height: 32rpx;
+  background-color: #e5e5e5;
+  margin: 0 14rpx 0 6rpx;
+}
+
+page ._triangle-img_1lv3r_37 {
+  margin-top: -1rpx;
+  width: 36rpx;
+  height: 18rpx;
+}

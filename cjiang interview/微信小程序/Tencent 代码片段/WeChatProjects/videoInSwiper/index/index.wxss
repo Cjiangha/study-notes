@@ -1,0 +1,22 @@
+.swiper-style {
+  width: 100vw;
+  height: 500rpx;
+  position: relative;
+}
+
+.swiper {
+  width: 100vw;
+  position: relative;
+}
+
+.swiper-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resources {
+  width: 100%;
+  position: relative;
+}

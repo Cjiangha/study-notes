@@ -1,0 +1,45 @@
+/* components/poster/poster.wxss */
+.poster-canvas-wrap{
+  position: absolute;
+  top: 0;
+  left: 10000px;
+  z-index: 10;
+  width: 0;
+  height: 0;
+  background: #fff;
+  opacity: 0;
+  overflow: hidden;
+}
+.poster-canvas{
+  width: 800px;
+  height: 1292px;
+}
+.poster-wrap{
+  width: 500rpx;
+  height: 808rpx;
+}
+.poster-wrap .img,
+.poster-img{
+  width: 100%;
+  height: 100%;
+}
+.poster-loading{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.save-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  width: 100%;
+  margin-top: 30rpx;
+  background-color: #3fb856;
+  border-radius: 40rpx;
+  color: #fff;
+}

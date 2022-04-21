@@ -1,0 +1,77 @@
+{
+    "description": "项目配置文件",
+    "packOptions": {
+        "ignore": []
+    },
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "enhance": true,
+        "postcss": true,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "newFeature": false,
+        "coverView": true,
+        "nodeModules": false,
+        "autoAudits": false,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false,
+        "uglifyFileName": false,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "compileHotReLoad": false,
+        "lazyloadPlaceholderEnable": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "enableEngineNative": false,
+        "useIsolateContext": true,
+        "userConfirmedBundleSwitch": false,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true,
+        "disableUseStrict": false,
+        "showES6CompileOption": false,
+        "useCompilerPlugins": false,
+        "minifyWXML": true
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.20.0",
+    "appid": "wx8f3ed48b6504348b",
+    "projectname": "ios%E4%B8%8B%E4%BD%93%E9%AA%8C%E7%89%88%E5%92%8C%E6%AD%A3%E5%BC%8F%E7%89%88onProgressUpdate%E6%97%A0%E6%B3%95%E7%9B%91%E5%90%AC",
+    "debugOptions": {
+        "hidedInDevtools": []
+    },
+    "scripts": {},
+    "staticServerOptions": {
+        "baseURL": "",
+        "servePath": ""
+    },
+    "isGameTourist": false,
+    "condition": {
+        "search": {
+            "list": []
+        },
+        "conversation": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "plugin": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": []
+        }
+    }
+}

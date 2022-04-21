@@ -1,0 +1,7 @@
+<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
+
+<!-- <view style="width: 100px;height: 100px;background-color: red;" bindtap="tt">t</view> -->
+
+<view bindtap="gg" style="background-color: orange;height: 50px;text-align: center;line-height: 50px;">点我 获取getNetworkType</view>
+
+<button bindchooseavatar="e" open-type="chooseAvatar">123</button>

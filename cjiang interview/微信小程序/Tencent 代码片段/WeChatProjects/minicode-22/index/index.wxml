@@ -1,0 +1,4 @@
+<view class="intro">
+<button style="margin: 30rpx;" bindtap="onOpen1">打开小商店</button>
+<button style="margin: 30rpx;" bindtap="onOpen2">打开随申办</button>
+</view>

@@ -1,0 +1,48 @@
+page ._guide_1g7od_1 {
+  position: absolute;
+  bottom: -88rpx;
+  min-height: 72rpx;
+  padding: 16rpx 38rpx 16rpx 24rpx;
+  background: #415886;
+  border-radius: 16rpx;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+page ._guide_1g7od_1 ._guide-text_1g7od_12 {
+  /* min-width: 308rpx; */
+  margin-right: 20rpx;
+  white-space: nowrap;
+}
+
+page ._guide_1g7od_1 ._guide-text-trangle_1g7od_17 {
+  position: absolute;
+  top: -12rpx;
+  left: 28rpx;
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  border-left: 19rpx solid transparent;
+  border-right: 19rpx solid transparent;
+  border-bottom: 14rpx solid #415886;
+}
+
+page ._guide_1g7od_1 ._close_1g7od_32 {
+  position: absolute;
+  top: 7rpx;
+  right: 0rpx;
+  width: 58rpx;
+  height: 58rpx;
+}
+
+page ._guide_1g7od_1 ._close_1g7od_32 ._close-icon_1g7od_39 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

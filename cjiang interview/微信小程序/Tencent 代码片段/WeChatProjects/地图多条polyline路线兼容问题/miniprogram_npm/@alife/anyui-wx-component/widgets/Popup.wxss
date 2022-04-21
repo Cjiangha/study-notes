@@ -1,0 +1,69 @@
+.anyui-popup-content {
+  position: fixed;
+}
+
+.anyui-popup-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.anyui-popup-left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.anyui-popup-right {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateX(100%);
+}
+
+.anyui-popup-top {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  transform: translateY(-100%);
+}
+
+.anyui-popup-bottom {
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  transform: translateY(100%);
+}
+
+.anyui-popup-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 200%);
+}
+
+.anyui-popup-show .anyui-popup-content {
+  transform: none;
+}
+
+.anyui-popup-show .anyui-popup-center {
+  transform: translate(-50%, -50%);
+}
+
+.anyui-popup-show .anyui-popup-mask {
+  opacity: 1;
+  visibility: visible;
+}
+
+.anyui-popup.anyui-animation .anyui-popup-content {
+  transition: all 200ms linear;
+}
+
+.anyui-popup.anyui-animation .anyui-popup-mask {
+  transition: all 200ms linear;
+}

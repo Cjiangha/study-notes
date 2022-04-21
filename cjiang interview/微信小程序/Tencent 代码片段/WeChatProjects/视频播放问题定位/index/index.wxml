@@ -1,0 +1,14 @@
+<view class="page-body">
+  <view class="page-section tc">
+    <video 
+      custom-cache="{{false}}"
+      id="myVideo" 
+      src='https://young.linkedbyx.com:3443/file/hde/1643100882691/2.mp4'
+      enable-danmu 
+      danmu-btn 
+      show-center-play-btn='{{false}}' 
+      show-play-btn="{{true}}" 
+      controls
+    ></video>
+  </view>
+</view>

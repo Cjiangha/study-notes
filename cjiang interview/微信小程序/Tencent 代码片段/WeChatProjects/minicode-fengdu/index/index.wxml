@@ -1,0 +1,18 @@
+<!-- <view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
+<view class="file-list" wx:for="{{fileUrlList}}" wx:key="index">
+  <button data-url="{{item}}" bindtap="previewFile">预览文件{{index + 1}}</button>
+</view> -->
+
+<van-button type="default">默认按钮</van-button>
+<van-button type="primary">主要按钮</van-button>
+<van-button type="info">信息按钮</van-button>
+<van-button type="warning">警告按钮</van-button>
+<van-button type="danger">危险按钮</van-button>
+
+<van-datetime-picker
+  type="datetime"
+  value="{{ currentDate }}"
+  min-date="{{ minDate }}"
+  max-date="{{ maxDate }}"
+  bind:input="onInput"
+/>

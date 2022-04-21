@@ -1,0 +1,10 @@
+
+ 
+    <video
+     id="video"
+     show-center-play-btn="{{false}}"
+     autoplay="{{true}}"
+     bindended="videoEnd"
+     controls="{{false}}"
+     src="{{videoUrl}}">
+     </video>

@@ -1,0 +1,1 @@
+"D:\software\微信web开发者工具\cli.bat" cloud functions deploy --e cloud-demo-ji33t --n quickstartFunctions --r --project "D:\work\demo\qiniu" --report_first --report

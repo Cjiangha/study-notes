@@ -1,0 +1,16 @@
+
+.mid{
+ /* padding :30vh 0;*/
+  font-size: 5.5vw;
+  margin:auto;
+  color: #eec093;
+  text-align: center;
+  width: 90vw;
+  height: 70vh;  
+  border: 2px solid #eec093;
+}
+.lottiejs-canvas{
+  width: 100%;
+  height: 60vh;
+  background-color:#3e404d;
+}

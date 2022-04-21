@@ -1,0 +1,5 @@
+<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档
+  <button catchtap="before" style="margin-bottom: 10px;">上一首</button>
+<button catchtap="funended">下一首</button>
+<!-- <button catchtap="setPlayRate">设置倍速1.5</button> -->
+</view>

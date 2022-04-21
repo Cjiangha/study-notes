@@ -1,0 +1,110 @@
+/* pages/login/login-account.wxss */
+page{
+  background-color:rgb(240,240,240);
+}
+.weui-input_ico{
+  width:48rpx;
+  height:48rpx;
+  vertical-align:middle;
+  margin-right:22rpx;
+}
+.weui-input{
+  font-size:28rpx;
+  color:#8A8A8A;
+  width:100%;
+}
+.another-way1{
+  border-bottom:1rpx solid rgb(0,96,226);
+  display:inline-block;
+  margin:0 auto;
+  height:50rpx;
+}
+.another-way2{
+  position: fixed;
+  left:50%;
+  bottom:368rpx;
+  margin-left:-85rpx;
+}
+
+
+.login-cell{
+  height:123rpx;
+  line-height:123rpx;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+  justify-content: space-between;
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+  align-items:center;
+  font-size:45rpx;
+}
+.login-text{
+  margin-right: 24rpx;
+  white-space: nowrap;
+}
+.login-input_ico_v{
+  height:100%;
+  width:124rpx;
+	background-color: transparent;
+	line-height: 136rpx;
+  /* border:1px solid blue; */
+}
+button.login-input_ico_v::after {
+	border:none 0;
+}
+.login-input_ico{
+  vertical-align: middle;
+  /* border:1px solid red; */
+  padding:0 calc(50% - 24rpx);
+  padding-top:calc(50% - 24rpx);
+  box-sizing: border-box;
+  height:98%;
+}
+.login-input_img{
+  width:88rpx;
+  height:100%;
+  /* border: 1px solid #000; */
+  padding:0 10rpx;
+  margin-left: 10rpx;
+}
+.login_name{
+  border-bottom:2rpx solid #f00;
+}
+.login_name .login-text{
+  color:#f00;
+}
+.login_pwd{
+  border-bottom:2rpx solid rgb(224,224,224);
+}
+.login_pwd .login-text{
+  color:rgb(51,51,51);
+}
+.login-input{
+  width:100%;
+  height: 100%;
+  /* border:1px solid yellow; */
+  font-size:35rpx;
+}
+.login-account1{
+  padding:0 100rpx;
+  margin-bottom:80rpx;
+}
+.code-login{
+  padding-bottom:40rpx;
+  text-align:center;
+  margin-top:23vh;
+  /* margin-top:350rpx; */
+  
+}
+
+.code-login_img{
+  width:280rpx;
+  height:259rpx;
+}
+/* 登录小提示 */
+.login-tip{
+  font-size: 23rpx;
+  text-align: center;
+  color: #666;
+}

@@ -1,0 +1,10 @@
+<!-- <view class="page">
+    <canvas
+      type="2d"
+      style="width:{{canvasWidth}}px;height:{{canvasHeight}}px;"
+      id="myCanvas"
+      class="myCanvas"
+    ></canvas>
+    <image src="{{imageSrc}}" mode="widthFix"></image>
+</view>
+ -->

@@ -1,0 +1,29 @@
+page ._common-empty_1wk86_1 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 303rpx 60rpx 120rpx;
+  background-color: #fff;
+}
+
+page ._common-empty_1wk86_1 ._empty-img_1wk86_11 {
+  width: 248rpx;
+  height: 248rpx;
+}
+
+page ._common-empty_1wk86_1 ._empty-title_1wk86_15 {
+  font-weight: bold;
+  font-size: 40rpx;
+  color: rgba(0, 0, 0, 0.87);
+  margin-top: 76rpx;
+}
+
+page ._common-empty_1wk86_1 ._empty-desc_1wk86_21 {
+  font-size: 32rpx;
+  color: rgba(0, 0, 0, 0.54);
+  line-height: 48rpx;
+  margin-top: 16rpx;
+}

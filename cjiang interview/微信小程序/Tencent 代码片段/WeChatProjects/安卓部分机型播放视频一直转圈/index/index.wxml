@@ -1,0 +1,11 @@
+<video 
+            :autoplay="true"
+            :poster="options.poster"
+            x5-video-player-type="h5"
+            :enable-progress-gesture="false"
+            :controls="videoOptions.controls"
+            :loop="videoOptions.loop"
+            :direction="videoOptions.direction"
+            :show-center-play-btn="videoOptions.showCenterPlayBtn"
+			src="https://www.w3schools.com/html/movie.mp4">
+          </video>  

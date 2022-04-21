@@ -1,0 +1,5 @@
+<view wx:for="{{3}}" wx:key="this" style="display: flex;align-items: center;flex-direction: column;padding: 20rpx;">
+  <text>{{index+1}}</text>
+  <slider style="width:80%;margin:0 14rpx 0 0;padding:0;" data-id="{{index}}" bindchange="slider" activeColor="#ffa200" max="10" block-size="12" block-color="#ffa200" value="10"></slider>
+</view>
+<view bindtap="play" style="width: 100%;display: flex;align-items: center;justify-content: center;">点我播放</view>

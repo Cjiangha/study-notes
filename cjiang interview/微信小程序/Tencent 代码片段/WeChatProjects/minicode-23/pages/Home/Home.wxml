@@ -1,0 +1,4 @@
+
+<page-view wx:if='{{__isPageReady}}' bind:onAnyUIPageReady='onAnyUIPageReady'>
+   <routes />
+</page-view>

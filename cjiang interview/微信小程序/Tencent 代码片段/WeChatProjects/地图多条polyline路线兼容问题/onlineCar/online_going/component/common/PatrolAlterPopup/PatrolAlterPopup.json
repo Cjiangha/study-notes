@@ -1,0 +1,4 @@
+{
+  "usingComponents": { "v-popup": "@alife/anyui-wx-component/widgets/Popup" },
+  "component": true
+}

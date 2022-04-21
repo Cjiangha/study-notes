@@ -1,0 +1,22 @@
+@import "./components/weapp/dist/common/index.wxss";
+
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial,
+    Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+}
+
+.van-cell__title {
+  color: #646566 !important;
+}
+
+.van-cell__value {
+  color: #242424 !important;
+}
+
+.com-container {
+  width: 100%;
+  box-sizing: border-box;
+  background: #f7f7f8;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}

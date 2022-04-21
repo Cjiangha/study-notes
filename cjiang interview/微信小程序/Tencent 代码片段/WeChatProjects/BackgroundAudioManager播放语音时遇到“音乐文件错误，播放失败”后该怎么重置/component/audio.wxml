@@ -1,0 +1,2 @@
+<!--component/audio.wxml-->
+<button bindtap="play" wx:if="{{show}}">{{btn}}</button>

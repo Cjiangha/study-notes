@@ -1,0 +1,42 @@
+
+<wxs module="m">
+var anyui = require("../../../../../_anyui/utils/helper.wxs");var anyuiClass = require("./Routes.style.wxs");
+
+module.exports._expId1 = function (selectedRouteId, item) {return anyui.processClass(['routes', selectedRouteId === item.routeId ? 'activity' : ''], anyuiClass.wrap());;};
+module.exports._expId2 = function (item) {return anyui.processClass(['routes-distance', 'com-left', 'activity-distance', item.lights && item.tolls ? 'routes-distance-font' : ''], anyuiClass.wrap());;};</wxs>
+<view class="_com_nsa8t_1 anyui_view {{className || ''}}" wx:if="{{__ready__}}">
+     <view wx:for="{{list}}" class="anyui_view {{m._expId1(selectedRouteId, item, _a_)}}" wx:for-item="item" wx:for-index="index" bindtap="handleSelect1" data-bindtapparams0="{{index}}" data-bindtapparams1="{{item}}" data-bindtapparams2="{{item.routeId}}" wx:key="index">
+       <view class="_routes-tag_nsa8t_22 _activity-tag_nsa8t_105 anyui_view">{{item.routeName}}</view>
+       <view class="_routes-costTime_nsa8t_34 _com-left_nsa8t_7 _activity-costTime_nsa8t_109 anyui_view">{{item.costTime}}</view>
+       <view class="anyui_view {{m._expId2(item, _a_)}}">{{item.distance}}<block wx:if="{{item.lights}}">
+           <image class="_routes-distance_light_nsa8t_48 anyui_image" src="https://gw.alicdn.com/imgextra/i2/O1CN01IIv7HD1K9v65BxzSN_!!6000000001122-2-tps-19-19.png" mode="scaleToFill" wx:if="{{selectedRouteId === item.routeId}}"/>
+           <image class="_routes-distance_light_nsa8t_48 anyui_image" src="https://gw.alicdn.com/imgextra/i3/O1CN01BpEVWD1hINZrfGQ9c_!!6000000004254-2-tps-19-19.png" mode="scaleToFill" wx:else/>{{item.lights}}</block>
+         <block wx:if="{{item.tolls}}">
+           <image class="_routes-distance_gas_nsa8t_55 anyui_image" src="https://gw.alicdn.com/imgextra/i3/O1CN011IQ1eu1copYoP4yDG_!!6000000003648-2-tps-16-20.png" mode="scaleToFill" wx:if="{{selectedRouteId === item.routeId}}"/>
+           <image class="_routes-distance_gas_nsa8t_55 anyui_image" src="https://gw.alicdn.com/imgextra/i3/O1CN01Av6fkR1eqK5MkLfyH_!!6000000003922-2-tps-16-20.png" mode="scaleToFill" wx:else/>¥{{item.tolls}}</block>
+         </view>
+       <!-- 区间预估价 -->
+       <block wx:if="{{!item.title && item.estimatePrice && item.upperEstimatePrice}}">
+         <view class="_routes-line_nsa8t_65 _activity-line_nsa8t_115 anyui_view"></view>
+         <view class="_routes-estimatePrice_nsa8t_71 _routes-estimatePrice_qj_nsa8t_77 _com-left_nsa8t_7 _activity-estimatePrice_nsa8t_118 anyui_view">
+           <text class="_routes-estimatePrice_text_nsa8t_84 anyui_text">{{item.estimatePrice}}-{{item.upperEstimatePrice}}</text>
+           <text class="_routes-estimatePrice_dw_nsa8t_80 activity-estimatePrice_dw anyui_text">元</text>
+           </view>
+         </block>
+       <!-- 单预估价 -->
+       <block wx:if="{{!item.title && item.estimatePrice && !item.upperEstimatePrice}}">
+         <view class="_routes-line_nsa8t_65 _activity-line_nsa8t_115 anyui_view"></view>
+         <view class="_routes-estimatePrice_nsa8t_71 _com-left_nsa8t_7 _activity-estimatePrice_nsa8t_118 anyui_view">
+           <text class="_routes-estimatePrice_text_nsa8t_84 anyui_text">{{item.estimatePrice}}</text>
+           <text class="_routes-estimatePrice_dw_nsa8t_80 activity-estimatePrice_dw anyui_text">元</text>
+           </view>
+         </block>
+       <!-- 打表计价 -->
+       <block wx:if="{{item.title}}">
+         <view class="_routes-line_nsa8t_65 _activity-line_nsa8t_115 anyui_view"></view>
+         <view class="_routes-title_nsa8t_89 _com-left_nsa8t_7 _activity-title_nsa8t_121 anyui_view" wx:if="{{item.title}}">{{item.title}}</view>
+         <view class="_routes-subtitle_nsa8t_95 _com-left_nsa8t_7 _activity-subtitle_nsa8t_124 anyui_view" wx:if="{{item.subTitle}}">{{item.subTitle}}</view>
+         </block>
+       </view>
+     </view>
+   

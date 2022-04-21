@@ -1,0 +1,5 @@
+<view class="intro">
+  <camera class="camera_content" device-position="back" binderror="error" bindinitdone="initDone" frame-size="large" resolution="high" flash="off"
+  bindtouchstart="wrapStart" bindtouchmove="wrapMove"
+  ></camera>
+</view>

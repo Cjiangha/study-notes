@@ -1,0 +1,13 @@
+<cBar id="c-bar" title="{{title}}" showBack="true" showHome="true"></cBar>
+<view class="container" style="{{mainHeight}}">
+  <view class="intro">分包 - 首页</view>
+  <view wx:if="{{showTip}}" class="intro">看看底部导航有什么变化</view>
+  
+  <view class="intro" style="height:30vh"></view>
+  <view class="intro">测试是否有滚动条</view>
+  <view class="intro" style="height:30vh"></view>
+  <view class="intro">...</view>
+  <view class="intro" style="height:40vh"></view>
+  <view class="intro">测试滚动条是否覆盖cBar</view>
+</view>
+<fBar id="f-bar" idx="0"></fBar>

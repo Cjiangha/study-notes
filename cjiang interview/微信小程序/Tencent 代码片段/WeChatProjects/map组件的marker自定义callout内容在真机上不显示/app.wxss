@@ -1,0 +1,66 @@
+image{
+  border: none;
+  display: block;
+}
+
+
+.ellipsis-one{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ellipsis-two{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* display: box; */
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+.ellipsis-three{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* display: box; */
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+.shadow{
+  box-shadow: 0 0 20rpx 0 rgba(0,0,0,0.03);
+  -webkit-box-shadow: 0 0 20rpx 0 rgba(0,0,0,0.03);
+}
+
+.item-shadow{
+  box-shadow: 0 0 16rpx 0 rgba(0,0,0,0.03);
+  -webkit-box-shadow: 0 0 16rpx 0 rgba(0,0,0,0.03);
+}
+
+.public-price, .public-original-price{
+  display: flex;
+  align-items: baseline;
+}
+
+
+.public-price{
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-right: 10rpx;
+}
+
+.public-original-price{
+  font-size: 24rpx;
+  color: #a0a0a0;
+  text-decoration: line-through;
+  text-align: center;
+}
+
+.price-symbol{
+  font-size: 22rpx;
+}

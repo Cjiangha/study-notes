@@ -1,0 +1,10 @@
+<view class="_top-order-status-card_1bbb7_1 anyui_view {{className || ''}}" wx:if="{{__ready__}}">
+     <view class="anyui_view">
+       <image class="_icon_1bbb7_13 anyui_image" mode="widthFix" src="{{imgSrc}}"/>
+       </view>
+     <view class="_title-wrap_1bbb7_17 anyui_view">
+       <view class="_main-title_1bbb7_22 anyui_view">{{mainTitle}}</view>
+       <view class="_sub-title_1bbb7_27 anyui_view">{{subTitle}}</view>
+       </view>
+     </view>
+   

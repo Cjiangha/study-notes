@@ -1,0 +1,3 @@
+<button class="intro" type="primary" bindtap="chooseVideo">选择视频</button>
+<video wx:for="{{videoList}}" src="{{item.tempFilePath}}" style="width: 100%;" data-index="{{index}}"
+    danmu-list="{{danmuList}}" direction="0" show-play-btn="false" poster="{{item.thumbTempFilePath}}"></video>

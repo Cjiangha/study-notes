@@ -1,0 +1,4 @@
+<view class="intro">
+<view class="btn1" bindtap="start">开始录音</view>
+<view class="btn1">停止录音</view>
+</view>

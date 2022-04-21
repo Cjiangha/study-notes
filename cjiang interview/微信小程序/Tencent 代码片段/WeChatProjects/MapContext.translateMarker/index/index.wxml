@@ -1,0 +1,14 @@
+<view class="map_container">
+    <map id="map" markers="{{markers}}" longitude="{{longitude}}" latitude="{{latitude}}" polyline="{{polyline}}" scale="15">
+        <cover-view slot="callout">
+            <!-- 车辆 -->
+            <cover-view marker-id="3" class="marker car">
+                <cover-view class="lc">
+                    <cover-view>
+                        标签
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+        </cover-view>
+    </map>
+</view>

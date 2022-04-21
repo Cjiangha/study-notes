@@ -1,0 +1,16 @@
+
+<wxs module="m">
+var anyui = require("../../../../_anyui/utils/helper.wxs");
+module.exports._expId1 = function (messageStyle) {return anyui.processStyle(messageStyle);;};</wxs>
+<view class="_message-wrapper_11xb1_1 anyui_view {{className || ''}}" wx:if="{{__ready__}}" catchtap="enterIMH5" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" style="{{m._expId1(messageStyle, _a_)}}">
+     <view class="_message-main_11xb1_15 anyui_view">
+       <image class="_driver-avatar_11xb1_21 anyui_image" mode="scaleToFill" src="{{displayAvatar}}"/>
+       <view class="_message-content_11xb1_27 anyui_view">
+         <view class="_driver-name_11xb1_34 anyui_view">{{displayName}}：</view>
+         <view class="_message_11xb1_1 anyui_view">{{message.text}}</view>
+         </view>
+       </view>
+     <view class="_halving-line_11xb1_53 anyui_view"></view>
+     <view class="_reply-btn_11xb1_61 anyui_view">快速回复</view>
+     </view>
+   

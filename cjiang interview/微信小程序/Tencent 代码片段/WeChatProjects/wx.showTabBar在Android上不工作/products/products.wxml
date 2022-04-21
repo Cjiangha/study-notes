@@ -1,0 +1,8 @@
+<!--products/products.wxml-->
+<!-- <button class="a" bindtap="hide">隐藏TabBar</button>
+<button class="b" bindtap="show">显示TabBar</button> -->
+
+<canvas type="2d" style="width: 260px; height: 260px;" id="myQrcode"></canvas>
+
+<button bindtap="dianwo"
+>dianwo</button>

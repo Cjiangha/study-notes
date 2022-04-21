@@ -1,0 +1,66 @@
+<!-- ios cover-view 不支持scroll-top -->
+
+<cover-view style="width:500rpx;height:300rpx;border:1px green solid;overflow-y: scroll" scroll-top="{{top}}">
+
+    <cover-view style="width:400rpx;height:80rpx;border:1px red solid;">滚动内容1</cover-view>
+    <cover-view style="width:400rpx;height:80rpx;border:1px red solid;">滚动内容2</cover-view>
+    <cover-view style="width:400rpx;height:80rpx;border:1px red solid;">滚动内容3</cover-view>
+    <cover-view style="width:400rpx;height:80rpx;border:1px red solid;">滚动内容4</cover-view>
+    <cover-view style="width:400rpx;height:80rpx;border:1px red solid;">滚动内容5</cover-view>
+    <cover-view style="width:400rpx;height:80rpx;border:1px red solid;">滚动内容6</cover-view>
+
+</cover-view>
+
+<button bindtap="scroll">btn</button>
+
+
+<map class="map">
+
+    <cover-view class="poiBox">
+        <cover-view class="poiList">
+            <cover-view class="item">
+                <cover-view class="item-left">
+                    <cover-view>滴滴滴滴</cover-view>
+                    <cover-view>滴滴</cover-view>
+                </cover-view>
+                <cover-view class="item-right">right</cover-view>
+            </cover-view>
+            <cover-view class="item">
+                <cover-view class="item-left">
+                    <cover-view>滴滴滴滴</cover-view>
+                    <cover-view>滴滴</cover-view>
+                </cover-view>
+                <cover-view class="item-right">right</cover-view>
+            </cover-view>
+            <cover-view class="item">
+                <cover-view class="item-left">
+                    <cover-view>滴滴滴滴</cover-view>
+                    <cover-view>滴滴</cover-view>
+                </cover-view>
+                <cover-view class="item-right">right</cover-view>
+            </cover-view>
+            <cover-view class="item">
+                <cover-view class="item-left">
+                    <cover-view>滴滴滴滴</cover-view>
+                    <cover-view>滴滴</cover-view>
+                </cover-view>
+                <cover-view class="item-right">right</cover-view>
+            </cover-view>
+            <cover-view class="item">
+                <cover-view class="item-left">
+                    <cover-view>滴滴滴滴</cover-view>
+                    <cover-view>滴滴</cover-view>
+                </cover-view>
+                <cover-view class="item-right">right</cover-view>
+            </cover-view>
+            <cover-view class="item">
+                <cover-view class="item-left">
+                    <cover-view>滴滴滴滴</cover-view>
+                    <cover-view>滴滴</cover-view>
+                </cover-view>
+                <cover-view class="item-right">right</cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+
+</map>

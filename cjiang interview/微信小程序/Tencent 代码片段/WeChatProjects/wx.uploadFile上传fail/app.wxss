@@ -1,0 +1,424 @@
+/**app.wxss**/
+
+page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  font-size: 26rpx;
+  font-family: "微软雅黑";
+}
+
+.hide {
+  display: none;
+}
+
+view {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, image {
+  width: 100%;
+  height: 100rpx;
+  vertical-align: middle;
+}
+
+view, text, img, image {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wxParse-content {
+  font-size: 28rpx;
+  line-height: 50rpx;
+  color: #666;
+  overflow: hidden;
+  padding: 20rpx 0;
+}
+
+.wxParse-content image {
+  max-width: 100%;
+}
+
+.wxParse-content .wxParse-p {
+  margin: 10rpx 0;
+}
+
+.shade_transparent {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  /*要显示在wrap的上面 */
+  z-index: 1;
+  position: fixed;
+}
+
+.shade {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  /*要显示在wrap的上面 */
+  z-index: 1;
+  position: absolute;
+}
+
+.cnvp-model {
+  position: absolute;
+  background: #fff;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  height: auto;
+  margin: -150rpx 0 0 -40%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.cnvp-model .title {
+  font-size: 18px;
+  color: #333;
+  line-height: 80rpx;
+  font-weight: bold;
+}
+
+.cnvp-model .text {
+  font-size: 16px;
+  padding: 20rpx;
+  color: #999;
+  line-height: 66rpx;
+}
+
+.cnvp-model button {
+  border: 0 solid #fff;
+  width: 60%;
+}
+
+/* 清除左右对齐 */
+
+.clear:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.clear {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.abs {
+  position: absolute !important;
+}
+
+.rel {
+  position: relative !important;
+}
+
+.flex_c_m {
+  /* 垂直水平居中*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex_c {
+  /* 水平居中*/
+  display: flex;
+  justify-content: center;
+}
+
+.flex_m {
+  /* 垂直居中*/
+  display: flex;
+  align-items: center;
+}
+
+.vcentral {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.vleft {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.vertical {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+}
+
+.flex_baseline {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  align-items: baseline;
+}
+
+.flex_stretch {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+
+.flex_center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.flex_wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flex_wrap_stretch {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.flex_flex {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+/*字体排列  */
+
+.text-c {
+  text-align: center;
+}
+
+.text-l {
+  text-align: left;
+}
+
+.text-r {
+  text-align: right;
+}
+
+.text_lins1 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text_lins2 {
+  overflow: hidden;
+  white-space: pre-line;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  word-wrap: break-word;
+}
+
+.text_lins3 {
+  overflow: hidden;
+  white-space: pre-line;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  word-wrap: break-word;
+}
+
+.h_20 {
+  height: 20rpx;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.h_100 {
+  height: 100rpx;
+}
+
+.h_87 {
+  height: 87rpx;
+}
+
+.h_88 {
+  height: 88rpx;
+}
+
+.pad30 {
+  padding: 30rpx;
+}
+
+.padlf30_tb18 {
+  padding: 18rpx 30rpx;
+}
+
+.padl30 {
+  padding: 0 0 0 30rpx;
+}
+
+.padr30 {
+  padding: 0 30rpx 0 0;
+}
+
+.padtrb30 {
+  padding: 30rpx 30rpx 30rpx 0;
+}
+
+.padlr30 {
+  padding: 0 30rpx;
+}
+
+.padrb30 {
+  padding: 0 30rpx 30rpx 0;
+}
+
+.padl35 {
+  padding-left: 35rpx;
+}
+
+.backcolorfff {
+  background-color: #fff;
+}
+
+.btnbackcolor {
+  background-color: #f17232;
+}
+
+.borderbottom1 {
+  border-bottom: 1rpx solid #eee;
+}
+
+.borderbottom2 {
+  border-bottom: 2rpx solid #eee;
+}
+
+.bordertop1 {
+  border-top: 1rpx solid #eee;
+}
+
+.borderright1 {
+  border-right: 1rpx solid #eee;
+}
+
+.btnSend {
+  font-size: 36rpx;
+  color: #fff;
+  line-height: 88rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+.weui-cell__ft_on_in-access {
+  padding-right: 13px;
+}
+
+/* tabBar样式 */
+
+.tabbar_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100rpx;
+}
+
+.tabbar_nav, .tabbar_nav1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  height: 100%;
+}
+
+.tabbar_icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.tabbar_nav1 {
+  position: relative;
+  bottom: 70rpx;
+  height: 170rpx;
+}
+
+.tabbar_icon1 {
+  width: 73%;
+  height: 110rpx;
+}
+
+.tabbar_icon2 {
+  width: 68%;
+  height: 110rpx;
+}

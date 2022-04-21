@@ -1,0 +1,8 @@
+
+<wxs module='proputil'>
+var propsInfo={_5:{message:"message",messageShow:"messageShow",animationTime:"animationTime","bind:onClosePopup":"closePopup_custHd_1","bind:onMessagePopupReset":"messagePopupReset_custHd_2"}};module.exports.getProps=function(e){return propsInfo[e]};
+</wxs>
+<view class="_instant-messaging-container_cajvf_1 anyui_view {{className || ''}}" wx:if="{{__ready__ && (instanceShow) }}" bindtap="closePopup">
+     <im-message bind:onClosePopup="closePopup_custHd_1" bind:onMessagePopupReset="messagePopupReset_custHd_2" anyuiProps="{{proputil.getProps('_5')}}" bindparentmounted="returnRef" message="{{message}}" messageShow="{{messageShow}}" animationTime="{{animationTime}}"/>
+     </view>
+   

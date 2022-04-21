@@ -1,0 +1,3 @@
+<view class="intro">
+    <view bindtap="goToDetail">点击前往二级页面</view>
+</view>

@@ -1,0 +1,9 @@
+
+
+<text  class="rightTemp" bindtap="showTempDialog" style="font-size: 66rpx;color: gold;" >24℃</text>
+<winddirction  id="wind"   class="winddirction"  >
+
+</winddirction>
+
+<temperature  id="temp"  class="temperature">
+</temperature>

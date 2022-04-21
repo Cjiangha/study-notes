@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "v-popup": "@alife/anyui-wx-component/widgets/Popup",
+    "station-guidance": "../StationGuidance/StationGuidance"
+  },
+  "component": true
+}

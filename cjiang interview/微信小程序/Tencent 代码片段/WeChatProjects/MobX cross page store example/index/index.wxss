@@ -1,0 +1,15 @@
+.list {
+  margin: 20px;
+}
+.item {
+  margin-bottom: 20px;
+  background: #eee;
+  padding: 10px;
+}
+.title {
+  font-size: 150%;
+  border-bottom: 1px solid #888;
+}
+.show-detail {
+  color: blue;
+}

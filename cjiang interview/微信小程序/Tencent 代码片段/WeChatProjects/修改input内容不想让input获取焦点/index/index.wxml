@@ -1,0 +1,5 @@
+<label class="count_control sp2 clearfix tvmid mr24">
+<em class="red {{count==0?'disable':''}}" bindtap="addredtc" data-type="red"></em>
+<input type="number" value="{{count}}"  />
+<em class="add {{count>=10?'disable':''}}" bindtap="addredtc" data-type="add"></em>
+</label>

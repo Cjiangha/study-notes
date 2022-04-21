@@ -1,0 +1,3 @@
+<canvas type="2d" id="myCanvas" class="cns"></canvas>
+
+<canvas type="2d" id="myCanvasTwo" class="cns"></canvas>

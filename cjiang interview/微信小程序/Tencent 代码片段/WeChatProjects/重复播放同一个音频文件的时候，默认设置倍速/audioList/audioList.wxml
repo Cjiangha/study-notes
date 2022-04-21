@@ -1,0 +1,3 @@
+<!--audioList/audioList.wxml-->
+<button bindtap="goAudio1">音频1</button>
+<button bindtap="goAudio2">音频2</button>

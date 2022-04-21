@@ -1,0 +1,7 @@
+<view class="wrapper">
+  <view class="title">{{list[index].date}}</view>
+  <view class="content">温度 {{list[index].temperature}}</view>
+  <view class="content">天气 {{list[index].weather}}</view>
+  <view class="content">空气质量 {{list[index].airQuality}}</view>
+  <view class="content">{{list[index].details}}</view>
+</view>

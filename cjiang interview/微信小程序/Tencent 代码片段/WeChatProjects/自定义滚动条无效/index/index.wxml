@@ -1,0 +1,38 @@
+
+
+<!-- 操作弹框 -->
+<view class="changeModel mask-model" hidden="{{isShowChangeModel}}">
+  <view class="changeModel2">
+    <!-- 转交合伙人 -->
+    <view class="sale-footer-content" wx:if="{{selectType==2}}">
+      <view class="turnOver-title">
+        转交合伙人
+      </view>
+      <view class="turnOver-center">
+        <view>合伙人</view>
+        <view class="search-box">
+          <input type="text" placeholder="姓名/合伙人类型" />
+        </view>
+      </view>
+      <scroll-view class="turnOver-center-list" scroll-y>
+        <checkbox-group bindchange="checkboxChange">
+          <label class="weui-check__label" wx:for="{{items}}" wx:key="{{item.value}}">
+            <view>
+              <checkbox value="{{item.value}}" checked="{{item.checked}}" style="transform: scale(0.6);"/>
+            </view>
+            <view class="weui-cell">
+              <text>{{item.name}}</text>
+              <text style="padding-left:88rpx;">钻石合伙人</text>
+            </view>
+          </label>
+        </checkbox-group>
+      </scroll-view>
+    </view>
+    <!-- 停用 启用 -->
+    <view class="stop-title" wx:elif='{{selectType==1}}'>确定{{selectType==1?'停用':'启用'}}该合伙人吗？</view>
+    <view class="changeModel2-footer">
+      <view catchtap="changeClose" data-type='1'>取消</view>
+      <view style="color: #2d59df;" catchtap="changeClose" data-type='2'>提交</view>
+    </view>
+  </view>
+</view>

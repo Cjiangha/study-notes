@@ -1,0 +1,68 @@
+page ._message-wrapper_11xb1_1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top: 16rpx;
+  left: 16rpx;
+  right: 16rpx;
+  background-color: #fff;
+  border-radius: 24rpx;
+  padding: 24rpx 0 24rpx 24rpx;
+  box-shadow: 0 4rpx 16rpx 0 rgba(0, 0, 0, 0.1);
+}
+
+page ._message-main_11xb1_15 {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+page ._driver-avatar_11xb1_21 {
+  width: 86rpx;
+  height: 86rpx;
+  border-radius: 50%;
+}
+
+page ._message-content_11xb1_27 {
+  margin-left: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+page ._driver-name_11xb1_34 {
+  font-size: 28rpx;
+  line-height: 34rpx;
+  color: rgba(0, 0, 0, 0.9);
+  margin-top: 6rpx;
+}
+
+page ._message_11xb1_1 {
+  display: block;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: rgba(0, 0, 0, 0.6);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 408rpx;
+  margin-top: 12rpx;
+}
+
+page ._halving-line_11xb1_53 {
+  display: block;
+  width: 1rpx;
+  height: 86rpx;
+  background: linear-gradient(to bottom, #C8C8C8 0%, #BBBBBB 32%, #979EAE 50%, #BBBBBB 68%, #C8C8C8 100%);
+  opacity: 0.6;
+}
+
+page ._reply-btn_11xb1_61 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160rpx;
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.9);
+}

@@ -1,0 +1,19 @@
+<!--pages/test/test.wxml-->
+<view>
+  <button type="primary" bindtap="creatQR">生成</button>
+  <button type="warn" bindtap="creatDialog">弹窗</button>
+  <canvas class="qr-code-exact" canvas-id='canvas' style="width:{{code_w}}px; height:{{code_w}}px;" wx:if="{{qrVisible}}" bindlongpress="savePic"></canvas>
+
+  <scroll-view wx:if="{{qrVisible1}}" class="scroll_view" scroll-y scroll-top="{{scrollTop}}" scroll-with-animation>
+    <view class="enptyBox">
+      <view style="height: 900rpx;background-color: aqua;">
+        <button type="warn" bindtap="creatDialogScorll">滚动</button>
+      </view>
+      <view class="canvasBox_p">
+        <canvas class="qr-code-exact" disable-scroll="true" canvas-id='canvas1' style="width:{{code_w}}px; height:{{code_w}}px;" wx:if="{{qrVisible1}}" bindlongpress="savePic1"></canvas>
+        <!-- <image class="position_ab" style="width:{{code_w}}px; height:{{code_w}}px;" src="{{canvasImageUrl}}" wx:if="{{canvasImageUrl}}"></image> -->
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

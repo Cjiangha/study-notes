@@ -1,0 +1,6 @@
+<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
+<view class="img"></view>
+
+<image src="../tt.png" 	show-menu-by-longpress="{{true}}" ></image>
+
+<image src="../gg.jpg" show-menu-by-longpress="{{true}}"></image>

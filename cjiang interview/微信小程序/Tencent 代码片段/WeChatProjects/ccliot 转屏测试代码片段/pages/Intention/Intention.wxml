@@ -1,0 +1,13 @@
+<!--pages/Intention/Intention.wxml-->
+<custom style='height:{{CustomBar}}rpx;'>
+	<bar class="bar" style='height:100%;padding-top:{{StatusBar - 5}}rpx;padding-right:{{ShareBar + 20}}rpx; justify-content: flex-start'>
+		<navigator class='' style='margin-left:30rpx;' url='../about/about' disabled='true'>
+			<image lazy-load style='height:{{CustomBar*3/4}}rpx;width:80rpx;' mode='aspectFit' src='../../images/icon_user3.png' class='user-img-index'></image>
+		</navigator>
+	
+	</bar>
+</custom>
+StatusBar：<view>{{StatusBar}}</view> <view>**</view>
+CustomBar：<view>{{CustomBar}}</view><view>**</view>
+ShareBar：<view>{{ShareBar}}</view><view>**</view>
+windowHeight：<view>{{windowHeight}}</view><view>**</view>

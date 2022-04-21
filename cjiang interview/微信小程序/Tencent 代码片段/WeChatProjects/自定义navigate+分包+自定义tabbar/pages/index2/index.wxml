@@ -1,0 +1,7 @@
+
+<cBar title="{{title}}" showBack="{{showBack}}" showHome="{{showHome}}" homePath="{{homePath}}" homeOpenType="{{homeOpenType}}"></cBar>
+<view class="intro"><navigator url="/pages/index3/index" hover-class="other-navigator-hover">hi, Custom Bar</navigator></view>
+<view class="intro">自定义标题：我是自定义标题<switch checked="{{showTitle}}" bindchange="showTitle" data-title="我是自定义标题" /></view>
+<view class="intro">显示返回：<switch checked="{{showBack}}" bindchange="showBack"/></view>
+<view class="intro">显示主页：<switch checked="{{showHome}}" bindchange="showHome"/></view>
+<view class="intro" hidden="{{!showHome}}" >主页不在tabbar上：<switch checked="{{notOnTabbar}}" bindchange="showNotTabberHome"/></view>

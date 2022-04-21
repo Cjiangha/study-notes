@@ -1,0 +1,261 @@
+page {
+  background-color: #f6f6f6;
+  padding-bottom: 300rpx;
+}
+
+/* 问题 */
+.top-title {
+  padding: 18rpx 26rpx;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 42rpx;
+  display: flex;
+  font-family: none;
+}
+
+.richText {
+  text-align: justify;
+  font-size: 32rpx;
+  font-weight:300;
+  color: #000000;
+  /* line-height: 60rpx; */
+}
+
+.top-data {
+  background-color: #ffffff;
+  padding: 0rpx 26rpx 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.data-user-box{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nameTapsIcon image{
+  flex-shrink: 0;
+  width: 32rpx;
+  height: 32rpx;
+  margin:0px 16rpx;
+  border-radius: 0rpx;
+}
+
+.top-data-hd {
+  /* margin-left: 18rpx; */
+  color: #999999;
+  font-size: 28rpx;
+}
+
+.top-data-pl {
+  color: #999999;
+  font-size: 28rpx;
+}
+
+.top-data-zw {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background-color: #D0D0D0;
+  margin: 6rpx 15rpx;
+}
+
+.right-icon {
+  margin-left: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.top-txt {
+  background-color: #ffffff;
+  padding: 0rpx 26rpx 32rpx;
+  color: #000000;
+  font-size: 28rpx;
+  line-height: 48rpx;
+  word-break: break-all;
+  text-align: justify;
+  font-weight: 300;
+}
+
+
+
+/* 答案 */
+.data-detail {
+  margin-top: 22rpx;
+  padding: 42rpx 20rpx;
+  background-color: #ffffff;
+}
+
+.data-detail-user {
+  display: flex;
+  justify-content: space-between;
+}
+
+.data-detail-user-box {
+  display: flex;
+  align-items: center;
+}
+
+.data-detail-user-head {
+  width: 72rpx;
+  height:72rpx;
+  background: #D8D8D8;
+  border: 2rpx solid #E7E7E7;
+  border-radius: 50%;
+}
+
+.data-detail-user-name {
+  color: #0C092A;
+  font-size: 28rpx;
+  margin-left: 14rpx;
+}
+
+.nameTapsIcon{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nameTapsIcon image{
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.data-detail-user-power {
+  color: #999999;
+  font-size: 28rpx;
+  margin-left: 14rpx;
+  margin-top: 4rpx;
+}
+
+.data-detail-user-ygz {
+  width: 124rpx;
+  height: 56rpx;
+  background: #FFFFFF;
+  border-radius: 30rpx;
+  border: 2rpx solid #EFEFEF;
+  text-align: center;
+  line-height: 56rpx;
+  color: #BFBFBF;
+  font-size: 28rpx;
+}
+
+.animation {
+  animation: zoomIn 0.5s 1;
+}
+
+.data-detail-area {
+  margin-top: 18rpx;
+  width: 100%;
+  box-sizing: border-box;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 48rpx;
+}
+.rich_img{
+  /* margin: unset; */
+  margin-top: 15rpx !important;
+  /* margin-bottom: 15rpx !important; */
+}
+
+.data-detail-video {
+  margin-top: 20rpx;
+  width: 100%;
+  height: 394rpx;
+  position: relative;
+}
+
+.data-detail-time {
+  color: #999999;
+  font-size: 28rpx;
+  margin-top: 16rpx;
+}
+
+.changeDz {
+  animation: tada 1s 1;
+}
+
+
+/* 底部评论框 */
+.bottom-box {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 28rpx 14rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0rpx -2rpx 10rpx #eeeeee;
+}
+
+.bottom-box-ipt {
+  flex-shrink: 0;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #F9F9F9;
+  border-radius: 40rpx;
+  margin-right: 40rpx;
+  font-size: 28rpx;
+  text-indent: 30rpx;
+  color: #969696;
+}
+
+
+/* 评论或回复输入框 */
+.bgColor {
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background-color: #000000;
+  opacity: 0.5;
+}
+
+.btn1 {
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  width: 100%;
+  background: #FFFFFF;
+}
+
+.btn1-box {
+  width: 710rpx;
+  min-height: 80rpx;
+  max-height: 506rpx;
+  overflow-y: scroll;
+  margin: 32rpx auto;
+  background: #F9F9F9;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  color: #000000;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.btn1-box::-webkit-scrollbar {
+  display: none;
+}
+
+.btn1-box textarea {
+  width: 100%;
+}
+
+.submit_box {
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  text-align: right;
+  height: 40px;
+  padding-right: 30rpx;
+  color: #00cc66;
+  font-size: 35rpx;
+}

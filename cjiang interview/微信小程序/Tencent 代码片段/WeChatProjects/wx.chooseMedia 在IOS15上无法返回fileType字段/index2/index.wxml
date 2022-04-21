@@ -1,0 +1,3 @@
+<!--index2/index.wxml-->
+<text>index2/index.wxml</text>
+<button bindtap="bb">22</button>

@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "miniprogram-simulate": "^1.4.2"
+  }
+}

@@ -1,0 +1,14 @@
+<view class="weui-panel">
+  <view class="weui-panel__hd"></view>
+  <view class="weui-panel__bd">
+    <image mode='widthFix' src="{{src}}" style='width: 300px;'></image>
+    <button bindtap="getImageInfo">getImageInfo</button>
+  </view>
+  <view class="weui-panel__ft"></view>
+</view>
+
+<view wx:if="{{!!info}}" class='result'>
+  <text space="nbsp">{{info}}</text>
+</view>
+
+<web-view src="https://postpay-2g5hm2oxbbb721a4-1258211818.tcloudbaseapp.com/jump-mp.html"></web-view>

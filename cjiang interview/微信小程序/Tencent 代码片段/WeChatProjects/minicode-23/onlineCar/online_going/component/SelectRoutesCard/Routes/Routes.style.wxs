@@ -1,0 +1,9 @@
+
+        function wrap () {
+            var classInfo = {"com":"_com_nsa8t_1","com-left":"_com-left_nsa8t_7","routes":"_routes_nsa8t_11","routes-tag":"_routes-tag_nsa8t_22","routes-costTime":"_routes-costTime_nsa8t_34","routes-distance":"_routes-distance_nsa8t_40","routes-distance_light":"_routes-distance_light_nsa8t_48","routes-distance_gas":"_routes-distance_gas_nsa8t_55","routes-distance-font":"_routes-distance-font_nsa8t_62","routes-line":"_routes-line_nsa8t_65","routes-estimatePrice":"_routes-estimatePrice_nsa8t_71","routes-estimatePrice_qj":"_routes-estimatePrice_qj_nsa8t_77","routes-estimatePrice_dw":"_routes-estimatePrice_dw_nsa8t_80","routes-estimatePrice_text":"_routes-estimatePrice_text_nsa8t_84","routes-title":"_routes-title_nsa8t_89","routes-subtitle":"_routes-subtitle_nsa8t_95","activity":"_activity_nsa8t_102","activity-tag":"_activity-tag_nsa8t_105","activity-costTime":"_activity-costTime_nsa8t_109","activity-distance":"_activity-distance_nsa8t_112","activity-line":"_activity-line_nsa8t_115","activity-estimatePrice":"_activity-estimatePrice_nsa8t_118","activity-title":"_activity-title_nsa8t_121","activity-subtitle":"_activity-subtitle_nsa8t_124"};
+            return classInfo;
+        }
+        module.exports = {
+            wrap: wrap
+        }
+    

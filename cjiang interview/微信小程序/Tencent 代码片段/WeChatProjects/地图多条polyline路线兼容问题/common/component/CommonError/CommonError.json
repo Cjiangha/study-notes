@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "login-wrapper": "../login-wrapper/LoginWrapper/LoginWrapper"
+  },
+  "component": true
+}

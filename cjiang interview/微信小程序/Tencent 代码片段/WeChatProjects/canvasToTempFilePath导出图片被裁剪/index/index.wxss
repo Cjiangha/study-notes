@@ -1,0 +1,10 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.page{
+  width:1500px;
+}
+page{
+  overflow: scroll;
+}

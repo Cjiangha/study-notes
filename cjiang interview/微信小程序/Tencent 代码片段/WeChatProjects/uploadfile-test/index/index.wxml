@@ -1,0 +1,3 @@
+<button class='button' bindtap='uploadPic'>上传图片</button>
+
+<input type="digit" style="border:1px solid #ccc;"/>

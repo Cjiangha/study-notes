@@ -1,0 +1,18 @@
+<!--pages/index/index.wxml-->
+<view style="padding: 1rem;">
+  <text>{{indexData.type}}</text>
+</view>
+<view style="padding: 1rem;">
+  <text>{{indexData.inputtype}}</text>
+</view>
+<view style="padding: 1rem;">
+  <text>{{indexData.choosen}}</text>
+</view>
+<view style="padding: 1rem;">
+  <text>修改的值：{{ indexData[indexData.choosen]}}</text>
+</view>
+<view style="padding: 1rem;">
+  <button type="primary" bindtap="goEdit" data-choosen="test" data-maxlength="20" data-inputtype="test">
+  TEST
+  </button>
+</view>

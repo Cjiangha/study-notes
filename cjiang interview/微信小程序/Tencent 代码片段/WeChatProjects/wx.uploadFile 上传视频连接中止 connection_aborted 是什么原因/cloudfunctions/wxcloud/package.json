@@ -1,0 +1,17 @@
+{
+  "name": "wxcloud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "form-data": "^2.4.0",
+    "got": "^9.6.0",
+    "request": "^2.88.0",
+    "wx-server-sdk": "latest"
+  }
+}

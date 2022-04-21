@@ -1,0 +1,15 @@
+<view class="_top-trip-info-card_60vkp_1 anyui_view {{className || ''}}" wx:if="{{__ready__}}">
+     <view class="_car-logo-wrap_60vkp_11 anyui_view">
+       <view class="_car-logo_60vkp_11 anyui_view">
+         <image src="/onlineCar/online_going/images/car.png" class="anyui_image" mode="widthFix"/>
+         </view>
+       <view class="_title-wrap_60vkp_19 anyui_view">
+         <view class="_main-title_60vkp_24 anyui_view">
+           <view class="_main-title-text_60vkp_31 anyui_view">{{mainTitle}}</view>
+           <view class="_receiving-order-tip-btn_60vkp_34 anyui_view" wx:if="{{showOpenTipPopupBtn}}" bindtap="showTipPopup">接单贴士</view>
+           </view>
+         <view class="_sub-title_60vkp_37 anyui_view">{{subTitle}}</view>
+         </view>
+       </view>
+     </view>
+   

@@ -1,0 +1,1 @@
+<map id="map" style="width:100vw;height:100vh" markers="{{markers}}" scale="10"  polyline="{{polyline}}"></map>

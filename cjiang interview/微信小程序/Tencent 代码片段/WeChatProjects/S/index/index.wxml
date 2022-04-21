@@ -1,0 +1,3 @@
+<view class="intro">跳转后返回-注释wx.enableAlertBeforeUnload代码(index2.js里)-编译保存-再次跳转-返回 enableAlertBeforeUnload 依然起作用</view>
+
+<button bind:tap="go">跳转</button>

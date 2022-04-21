@@ -1,0 +1,17 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.wx-action-image {
+  width: 240rpx;
+  height: 240rpx;
+  position: absolute;
+  left: 30%;
+  bottom: 40rpx;
+}
+
+.a {
+  color: red;
+  font-size: 1.2em;
+  font-style: italic;
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "winddirction": "/component/winddirction/winddirction" ,
+    "temperature":"/component/synctemperature/temperature"
+  }
+}

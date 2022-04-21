@@ -1,0 +1,13 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.theMeetPoi{
+  margin: 0rpx 60rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 30rpx;
+  text-align: center;
+  color: #FFFFFF;
+  background: #889988;
+}

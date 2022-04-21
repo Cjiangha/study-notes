@@ -1,0 +1,9 @@
+<open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data>
+<!-- 需要使用 button 来授权登录 -->
+<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+<view wx:else>请升级微信版本</view>
+<official-account></official-account>
+<view wx:for="{{list}}" wx:key="index">
+  <view wx:for="{{item.keys}}" wx:key="index" wx:for-item="key" class="data">{{item.data[key]}}</view>
+</view>

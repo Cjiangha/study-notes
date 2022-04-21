@@ -1,0 +1,7 @@
+<cBar id="c-bar" title="{{title}}" showBack="true" showHome="true"></cBar>
+<view class="container" style="{{mainHeight}}">
+  <view class="intro">
+    分包 - 我的页面
+  </view>
+</view>
+<fBar id="f-bar" idx="2"></fBar>

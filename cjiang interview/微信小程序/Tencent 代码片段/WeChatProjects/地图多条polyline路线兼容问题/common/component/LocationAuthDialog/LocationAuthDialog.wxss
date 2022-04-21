@@ -1,0 +1,65 @@
+page ._auth-dialog_10hfd_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+page ._auth-dialog__content_10hfd_13 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40rpx 0 0 0;
+  width: 500rpx;
+  background: white;
+  border-radius: 20px;
+  text-align: center;
+}
+
+page ._auth-dialog__content-title_10hfd_23 {
+  padding: 0 40rpx;
+  margin-bottom: 16rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  justify-content: center;
+}
+
+page ._auth-dialog__content-sub_10hfd_30 {
+  padding: 0 40rpx;
+  font-size: 30rpx;
+  color: #333333;
+  margin-bottom: 40rpx;
+}
+
+page ._auth-dialog__content-btn_10hfd_36 {
+  display: flex;
+  align-items: center;
+  line-height: 90rpx;
+  height: 90rpx;
+  font-size: 36rpx;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+}
+
+page ._auth-dialog__content-btn_cancel_10hfd_45 {
+  flex: 1;
+  justify-content: center;
+}
+
+page ._auth-dialog__content-btn_confirm_10hfd_49 {
+  flex: 1;
+  border: none;
+  color: #1677ff;
+}
+
+page ._vertical-line_10hfd_55 {
+  width: 1rpx;
+  background: #e5e5e5;
+  height: 100%;
+}

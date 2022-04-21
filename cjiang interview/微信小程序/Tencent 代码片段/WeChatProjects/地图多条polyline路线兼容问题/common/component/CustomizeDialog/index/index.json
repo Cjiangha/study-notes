@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "dialog-picture-card": "../compoents/DIALOG_PICTURE_CARD/index/index"
+  },
+  "component": true
+}

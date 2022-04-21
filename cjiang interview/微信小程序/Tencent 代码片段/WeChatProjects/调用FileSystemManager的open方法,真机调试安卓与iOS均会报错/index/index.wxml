@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <button catchtap="makeFile"> 获取头像昵称 </button>
+</view>

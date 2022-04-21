@@ -1,0 +1,19 @@
+<map
+  bindtap="hf"
+  id='maps'
+  show-location="true"
+  longitude="{{longitude}}"
+  latitude="{{latitude}}"
+  scale="16"
+  subkey="XXBBZ-IRJ3I-XPPG2-5KG6D-GHWMT-GEBZD"
+  layer-style="1"
+  enable-poi="false"
+>
+
+<cover-view class='body_box' style="margin-top: {{Tops}}px;"  catchtouchmove="buttonMove">
+  <cover-view style="width: 100%;height: 30%;background-color: aquamarine;"></cover-view>
+</cover-view>
+</map>
+
+
+

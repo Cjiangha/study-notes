@@ -1,0 +1,2 @@
+<image src="{{imgSrc}}"></image>
+<view class="intro" bindtap="selectImage">选择图片</view>

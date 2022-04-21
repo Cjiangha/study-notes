@@ -1,0 +1,228 @@
+<!-- <import src="/base.wxml" /> -->
+
+<wxs src='/helper.wxs' module="helper" />
+
+<template name="OCTOPUS_BASE_TEMPLATE">
+  <block wx:for="{{root.cn}}" wx:key="id">
+    <template is="OCTOPUS_1_CONTAINER" data="{{i: item, ancestor: ''}}" />
+  </block>
+</template>
+
+<template name="oc_scroll-view">
+    <scroll-view id="{{helper.v(i['id'])}}" class="{{helper.v(i['c1'])}}" style="{{helper.v(i['c2'])}}" scroll-x="{{helper.v(i['c34'])}}" scroll-y="{{helper.v(i['c33'])}}" upper-threshold="{{helper.v(i['c30'])}}" lower-threshold="{{helper.v(i['c31'])}}"   scroll-into-view="{{helper.v(i['scrollIntoView'])}}" scroll-with-animation="{{helper.v(i['c32'])}}" enable-back-to-top="{{helper.v(i['c29'])}}" enable-flex="{{helper.v(i['c35'])}}" scroll-anchoring="{{helper.v(i['c22'])}}" refresher-enabled="{{helper.v(i['c23'])}}" refresher-threshold="{{helper.v(i['c24'])}}" refresher-default-style="{{helper.v(i['c25'])}}" refresher-triggered="{{helper.v(i['c27'])}}" enhanced="{{helper.v(i['enhanced'])}}" bounces="{{helper.v(i['bounces'])}}" show-scrollbar="{{helper.v(i['showScrollbar'])}}" paging-enabled="{{helper.v(i['pagingEnabled'])}}" fast-deceleration="{{helper.v(i['fastDeceleration'])}}" scroll-top="{{i['scrollTop']}}" scroll-left="{{i['scrollLeft']}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </scroll-view>
+</template>
+<template name="oc_text">
+    <text id="{{helper.v(i['id'])}}" class="{{helper.v(i['c1'])}}" style="{{helper.v(i['c2'])}}" selectable="{{helper.v(i['c18'])}}" user-select="{{helper.v(i['userSelect'])}}" space="{{helper.v(i['space'])}}" decode="{{helper.v(i['c40'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </text>
+</template>
+<template name="oc_2_text">
+    <text id="{{helper.v(i['id'])}}" class="{{helper.v(i['c1'])}}" style="{{helper.v(i['c2'])}}" selectable="{{helper.v(i['c18'])}}" user-select="{{helper.v(i['userSelect'])}}" space="{{helper.v(i['space'])}}" decode="{{helper.v(i['c40'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </text>
+</template>
+<template name="oc_3_text">
+    <text id="{{helper.v(i['id'])}}" class="{{helper.v(i['c1'])}}" style="{{helper.v(i['c2'])}}" selectable="{{helper.v(i['c18'])}}" user-select="{{helper.v(i['userSelect'])}}" space="{{helper.v(i['space'])}}" decode="{{helper.v(i['c40'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </text>
+</template>
+<template name="oc_4_text">
+    <text id="{{helper.v(i['id'])}}" class="{{helper.v(i['c1'])}}" style="{{helper.v(i['c2'])}}" selectable="{{helper.v(i['c18'])}}" user-select="{{helper.v(i['userSelect'])}}" space="{{helper.v(i['space'])}}" decode="{{helper.v(i['c40'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </text>
+</template>
+<template name="oc_5_text">
+    <text id="{{helper.v(i['id'])}}" class="{{helper.v(i['c1'])}}" style="{{helper.v(i['c2'])}}" selectable="{{helper.v(i['c18'])}}" user-select="{{helper.v(i['userSelect'])}}" space="{{helper.v(i['space'])}}" decode="{{helper.v(i['c40'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </text>
+</template>
+<template name="oc_pure-text">
+    <text id="{{helper.v(i['id'])}}" class="{{helper.v(i['class'],i['c1'])}}" style="{{helper.v(i['c2'])}}" selectable="{{helper.v(i['c18'])}}" user-select="{{helper.v(i['userSelect'])}}" space="{{helper.v(i['space'])}}" decode="{{helper.v(i['c40'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </text>
+</template>
+<template name="oc_2_pure-text">
+    <text id="{{helper.v(i['id'])}}" class="{{helper.v(i['class'],i['c1'])}}" style="{{helper.v(i['c2'])}}" selectable="{{helper.v(i['c18'])}}" user-select="{{helper.v(i['userSelect'])}}" space="{{helper.v(i['space'])}}" decode="{{helper.v(i['c40'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </text>
+</template>
+<template name="oc_3_pure-text">
+    <text id="{{helper.v(i['id'])}}" class="{{helper.v(i['class'],i['c1'])}}" style="{{helper.v(i['c2'])}}" selectable="{{helper.v(i['c18'])}}" user-select="{{helper.v(i['userSelect'])}}" space="{{helper.v(i['space'])}}" decode="{{helper.v(i['c40'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </text>
+</template>
+<template name="oc_4_pure-text">
+    <text id="{{helper.v(i['id'])}}" class="{{helper.v(i['class'],i['c1'])}}" style="{{helper.v(i['c2'])}}" selectable="{{helper.v(i['c18'])}}" user-select="{{helper.v(i['userSelect'])}}" space="{{helper.v(i['space'])}}" decode="{{helper.v(i['c40'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </text>
+</template>
+<template name="oc_5_pure-text">
+    <text id="{{helper.v(i['id'])}}" class="{{helper.v(i['class'],i['c1'])}}" style="{{helper.v(i['c2'])}}" selectable="{{helper.v(i['c18'])}}" user-select="{{helper.v(i['userSelect'])}}" space="{{helper.v(i['space'])}}" decode="{{helper.v(i['c40'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </text>
+</template>
+<template name="oc_view">
+    <view id="{{helper.v(i['id'])}}" class="{{helper.v(i['c1'])}}" style="{{helper.v(i['c2'])}}" hover-class="{{helper.v(i['c9'])}}" hover-stop-propagation="{{helper.v(i['c10'])}}" hover-start-time="{{helper.v(i['c6'])}}" hover-stay-time="{{helper.v(i['c7'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </view>
+</template>
+<template name="oc_2_view">
+    <view id="{{helper.v(i['id'])}}" class="{{helper.v(i['c1'])}}" style="{{helper.v(i['c2'])}}" hover-class="{{helper.v(i['c9'])}}" hover-stop-propagation="{{helper.v(i['c10'])}}" hover-start-time="{{helper.v(i['c6'])}}" hover-stay-time="{{helper.v(i['c7'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </view>
+</template>
+<template name="oc_3_view">
+    <view id="{{helper.v(i['id'])}}" class="{{helper.v(i['c1'])}}" style="{{helper.v(i['c2'])}}" hover-class="{{helper.v(i['c9'])}}" hover-stop-propagation="{{helper.v(i['c10'])}}" hover-start-time="{{helper.v(i['c6'])}}" hover-stay-time="{{helper.v(i['c7'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </view>
+</template>
+<template name="oc_pure-view">
+    <view id="{{helper.v(i['id'])}}" class="{{helper.v(i['c1'])}}" style="{{helper.v(i['c2'])}}" slot="{{helper.v(i['slot'])}}" hover-class="{{helper.v(i['c9'])}}" hover-start-time="{{helper.v(i['c6'])}}" hover-stay-time="{{helper.v(i['c7'])}}" animation="{{helper.v(i['animation'])}}" hover-stop-propagation="{{helper.v(i['c10'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </view>
+</template>
+<template name="oc_2_pure-view">
+    <view id="{{helper.v(i['id'])}}" class="{{helper.v(i['c1'])}}" style="{{helper.v(i['c2'])}}" slot="{{helper.v(i['slot'])}}" hover-class="{{helper.v(i['c9'])}}" hover-start-time="{{helper.v(i['c6'])}}" hover-stay-time="{{helper.v(i['c7'])}}" animation="{{helper.v(i['animation'])}}" hover-stop-propagation="{{helper.v(i['c10'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </view>
+</template>
+<template name="oc_3_pure-view">
+    <view id="{{helper.v(i['id'])}}" class="{{helper.v(i['c1'])}}" style="{{helper.v(i['c2'])}}" slot="{{helper.v(i['slot'])}}" hover-class="{{helper.v(i['c9'])}}" hover-start-time="{{helper.v(i['c6'])}}" hover-stay-time="{{helper.v(i['c7'])}}" animation="{{helper.v(i['animation'])}}" hover-stop-propagation="{{helper.v(i['c10'])}}">
+        <block wx:for="{{i.cn}}" wx:key="id">
+        <template is="{{'OCTOPUS_' + (tid + 1) + '_CONTAINER'}}" data="{{i: item, ancestor: ancestor + ',' + i.te, tid: tid + 1 }}" />
+        </block>
+    </view>
+</template>
+
+<template name="OCTOPUS_1_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 1 }}" />
+</template>
+<template name="OCTOPUS_2_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 2 }}" />
+</template>
+<template name="OCTOPUS_3_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 3 }}" />
+</template>
+<template name="OCTOPUS_4_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 4 }}" />
+</template>
+<template name="OCTOPUS_5_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 5 }}" />
+</template>
+<template name="OCTOPUS_6_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 6 }}" />
+</template>
+<template name="OCTOPUS_7_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 7 }}" />
+</template>
+<template name="OCTOPUS_8_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 8 }}" />
+</template>
+<template name="OCTOPUS_9_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 9 }}" />
+</template>
+<template name="OCTOPUS_10_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 10 }}" />
+</template>
+<template name="OCTOPUS_11_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 11 }}" />
+</template>
+<template name="OCTOPUS_12_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 12 }}" />
+</template>
+<template name="OCTOPUS_13_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 13 }}" />
+</template>
+<template name="OCTOPUS_14_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 14 }}" />
+</template>
+<template name="OCTOPUS_15_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 15 }}" />
+</template>
+<template name="OCTOPUS_16_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 16 }}" />
+</template>
+<template name="OCTOPUS_17_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 17 }}" />
+</template>
+<template name="OCTOPUS_18_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 18 }}" />
+</template>
+<template name="OCTOPUS_19_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 19 }}" />
+</template>
+<template name="OCTOPUS_20_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 20 }}" />
+</template>
+<template name="OCTOPUS_21_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 21 }}" />
+</template>
+<template name="OCTOPUS_22_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 22 }}" />
+</template>
+<template name="OCTOPUS_23_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 23 }}" />
+</template>
+<template name="OCTOPUS_24_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 24 }}" />
+</template>
+<template name="OCTOPUS_25_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 25 }}" />
+</template>
+<template name="OCTOPUS_26_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 26 }}" />
+</template>
+<template name="OCTOPUS_27_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 27 }}" />
+</template>
+<template name="OCTOPUS_28_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 28 }}" />
+</template>
+<template name="OCTOPUS_29_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 29 }}" />
+</template>
+<template name="OCTOPUS_30_CONTAINER" data="{{i: i}}">
+  <template is="{{helper.tid(i.te, ancestor, i.id)}}" data="{{i: i, ancestor: ancestor + ',' + i.te, tid: 30 }}" />
+</template>
+
+<template name="oc_plain-text">{{i.tt}}</template>
+
+<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
+
+<template is="OCTOPUS_BASE_TEMPLATE" data="{{root: root}}" />
+
+<button bindtap="onButtonTap">click me~</button>

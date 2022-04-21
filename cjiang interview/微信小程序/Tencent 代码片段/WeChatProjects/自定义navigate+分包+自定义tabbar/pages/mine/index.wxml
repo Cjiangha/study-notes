@@ -1,0 +1,3 @@
+<cBar title="{{title}}"></cBar>
+<view class="intro">hi, Custom Bar</view>
+<view class="intro">其他页面</view>

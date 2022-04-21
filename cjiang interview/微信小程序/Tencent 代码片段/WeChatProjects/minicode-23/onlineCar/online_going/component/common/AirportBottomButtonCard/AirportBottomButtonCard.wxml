@@ -1,0 +1,19 @@
+
+<wxs module="m">
+var anyui = require("../../../../../_anyui/utils/helper.wxs");
+module.exports._expId1 = function (fontStyle) {return anyui.processStyle(fontStyle);;};</wxs>
+<view class="_bottom-button-card_s4fvm_1 anyui_view {{className || ''}}" wx:if="{{__ready__}}">
+     <view class="_icon-wrap_s4fvm_7 anyui_view">
+       <view class="_icon-wrap__left_s4fvm_10 anyui_view">
+        
+         </view>
+       <view class="_icon-wrap__right_s4fvm_15 anyui_view" wx:if="{{showCurrentLocationIcon}}">
+        
+         </view>
+       </view>
+     <block wx:if="{{ !__slotObj['default'] }}"></block>
+     <slot>
+       </slot>
+     <view class="_bottom-button-card__button_s4fvm_20 anyui_view" bindtap="btnClick" style="{{m._expId1(fontStyle, _a_)}}">{{btnText}}</view>
+     </view>
+   

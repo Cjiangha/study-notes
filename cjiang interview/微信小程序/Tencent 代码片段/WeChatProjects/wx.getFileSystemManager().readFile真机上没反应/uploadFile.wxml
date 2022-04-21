@@ -1,0 +1,31 @@
+<!--components/uploadImg/uploadimg.wxml-->
+<view class="upload-img-component">
+	<view class="upload-img-box">
+		<view class="item" wx:for="{{newFileList}}" wx:key="index" data-item="{{item}}">
+			<view class="img" bindtap="onPreview" data-item="{{item}}">
+				<!-- <image src="{{previewImageHost + '/HelpPage/DownloadFile.ashx?fileid='+item.path}}" style="object-fit:cover"  wx:if="{{item.type === '_img_'}}"></image> -->				
+				<image src="{{'http://hsbackup1.oss-accelerate.aliyuncs.com/'+item.path+'?x-oss-process=image/resize,h_70,w_70,m_lfit/quality,q_50'}}" style="object-fit:cover"  wx:if="{{item.type === '_img_'}}" id="uploadImgs"></image>
+				<image src="../../images/baodan_icon_pdf@2x.png" style="object-fit:cover" wx:if="{{item.type === '_pdf_'}}"></image>
+			</view>
+
+			<view class="delete-icon" wx:if="{{isDel}}" bindtap="deleteImg" data-item="{{item}}">
+				<text class="fa fa-close"></text>
+			</view>
+		</view>
+
+		<view class="upload-file-box" wx:if="{{isDisabled}}">
+			<button bindtap="toggleActionSheet" class="upload-btn"></button>
+			<view class="item" wx:if="{{totalCount && newFileList.length !== totalCount}}">
+				<view class="upload">
+					<image src="../../images/baodan_icon_add@2x.png" mode="widthFix" class="sm"/>
+				</view>
+			</view>
+			<view class="item" wx:if="{{!totalCount}}">
+				<view class="upload">
+					<image src="../../images/baodan_icon_add@2x.png" mode="widthFix" class="sm"/>
+				</view>
+			</view>
+		</view>
+	</view>
+
+</view>

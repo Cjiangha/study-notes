@@ -1,0 +1,25 @@
+<view class="navar-wrap">
+  <view class="navbar">自定义导航栏</view>
+</view>
+<view id="item1" class="item">item number:1</view>
+<view id="item2" class="item">item number:2</view>
+<view id="item3" class="item">item number:3</view>
+<view id="item4" class="item">item number:4</view>
+<view id="item5" class="item">item number:5</view>
+<view id="item6" class="item">item number:6</view>
+<view id="item7" class="item">item number:7</view>
+<view id="item8" class="item">item number:8</view>
+<view id="item9" class="item">item number:9</view>
+<view id="item10" class="item">item number:10</view>
+<view id="item11" class="item">item number:11</view>
+<view id="item12" class="item">item number:12</view>
+<view id="item13" class="item">item number:13</view>
+<view id="item14" class="item">item number:14</view>
+<view id="item15" class="item">item number:15</view>
+<view id="item16" class="item">item number:16</view>
+<view id="item17" class="item">item number:17</view>
+<view id="item18" class="item">item number:18</view>
+<view id="item19" class="item">item number:19</view>
+<view id="item20" class="item">item number:20</view>
+
+<view class="btn" catchtap="jump">jump</view>

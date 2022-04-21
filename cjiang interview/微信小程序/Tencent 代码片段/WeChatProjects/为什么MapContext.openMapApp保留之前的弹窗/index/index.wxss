@@ -1,0 +1,11 @@
+.home-page {
+  font-size: 32px;
+  color: red;
+}
+.desc {
+  margin-top: 30px;
+  font-size: 18px;
+}
+.point {
+  color: red;
+}

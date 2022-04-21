@@ -1,0 +1,42 @@
+
+<wxs module='proputil'>
+var propsInfo={_1:{"bind:loginClick":"btnClick_custHd_1"}};module.exports.getProps=function(n){return propsInfo[n]};
+</wxs>
+
+<wxs module="m">
+var anyui = require("../../../_anyui/utils/helper.wxs");var anyuiClass = require("./CommonError.style.wxs");
+
+module.exports._expId1 = function (wrapClass) {return anyui.processClass(wrapClass, anyuiClass.wrap());;};
+module.exports._expId2 = function (wrapStyle) {return anyui.processStyle(wrapStyle);;};</wxs>
+<view class="_common-error_jygsw_1 anyui_view {{m._expId1(wrapClass, _a_)}} {{className || ''}}" wx:if="{{__ready__}}" style="{{m._expId2(wrapStyle, _a_)}}">
+     <view class="_error-img-wrap_jygsw_11 anyui_view">
+       <image class="_error-img_jygsw_11 anyui_image" mode="widthFix" src="{{imgSrc}}"/>
+       </view>
+     <view class="_error-title_jygsw_15 anyui_view">
+       <block wx:if="{{ !__slotObj['title'] }}">{{title}}</block>
+       <slot name="title">
+         </slot>
+       </view>
+     <view class="_error-desc_jygsw_21 anyui_view">
+       <block wx:if="{{ !__slotObj['desc'] }}">{{desc}}</block>
+       <slot name="desc">
+         </slot>
+       </view>
+     <view class="_error-btn-wrap_jygsw_27 anyui_view">
+       <login-wrapper __slots="{{ ['default']}}" bind:loginClick="btnClick_custHd_1" wx:if="{{isNotLogin}}" anyuiProps="{{proputil.getProps('_1')}}" bindparentmounted="returnRef">
+         <block wx:if="{{ !__slotObj['btn'] }}">
+           <view class="_error-btn_jygsw_27 anyui_view" wx:if="{{btnText}}">{{btnText}}</view>
+           </block>
+         <slot name="btn">
+           </slot>
+         </login-wrapper>
+       <block wx:else>
+         <block wx:if="{{ !__slotObj['btn'] }}">
+           <view class="_error-btn_jygsw_27 anyui_view" wx:if="{{btnText}}" bindtap="btnClick">{{btnText}}</view>
+           </block>
+         <slot name="btn">
+           </slot>
+         </block>
+       </view>
+     </view>
+   

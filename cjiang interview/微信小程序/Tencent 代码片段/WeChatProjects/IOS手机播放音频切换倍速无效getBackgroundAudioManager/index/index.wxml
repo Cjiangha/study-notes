@@ -1,0 +1,10 @@
+<!-- <button class="updateAudio" catchtap="clickBeginListen">开始播</button>
+<button class="updateAudio" catchtap="clickRateAudio">{{ratePlayStr}}</button>
+<div style="height: 300px; width:300px;position: relative;">
+    <camera style="height: 200px; width:200px;position: absolute;top: 10px;"></camera>
+    <p>123</p>
+</div> -->
+
+<button bindtap="ddd">
+    订阅
+</button>

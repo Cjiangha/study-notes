@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "分包",
+    "onReachBottomDistance": 330,
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "dark",
+    "usingComponents": {
+  		"fBar": "../../components/tab_bar/tab_bar",
+  		"cBar": "/components/cBar/index"
+    }
+}

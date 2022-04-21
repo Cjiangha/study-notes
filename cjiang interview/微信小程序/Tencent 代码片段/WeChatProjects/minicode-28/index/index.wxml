@@ -1,0 +1,10 @@
+<view class="container">
+    <map
+    class="map"
+    circles="{{circles}}"
+    latitude="23.00000"
+    longitude="120.00000"
+    ></map>
+    <block wx:if="{{hide}}"><view class="tap" bindtap="showcircle">SHOW</view></block>
+    <block wx:else><view class="tap" bindtap="hidecircle">HIDE</view></block>
+</view>

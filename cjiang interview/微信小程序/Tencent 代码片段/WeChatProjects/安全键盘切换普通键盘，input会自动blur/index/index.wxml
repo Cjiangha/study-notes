@@ -1,0 +1,38 @@
+<view class="container">
+  <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+ 
+		<mp-form rules='{{rules}}' id="form1" models='{{form1}}'>
+			<view class="uni-flex">
+        <view class="bg-color-fff left-view">
+          <icon class="iconfont icon-phone_icon left-icon" ></icon>
+        </view>
+        <view class="right-view" prop="phone">
+          <input class="uni-input" bindinput="phoneEvent" placeholder="请输入手机号"
+          type="number" hold-keyboard="{{true}}"/>
+        </view>
+			</view>
+			<view class="uni-flex">
+        <view class="bg-color-fff left-view">
+          <icon class="iconfont icon-mimasuo left-icon"></icon>
+        </view>
+        <view class="right-view" prop="password">
+          <input class="uni-input" password bindinput="passwordEvent"  placeholder="请输入密码" hold-keyboard="{{true}}"
+          bindconfirm="pwNext" bindfocus="pwFocus" bindblur="pwBlur"/>
+        </view>
+			</view>
+      <view class="uni-flex">
+        <view class="bg-color-fff left-view">
+          <icon class="iconfont icon-yanzhengma left-icon" ></icon>
+        </view>
+        <view class="right-view">
+          <view class="uni-input uni-flex" prop="verificationCode">
+            <input class="uni-input-verification" bindinput="verificationCodeEvent"   placeholder="请输入验证码"
+             focus = "{{verificationFocus}}" hold-keyboard="{{true}}" bindfocus="verificationFocus" bindblur="verificationBlur"/>
+          </view>
+        </view>
+			</view>
+			<view style="margin-top: 20rpx;">
+				<button class="login_button" form-type="submit" bindtap="login">登录</button>
+			</view>
+		</mp-form>
+</view>

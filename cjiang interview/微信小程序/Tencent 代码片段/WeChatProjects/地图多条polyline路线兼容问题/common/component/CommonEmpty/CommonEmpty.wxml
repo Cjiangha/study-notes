@@ -1,0 +1,23 @@
+
+<wxs module="m">
+var anyui = require("../../../_anyui/utils/helper.wxs");var anyuiClass = require("./CommonEmpty.style.wxs");
+
+module.exports._expId1 = function (wrapClass) {return anyui.processClass(wrapClass, anyuiClass.wrap());;};
+module.exports._expId2 = function (wrapStyle) {return anyui.processStyle(wrapStyle);;};</wxs>
+<view class="_common-empty_1wk86_1 anyui_view {{m._expId1(wrapClass, _a_)}} {{className || ''}}" wx:if="{{__ready__}}" style="{{m._expId2(wrapStyle, _a_)}}">
+     <image class="_empty-img_1wk86_11 anyui_image" mode="widthFix" src="{{emptyImg}}"/>
+     <view class="_empty-title_1wk86_15 anyui_view">
+       <block wx:if="{{ !__slotObj['title'] }}">{{title}}</block>
+       <slot name="title">
+         </slot>
+       </view>
+     <view class="_empty-desc_1wk86_21 anyui_view">
+       <block wx:if="{{ !__slotObj['desc'] }}">{{desc}}</block>
+       <slot name="desc">
+         </slot>
+       </view>
+     <block wx:if="{{ !__slotObj['extra'] }}"></block>
+     <slot name="extra">
+       </slot>
+     </view>
+   

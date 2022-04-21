@@ -1,0 +1,34 @@
+page ._routes-card_1r8l6_1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+page ._routes-right_1r8l6_8 {
+  position: absolute;
+  right: 16rpx;
+  top: -174rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+page ._routes-right_wrap_bottom_1r8l6_15 {
+  margin-top: 5rpx;
+}
+
+page ._routes-right_pos_1r8l6_18 {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+page ._routes-nav_1r8l6_22 {
+  height: 88rpx;
+  padding: 0 32rpx 0 5rpx;
+  background: #FFFFFF;
+  box-shadow: 0 4rpx 16rpx 0 rgba(0, 0, 0, 0.1);
+  border-radius: 18rpx;
+  display: inline-block;
+  align-items: center;
+  margin: 0 16rpx 16rpx 16rpx;
+}

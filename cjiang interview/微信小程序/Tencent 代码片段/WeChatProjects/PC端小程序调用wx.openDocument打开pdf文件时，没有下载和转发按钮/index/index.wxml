@@ -1,0 +1,1 @@
+<button style="margin-top: 100rpx;" type="primary" bindtap="openDocument">打开文件</button>

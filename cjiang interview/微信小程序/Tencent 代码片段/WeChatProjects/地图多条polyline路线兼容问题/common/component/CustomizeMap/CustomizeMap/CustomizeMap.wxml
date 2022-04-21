@@ -1,0 +1,38 @@
+
+<wxs module='proputil'>
+var propsInfo={_15:{id:"id",setting:"setting",scale:"scale",rotate:"rotate",markers:"mapMarkers",polyline:"polyline",polygon:"polygon",includePoints:"includePoints","include-padding":"includePadding",onCalloutTap:"handleCallouttap",onMarkerTap:"handleMarkertap",onRegionChange:"handleRegionchange","show-location":"showLocation",subkey:"subkey","bind:_ref":"_saveRef1"},_16:{customizeParams:"item"},_17:{customizeParams:"item"},_18:{customizeParams:"item"},_19:{customizeParams:"item"},_20:{customizeParams:"item"},_21:{customizeParams:"item"},_22:{customizeParams:"item"},_23:{customizeParams:"item"},_24:{customizeParams:"item"},_25:{customizeParams:"item"}};module.exports.getProps=function(e){return propsInfo[e]};
+</wxs>
+
+<wxs module="m">
+var anyui = require("../../../../_anyui/utils/helper.wxs");var anyuiClass = require("./CustomizeMap.style.wxs");
+
+module.exports._expId1 = function (hideScrollStyle) {return anyui.processClass({
+  'hide-scroll': hideScrollStyle
+}, anyuiClass.wrap());;};</wxs>
+<view class="map-wrapper anyui_view {{m._expId1(hideScrollStyle, _a_)}} {{className || ''}}" wx:if="{{__ready__}}">
+     <!-- 北京图书大厦：116.377078，39.907883 -->
+     <v-map class="anyui_map" className="anyui_map" __slots="{{ ['default']}}" bind:_ref="_saveRef1" anyuiProps="{{proputil.getProps('_15')}}" bindparentmounted="returnRef" id="{{id}}" setting="{{setting}}" longitude="{{longitude || '116.377078'}}" latitude="{{latitude || '39.907883'}}" scale="{{scale}}" rotate="{{rotate}}" markers="{{mapMarkers}}" polyline="{{polyline}}" polygon="{{polygon}}" includePoints="{{includePoints}}" include-padding="{{includePadding}}" onCalloutTap="handleCallouttap" onMarkerTap="handleMarkertap" onRegionChange="handleRegionchange" show-location="{{showLocation}}" subkey="{{subkey}}">
+       <block>
+         <!-- 微信自定义渲染模板 -->
+         <customize-marker1 wx:for="{{customizeMarkerData[1]}}" __slots="{{ []}}" wx:for-item="item" wx:for-index="index2" anyuiProps="{{proputil.getProps('_16')}}" bindparentmounted="returnRef" wx:key="markerId" customizeParams="{{item}}"></customize-marker1>
+         <customize-marker2 wx:for="{{customizeMarkerData[2]}}" __slots="{{ []}}" wx:for-item="item" wx:for-index="index3" anyuiProps="{{proputil.getProps('_17')}}" bindparentmounted="returnRef" wx:key="markerId" customizeParams="{{item}}"></customize-marker2>
+         <customize-marker3 wx:for="{{customizeMarkerData[3]}}" __slots="{{ []}}" wx:for-item="item" wx:for-index="index4" anyuiProps="{{proputil.getProps('_18')}}" bindparentmounted="returnRef" wx:key="markerId" customizeParams="{{item}}"></customize-marker3>
+         <customize-marker4 wx:for="{{customizeMarkerData[4]}}" __slots="{{ []}}" wx:for-item="item" wx:for-index="index5" anyuiProps="{{proputil.getProps('_19')}}" bindparentmounted="returnRef" wx:key="markerId" customizeParams="{{item}}"></customize-marker4>
+         <customize-marker5 wx:for="{{customizeMarkerData[5]}}" __slots="{{ []}}" wx:for-item="item" wx:for-index="index6" anyuiProps="{{proputil.getProps('_20')}}" bindparentmounted="returnRef" wx:key="markerId" customizeParams="{{item}}"></customize-marker5>
+         <customize-marker6 wx:for="{{customizeMarkerData[6]}}" __slots="{{ []}}" wx:for-item="item" wx:for-index="index7" anyuiProps="{{proputil.getProps('_21')}}" bindparentmounted="returnRef" wx:key="markerId" customizeParams="{{item}}"></customize-marker6>
+         <customize-marker7 wx:for="{{customizeMarkerData[7]}}" __slots="{{ []}}" wx:for-item="item" wx:for-index="index8" anyuiProps="{{proputil.getProps('_22')}}" bindparentmounted="returnRef" wx:key="markerId" customizeParams="{{item}}"></customize-marker7>
+         <intercity-cp-start-marker wx:for="{{customizeMarkerData['intercity-cp']}}" __slots="{{ []}}" wx:for-item="item" wx:for-index="index9" anyuiProps="{{proputil.getProps('_23')}}" bindparentmounted="returnRef" wx:key="markerId" customizeParams="{{item}}"></intercity-cp-start-marker>
+         <online-modify-location-marker wx:for="{{customizeMarkerData['online-modify-location']}}" __slots="{{ []}}" wx:for-item="item" wx:for-index="index10" anyuiProps="{{proputil.getProps('_24')}}" bindparentmounted="returnRef" wx:key="markerId" customizeParams="{{item}}"></online-modify-location-marker>
+         <online-modify-location-tip-marker wx:for="{{customizeMarkerData['online-modify-location-tip']}}" __slots="{{ []}}" wx:for-item="item" wx:for-index="index11" anyuiProps="{{proputil.getProps('_25')}}" bindparentmounted="returnRef" wx:key="markerId" customizeParams="{{item}}"></online-modify-location-tip-marker>
+         </block>
+       </v-map>
+     <view class="_callout-wrapper_1k9ex_6 anyui_view" wx:if="{{showMapCenterCallout || showMapCenterIcon}}">
+       <!-- 扎标 气泡 -->
+       <block wx:if="{{showMapCenterCallout}}"></block>
+       <slot name="centerCallout" wx:if="{{showMapCenterCallout}}">
+         </slot>
+       <!-- 扎标 线 -->
+       <image class="_callout-wrapper__center-icon_1k9ex_14 anyui_image" src="/common/component/CustomizeMap/image/start-center.png" mode="scaleToFill" wx:if="{{showMapCenterIcon}}"/>
+       </view>
+     </view>
+   

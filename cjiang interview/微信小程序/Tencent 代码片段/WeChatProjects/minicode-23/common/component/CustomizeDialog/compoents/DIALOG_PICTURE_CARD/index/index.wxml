@@ -1,0 +1,22 @@
+
+<wxs module='proputil'>
+var propsInfo={_1:{nodes:"richTipsTitle"}};module.exports.getProps=function(o){return propsInfo[o]};
+</wxs>
+
+<wxs module="m">
+var anyui = require("../../../../../../_anyui/utils/helper.wxs");var anyuiClass = require("./index.style.wxs");
+
+module.exports._expId1 = function (customClass) {return anyui.processClass(['customize-dialog_main', customClass], anyuiClass.wrap());;};</wxs>
+<view class="_customize-dialog_pra15_15 _flex-vc_pra15_1 anyui_view {{className || ''}}" wx:if="{{__ready__ && (show) }}" catchtouchmove disableScroll="{{false}}">
+     <!-- 遮罩层,支持配置 -->
+     <view class="_customize-dialog_mask_pra15_23 anyui_view" wx:if="{{mask}}"></view>
+     <view class="anyui_view {{m._expId1(customClass, _a_)}}">
+       <view class="_customize-dialog_main-body_pra15_37 anyui_view">
+         <image class="_customize-dialog_main-head-img_pra15_40 anyui_image" src="https://img.alicdn.com/imgextra/i1/O1CN01b8RzDQ1Iu3lWzOGW4_!!6000000000952-2-tps-516-282.png" mode="widthFix"/>
+         <v-rich-text class="_customize-dialog_main-rich-title_pra15_45 anyui_rich-text" className="_customize-dialog_main-rich-title_pra15_45 anyui_rich-text" __slots="{{ []}}" anyuiProps="{{proputil.getProps('_1')}}" bindparentmounted="returnRef" nodes="{{richTipsTitle}}"></v-rich-text>
+         <view class="_customize-dialog_main-desc_pra15_52 anyui_view">{{popupInfo.description}}</view>
+         </view>
+       <view class="_customize-dialog_main-footer_pra15_60 anyui_view" bindtap="handleOk">{{popupInfo.buttonText}}</view>
+       </view>
+     </view>
+   

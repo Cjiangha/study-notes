@@ -1,0 +1,8 @@
+<view class="box">
+  <view style="margin-bottom: 40rpx;">点击下方灰色区域上传图片</view>
+  <view class="up-box" bindtap="upImg"></view>
+
+  <view class="show-img">显示图片</view>
+  <image src="{{ item.url }}" mode="widthFix" wx:for="{{ fileList }}" wx:key="index" />
+</view>
+<view bindtap="dd" style="background-color: aqua;">点我 获取getNetworkType</view>

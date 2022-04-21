@@ -1,0 +1,21 @@
+page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* #这里是让滚动条不显示
+.container::-webkit-scrollbar {
+  width: 0 !important;
+}
+.container { -ms-overflow-style: none; }
+.container { overflow: -moz-scrollbars-none; } */

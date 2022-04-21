@@ -1,0 +1,8 @@
+<view class="box {{extraClasses}}"
+  bindtransitionend="transitionEnd"
+  bindanimationstart="animationStart"
+  bindanimationiteration="animationIteration"
+></view>
+
+<button class="btn" bindtap="triggerTransition">触发 CSS 渐变</button>
+<button class="btn" bindtap="triggerAnimation">触发 CSS 动画</button>

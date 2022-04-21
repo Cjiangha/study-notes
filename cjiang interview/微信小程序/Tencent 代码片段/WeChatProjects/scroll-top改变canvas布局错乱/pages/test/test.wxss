@@ -1,0 +1,22 @@
+/* pages/test/test.wxss */
+.qr-code-exact,.position_ab{
+   position: absolute;
+   left: 50%;
+   top: 50rpx;
+   transform: translate(-50%,0);
+}
+.scroll_view{
+   width: 90%;
+   height: 1000rpx;
+   position: fixed;
+   left: 5%;
+   right: 5%;
+   top: 5%;
+   background-color: skyblue;
+}
+.enptyBox{
+   height: 1000rpx;
+}
+.canvasBox_p{
+   position: relative;
+}

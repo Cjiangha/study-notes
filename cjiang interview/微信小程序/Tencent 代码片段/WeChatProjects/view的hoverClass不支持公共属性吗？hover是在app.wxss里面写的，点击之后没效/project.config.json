@@ -1,0 +1,67 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "scopeDataCheck": false,
+    "coverView": true,
+    "es6": false,
+    "postcss": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "autoAudits": false,
+    "newFeature": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "useIsolateContext": false,
+    "nodeModules": false,
+    "enhance": true,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "ignoreUploadUnusedFiles": true,
+    "minifyWXML": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.23.2",
+  "appid": "wx8f3ed48b6504348b",
+  "projectname": "view%E7%9A%84hoverClass%E4%B8%8D%E6%94%AF%E6%8C%81%E5%85%AC%E5%85%B1%E5%B1%9E%E6%80%A7%E5%90%97%EF%BC%9Fhover%E6%98%AF%E5%9C%A8app.wxss%E9%87%8C%E9%9D%A2%E5%86%99%E7%9A%84%EF%BC%8C%E7%82%B9%E5%87%BB%E4%B9%8B%E5%90%8E%E6%B2%A1%E6%95%88",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "staticServerOptions": {
+    "baseURL": "",
+    "servePath": ""
+  },
+  "isGameTourist": false,
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": []
+    }
+  }
+}

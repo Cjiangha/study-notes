@@ -1,0 +1,13 @@
+<view class="userinfo">
+  <view class="userinfo-avatar">订单号</view>
+  <view class="userinfo-nickname-wrapper">
+    <view class="uploader-text" style="height: 52px;justify-content: center;align-items: center;display: flex;width: 100%;">
+      <input bindinput="getTradeNo" value="{{trade_no}}" style="font-size: 20px;justify-content: center;sdisplay: flex;" />
+    </view>
+  </view>
+</view>
+<button bindtap="pay" type="primary">支付</button>
+<button bindtap="payCheck" type="default">支付查询</button>
+<button bindtap="refund" type="default">退款</button>
+<button bindtap="refundCheck" type="default">退款查询</button>
+<button bindtap="cancelPay" type="default">取消支付</button>

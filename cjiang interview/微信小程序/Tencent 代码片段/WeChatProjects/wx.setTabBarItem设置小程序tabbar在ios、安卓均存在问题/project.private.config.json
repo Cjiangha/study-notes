@@ -1,0 +1,55 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/bindCard/bindCard",
+          "pathName": "pages/bindCard/bindCard",
+          "query": "appid=wxd158d3dd3bdf73cc&bind_tail=&enc_bankelem=iNZIgQ9sgCWaNVX1KmdXo7eEMDLXHJ37tgQkwf1fXfoh8ReSfGHN1BWzb++kDNqLGk8kvZQ4fdCPFCXewphisXkNPqB+udquBxudJYv0Chv8J4CbTrhOWJpUiyaeHxSrCL4T+OKiKtmMaGADvmA4/168ZcEaXagATGPhS4ynM3RaVaKjl6bwiH3vekWNoFm5RQ1NctzIsqBTHv31N3Fs4VRVC/uhrsGoiCfOPlXzz6jyeHNP37B4/IAUFsvy1YbdlXoicaMUldEPtqbf6sfGSfbQ/dhY7qEieCHF7LM3AbLZqD8jSkvPbAfbWscyDJ3wAQ2ji2TDLJBE4gYB78hYnw==&openid=oCacC5d7V1ilmvzv1X7v8vxIavoA&noncestr=ibuaiVcKdpRxkhJA&paysign=6a378247ede10d6aca291b34bb83fca96206552f&sessionid=sessionidXXXXXXXXXX&timestamp=timestampXXXXXX",
+          "scene": null
+        },
+        {
+          "name": "pages/bindError/bindError",
+          "pathName": "pages/bindError/bindError",
+          "query": "appid=wxd158d3dd3bdf73cc&bind_tail=&enc_bankelem=QPaevqaXMi/zJSpuM3/SLJkAk+2sCHNtinUWws6r77ldu9VzB5YgR31j+/ctP7lfdkQhdHQCzabb+Vi9FrAk/pTA7X7vKQ/wTXGOtQ3fs7Jc2Owx+0c8jETyPrvQbRlVgq31hnQpFtI/w8kdehZilf/h6f0/eW2THJ3jqzkiZ5/tjMJSNE892NNKLou21i8fv4P9sGlRCgvYMaH/fWs58PpYP6Ybr9MBqUvGfdPjh8NduV+bS+OWp+Fjhdvqy45TeCLFLBlPvCXNeCcdWfICinsOwd2kVm0COkKzw6yIsvAq4bqnIcRMcCibGr/ub7FqJ7doY0tbAUCEXs815b6lVg==&openid=oCacC5XsyjiIklWv7up_5-gtJPwA&noncestr=ibuaiVcKdpRxkhJA&paysign=fd15ff0a4f412a314273ec2c90ad5342b576d8ae&signtype=sha1&sessionid=sessionidXXXXXXXXXX&timestamp=timestampXXXXXX",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/jkbind/jkbind",
+          "pathName": "pages/jkbind/jkbind",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/netDetail/index",
+          "pathName": "pages/netDetail/index",
+          "query": "branchno=7014",
+          "scene": null
+        },
+        {
+          "name": "pages/netList/index",
+          "pathName": "pages/netList/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/activityList/index",
+          "pathName": "pages/activityList/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

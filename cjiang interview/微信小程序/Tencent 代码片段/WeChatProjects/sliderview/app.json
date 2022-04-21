@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "index/index",
+    "index2/index2"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "useExtendedLib": {
+    "weui": true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+    "embeddedAppIdList": ["wx82d43fee89cdc7df"]
+}

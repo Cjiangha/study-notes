@@ -1,0 +1,3 @@
+<!--subIndex/index.wxml-->
+<text>子页面</text>
+<button bindtap="handleGoMinePage">跳转到我的页面</button>

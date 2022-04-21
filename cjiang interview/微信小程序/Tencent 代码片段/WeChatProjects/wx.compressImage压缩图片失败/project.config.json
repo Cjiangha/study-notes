@@ -1,0 +1,64 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "scopeDataCheck": false,
+    "coverView": true,
+    "es6": false,
+    "postcss": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "autoAudits": false,
+    "newFeature": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "useIsolateContext": false,
+    "nodeModules": false,
+    "enhance": true,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "ignoreUploadUnusedFiles": true,
+    "minifyWXML": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.16.0",
+  "appid": "wx8f3ed48b6504348b",
+  "projectname": "wx.compressImage%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87%E5%A4%B1%E8%B4%A5",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": []
+    }
+  }
+}

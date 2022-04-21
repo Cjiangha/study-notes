@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "v-map": "@alife/anyui-wx-component/components/Map/Map",
+    "customize-marker1": "../layout/CustomizeMarker1/CustomizeMarker1",
+    "customize-marker2": "../layout/CustomizeMarker2/CustomizeMarker2",
+    "customize-marker3": "../layout/CustomizeMarker3/CustomizeMarker3",
+    "customize-marker4": "../layout/CustomizeMarker4/CustomizeMarker4",
+    "customize-marker5": "../layout/CustomizeMarker5/CustomizeMarker5",
+    "customize-marker6": "../layout/CustomizeMarker6/CustomizeMarker6",
+    "customize-marker7": "../layout/CustomizeMarker7/CustomizeMarker7",
+    "intercity-cp-start-marker": "../layout/intercity/IntercityCpStartMarker/IntercityCpStartMarker",
+    "online-modify-location-marker": "../layout/modifyLocation/OnlineModifyLocationMarker/OnlineModifyLocationMarker",
+    "online-modify-location-tip-marker": "../layout/modifyLocation/OnlineModifyLocationTipMarker/OnlineModifyLocationTipMarker"
+  },
+  "component": true
+}

@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "原生导航",
+  "usingComponents": {
+    "cBar": "/components/cBar/index"
+  }
+}

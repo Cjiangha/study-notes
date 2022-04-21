@@ -1,0 +1,69 @@
+<view class="page-body">
+    <view class="page-control">
+        <text class="txtCount">监测点总数：{{totals.length}}</text>
+        <text class="btnRefresh" bindtap="refresh">刷新</text>
+    </view>
+    <view class="page-status">
+      <!-- aspectFit |aspectFill|widthFix -->
+        <view>
+            <image class="imgstatus" src="{{isNormalImage}}" mode="aspectFit" lazy-load="false" binderror="" bindload="" bindtap="selectNormal">
+                
+            </image>
+            <text>正常: {{normals.length}}</text>
+        </view>
+        <view>
+            <image class="imgstatus" src="{{isOfflineImage}}" mode="aspectFit" lazy-load="false" binderror="" bindload="" bindtap="selectOffline">
+                
+            </image>
+            <text>离线: {{offlines.length}}</text>
+        </view>
+        <view>
+             <image class="imgstatus" src="{{isWarningImage}}" mode="aspectFit" lazy-load="false" binderror="" bindload="" bindtap="selectWarning">
+                
+            </image>
+            <text>预警: {{warnings.length}}</text>
+        </view>
+    </view>
+    <!-- <view class="btn-area">
+        <button bindtap="getCenterLocation" class="page-body-button" type="primary">获取位置</button>
+        <button bindtap="moveToLocation" class="page-body-button" type="primary">移动位置</button>
+        <button bindtap="translateMarker" class="page-body-button" type="primary">移动标注</button>
+        <button bindtap="includePoints" class="page-body-button" type="primary">缩放视野展示所有经纬度</button>
+    </view> -->
+  <view class="page-section page-section-gap">
+    <map
+        id="myMap"
+        style="width: 100%;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        show-location
+        bindmarkertap="markertap"
+        bindcallouttap="callouttap"
+        bindlabeltap="labeltap"
+    >
+        <cover-view slot="callout" >
+            <block wx:for="{{totals}}" wx:key="id">
+                <cover-view  class="customCallout" marker-id="{{item.id}}" >
+                    <cover-view class="callout-title">
+                        <cover-image class="callout-icon" mode="aspectFit" src="/image/信息.png"></cover-image>
+                        <cover-view class="callout-info">{{item.name}}</cover-view>
+                    </cover-view>
+                    <cover-view class="callout-content">
+                        <cover-view class="content-row">
+                            <cover-view class="lbl">联系人</cover-view>
+                            <cover-view class="txt">{{item.customCallout.user1}}</cover-view>
+                        </cover-view>
+                        <cover-view class="content-row">
+                            <cover-view class="lbl">地址</cover-view>
+                            <cover-view class="txt">{{item.customCallout.addr}}</cover-view>
+                        </cover-view>
+                       
+                    </cover-view>                
+                </cover-view>
+            </block>
+        </cover-view>
+    </map>
+  </view>
+
+</view>

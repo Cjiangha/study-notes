@@ -1,0 +1,10 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+
+.view{  
+  width: 200rpx;
+  height: 200rpx;
+  background-color: coral;
+}

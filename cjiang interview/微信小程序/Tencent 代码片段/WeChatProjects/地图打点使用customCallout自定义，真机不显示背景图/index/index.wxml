@@ -1,0 +1,17 @@
+
+<map style="width:100vw; height:100vh" layer-style="1" longitude='{{longitude}}' latitude='{{latitude}}' scale='{{scale}}' markers='{{markers}}' controls="{{controls}}" bindmarkertap='markertap' bindcontroltap='controltap' bindregionchange="regionchange" show-location>
+    <cover-view slot="callout">
+        <block wx:for="{{markers}}" wx:key="index">
+            <cover-view class="callout" marker-id="{{item.id}}" style="background-image:url({{item.imageUrl}});width:90rpx;height:93rpx" bindtap="markertap">
+                <cover-view style="color:{{item.color}};text-align: center;font-size:25rpx;margin-top:12px">{{item.vacancy}}</cover-view>
+            </cover-view>
+        </block>
+    </cover-view>
+</map>
+<image src="../image/carFull.png"></image>
+<view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
+    <view class="modals-cancel" bindtap="hideModal"></view>
+    <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">你好你好你好</view>
+</view>
+
+

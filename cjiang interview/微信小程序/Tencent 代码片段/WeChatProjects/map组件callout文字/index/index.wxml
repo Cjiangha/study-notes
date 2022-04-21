@@ -1,0 +1,13 @@
+<map id="myMap"
+     longitude="116.812246"
+     latitude="39.950938"
+     scale="13"
+     subkey="PP6BZ-QFJR2-EVYUK-CKSI2-2JZ6Z-STBXX"
+     layer-style='2'
+     show-location="true"
+     show-compass="true"
+     show-scale="true"
+     polyline="{{polyline}}"
+     markers="{{markers}}"
+     bindcallouttap="pointTap">
+</map>

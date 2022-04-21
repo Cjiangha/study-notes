@@ -1,0 +1,3 @@
+<view class="intro">
+  <button bindtap="handleClick">扫码测试</button>
+</view>

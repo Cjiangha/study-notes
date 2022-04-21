@@ -1,0 +1,4 @@
+<view class="intro">
+<button bindtap="play1">play 1</button>
+<button bindtap="play2" style="margin-top: 30rpx;">play 2</button>
+</view>

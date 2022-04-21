@@ -1,0 +1,15 @@
+page ._refresh-icon_3tpql_1 {
+  width: 80rpx;
+  height: 80rpx;
+  background: #fff;
+  box-shadow: 0 2rpx 8rpx 0 rgba(0, 0, 0, 0.1);
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+page ._refresh-icon_3tpql_1 ._img_3tpql_11 {
+  width: 38rpx;
+  height: 38rpx;
+}

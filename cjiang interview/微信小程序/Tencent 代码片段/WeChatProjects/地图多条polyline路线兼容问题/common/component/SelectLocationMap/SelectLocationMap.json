@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "customize-map": "../CustomizeMap/CustomizeMap/CustomizeMap",
+    "station-select-pop": "../Station/StationSelectPop/StationSelectPop",
+    "control-area-pop": "../Station/ControlAreaPop/ControlAreaPop"
+  },
+  "component": true
+}

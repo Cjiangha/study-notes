@@ -1,0 +1,17 @@
+/* components/countdown/index.wxss */
+.time-body {
+  display: flex;
+  text-align: center;
+  line-height: 48rpx;
+  margin-top: 5rpx;
+}
+.time-body view {
+  margin: 0 3rpx;
+}
+.time-body .time-bg {
+  box-sizing: border-box;
+  min-width: 50rpx;
+  height: 50rpx;
+  border-radius: 30rpx;
+  background: #fb5b58;
+}

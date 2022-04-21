@@ -1,0 +1,19 @@
+<view class="cates_container">
+  <!-- 上部菜单 -->
+  <scroll-view scroll-x class="menu">
+      <view class="menu_item {{index===currentIndex?'active':''}}" wx:for="{{leftMenuList}}" wx:key="*this" bindtap="handleItemTap" data-index="{{index}}" style="width: {{menuwidth}};">
+          {{item}}
+      </view>
+  </scroll-view>
+  
+  <!-- 下部内容 -->
+  <scroll-view scroll-top="{{scrollTop}}" scroll-y class="content" bindscrolltolower="tobottom">
+      <view class="groupList">
+          <view class="groupList_item" wx:for="{{somerightContent}}" wx:for-index="index1" wx:for-item="item1"
+          bindtap="checkDetail" data-detail="{{item1}}" wx:key="key">
+              <image src="{{item1.url1? item1.url1 : '../../icons/error.png'}}" bindload="imageLoad"></image>
+              <view class="name">{{item1.name}}</view>      
+          </view>
+      </view>
+  </scroll-view>
+</view>

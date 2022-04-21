@@ -1,0 +1,9 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+
+.canvas {
+  width: 100%;
+  height: calc(100vh - 100rpx);
+}

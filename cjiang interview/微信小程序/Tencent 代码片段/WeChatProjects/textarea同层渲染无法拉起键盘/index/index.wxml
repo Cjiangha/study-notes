@@ -1,0 +1,53 @@
+<!-- 问题 -->
+<view class="top-title">
+  <view style="flex: 1;">台湾远东集团被大陆重罚，岛内猜测：大陆出手震慑“台独”金主</view>
+</view>
+<view class="top-data">
+  <view class="data-user-box">
+    <view class="top-data-hd">100个回答</view>
+    <view class="top-data-zw"></view>
+    <view class="top-data-pl">9个收藏</view>
+    <image class="right-icon" src="/static/imgs/right.png"></image>
+  </view>
+</view>
+<view class="top-txt">【环球时报记者张若】台湾远东集团22日被证实遭大陆重罚，引发岛内对大陆出手震慑“台独”金主的猜测</view>
+
+<!-- 答案 -->
+<view class="data-detail" wx:for="{{4}}">
+  <view class="data-detail-user">
+    <view class="data-detail-user-box">
+      <image class="data-detail-user-head" src="/static/imgs/userhead.jpg"></image>
+      <view>
+        <view class="nameTapsIcon">
+          <view class="data-detail-user-name">张自强</view>
+          <image src="/static/imgs/renzheng.png"></image>
+        </view>
+        <view class="data-detail-user-power">
+          环球时报记者
+        </view>
+      </view>
+    </view>
+    <view class="data-detail-user-ygz animation">已关注</view>
+  </view>
+  <view class="data-detail-area">
+    大陆官方媒体新华社22日称，近期上海、江苏、江西、湖北、四川五省市执法部门开展执法检查，发现台湾远东集团在当地投资的化纤纺织、水泥企业在环保、土地利用、员工职业健康、安全生产及消防、税务、产品质量等方面存在一系列违法违规行为，依据国家法律法规对涉事企业采取罚款、追缴税款、限期整改等措施，并收回该企业闲置建设用地。报道还说，远东集团承认存在违法违规事实。
+  </view>
+  <view class="data-detail-time">发布于2021/11/23</view>
+</view>
+
+<!-- 底部评论框 -->
+<view class="bottom-box">
+  <view class="bottom-box-ipt" bindtap="reportStr">善意的评论是交流的起点…</view>
+</view>
+
+<!-- 评论或回答输入框 -->
+<view class="bgColor" catchtouchmove="preventD" catchtap="hideKeyworld" wx:if='{{ispl == true}}'></view>
+<view class="btn1" style="bottom: {{keyHeight+40}}px;" wx:if='{{ispl == true}}'>
+  <view class="btn1-box">
+    <textarea placeholder="善意的评论是交流的起点…" maxlength='300' auto-height='{{true}}' focus='{{true}}' show-confirm-bar='{{false}}' 
+    hold-keyboard='{{true}}' adjust-position='{{false}}' confirm-type="send"  bindconfirm="changeSubmit" bindinput='changeInput'></textarea>
+  </view>
+</view>
+<view class="submit_box" style="bottom: {{keyHeight}}px;" wx:if='{{ispl == true}}'>
+  <span catchtap='changeSubmitSend'>发送</span>
+</view>

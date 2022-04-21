@@ -1,0 +1,8 @@
+.bar{
+  display:flex;
+  position:relative;
+  align-items: center;
+  background-color:#fff;
+  justify-content:space-between;
+  height:100rpx;  
+}

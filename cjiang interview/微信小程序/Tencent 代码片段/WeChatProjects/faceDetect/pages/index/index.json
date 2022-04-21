@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "usingComponents": {
+    "face-detect": "/components/face-detect/index"
+  }
+}

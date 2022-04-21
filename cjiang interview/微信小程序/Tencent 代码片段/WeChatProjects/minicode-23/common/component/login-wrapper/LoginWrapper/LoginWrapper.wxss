@@ -1,0 +1,16 @@
+page ._login-btn_7px8d_1 {
+  overflow: initial;
+  border: none;
+  text-align: left;
+  flex: 1;
+  background: none;
+  line-height: normal;
+}
+
+page ._login-btn_hover_7px8d_9 {
+  opacity: 0.8;
+}
+
+page ._disabled_7px8d_13 {
+  opacity: 0.6;
+}

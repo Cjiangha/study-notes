@@ -1,0 +1,40 @@
+
+<wxs module='proputil'>
+var propsInfo={_6:{show:"show",position:"bottom",onClose:"handleClose",zIndex:"9",disableScroll:"disableScroll",enableComponentOverlayer:"true"}};module.exports.getProps=function(o){return propsInfo[o]};
+</wxs>
+
+<wxs module="m">
+var anyui = require("../../../_anyui/utils/helper.wxs");var anyuiClass = require("./CommonPopUp.style.wxs");
+
+module.exports._expId1 = function (wrapperStyle) {return anyui.processStyle(wrapperStyle);;};
+module.exports._expId2 = function (coverViewHeight) {return anyui.processStyle("height:".concat(coverViewHeight, "px;"));;};
+module.exports._expId3 = function (btnDisable) {return anyui.processClass({
+  'disable': btnDisable
+}, anyuiClass.wrap());;};
+module.exports._expId4 = function (btnStyle) {return anyui.processStyle(btnStyle);;};
+module.exports._expId5 = function (btnTextStyle) {return anyui.processStyle(btnTextStyle);;};</wxs>
+<v-popup position="bottom" onClose="handleClose" zIndex="9" className="{{className || ''}}" class="anyui_popup" __slots="{{ ['default']}}" wx:if="{{__ready__}}" anyuiProps="{{proputil.getProps('_6')}}" bindparentmounted="returnRef" show="{{show}}" disableScroll="{{disableScroll}}" enableComponentOverlayer="{{true}}">
+     <view id="popUp" class="_pop-up_8ftnd_17 anyui_view" catchtouchmove catchtouchend style="{{m._expId1(wrapperStyle, _a_)}}" disable-scroll="{{disableScroll}}">
+       <cover-view class="_preventTouch_8ftnd_6 anyui_cover-view" catchtouchmove="catchTouchMove" className="_preventTouch_8ftnd_6 anyui_cover-view" wx:if="{{showCoverView}}" style="{{m._expId2(coverViewHeight, _a_)}}"></cover-view>
+       <block wx:if="{{ !__slotObj['head'] }}">
+         <view class="_pop-header-title_8ftnd_27 anyui_view" wx:if="{{title}}">
+           <text class="anyui_text">{{title}}</text>
+           <image class="_pop-header-close_8ftnd_37 anyui_image" mode="scaleToFill" src="https://gw.alicdn.com/imgextra/i1/O1CN01WCzoa41eaIDHYVW2r_!!6000000003887-2-tps-48-48.png" bindtap="handleClose"/>
+           </view>
+         </block>
+       <slot name="head">
+         </slot>
+       <block wx:if="{{ !__slotObj['popContent'] }}"></block>
+       <slot name="popContent">
+         </slot>
+       <block wx:if="{{ !__slotObj['foot'] }}">
+         <view class="_pop-btn_8ftnd_51 anyui_view {{m._expId3(btnDisable, _a_)}}" wx:if="{{btnName}}" bindtap="handleConfirm" style="{{m._expId4(btnStyle, _a_)}}" disable-scroll="{{btnStyleDisableScroll}}">
+           <text class="anyui_text" style="{{m._expId5(btnTextStyle, _a_)}}">{{btnName}}</text>
+           </view>
+         </block>
+       <slot name="foot">
+         </slot>
+       <!-- 底部安全距离 -->
+       </view>
+     </v-popup>
+   

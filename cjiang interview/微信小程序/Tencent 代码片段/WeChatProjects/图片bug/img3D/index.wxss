@@ -1,0 +1,32 @@
+.box3D{
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  height: 580rpx;
+}
+.box3D .touchBox{
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+  height: 580rpx;
+}
+.box3D .img3D{
+  width: 884rpx;
+  height: 884rpx;
+  display: block;
+  position: absolute;
+  top: 40rpx;
+  left: 154rpx;
+  z-index: 1;
+}
+
+.area{
+  width: 100%;
+  height: 580rpx;
+  overflow: hidden;
+}
+
+.areaBox{
+  width: 200%;
+  height: 1160rpx;
+}

@@ -1,0 +1,2 @@
+<import src="./te.wxml"></import>
+<template is="item" data="{{text: 'forbar'}}"/>

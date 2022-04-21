@@ -1,0 +1,33 @@
+/* components/sg-face-detect/index.wxss */
+.face_detect {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.face_camera {
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.face_tip {
+  width: 100%;
+  z-index: 6;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 5px;
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 0.85rem;
+  color: azure;
+}
+.frame_canvas {
+  position: fixed;
+  left: 120vw;
+  bottom: 20vh;
+}

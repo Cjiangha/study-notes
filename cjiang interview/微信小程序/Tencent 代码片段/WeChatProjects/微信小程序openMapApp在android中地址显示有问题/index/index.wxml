@@ -1,0 +1,20 @@
+<!--pages/map/index.wxml-->
+<map 
+id="map-h5" 
+class="map-h5" 
+longitude="{{longitude}}"
+latitude="{{latitude}}"
+enable-3D="{{true}}"
+show-location="{{true}}"
+enable-overlooking="{{true}}"
+enable-building="{{true}}"
+scale="{{17}}"
+circles="{{circles}}"
+></map>
+<cover-view class="nav-back-box" bindtap="openMapApp">
+    <cover-view class="title">[位置] {{destination}}</cover-view>
+    <cover-image class="icon" src="/assets/market.png"></cover-image>
+</cover-view>
+<cover-view class="position">
+    <cover-image class="position-icon" src="/assets/position.png" bindtap="onMoveToLocation"></cover-image>
+</cover-view>

@@ -1,0 +1,8 @@
+<view class="main">
+    <swiper current="{{current}}" bindtransition="transition" class="swiper">
+        <swiper-item wx:for="{{list}}" wx:key="index" class="swiper-item">
+            swiper-item: + {{item}}
+        </swiper-item>
+    </swiper>
+    <view style="margin-top: 30rpx;text-align: center;"> swiper的bindtransition 在current初始化不为0时回调错误！ </view>
+</view>

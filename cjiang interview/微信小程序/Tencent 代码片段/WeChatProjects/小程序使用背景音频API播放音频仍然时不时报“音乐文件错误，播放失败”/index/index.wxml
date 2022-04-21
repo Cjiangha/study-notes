@@ -1,0 +1,4 @@
+<view>
+  <view bindtap="start">显示播放面板</view>
+  <audioPlay audio="{{audio}}" show="{{isShow}}"></audioPlay>
+</view>

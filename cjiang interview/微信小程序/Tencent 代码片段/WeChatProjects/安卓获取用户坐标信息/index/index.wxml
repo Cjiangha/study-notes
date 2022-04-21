@@ -1,0 +1,6 @@
+<view class="btn" bindtap="positioning" data-type="1">wx.onLocationChange获取位置</view>
+<view class="btn" bindtap="getSetting1" data-type="1">wx.getLocation获取位置</view>
+<view>wx.onLocationChange坐标:{{longitude}},{{latitude}}</view>
+<view>wx.getLocation坐标:{{Coordinate}}</view>
+
+<button bindtap="diaoyong">调用getUserProfile</button>

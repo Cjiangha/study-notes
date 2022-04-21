@@ -1,0 +1,67 @@
+{
+    "description": "项目配置文件",
+    "packOptions": {
+        "ignore": []
+    },
+    "setting": {
+        "urlCheck": true,
+        "es6": true,
+        "enhance": true,
+        "postcss": true,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "newFeature": true,
+        "coverView": true,
+        "nodeModules": false,
+        "autoAudits": false,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false,
+        "uglifyFileName": false,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "compileHotReLoad": false,
+        "lazyloadPlaceholderEnable": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "enableEngineNative": false,
+        "useIsolateContext": true,
+        "userConfirmedBundleSwitch": false,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true,
+        "disableUseStrict": false,
+        "showES6CompileOption": false,
+        "useCompilerPlugins": false
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.12.1",
+    "appid": "wx8f3ed48b6504348b",
+    "projectname": "%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E4%BD%BF%E7%94%A8textarea%E7%9A%84show-confirm-bar%E5%90%8E%E8%B0%83%E7%94%A8input%E9%94%AE%E7%9B%98%E9%AB%98%E5%BA%A6%E4%BC%9A%E5%A2%9E%E5%8A%A0%E7%9A%84%E9%97%AE%E9%A2%982",
+    "debugOptions": {
+        "hidedInDevtools": []
+    },
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "condition": {
+        "search": {
+            "list": []
+        },
+        "conversation": {
+            "list": []
+        },
+        "game": {
+            "currentL": -1,
+            "list": []
+        },
+        "miniprogram": {
+            "list": []
+        }
+    }
+}

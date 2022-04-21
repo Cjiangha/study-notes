@@ -1,0 +1,9 @@
+
+        function wrap () {
+            var classInfo = {"wrap":"_wrap_pz00z_1","wrap-mash":"_wrap-mash_pz00z_4","wrap-lately":"_wrap-lately_pz00z_12","com":"_com_pz00z_28","nav":"_nav_pz00z_34","nav-icon":"_nav-icon_pz00z_54","nav-name":"_nav-name_pz00z_60","nav-line":"_nav-line_pz00z_66","nav3":"_nav3_pz00z_79","before-line":"_before-line_pz00z_83","activity":"_activity_pz00z_87","activity-name":"_activity-name_pz00z_87"};
+            return classInfo;
+        }
+        module.exports = {
+            wrap: wrap
+        }
+    

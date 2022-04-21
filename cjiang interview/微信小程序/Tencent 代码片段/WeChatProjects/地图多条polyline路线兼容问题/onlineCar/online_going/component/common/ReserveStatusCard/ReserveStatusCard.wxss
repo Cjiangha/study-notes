@@ -1,0 +1,62 @@
+page ._airport-transfer-status-card_198up_1 {
+  position: fixed;
+  left: 16rpx;
+  top: 16rpx;
+  right: 16rpx;
+}
+
+page ._airport-transfer-status-card_198up_1 ._car-logo-wrap_198up_7 {
+  display: flex;
+  padding: 30rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+  box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.08);
+}
+
+page ._airport-transfer-status-card_198up_1 ._car-logo_198up_7 {
+  margin-top: 16rpx;
+}
+
+page ._airport-transfer-status-card_198up_1 ._car-logo_198up_7 .anyui_image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+page ._airport-transfer-status-card_198up_1 ._title-wrap_198up_21 {
+  flex: 1;
+  width: 0;
+  padding-left: 30rpx;
+}
+
+page ._airport-transfer-status-card_198up_1 ._title-wrap_198up_21 ._main-title_198up_26 {
+  font-size: 32rpx;
+  color: #212121;
+  line-height: 100%;
+}
+
+page ._airport-transfer-status-card_198up_1 ._title-wrap_198up_21 ._common-text_198up_31 {
+  font-size: 26rpx;
+  color: #757575;
+  line-height: 100%;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+page ._airport-transfer-status-card_198up_1 ._title-wrap_198up_21 ._common-text_198up_31:before {
+  content: "";
+  display: block;
+  width: 24rpx;
+  height: 24rpx;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAGaADAAQAAAABAAAAGQAAAABY85deAAAC5klEQVRIDbVWvWtTURQ/574gVqGiiJa0jQ7SQUEQdXFycSlY5zpUa6CtRQd1VoKufixia6C2ZnHWpf4DDuLg5Afq0MakrSKIhbYgTa6/3/Xe8BISX2rphfDux+/j3vveOScqbbSecXvIVuSAFckYK/urKt9UpKiRzJce6ZckCWCbt74Ru3dFZQjCWbFyuDkKsyrvITK100rhU15/NMM1NUmP2Utq5aG10hEjWYCXIPodpvtg3uUsPEBV1gC4sjCpT2Ic160z6blmO+yqTEJ8yK8uw+wZQNO70vL2XU5/B4EjObvt14Icg9kwxAdh3Mk1mBV0h4yVHuhawNaZdI/ap8EACy+iSC4WJ/RnALd6Zi7b3ZWKzMBwgBgalR/rhYCvmfCKpCpTDiRyp5zXWwHE5+mcTX1elJfoluMCcUz3iL0No5tuzkg2XJ0z8S+5yHfAE8DgXJzMfu+oPVGx8ob9VCR7Wp0QRs95Ir4jfAwZfgyGJPcV8SWrLPOKONfYcO8Oy/nqdiBbNMeHDjdMXcIcEc5ZDviSW+2Q6+008qlDbNA1DDSMXBxge9PtCCVhajrQpb5hJHuS5WeaJNDOutfBQXAa6CNLSIYDuC/F44Bz/9uoQz3yqW+Yi5wYI7nNZlfkbCLU61HfMNk5AlLFv4hRVb5ifZUY7G4Gn+qr3nF7shUHGLd56hscq+iJXUwVrUjzeV3E4nHgZz3+VGVdXsPsbiPH6fgbor5huvYgZS5qJMTHc3n9iEDtN5H0Y/4DftCQq3EM+16Ha0J94+sBCbyGYT6TWmlCZ/vScjRSOY+rONOIr+mgDFDfuSExXkeE3mPEp4wc3ExAMlmuV2UOO+5EarmBPHffRTwLDnMNF5hNG3e2kbHj/zVg7iqQ60yYxFhwOIGjDjCbsr/RRh755FEvVEp3XUFsq+pJKhjwyYrGSGDh4o54t9hdYmUEbhD0uspYpxsfhP6W1vhgwueW/1uJm7G/2f9dfwC8xlr1Bu8LFgAAAABJRU5ErkJggg==") no-repeat;
+  background-size: contain;
+}
+
+page ._airport-transfer-status-card_198up_1 ._title-wrap_198up_21 ._common-text_198up_31 ._reserve-date_198up_47 {
+  color: #1A66FF;
+  margin-left: 12rpx;
+}
+
+page ._airport-transfer-status-card_198up_1 ._title-wrap_198up_21 ._common-text_198up_31 ._reserve-time_198up_51 {
+  margin-left: 12rpx;
+}

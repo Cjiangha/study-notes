@@ -1,0 +1,11 @@
+<view class="_auth-dialog_10hfd_1 anyui_view {{className || ''}}" wx:if="{{__ready__ && (isShowAuthDialog) }}">
+     <view class="_auth-dialog__content_10hfd_13 anyui_view">
+       <view class="_auth-dialog__content-title_10hfd_23 anyui_view">获取不到您的定位</view>
+       <view class="_auth-dialog__content-btn_10hfd_36 anyui_view">
+         <view class="_auth-dialog__content-btn_cancel_10hfd_45 anyui_view" bindtap="handleClose">返回</view>
+         <view class="_vertical-line_10hfd_55 anyui_view"></view>
+         <button open-type="openSetting" bindopensetting="handleOpenSetting" class="_auth-dialog__content-btn_confirm_10hfd_49 anyui_button" plain>开启定位</button>
+         </view>
+       </view>
+     </view>
+   

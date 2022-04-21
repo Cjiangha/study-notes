@@ -1,0 +1,41 @@
+
+<wxs module='proputil'>
+var propsInfo={_1:{type:"sendMessage"},_2:{type:"choosePath"}};module.exports.getProps=function(e){return propsInfo[e]};
+</wxs>
+
+<wxs module="m">
+var anyui = require("../../../../_anyui/utils/helper.wxs");var anyuiClass = require("./ToolBar.style.wxs");
+
+module.exports._expId1 = function (isSingle) {return anyui.processClass({
+  'single-style': isSingle
+}, anyuiClass.wrap());;};
+module.exports._expId2 = function (item) {return anyui.processStyle("opacity:".concat(item.status === 1 ? '0.4' : '1'));;};</wxs>
+<view class="_wrap-card-toolBar_11o5k_1 anyui_view {{m._expId1(isSingle, _a_)}} {{className || ''}}" wx:if="{{__ready__}}">
+     <view class="_card-toolBar_11o5k_18 anyui_view" wx:if="{{toolList.length}}">
+       <block wx:for="{{toolList}}" wx:for-item="item" wx:for-index="__index" id="{{item.id}}" wx:key="id">
+         <button open-type="share" plain class="anyui_button" wx:if="{{item.emitClick === 'shareLine'}}" bindtap="shareLinkClick">
+           <image class="_tool-icon_11o5k_40 anyui_image" mode="scaleToFill" src="{{item.icon}}"/>
+           <view class="anyui_view">{{item.title}}</view>
+           </button>
+         <view class="anyui_view" wx:elif="{{item.emitClick === 'sendMessage'}}" bindtap="toolClick1" data-bindtapparams0="{{item.emitClick}}">
+           <image class="_tool-icon_11o5k_40 anyui_image" mode="scaleToFill" src="{{item.icon}}"/>
+           <view class="anyui_view">{{item.title}}</view>
+           <view class="_info-amount_11o5k_45 anyui_view" wx:if="{{unreadAmount > 0}}">{{displayUnread}}</view>
+           <info-guide type="sendMessage" wx:if="{{showMessageGuide}}" anyuiProps="{{proputil.getProps('_1')}}" bindparentmounted="returnRef"/>
+           </view>
+         <view class="anyui_view" wx:elif="{{item.emitClick === 'choosePath'}}" bindtap="toolClick2" data-bindtapparams0="{{item.emitClick}}" data-bindtapparams1="{{item}}" style="{{m._expId2(item, _a_)}}">
+           <image class="_tool-icon_11o5k_40 anyui_image" mode="scaleToFill" src="{{item.icon}}"/>
+           <view class="anyui_view">{{item.title}}</view>
+           <info-guide type="choosePath" wx:if="{{isShowPathGuide && item.status === 0}}" anyuiProps="{{proputil.getProps('_2')}}" bindparentmounted="returnRef"/>
+           </view>
+         <view class="anyui_view" wx:else bindtap="toolClick3" data-bindtapparams0="{{item.emitClick}}">
+           <image class="_tool-icon_11o5k_40 anyui_image" mode="scaleToFill" src="{{item.icon}}"/>
+           <view class="anyui_view">{{item.title}}</view>
+           </view>
+         </block>
+       </view>
+     <view class="_wrap-more-icon_11o5k_9 anyui_view" wx:if="{{moreToolList}}" bindtap="toolClick4" data-bindtapparams0="{{'openToolMask'}}">
+       <image src="http://mapdownload.autonavi.com/mobiletts/webcar/%E6%9B%B4%E5%A4%9A%E5%8A%9F%E8%83%BD@3x.png" class="anyui_image" mode="widthFix"/>
+       </view>
+     </view>
+   

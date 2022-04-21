@@ -1,0 +1,11 @@
+<!--components/poster/poster.wxml-->
+<view class='poster-canvas-wrap'>
+  <canvas class='poster-canvas' type="2d" canvas-id="posterCanvas"></canvas>
+</view>
+<view class="poster-wrap">
+  <view class='img' wx:if="{{!posterLoading}}">
+    <image wx:if="{{posterImg}}" class='poster-img' src='{{posterImg}}'></image>
+    <view class="save-btn" bindtap="saveAction">保存海报到相册</view>
+  </view>
+  <view class='poster-loading' wx:else>正在生成海报...</view>
+</view>

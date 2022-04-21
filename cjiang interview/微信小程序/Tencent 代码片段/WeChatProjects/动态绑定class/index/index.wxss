@@ -1,0 +1,36 @@
+Page {
+  height: 100%;
+}
+
+.big{
+  
+}
+
+.blue {
+  background-color: blue;
+  z-index: 9999;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.dian {
+  height: 100rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+} 
+
+.zhezhao{
+  background-color: rgb(153, 141, 141,0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}

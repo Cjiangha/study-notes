@@ -1,0 +1,9 @@
+
+        function wrap () {
+            var classInfo = {"login-btn":"_login-btn_7px8d_1","login-btn_hover":"_login-btn_hover_7px8d_9","disabled":"_disabled_7px8d_13"};
+            return classInfo;
+        }
+        module.exports = {
+            wrap: wrap
+        }
+    

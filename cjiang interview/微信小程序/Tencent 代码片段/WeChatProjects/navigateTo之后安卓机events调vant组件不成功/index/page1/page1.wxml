@@ -1,0 +1,3 @@
+<!--index/page1/page1.wxml-->
+<text>index/page1/page1.wxml</text>
+<button bindtap="back">Back</button>

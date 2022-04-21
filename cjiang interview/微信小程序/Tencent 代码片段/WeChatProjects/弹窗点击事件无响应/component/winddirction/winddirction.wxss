@@ -1,0 +1,86 @@
+/* component/winddirction/wind.wxss */
+.modal-mask{
+    width: 90%;
+    height:60%;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    position: fixed;
+    margin: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+
+
+
+.modalContent{
+    border-radius: 15px;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalTitle{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.title{
+    margin: 0 auto;
+    text-align: center;
+}
+.close{
+    width: 25px;
+    height: 25px;
+    position: absolute; /* 相对relative也可以 */
+    right: 0; /* 靠右调节 */
+    margin-right: 30px  
+}
+.direction{
+
+    width: 90%;
+    height: 60%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap:  wrap ;
+    margin-left: 20px;
+
+}
+
+.wholeBody{
+    width: 70px;
+    height: 70px;
+}
+.knee{
+    width: 70px;
+    height:70px;
+
+}
+.blowFeet{
+    width: 70px;
+    height:70px;
+
+}
+
+.blowFace{
+    width: 70px;
+    height:70px;
+
+}
+
+.blow{
+    width: 70px;
+    height:70px;  
+}
+
+

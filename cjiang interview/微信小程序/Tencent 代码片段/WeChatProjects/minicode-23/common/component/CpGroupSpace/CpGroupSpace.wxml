@@ -1,0 +1,9 @@
+
+<wxs module="m">
+var anyui = require("../../../_anyui/utils/helper.wxs");var anyuiClass = require("./CpGroupSpace.style.wxs");
+
+module.exports._expId1 = function (mini) {return anyui.processClass({
+  'mini': mini
+}, anyuiClass.wrap());;};</wxs>
+<view class="_cp-group-space_11ras_1 anyui_view {{m._expId1(mini, _a_)}} {{className || ''}}" wx:if="{{__ready__ && (show) }}"></view>
+   

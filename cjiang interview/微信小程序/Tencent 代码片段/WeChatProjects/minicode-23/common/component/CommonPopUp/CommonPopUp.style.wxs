@@ -1,0 +1,9 @@
+
+        function wrap () {
+            var classInfo = {"anyui-popup-mask":"_anyui-popup-mask_8ftnd_2","preventTouch":"_preventTouch_8ftnd_6","pop-up":"_pop-up_8ftnd_17","pop-header-title":"_pop-header-title_8ftnd_27","pop-header-close":"_pop-header-close_8ftnd_37","pop-btn":"_pop-btn_8ftnd_51","disable":"_disable_8ftnd_61","am-popup-bottom":"_am-popup-bottom_8ftnd_73"};
+            return classInfo;
+        }
+        module.exports = {
+            wrap: wrap
+        }
+    

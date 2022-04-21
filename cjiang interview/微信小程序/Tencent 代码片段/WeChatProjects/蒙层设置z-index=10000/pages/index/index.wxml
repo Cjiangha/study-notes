@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+  <view class="inputarea">
+    <textarea confirm-type="done" placeholder="{{placeholder}}"></textarea>
+  </view>
+
+  <view class="popup-btn" bindtap="clickPopup">
+    <text>选择图片</text>
+  </view>
+
+  <view class="popup" wx:if="{{isPopup}}">
+    <view class="content">
+      <view class="popup-btn" bindtap="clickPopup">
+        <view>相册</view>
+      </view>
+      <view class="popup-btn" catchtap="clickPopup">
+        <view>相机</view>
+      </view>
+      <view class="popup-btn" bind:tap="clickPopup">
+        <view>图库</view>
+      </view>
+      <view style="margin-top:60px;" class="popup-btn" bind:tap="clickPopup">
+        <view>图库</view>
+      </view>
+    </view>
+  </view>
+</view>

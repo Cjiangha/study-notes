@@ -1,0 +1,9 @@
+<anyui-default-page className="{{className || ''}}" __slots="{{ ['default']}}" wx:if="{{__ready__}}">
+     <block wx:if="{{ !__slotObj['default'] }}"/>
+     <slot/>
+     <!-- <Elves :extraAppInfo="extraAppInfo" /> -->
+     <!-- IM 消息弹窗 -->
+     <im-popup/>
+     <!-- <ConnectTest /> -->
+     </anyui-default-page>
+   

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "pab-pusher":"plugin://PABMedia/pusher",
+    "pab-player":"plugin://PABMedia/player"
+  }
+}

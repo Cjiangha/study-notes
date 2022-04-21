@@ -1,0 +1,9 @@
+<recycle-view batch="{{batchSetRecycleData}}" id="recycleId" bindscrolltolower="recycleScrollToBottom">
+  <view slot="before">长列表前面的内容</view>
+  <recycle-item wx:for="{{recycleList}}" wx:key="id">
+    <view class="recycle-item">{{item.num}}</view>
+  </recycle-item>
+  <view slot="after">长列表后面的内容</view>
+</recycle-view>
+
+<image src="https://www.eeo.im/upload/images/20190121/e1e15c9721be9c286493_180.png"></image>

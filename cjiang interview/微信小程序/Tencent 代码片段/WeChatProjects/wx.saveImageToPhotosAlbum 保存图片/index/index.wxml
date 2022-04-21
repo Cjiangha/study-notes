@@ -1,0 +1,8 @@
+<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
+<button bindtap="clipImgPath" style="margin: 100rpx auto;">复制图片连接</button>
+<button bindtap="downloadImg">下载高清大图</button>
+
+<view class="log-title">错误日志：</view>
+<view>{{ errorMsg }}</view>
+
+<web-view src="https://www.liketon.cn/agreement/agreement1.html"></web-view>

@@ -1,0 +1,7 @@
+<view class="content">
+  <block wx:for="{{30}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+    <block><input name="{{'inpu'+item}}" type="text" placeholder="请输入文本" /></block>
+  </block>
+  <view class="block30"></view>
+  <view class="btn-area"><button class="submit-btn" type="primary" data-event-opts="{{[['tap',[['formSubmit',['$event']]]]]}}" bindtap="__e">下一步</button></view>
+</view>

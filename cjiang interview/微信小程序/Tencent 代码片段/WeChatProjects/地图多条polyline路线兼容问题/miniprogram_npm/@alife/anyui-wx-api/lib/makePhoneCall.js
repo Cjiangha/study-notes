@@ -1,0 +1,1 @@
+var u=Object.defineProperty;var l=e=>u(e,"__esModule",{value:!0});var m=(e,n)=>{for(var r in n)u(e,r,{get:n[r],enumerable:!0})};l(exports);m(exports,{default:()=>t});function a(e={}){return e.number&&(e.phoneNumber=e.number,delete e.number),wx.makePhoneCall(e)}var t=a;

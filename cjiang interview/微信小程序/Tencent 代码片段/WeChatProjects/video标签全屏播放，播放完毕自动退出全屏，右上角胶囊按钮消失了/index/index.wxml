@@ -1,0 +1,15 @@
+<view style="height: {{systemInfo.statusBarHeight+44}}px;width:100%"></view>
+<view class="video-out" bindtap="onVideoPlay" wx:if="{{!isPlay}}">
+    <image class="poster" src="https://test-static.1x.cn/uploads/mu/images/2021_10/22/70e857b3cd7248b1a8e284a0fa42bfff1634886848495_3976537.jpg"></image>
+    <image class="play-icon" src="https://test-static.1x.cn/appstatic/images/video-play.png"></image>
+</view>
+<video 
+    bindfullscreenchange="onFullScreenChange"
+    class="video-out"
+    bindended="onVideoEnded"
+    id="video"
+    direction="0"
+    src="https://test-static.1x.cn/uploads/common/dynamic/video/2021_10/22/70e857b3cd7248b1a8e284a0fa42bfff1634886848495_3976537.mp4"
+    wx:else
+    >
+</video>

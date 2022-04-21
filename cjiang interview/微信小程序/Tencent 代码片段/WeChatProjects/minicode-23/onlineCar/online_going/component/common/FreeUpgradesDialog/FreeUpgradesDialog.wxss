@@ -1,0 +1,95 @@
+page ._free-upgrades_dialog_1kaqu_1 {
+  width: 718rpx;
+  height: 1032rpx;
+  background-size: contain;
+  position: relative;
+  top: -140rpx;
+}
+
+page ._content_1kaqu_9 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+page ._content_1kaqu_9 ._top-label_1kaqu_22 {
+  width: 462rpx;
+  height: 33rpx;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0;
+  background: url("https://gw.alicdn.com/imgextra/i4/O1CN01t6hJGv1rkS0BTiTl0_!!6000000005669-2-tps-723-3.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+page ._content_1kaqu_9 ._price_1kaqu_32 {
+  margin-top: 17rpx;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+page ._content_1kaqu_9 ._tags_1kaqu_37 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 41rpx;
+}
+
+page ._content_1kaqu_9 ._tags_item_1kaqu_43 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+page ._content_1kaqu_9 ._tags_item_1kaqu_43 ._tags_icon_1kaqu_50 {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 8rpx;
+}
+
+page ._content_1kaqu_9 ._tags_item_1kaqu_43 ._tags_text_1kaqu_55 {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  top: -4rpx;
+}
+
+page ._content_1kaqu_9 ._tags_item_1kaqu_43 + ._tags_item_1kaqu_43 {
+  margin-left: 60rpx;
+}
+
+page ._content_1kaqu_9 ._opt_1kaqu_66 {
+  margin-top: 56rpx;
+  background-image: linear-gradient(90deg, #ff5e33 0%, #f73 100%);
+  border-radius: 40rpx;
+  line-height: 80rpx;
+  width: 462rpx;
+  height: 80rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+page ._content_1kaqu_9 ._tip_1kaqu_79 {
+  font-size: 20rpx;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  line-height: 33rpx;
+  margin-top: 24rpx;
+  margin-bottom: 39rpx;
+}

@@ -1,0 +1,19 @@
+<canvas
+  id="webgl"
+  type="webgl"
+  canvas-id="canvas"
+  style="width: {{width}}px; height: {{height}}px; position:absolute; left: 1000rpx;"
+>
+</canvas>
+
+<camera
+  device-position="front"
+  flash="on"
+  binderror="error"
+  style="width: 192px; height: 192px; margin: 23%; border-radius: 50%;"
+  frame-size="small"
+></camera>
+<button bindtap="start">开始</button>
+<image class="wx-action-image" src="{{activeGif}}"></image>
+
+<input type="text" placeholder-class="a" style="border: 10px solid #ccc;font-size: 10px;" placeholder="请输入密码"/>

@@ -1,0 +1,69 @@
+{
+    "description": "项目配置文件",
+    "packOptions": {
+        "ignore": []
+    },
+    "setting": {
+        "bundle": false,
+        "userConfirmedBundleSwitch": false,
+        "urlCheck": true,
+        "scopeDataCheck": false,
+        "coverView": true,
+        "es6": true,
+        "postcss": true,
+        "compileHotReLoad": false,
+        "lazyloadPlaceholderEnable": false,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "autoAudits": false,
+        "newFeature": false,
+        "uglifyFileName": false,
+        "uploadWithSourceMap": true,
+        "useIsolateContext": true,
+        "nodeModules": false,
+        "enhance": true,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
+        "showShadowRootInWxmlPanel": true,
+        "packNpmManually": false,
+        "enableEngineNative": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true,
+        "showES6CompileOption": false,
+        "minifyWXML": true
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.20.0",
+    "appid": "wx8f3ed48b6504348b",
+    "projectname": "%E4%BD%BF%E7%94%A8map%E7%BB%84%E4%BB%B6%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0polyline%E5%92%8Cmarkers%E6%97%B6%E5%9C%A8%E7%9C%9F%E6%9C%BA%E7%9B%B4%E6%8E%A5%E5%8A%A8%E7%94%BB%E5%92%8C%E6%9B%B4%E6%96%B0%E7%9A%84%E5%9B%BE%E6%A0%87%E4%B9%B1%E4%BA%86",
+    "debugOptions": {
+        "hidedInDevtools": []
+    },
+    "scripts": {},
+    "staticServerOptions": {
+        "baseURL": "",
+        "servePath": ""
+    },
+    "isGameTourist": false,
+    "condition": {
+        "search": {
+            "list": []
+        },
+        "conversation": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "plugin": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": []
+        }
+    }
+}

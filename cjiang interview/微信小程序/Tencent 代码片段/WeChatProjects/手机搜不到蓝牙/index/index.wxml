@@ -1,0 +1,66 @@
+<view class="flexview">
+  <view class="scrollView">
+    <view class="_div data-v-3c291bb2 bluetooth">
+      <view class="_div data-v-3c291bb2 status">
+        <text class="_text data-v-3c291bb2 status-text">车架号：</text>
+        <view class="_div  status-text1">{{vin}}</view>
+      </view>
+      <view class="_div data-v-3c291bb2 status">
+        <text class="_text data-v-3c291bb2 status-text">蓝牙设配状态：</text>
+        <view class="_div data-v-3c291bb2 status-text1">{{msg}}</view>
+        <view class="status-text-right.data-v-3c291bb2" bindtap='openBluetooth' wx:if="{{!blueStatus}}">重试</view>
+      </view>
+      <view class="_div data-v-3c291bb2 status" wx:if='{{false}}'>
+        <text class="_text data-v-3c291bb2 status-text">开启蓝牙设备搜索：</text>
+        <switch checked="{{searchDevice}}" bindchange="switchChange" class="_switch data-v-3c291bb2 switch" color="#096DD9" data-eventid="{{'0'}}" data-comkey="{{$k}}" />
+      </view>
+    
+      <view class="_div data-v-3c291bb2 devices">
+         <view class="_div data-v-3c291bb2" style="color:#00bdc9;padding:15px;font-size:0.8rem;font-weight: bold;">
+      <text>提示：请点击“JP001”或“JP002”，若未显示“JP001”或“JP002”,请查看“使用方法”或联系相关技术人员</text>
+      </view>
+        <view class="_div data-v-3c291bb2 device-list">
+          <view class="_div data-v-3c291bb2 weui-cells__title" style="font-size: 13px">附近蓝牙设备</view>
+          <view class="_div data-v-3c291bb2 weui-cells weui-cells_after-title" wx:for="{{deviceList}}" wx:for-index="index" wx:for-item="device" wx:if="{{device.name}}">
+           <view class="_div data-v-3c291bb2 weui-cell" bindtap="chooseDevice" data-index="{{index}}" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}">
+              <view class="_div data-v-3c291bb2 weui-cell__bd" style="font-size: 13px">蓝牙名称：{{device.name}}</view>
+            </view>
+            <view class="_div data-v-3c291bb2 weui-cell" bindtap="chooseDevice" data-index="{{index}}" data-eventid="{{'1-'+index}}" data-comkey="{{$k}}">
+              <view class="_div data-v-3c291bb2 weui-cell__bd" style="font-size: 12px">蓝牙ID: {{device.deviceId}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-3c291bb2 devices" wx:if="{{nowDevice && false}}">
+        <view class="_div data-v-3c291bb2 device-list">
+          <view class="_div data-v-3c291bb2 weui-cells__title" style="font-size: 13px">蓝牙设备详细信息</view>
+          <view class="_div data-v-3c291bb2 weui-cell" style="font-size: 13px;background-color:white">设备名称：{{currentDevice.name}}</view>
+          <view class="_div data-v-3c291bb2 weui-cell" style="font-size: 13px;background-color:white">设备ID：{{currentDevice.deviceId}}</view>
+          <view class="_div data-v-3c291bb2 weui-cell" style="font-size: 13px;background-color:white">信号强度：{{currentDevice.RSSI}}</view>
+          <button class="_button data-v-3c291bb2 weui-btn" type="default" style="font-size: 13px;margin-top: 0px;border-radius: 0 0 15px 15px;" data-device-id="{{currentDevice.deviceId}}" data-eventid="{{'2'}}" data-comkey="{{$k}}">连接蓝牙设备</button>
+        </view>
+      </view>
+      <view class="_div data-v-3c291bb2 devices dev-info" wx:if="{{nowService}}">
+        <view class="_div data-v-3c291bb2 device-list">
+          <view class="_div data-v-3c291bb2 weui-cells__title" style="font-size: 13px">成功连接的蓝牙设备信息</view>
+          <view class="_div data-v-3c291bb2 weui-cell" style="font-size: 13px;background-color:white">车架号：{{vin}}</view>
+          <view wx:if="{{kzq_code!=''}}" class="_div data-v-3c291bb2 weui-cell" style="font-size: 13px;background-color:white">控制器码：{{kzq_code}}</view>
+          <view class="_div data-v-3c291bb2 weui-cell" style="font-size: 13px;background-color:white">蓝牙名称：{{currentDevice.name}}</view>
+          <view class="_div data-v-3c291bb2 weui-cell" style="font-size: 13px;background-color:white">蓝牙ID：{{currentDevice.deviceId}}</view>
+          <view class="_div data-v-3c291bb2 weui-cell" style="font-size: 13px;background-color:white">信号强度：{{currentDevice.RSSI}}</view>
+          <view class="_view data-v-3c291bb2 weui-cells weui-cells_after-title" wx:if="{{false}}">
+            <view class="_view data-v-3c291bb2 weui-cell weui-cell_input">
+              <view class="_view data-v-3c291bb2 weui-cell__bd">
+                <input class="_input data-v-3c291bb2 weui-input" bindinput="bindMessageInput" placeholder="请输入16进制数据" value="{{sendData}}" style="font-size: 15px" data-eventid="{{'3'}}" data-comkey="{{$k}}" />
+              </view>
+            </view>
+          </view>
+     
+  
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

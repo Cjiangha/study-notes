@@ -1,0 +1,25 @@
+<!--component/winddirction/wind.wxml-->
+<!--遮罩层-->
+<view class='modal-mask' hidden="{{!isWind}}" animation="{{updatePanelAnimationData}}" >
+<!--    风向弹窗 -->
+   <view   class="modalContent"  style="  background: white;border-radius: 30rpx;">
+ <view class='modalTitle'> 
+  <text  class="title"  style="color: black;  font-size: 26rpx;">风向</text>
+  <image   class="close" src="/images/close.png"  bindtap="hideDialog">
+   </image>
+
+</view>  
+
+<view  class="direction" >
+<image  class="wholeBody"  src="/images/vehicle_byod_aircondition_wind_direction_tou_jiao_on.png">
+</image>
+<image  class="knee" src="/images/vehicle_byod_aircondition_wind_direction_jiao_off.png">
+</image>
+<image  class="blowFeet" src="/images/vehicle_byod_aircondition_wind_direction_shen_jiao_off.png">  
+</image>
+<image  class="blowFace"  src="/images/vehicle_byod_wind_direction_face_foot_on.png">
+</image>
+
+</view>
+    </view>
+</view>

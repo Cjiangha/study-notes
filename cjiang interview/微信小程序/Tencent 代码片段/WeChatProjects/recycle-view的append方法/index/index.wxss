@@ -1,0 +1,8 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.recycle-item {
+  width: 375px;
+  height: 100px;
+}

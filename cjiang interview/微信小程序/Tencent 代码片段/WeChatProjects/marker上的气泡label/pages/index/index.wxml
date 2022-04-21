@@ -1,0 +1,3 @@
+<!--index/index.wxml-->
+<text>index/index.wxml</text>
+<button bindtap="dianwo">点我</button>

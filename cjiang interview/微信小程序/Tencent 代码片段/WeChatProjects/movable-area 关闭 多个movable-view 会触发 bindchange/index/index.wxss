@@ -1,0 +1,267 @@
+/* functionPage/functionPage/addHeadline/addHeadline.wxss */
+
+/* @font-face {
+  font-family: myFirstFont;
+  src:url('https://peiyin-file.gzguda.com/ttf/zhenHan.TTF')
+} */
+
+
+
+
+
+
+
+
+
+.pageBox{
+  background: #232425;
+  padding-top: 40rpx;
+  position: relative;
+}
+.box{
+  background: #000;
+  position: relative;
+}
+
+.movableView{
+  height: 60rpx;
+  width: 160rpx;
+  border: 2rpx solid rgba(0, 0, 0, 0);
+}
+
+.pitchOn-movableView{
+  height: 60rpx;
+  width: 160rpx;
+  border: 2rpx solid red;
+
+  /* height: 60rpx; */
+  /* width: 300rpx; */
+
+}
+
+.canvas{
+  /* width: 80%; */
+  position: absolute;
+  top: 0 ; 
+  left: 9999rpx;
+  margin: 0 auto;
+
+  width: 660rpx;
+  height: 300rpx;
+
+  border-radius: 10rpx;
+  /* width: 330px;
+  height: 150px; */
+}
+
+/* .coverView{
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
+input{color:#fff;}
+.area{
+  margin: 0 auto;
+  width: 660rpx;
+  height: 300rpx;
+  background: #333;
+  border-radius: 20rpx;
+  background-size:100%  100% ;
+  background-repeat:no-repeat ;
+}
+.area-box{
+  position: relative;
+  height: 60rpx;
+  width: 100%;
+}
+
+.bodr{
+ 
+  /* height: 56rpx; */
+  width: 100%;
+}
+
+
+.closeImage{
+  position: absolute;
+  top: -20rpx;
+  left: -24rpx;
+}
+.closeImage image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.scaleImage {
+  position: absolute;
+  bottom: -32rpx;
+  right: -20rpx;
+}
+.scaleImage image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.area-text{
+  height: 60rpx;
+  width: 100%;
+  margin:0 5rpx;
+  /* margin-left: 20rpx; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.inputBox{
+  width: 660rpx;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 32rpx;
+  justify-content: space-between;
+}
+
+.input input{
+  width: 500rpx;
+  height: 68rpx;
+  background: #313334;
+  padding-left: 10rpx;
+}
+
+.inputImage {
+  width: 68rpx;
+  height: 68rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #313334;
+}
+
+.inputImage image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.typeface{
+  width: 660rpx;
+  margin:  0 auto;
+  margin-top: 42rpx;
+}
+
+.typefaceBox{
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  flex-wrap: wrap;
+}
+
+.typefaceFormBox{
+  width: 152rpx;
+  /* width: 24%; */
+  margin-right:10rpx;
+  height: 76rpx;
+  background: #313334;
+  border-radius: 6rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #989899;
+  background: #313334;
+  /* font-family: myFirstFont; */
+}
+
+.baiSe{
+  color: #FFFFFF;
+  border: 4rpx solid #FFFFFF;
+  width: 144rpx;
+  height: 68rpx;
+}
+
+
+.Family{
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 22rpx;
+}
+
+.wx-progress-inner-bar {
+  border-radius: 5px;
+}
+
+.dja{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mt20{
+  margin-top: 20rpx;
+}
+.mr10{
+  margin-right:10rpx ;
+}
+.fontProgress{
+  width: 660rpx;
+  margin: 0 auto;
+  margin-top: 42rpx;
+}
+
+.progress-box{
+  background: #313334;
+  width: 654rpx;
+  height: 76rpx;
+
+}
+.progress-box>slider{
+  border-radius: 6rpx;
+  width: 90%;
+}
+
+.yeSe{
+  width: 660rpx;
+  margin:  0 auto;
+  margin-top: 42rpx;
+}
+
+.colorBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colorBox  .colorList{
+  width: 76rpx;
+  height: 76rpx;
+  background: #333;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.colorList .colorList-xbox{
+  width: 56rpx;
+  height: 56rpx;
+
+  border-radius: 50%;
+}
+
+.mt22{
+  margin-top: 22rpx;
+}
+
+.accomplish{
+  width: 544rpx;
+  height: 84rpx;
+  background: #FFFFFF;
+  border-radius: 8rpx;
+  border: 2rpx solid #E8E8E8;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  margin: 0 auto;
+  margin-top: 82rpx;
+}
+
+.colorBaiSe{
+  border: 2rpx solid #fff;
+  width: 72rpx  !important;
+  height: 72rpx !important;
+}
+

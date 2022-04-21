@@ -1,0 +1,40 @@
+
+<wxs module="m">
+var anyui = require("../../../../_anyui/utils/helper.wxs");var anyuiClass = require("./CommonDialog.style.wxs");
+
+module.exports._expId1 = function (customClass) {return anyui.processClass([customClass, 'common-dialog__wrap'], anyuiClass.wrap());;};</wxs>
+<view class="_common-dialog_1gslf_1 _flex-vc_1gslf_5 anyui_view {{className || ''}}" wx:if="{{__ready__ && (visible) }}" catchtouchmove>
+     <!-- 遮罩层,支持配置 -->
+     <view class="_common-dialog__mask_1gslf_27 anyui_view" wx:if="{{mask}}" bindtap="handleModalCancel"></view>
+     <!-- dialog -->
+     <view class="anyui_view {{m._expId1(customClass, _a_)}}">
+       <!-- 顶部标题 -->
+       <view class="_common-dialog__title_1gslf_41 anyui_view">
+         <text class="anyui_text" wx:if="{{title}}">{{title}}</text>
+         <block wx:else>
+           <block wx:if="{{ !__slotObj['title'] }}"></block>
+           <slot name="title">
+             </slot>
+           </block>
+         </view>
+       <!-- 中部内容 -->
+       <view class="_common-dialog__content_1gslf_49 anyui_view">
+         <text class="anyui_text" wx:if="{{content}}">{{content}}</text>
+         <block wx:else>
+           <block wx:if="{{ !__slotObj['content'] }}"></block>
+           <slot name="content">
+             </slot>
+           </block>
+         </view>
+       <!-- 底部按钮 -->
+       <view class="_common-dialog__footer_1gslf_56 anyui_view">
+         <block wx:if="{{ !__slotObj['footer'] }}">
+           <view class="_common-dialog__btn_1gslf_64 _common-dialog__btn_cancel_1gslf_75 anyui_view" wx:if="{{viewType==2}}" bindtap="handleCancel">{{cancelText}}</view>
+           <view class="_common-dialog__btn_1gslf_64 _common-dialog__btn_ok_1gslf_78 anyui_view" bindtap="handleOk">{{okText}}</view>
+           </block>
+         <slot name="footer">
+           </slot>
+         </view>
+       </view>
+     </view>
+   

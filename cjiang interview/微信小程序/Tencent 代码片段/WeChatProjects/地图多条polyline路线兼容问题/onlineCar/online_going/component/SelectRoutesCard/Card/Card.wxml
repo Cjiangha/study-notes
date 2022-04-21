@@ -1,0 +1,50 @@
+
+<wxs module='proputil'>
+var propsInfo={_1:{nodes:"tipsData.tipTag"},_2:{nodes:"tipsData.tipDescription"},_6:{selected:"defaultChoose",list:"routesList",currentRouteId:"currentRouteId","bind:onSelect":"handleSelect_custHd_1"}};module.exports.getProps=function(t){return propsInfo[t]};
+</wxs>
+
+<wxs module="m">
+var anyui = require("../../../../../_anyui/utils/helper.wxs");
+module.exports._expId1 = function (bgStyle) {return anyui.processStyle({
+  'backgroundColor': bgStyle.bgColor
+});;};
+module.exports._expId2 = function (cardHegiht) {return anyui.processStyle({
+  height: cardHegiht
+});;};
+module.exports._expId3 = function (cardHegiht) {return anyui.processStyle({
+  height: cardHegiht
+});;};</wxs>
+<view id="cardId" class="_com_1eytj_1 anyui_view {{className || ''}}" wx:if="{{__ready__}}" catchtouchmove style="{{m._expId1(bgStyle, _a_)}}" disable-scroll="{{true}}">
+     <block wx:if="{{status === 'suc'}}">
+       <view class="_com-tips_1eytj_11 anyui_view">
+         <block wx:if="{{tipsData.tipTagType === 'IMAGE'}}">
+           <image class="_com-tips_icon_1eytj_20 anyui_image" mode="widthFix" src="{{tipsData.tipTag}}"/>
+           </block>
+         <block wx:else>
+           <v-rich-text class="anyui_rich-text" className="anyui_rich-text" __slots="{{ []}}" anyuiProps="{{proputil.getProps('_1')}}" bindparentmounted="returnRef" nodes="{{tipsData.tipTag}}"></v-rich-text>
+           </block>
+         <v-rich-text class="_com-tips_text_1eytj_23 anyui_rich-text" className="_com-tips_text_1eytj_23 anyui_rich-text" __slots="{{ []}}" anyuiProps="{{proputil.getProps('_2')}}" bindparentmounted="returnRef" nodes="{{tipsData.tipDescription}}"></v-rich-text>
+         </view>
+       <routes className="_com-routes_1eytj_26" bind:onSelect="handleSelect_custHd_1" anyuiProps="{{proputil.getProps('_6')}}" bindparentmounted="returnRef" selected="{{defaultChoose}}" list="{{routesList}}" currentRouteId="{{currentRouteId}}"/>
+       <view class="_com-btn_1eytj_29 anyui_view" bindtap="handleOk">{{btnText}}</view>
+       </block>
+     <block wx:if="{{status === 'err'}}">
+       <view class="_com-wrap-err_1eytj_55 anyui_view" style="{{m._expId2(cardHegiht, _a_)}}">
+         <view class="_com-err_1eytj_64 anyui_view">
+           <image class="_com-err_icon_1eytj_71 anyui_image" src="https://gw.alicdn.com/imgextra/i1/O1CN01w9sW2p1sx6ZUfuyki_!!6000000005832-2-tps-24-24.png" mode="scaleToFill"/>加载失败，请稍后重试</view>
+         <view class="_com-btn_1eytj_29 anyui_view" bindtap="handleReload">重新加载</view>
+         </view>
+       </block>
+     <block wx:if="{{status === 'loading'}}">
+       <view class="_com-loading_1eytj_42 anyui_view" style="{{m._expId3(cardHegiht, _a_)}}">
+         <image class="_com-loading_img_1eytj_50 anyui_image" mode="widthFix" src="{{loading}}"/>
+         <!-- loading效果 -->
+         <view class="_pay-btn__loading_1eytj_77 _com-btn_1eytj_29 anyui_view">
+           <view class="_pay-btn__loading-dot_1eytj_81 anyui_view"/>
+           <view class="_pay-btn__loading-dot_1eytj_81 anyui_view"/>
+           <view class="_pay-btn__loading-dot_1eytj_81 anyui_view"/>
+           </view>
+         </view>
+       </block>
+     </view>
+   

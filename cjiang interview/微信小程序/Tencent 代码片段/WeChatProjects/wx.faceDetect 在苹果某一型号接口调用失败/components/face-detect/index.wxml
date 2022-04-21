@@ -1,0 +1,26 @@
+<!--
+ * @Author: Ran
+ * @Date: 2021-12-17 16:16:50
+ * @LastEditTime: 2021-12-17 16:25:59
+ * @LastEditors: Ran
+-->
+<!--components/face-detect/index.wxml-->
+<view class="face_detect" wx:if="{{cameraVisbile}}">
+  <camera
+    id="camera"
+    device-position="front"
+    flash="off"
+    binderror="onCameraError"
+    bindinitdone="onBindInitDone"
+    bindstop="onBindStop"
+    class="face_camera"
+    frame-size="small">
+  </camera>
+  <view class="face_tip"> <text>{{status.tip}}</text> </view>
+</view>
+
+<canvas
+  id="frameCanvas"
+  canvas-id='frameCanvas'
+  style="width: {{frameWidth}}px; height: {{frameHeight}}px;"
+  class="frame_canvas"></canvas>

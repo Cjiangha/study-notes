@@ -1,0 +1,5 @@
+<view class="intro">
+    <count  endTime="3333"></count>
+    页面a
+    <navigator url="/index2/index">跳转b页面</navigator>
+</view>

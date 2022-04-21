@@ -1,0 +1,13 @@
+<view class="_confirm-box_gs64m_1 anyui_view {{className || ''}}" wx:if="{{__ready__ && (showConfirm) }}" disable-scroll="{{true}}">
+     <view class="_confirm-wrap_gs64m_14 anyui_view">
+       <image class="_confirm-close_gs64m_42 anyui_image" mode="scaleToFill" src="/common/images/close.png" wx:if="{{closable}}" bindtap="handleClose"/>
+       <block wx:if="{{ !__slotObj['confirm_content'] }}"></block>
+       <slot name="confirm-content">
+         </slot>
+       <view class="_confirm-button_gs64m_60 anyui_view">
+         <view class="_confirm-click_gs64m_68 anyui_view" bindtap="leftClick">{{leftBtnText}}</view>
+         <view class="_confirm-cancel_gs64m_77 anyui_view" bindtap="rightClick">{{rightBtnText}}</view>
+         </view>
+       </view>
+     </view>
+   

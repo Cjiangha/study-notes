@@ -1,0 +1,7 @@
+<view>1.点击Item进入新页面</view>
+<view>2.返回后立即滑动scroll-view 大概率无法滚动</view>
+<scroll-view>
+    <navigator url="/detail/detail" wx:for="{{100}}" class="item">
+    <image class="image" src="https://imgs.wantubizhi.com/upload/i_2/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3604815488x2977190119_26_0.jpg" mode="aspectFill"/>
+    </navigator>
+</scroll-view>

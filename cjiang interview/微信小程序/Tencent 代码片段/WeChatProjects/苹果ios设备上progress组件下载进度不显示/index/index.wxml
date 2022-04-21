@@ -1,0 +1,2 @@
+<progress wx:if="{{progress}}" percent="{{progress}}" backgroundColor="white" color="#0081FF" duration="30" border-radius='50' bindtap="progress" show-info></progress>
+<button bindtap='downloadfile'>保存视频{{progress}}</button>

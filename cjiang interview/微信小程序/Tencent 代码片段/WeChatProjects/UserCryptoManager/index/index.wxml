@@ -1,0 +1,6 @@
+<button bindtap="click">
+获取最新秘钥
+</button>
+<view style="font-size: 11px;" wx:for="{{keyList}}">
+秘钥：{{item.encryptKey}} 过期时间{{item.times}}
+</view>

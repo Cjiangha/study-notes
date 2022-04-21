@@ -1,0 +1,1 @@
+<view class="intro" bindtap="linkto">欢迎使用代码片段，点击relaunch到其他页</view>

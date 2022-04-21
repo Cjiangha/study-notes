@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@alife/anyui-wx-component": "0.6.83-beta.1636366450679",
+    "@alife/anyui-wx-framework": "0.6.83-beta.1636366450679",
+    "@alife/anyui-mini-reactivity": "0.6.83-beta.1636366450679",
+    "@alife/anyui-wx-api": "0.6.83-beta.1636366450679"
+  }
+}

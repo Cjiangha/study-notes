@@ -1,0 +1,22 @@
+page ._bubble-wrapper_1kw6v_1 {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  background-color: lightseagreen;
+  color: #fff;
+  width: 150rpx;
+  height: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 24rpx;
+  flex-direction: column;
+  z-index: 999;
+}
+
+page ._connect_1kw6v_18 {
+  color: red;
+  font-weight: 700;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,114 @@
+{
+  "id": "1826375",
+  "name": "视频打通",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "15093841",
+      "name": "icon_closed",
+      "font_class": "icon_closed",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "15093730",
+      "name": "icon_radio",
+      "font_class": "icon_radio",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "14780508",
+      "name": "icon_screenhalf",
+      "font_class": "icon_screenhalf",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "14780509",
+      "name": "icon_overturn",
+      "font_class": "icon_overturn",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "14780510",
+      "name": "icon_hangup",
+      "font_class": "icon_hangup1",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "14780511",
+      "name": "icon_screenminimum",
+      "font_class": "icon_screenminimum",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "14780512",
+      "name": "icon_screenshot",
+      "font_class": "icon_screenshot",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "14779890",
+      "name": "icon_vision",
+      "font_class": "icon_vision",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "14779013",
+      "name": "icon_microphone",
+      "font_class": "icon_microphone",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "14779014",
+      "name": "icon_hangup",
+      "font_class": "icon_hangup",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "14779016",
+      "name": "icon_network",
+      "font_class": "icon_network",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "14779183",
+      "name": "icon_camera",
+      "font_class": "icon_camera",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "14779184",
+      "name": "icon_location",
+      "font_class": "icon_location",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "14779828",
+      "name": "icon_flip",
+      "font_class": "icon_flip",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "14779829",
+      "name": "icon_silence",
+      "font_class": "icon_silence",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    }
+  ]
+}

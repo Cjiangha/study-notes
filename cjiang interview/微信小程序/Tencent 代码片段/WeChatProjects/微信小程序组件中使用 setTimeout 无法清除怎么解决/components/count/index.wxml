@@ -1,0 +1,9 @@
+<!--components/countdown/index.wxml-->
+<view class="{{className}}">
+	<view class="time-bg">{{hour}}</view>
+	<view>{{separators[formatSolution].hour}}</view>
+	<view class="time-bg">{{minute}}</view>
+	<view>{{separators[formatSolution].minute}}</view>
+	<view class="time-bg">{{second}}</view>
+	<view>{{separators[formatSolution].second}}</view>
+</view>

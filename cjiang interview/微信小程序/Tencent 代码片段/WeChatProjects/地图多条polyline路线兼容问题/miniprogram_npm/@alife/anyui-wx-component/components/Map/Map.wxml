@@ -1,0 +1,16 @@
+
+<wxs module='proputil'>
+var propsInfo={_22:{bindcallouttap:"dealCalloutTap",bindcontroltap:"dealControlTap",bindmarkertap:"dealMarkerTap",bindlabeltap:"dealMarkerTap",bindregionchange:"dealRegionChange",bindtap:"onTap",bindupdated:"dealMapUpdate",circles:"circles",controls:"controls",id:"id",latitude:"latitude",longitude:"longitude",markers:"computedMarkers",polygons:"computedPolygon",polyline:"computedPolyline",scale:"scale",skew:"skew",rotate:"rotate",subkey:"subkey","layer-style":"layerStyle",setting:"computedSetting","show-location":"showLocation"}};module.exports.getProps=function(e){return propsInfo[e]};
+</wxs>
+
+<wxs module="m">
+var anyui = require("../../_anyui/utils/helper.wxs");
+module.exports._expId1 = function (style) {return anyui.processStyle(style);;};</wxs>
+<map class="wx-map anyui_map" wx:if="{{__ready__ && (isMapDataReady) }}" anyuiProps="{{proputil.getProps('_22')}}" bindparentmounted="returnRef" bindcallouttap="dealCalloutTap" bindcontroltap="dealControlTap" bindmarkertap="dealMarkerTap" bindlabeltap="dealMarkerTap" bindregionchange="dealRegionChange" bindtap="onTap" bindupdated="dealMapUpdate" circles="{{circles}}" controls="{{controls}}" id="{{id}}" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{computedMarkers}}" polygons="{{computedPolygon}}" polyline="{{computedPolyline}}" scale="{{scale}}" skew="{{skew}}" rotate="{{rotate}}" style="{{m._expId1(style, _a_)}}" subkey="{{subkey}}" layer-style="{{layerStyle}}" setting="{{computedSetting}}" show-location="{{showLocation}}">
+     <cover-view slot="callout" class="anyui_cover-view" className="anyui_cover-view">
+       <block wx:if="{{ !__slotObj['default'] }}"></block>
+       <slot>
+         </slot>
+       </cover-view>
+     </map>
+   

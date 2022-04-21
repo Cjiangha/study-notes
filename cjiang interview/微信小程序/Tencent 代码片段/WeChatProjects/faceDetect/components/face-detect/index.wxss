@@ -1,0 +1,101 @@
+
+.modal.data-v-7cf54daa {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1110;
+	opacity: 0;
+	outline: 0;
+	text-align: center;
+	-webkit-transform: scale(1.185);
+	        transform: scale(1.185);
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
+	-webkit-perspective: 2000rpx;
+	        perspective: 2000rpx;
+	background: rgba(0, 0, 0, 0.6);
+	transition: all 0.3s ease-in-out 0s;
+	pointer-events: none;
+}
+.modal.data-v-7cf54daa::before {
+	content: "\200B";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.modal.show.data-v-7cf54daa {
+	opacity: 1;
+	transition-duration: 0.3s;
+	-webkit-transform: scale(1);
+	        transform: scale(1);
+	overflow-x: hidden;
+	overflow-y: auto;
+	pointer-events: auto;
+}
+.modal.bottom-modal.data-v-7cf54daa::before {
+	vertical-align: bottom;
+}
+.modal.bottom-modal .dialog.data-v-7cf54daa {
+	width: 100%;
+	border-radius: 0;
+}
+.modal.bottom-modal.data-v-7cf54daa {
+	margin-bottom: -1000rpx;
+}
+.modal.bottom-modal.show.data-v-7cf54daa {
+	margin-bottom: 0;
+}
+.dialog.data-v-7cf54daa {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: auto;
+	margin-right: auto;
+	width: 680rpx;
+	max-width: 100%;
+	background-color: #f8f8f8;
+	border-radius: 10rpx;
+	overflow: hidden;
+}
+.bar.data-v-7cf54daa {
+	display: flex;
+	position: relative;
+	align-items: center;
+	min-height: 100rpx;
+    padding: 0rpx 40rpx;
+	justify-content: space-between;
+}
+.bg-white.data-v-7cf54daa {
+	background-color: #ffffff;
+	color: #666666;
+}
+.action.data-v-7cf54daa {
+	color: #0081ff;
+}
+image.data-v-7cf54daa{
+    width: 100%;
+    height: 100%;
+}
+.detectInfo.data-v-7cf54daa{
+    padding: 100rpx 0rpx;
+    font-size: 34rpx;
+    text-align: center;
+}
+.faceContent.data-v-7cf54daa{
+    height: 700rpx;
+    position: relative;
+}
+.successImage.data-v-7cf54daa{
+    overflow: hidden;
+    width: 600rpx;
+    height: 600rpx;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+

@@ -1,0 +1,5 @@
+<view class="upload" bindtap="upload">
+  <image class="upload-img" src="{{baseImgUrl+'online-upload-add.png'}}"></image>
+  <image class="file-img" mode="aspectFill" src="{{imgList[0]}}"></image>
+  <image wx:if="{{imgList.length > 0}}" catchtap="deleteImg" class="close" src="{{baseImgUrl+'close.png'}}"></image>
+</view>

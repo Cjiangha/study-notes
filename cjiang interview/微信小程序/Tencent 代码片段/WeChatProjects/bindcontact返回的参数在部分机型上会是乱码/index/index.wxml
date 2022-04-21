@@ -1,0 +1,7 @@
+<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
+<official-account></official-account>
+<button open-type="contact" bindcontact="dd" show-message-card="{{true}}">dd</button>
+
+<mp-tabs>
+123
+</mp-tabs>

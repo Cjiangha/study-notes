@@ -1,0 +1,146 @@
+page ._com_nsa8t_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+page ._com-left_nsa8t_7 {
+  margin-left: 24rpx;
+}
+
+page ._routes_nsa8t_11 {
+  position: relative;
+  flex-direction: column;
+  width: 229rpx;
+  max-height: 218rpx;
+  background: #FFFFFF;
+  border-radius: 18rpx;
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0 8rpx;
+  padding-bottom: 16rpx;
+}
+
+page ._routes-tag_nsa8t_22 {
+  display: block;
+  width: max-content;
+  margin: 0;
+  padding: 0 10rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 18rpx 0 18rpx 0;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 20rpx;
+}
+
+page ._routes-costTime_nsa8t_34 {
+  margin-top: 11rpx;
+  font-size: 38rpx;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: bold;
+}
+
+page ._routes-distance_nsa8t_40 {
+  display: flex;
+  align-items: center;
+  margin-top: 12rpx;
+  opacity: 0.7;
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+page ._routes-distance_light_nsa8t_48 {
+  vertical-align: middle;
+  margin-left: 6rpx;
+  margin-right: 3rpx;
+  width: 19rpx;
+  height: 19rpx;
+}
+
+page ._routes-distance_gas_nsa8t_55 {
+  vertical-align: middle;
+  margin-left: 6rpx;
+  margin-right: 3rpx;
+  width: 16rpx;
+  height: 20rpx;
+}
+
+page ._routes-distance-font_nsa8t_62 {
+  font-size: 20rpx;
+}
+
+page ._routes-line_nsa8t_65 {
+  margin-top: 13rpx;
+  background: #F5F5F5;
+  height: 1px;
+  width: 100%;
+}
+
+page ._routes-estimatePrice_nsa8t_71 {
+  font-size: 38rpx;
+  align-items: baseline;
+  margin-top: 5rpx;
+  color: #000000;
+}
+
+page ._routes-estimatePrice_qj_nsa8t_77 {
+  font-size: 28rpx;
+}
+
+page ._routes-estimatePrice_dw_nsa8t_80 {
+  font-size: 24rpx;
+  margin-left: 2rpx;
+}
+
+page ._routes-estimatePrice_text_nsa8t_84 {
+  position: relative;
+  top: 2rpx;
+  font-weight: bold;
+}
+
+page ._routes-title_nsa8t_89 {
+  margin-top: 8rpx;
+  font-size: 28rpx;
+  color: #000000;
+  font-weight: bold;
+}
+
+page ._routes-subtitle_nsa8t_95 {
+  margin-top: 2rpx;
+  opacity: 0.4;
+  font-size: 18rpx;
+  color: #000000;
+}
+
+page ._activity_nsa8t_102 {
+  color: #1A66FF;
+}
+
+page ._activity_nsa8t_102 ._activity-tag_nsa8t_105 {
+  background: #1A66FF;
+  color: white;
+}
+
+page ._activity_nsa8t_102 ._activity-costTime_nsa8t_109 {
+  color: #1A66FF;
+}
+
+page ._activity_nsa8t_102 ._activity-distance_nsa8t_112 {
+  color: #1A6CFF;
+}
+
+page ._activity_nsa8t_102 ._activity-line_nsa8t_115 {
+  background: #DBE3FF;
+}
+
+page ._activity_nsa8t_102 ._activity-estimatePrice_nsa8t_118 {
+  color: #1A66FF;
+}
+
+page ._activity_nsa8t_102 ._activity-title_nsa8t_121 {
+  color: #1A66FF;
+}
+
+page ._activity_nsa8t_102 ._activity-subtitle_nsa8t_124 {
+  color: #1A66FF;
+}

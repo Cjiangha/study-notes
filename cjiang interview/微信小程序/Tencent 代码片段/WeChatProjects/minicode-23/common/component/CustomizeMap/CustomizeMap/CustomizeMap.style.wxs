@@ -1,0 +1,9 @@
+
+        function wrap () {
+            var classInfo = {"hide-scroll":"_hide-scroll_1k9ex_1","callout-wrapper":"_callout-wrapper_1k9ex_6","callout-wrapper__center-icon":"_callout-wrapper__center-icon_1k9ex_14"};
+            return classInfo;
+        }
+        module.exports = {
+            wrap: wrap
+        }
+    

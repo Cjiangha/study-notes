@@ -1,0 +1,4 @@
+.anyui-default {
+  position: relative;
+  width: 100%;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "page-view": "/layouts/default/default",
+    "routes": "../../onlineCar/online_going/page/OnlineSelectRoutes/OnlineSelectRoutes"
+  },
+  "navigationBarTitleText": "打车"
+}

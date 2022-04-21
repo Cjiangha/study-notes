@@ -1,0 +1,1 @@
+<view  class="intro" bindtap="to">点击跳转</view>

@@ -1,0 +1,2 @@
+<wxml-to-canvas class="widget" height="546" width="320"></wxml-to-canvas>
+<view @tap="saveShareImage">保存图片</view>

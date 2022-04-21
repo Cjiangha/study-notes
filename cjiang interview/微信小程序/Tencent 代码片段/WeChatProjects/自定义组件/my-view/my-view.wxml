@@ -1,0 +1,5 @@
+<!--my-view/my-view.wxml-->
+<text>my-view/my-view.wxml</text>
+<!-- 12.29日23时有用户反馈，排查到这个问题 -->
+<!-- 传入undefined之前是没有问题的，为false，结果现在为true -->
+<view>{{show?'show为true':'show为false'}}</view>

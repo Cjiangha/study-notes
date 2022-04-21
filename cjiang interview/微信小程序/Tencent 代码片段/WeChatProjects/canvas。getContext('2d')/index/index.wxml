@@ -1,0 +1,7 @@
+<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
+
+<canvas id="weiqi"  type="2d" bindtouchstart="mousedownHandler" 
+  style="width:{{weiqiCW}}px;height:{{weiqiCH}}px;margin:auto;"></canvas>
+
+
+  <button bindtap="drawQipan">持续点我，点到看不见时栈溢出</button>

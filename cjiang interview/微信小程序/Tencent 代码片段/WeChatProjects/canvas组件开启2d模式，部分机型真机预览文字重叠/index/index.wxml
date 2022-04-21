@@ -1,0 +1,9 @@
+<import src="{{a}}" />
+<template is="item" data="{{text: 'forbar'}}"/>
+
+<view class="intro">
+  <view>
+    <canvas type="2d" id="myCanvas"></canvas>
+  </view>
+</view>
+<official-account></official-account>

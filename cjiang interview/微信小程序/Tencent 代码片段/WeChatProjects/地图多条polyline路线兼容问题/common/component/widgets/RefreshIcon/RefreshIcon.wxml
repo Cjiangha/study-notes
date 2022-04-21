@@ -1,0 +1,9 @@
+
+<wxs module="m">
+var anyui = require("../../../../_anyui/utils/helper.wxs");var anyuiClass = require("./RefreshIcon.style.wxs");
+
+module.exports._expId1 = function (className) {return anyui.processClass(className, anyuiClass.wrap());;};</wxs>
+<view class="_refresh-icon_3tpql_1 anyui_view {{m._expId1(className, _a_)}} {{className || ''}}" wx:if="{{__ready__}}" bindtap="handleClick">
+     <image class="_img_3tpql_11 anyui_image" src="https://gw.alicdn.com/imgextra/i2/O1CN01HAn93n1nAUP7mWTxk_!!6000000005049-2-tps-34-34.png" mode="scaleToFill"/>
+     </view>
+   

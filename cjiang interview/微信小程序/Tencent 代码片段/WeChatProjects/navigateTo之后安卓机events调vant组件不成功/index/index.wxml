@@ -1,0 +1,4 @@
+<view class="msg">这里是：{{ msg }}</view>
+<button bindtap="toPage1">toPage1</button>
+
+<van-toast id="van-toast" />

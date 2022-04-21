@@ -1,0 +1,8 @@
+.able {
+  margin-right: 20rpx;
+  width: 95%;
+  border-radius: 15rpx;
+  font-size: 30rpx;
+  background-color: #ffe459;
+  flex: 3;
+}

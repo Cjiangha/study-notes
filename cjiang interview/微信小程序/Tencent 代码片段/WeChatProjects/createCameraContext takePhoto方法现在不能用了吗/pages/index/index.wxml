@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view>
+  <view class="usermotto">
+    <button bindtap="test">测试</button>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.weui-cell {
+  padding:20rpx 0 0 5%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.weui-check__label{ display: flex;padding:0 20rpx 0 12rpx;}

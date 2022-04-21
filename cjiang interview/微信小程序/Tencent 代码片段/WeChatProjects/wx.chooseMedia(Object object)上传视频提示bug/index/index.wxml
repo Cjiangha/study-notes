@@ -1,0 +1,4 @@
+<view bindtap="upLoadFile">
+  <video wx:if="{{videoUrl}}" src="{{videoUrl}}" />
+  <button>上传视频</button>
+</view>

@@ -1,0 +1,26 @@
+<!--plugin/components/LiveRoom/index.wxml-->
+<live-player
+        id="player"
+        style="{{classStyle}}"
+        class="{{className}}"
+        src="{{src}}"
+        mode="{{mode}}"
+        autoplay="{{autoplay}}"
+        muted="{{muted}}"
+        orientation="{{orientation}}"
+        object-fit="{{objectFit}}"
+        min-cache="{{minCache}}"
+        max-cache="{{maxCache}}"
+        sound-mode="{{soundMode}}"
+        auto-pause-if-navigate="{{autoPauseIfNavigate}}"
+        auto-pause-if-open-native="{{autoPauseIfOpenNative}}"
+        bindstatechange="handleStateChange"
+        bindfullscreenchange="handleFullScreenChange"
+        bindnetstatus="handleNetStatus"
+        binderror="handleError"
+        picture-in-picture-mode="{{pictureInPictureMode}}"
+        bindenterpictureinpicture="handleEnterpictureinpicture"
+        bindleavepictureinpicture="handleLeavepictureinpicture"
+>
+    <slot></slot>
+</live-player>

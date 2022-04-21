@@ -1,0 +1,6 @@
+<button bindtap="down" >下载保存</button>
+进度：{{progress}}
+
+<button open-type="contact" bindcontact="e">dd</button>
+
+<view class="intro"></view>

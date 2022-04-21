@@ -1,0 +1,11 @@
+/* pages/index/index.wxss */
+
+.text {
+    width: 100px;
+    height: 100px;
+    color: #FFFFFF;
+}
+
+.video {
+    width: 750rpx;
+}

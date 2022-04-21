@@ -1,0 +1,27 @@
+
+<wxs module='proputil'>
+var propsInfo={_3:{show:"show",position:"center",disableScroll:"false"},_4:{nodes:"subtitle"},_5:{nodes:"item.text"}};module.exports.getProps=function(e){return propsInfo[e]};
+</wxs>
+<!-- 一口价，弹窗提示 -->
+   <v-popup position="center" className="free-upgrades {{className || ''}}" class="anyui_popup" __slots="{{ ['default']}}" wx:if="{{__ready__}}" anyuiProps="{{proputil.getProps('_3')}}" bindparentmounted="returnRef" show="{{show}}" disableScroll="{{false}}">
+     <view class="_content_p78q2_1 anyui_view">
+       <image mode="widthFix" class="_content-titlebg_p78q2_5 anyui_image" src="{{bgUrl}}"/>
+       <view class="_content-content_p78q2_9 anyui_view">
+         <view class="_top-label_p78q2_36 anyui_view">
+           <view class="anyui_view">应答快 车型好 价更省</view>
+           </view>
+         <view class="_price_p78q2_47 anyui_view">
+           <v-rich-text class="anyui_rich-text" className="anyui_rich-text" __slots="{{ []}}" anyuiProps="{{proputil.getProps('_4')}}" bindparentmounted="returnRef" nodes="{{subtitle}}"></v-rich-text>
+           </view>
+         <view class="_tags_p78q2_52 anyui_view">
+           <view wx:for="{{decsList}}" class="_tags_item_p78q2_60 anyui_view" wx:for-item="item" wx:for-index="index2" wx:key="text">
+             <image mode="aspectFit" class="_tags_icon_p78q2_66 anyui_image" wx:if="{{item.icon}}" src="{{item.icon}}"/>
+             <view class="_tags_point_p78q2_71 anyui_view" wx:else></view>
+             <v-rich-text class="_tags_text_p78q2_78 anyui_rich-text" className="_tags_text_p78q2_78 anyui_rich-text" anyuiProps="{{proputil.getProps('_5')}}" bindparentmounted="returnRef" nodes="{{item.text}}"/>
+             </view>
+           </view>
+         <view class="_content-content_btn_p78q2_24 anyui_view" bindtap="onCloseAction">{{btnText}}</view>
+         </view>
+       </view>
+     </v-popup>
+   

@@ -1,0 +1,2 @@
+<!--page2/page2.wxml-->
+<view bindtap="goPage3">前往page3</view>

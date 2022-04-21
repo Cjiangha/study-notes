@@ -1,0 +1,9 @@
+
+<wxs module="m">
+var anyui = require("../../../../_anyui/utils/helper.wxs");
+module.exports._expId1 = function (bubbleStyle) {return anyui.processStyle(bubbleStyle);;};</wxs>
+<view class="_bubble-wrapper_1kw6v_1 anyui_view {{className || ''}}" wx:if="{{__ready__ && (socketConnectFlag) }}" bindtouchstart="touchStart" bindtouchmove="touchMove" style="{{m._expId1(bubbleStyle, _a_)}}">
+     <view class="anyui_view">socket测试用</view>
+     <view class="_connect_1kw6v_18 anyui_view">连接中</view>
+     </view>
+   

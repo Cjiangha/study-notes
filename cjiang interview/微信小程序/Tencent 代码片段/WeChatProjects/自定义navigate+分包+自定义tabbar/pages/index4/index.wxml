@@ -1,0 +1,4 @@
+<cBar id="c-bar" title="{{title}}" showBack="{{showBack}}" showHome="{{showHome}}" homePath="{{homePath}}" homeOpenType="{{homeOpenType}}"></cBar>
+<view class="intro">兼容自定义和原生导航</view>
+<button class="intro" bindtap="showLoading">wx.showNavigationBarLoading</button>
+<button class="intro" bindtap="hideLoading">wx.hideNavigationBarLoading</button>

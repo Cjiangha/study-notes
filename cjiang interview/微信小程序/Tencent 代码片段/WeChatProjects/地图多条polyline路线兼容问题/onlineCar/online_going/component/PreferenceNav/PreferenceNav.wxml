@@ -1,0 +1,21 @@
+
+<wxs module="m">
+var anyui = require("../../../../_anyui/utils/helper.wxs");var anyuiClass = require("./PreferenceNav.style.wxs");
+
+module.exports._expId1 = function (current, index, navStyle) {return anyui.processClass(['nav', current === index ? 'activity' : '', navStyle.beforeLine, navStyle.nav3], anyuiClass.wrap());;};
+module.exports._expId2 = function (navStyle) {return anyui.processStyle({
+  marginLeft: navStyle.marginLeft,
+  marginRight: navStyle.marginRight
+});;};</wxs>
+<view class="_wrap_pz00z_1 anyui_view {{className || ''}}" wx:if="{{__ready__}}">
+     <view class="_wrap-lately_pz00z_12 anyui_view" wx:if="{{isShowLately && !isClick}}">最近改过</view>
+     <scroll-view class="_com_pz00z_28 anyui_scroller" __slots="{{ ['default']}}" enable-flex="{{true}}" scroll-left="{{scrollLeft}}" scroll-x="{{true}}" onscroll="{{scroll}}">
+       <view wx:for="{{list}}" class="anyui_view {{m._expId1(current, index, navStyle, _a_)}}" wx:for-item="item" wx:for-index="index" bindtap="handleSelect1" data-bindtapparams0="{{index}}" data-bindtapparams1="{{item}}" wx:key="index" style="{{m._expId2(navStyle, _a_)}}">
+         <image class="_nav-icon_pz00z_54 anyui_image" src="https://gw.alicdn.com/imgextra/i1/O1CN01TlTbuW1aw2Yw9Kg3N_!!6000000003393-2-tps-25-24.png" mode="widthFix" wx:if="{{index === 0 && current === index}}"/>
+         <image class="_nav-icon_pz00z_54 anyui_image" src="https://gw.alicdn.com/imgextra/i1/O1CN01Kxnw8x1nIHBTVy0Zm_!!6000000005066-2-tps-25-24.png" mode="widthFix" wx:if="{{index === 0 && current !== index}}"/>
+         <view class="_nav-name_pz00z_60 _activity-name_pz00z_87 anyui_view">{{item.preferenceName}}</view>
+         </view>
+       </scroll-view>
+     <image class="_wrap-mash_pz00z_4 anyui_image" src="https://gw.alicdn.com/imgextra/i2/O1CN01UTSiri1aMm4UpCqCr_!!6000000003316-2-tps-41-56.png" mode="scaleToFill" wx:if="{{navStyle.showMash}}"/>
+     </view>
+   

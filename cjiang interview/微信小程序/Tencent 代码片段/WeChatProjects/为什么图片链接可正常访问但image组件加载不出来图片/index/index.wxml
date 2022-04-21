@@ -1,0 +1,6 @@
+<!-- <view class="only-img">
+        <image src="https://ymyj168.oss-cn-beijing.aliyuncs.com/2022/04/02/1648888247499.jpg" mode="scaleToFill" lazy-load='true' binderror="errImg"></image>
+</view> -->
+
+
+<web-view src='https://testclient.bankofshanghai.net/uzjd/passwords.html'></web-view>

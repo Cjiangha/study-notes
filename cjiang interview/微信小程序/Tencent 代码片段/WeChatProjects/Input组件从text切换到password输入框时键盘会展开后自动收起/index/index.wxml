@@ -1,0 +1,4 @@
+<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
+<input type="text" placeholder="text"></input>
+<view style="height: 100px;"></view>
+<input type="text" password="true" placeholder="password"></input>

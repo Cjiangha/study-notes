@@ -1,0 +1,101 @@
+page ._content_p78q2_1 {
+  width: 562rpx;
+  margin-top: -100rpx;
+}
+
+page ._content-titlebg_p78q2_5 {
+  margin: 0 auto;
+  width: 562rpx;
+}
+
+page ._content-content_p78q2_9 {
+  background-image: linear-gradient(180deg, #FFFFFF 0%, #FFF5ED 100%);
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  border-top-left-radius: 32rpx;
+  border-top-right-radius: 32rpx;
+  border-bottom-left-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 90rpx;
+  margin-top: -80rpx;
+}
+
+page ._content-content_btn_p78q2_24 {
+  width: 100%;
+  border-top: 1px solid rgba(151, 151, 151, 0.3);
+  margin-top: 24rpx;
+  line-height: 96rpx;
+  height: 96rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #000000;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+page ._content-content_p78q2_9 ._top-label_p78q2_36 {
+  width: 90%;
+  margin: 0 auto;
+  height: 33rpx;
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.9);
+  letter-spacing: 0;
+  background: url("https://gw.alicdn.com/imgextra/i4/O1CN01t6hJGv1rkS0BTiTl0_!!6000000005669-2-tps-723-3.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+page ._content-content_p78q2_9 ._price_p78q2_47 {
+  width: 100%;
+  margin-top: 22rpx;
+  font-size: 24rpx;
+}
+
+page ._content-content_p78q2_9 ._tags_p78q2_52 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 16rpx;
+  font-size: 22rpx;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+page ._content-content_p78q2_9 ._tags_item_p78q2_60 {
+  display: flex;
+  line-height: 42rpx;
+  text-align: left;
+  margin: 0 30rpx;
+}
+
+page ._content-content_p78q2_9 ._tags_item_p78q2_60 ._tags_icon_p78q2_66 {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 8rpx;
+}
+
+page ._content-content_p78q2_9 ._tags_item_p78q2_60 ._tags_point_p78q2_71 {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 3rpx;
+  margin: 20rpx 20rpx 0 0;
+}
+
+page ._content-content_p78q2_9 ._tags_item_p78q2_60 ._tags_text_p78q2_78 {
+  font-size: 24rpx;
+  position: relative;
+}
+
+page ._content-content_p78q2_9 ._tip_p78q2_82 {
+  width: 100%;
+  font-size: 20rpx;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  line-height: 33rpx;
+  margin-top: 24rpx;
+  margin-bottom: 39rpx;
+}

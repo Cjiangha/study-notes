@@ -1,0 +1,6 @@
+<button bindtap="chooseImage">上传照片</button>
+
+<video src="https://ipms.crcement.com:8085/oss-proxy/ossProxy/download?location=cxpt/admin/activityfront/20220322150117/111.mp4"></video>
+
+
+<button bindtap="dianwo">点我</button>

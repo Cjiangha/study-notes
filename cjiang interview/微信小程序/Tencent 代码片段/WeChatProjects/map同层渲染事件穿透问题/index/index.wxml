@@ -1,0 +1,10 @@
+<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
+<view style="position: relative; width: 750rpx;height: 400rpx;">
+    <map bindtap="tapMap" style="width: 100%;height: 100%;" longitude="{{ longitude }}" latitude="{{latitude}}"
+        markers="{{markers}}" bindmarkertap='tapMarker'></map>
+    <view catchtap="tapView"
+        style="position: absolute;top: 10rpx;right: 10rpx;width: 90rpx;height: 90rpx;background-color: red;"></view>
+</view>
+<view>{{tapMap}}</view>
+<view>{{tapView}}</view>
+<view>{{tapMarker}}</view>

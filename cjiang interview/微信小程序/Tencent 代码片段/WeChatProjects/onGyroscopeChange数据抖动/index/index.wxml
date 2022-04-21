@@ -1,0 +1,3 @@
+<button open-type="contact" show-message-card :send-message-title="contactTitle" :send-message-path="contactUrl">点我</button>
+
+<video src="https://yeyjk.hhjlxxkj.com:18443/icloud/qiniu/live?tk=eLZDeuQKdZpYyu7wqeeGurDnPNF_ne5syrEkf8Nnc2m6vuPfwv60GA==" binderror="error"></video>

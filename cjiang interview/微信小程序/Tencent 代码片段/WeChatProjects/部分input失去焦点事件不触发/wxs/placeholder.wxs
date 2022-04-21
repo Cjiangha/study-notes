@@ -1,0 +1,17 @@
+function show (value = '', placeholder = '') {
+  var type = value.constructor
+  if ( (type == 'String' || type == 'Array') && value.length == 0) {
+    return placeholder
+  }
+  if (type == 'Number' && isNaN(value)) {
+    return placeholder
+  }
+  if (type == 'Null' || type == 'Undefined') {
+    return placeholder
+  }
+  return value
+}
+
+module.exports = {
+  show: show
+}

@@ -1,0 +1,17 @@
+
+<wxs module='proputil'>
+var propsInfo={_1:{src:"customizeParams.arrowRightImg"},_2:{src:"customizeParams.layoutXmlTriangleImg"}};module.exports.getProps=function(r){return propsInfo[r]};
+</wxs>
+<!-- 修改上车点：起点可修改Marker -->
+   <cover-view class="_wrap_752ng_1 anyui_cover-view" className="_wrap_752ng_1 anyui_cover-view" wx:if="{{__ready__}}" marker-id="{{customizeParams.markerId}}">
+     <cover-view class="_wrap-body_752ng_6 anyui_cover-view" className="_wrap-body_752ng_6 anyui_cover-view">
+       <cover-view class="_content_752ng_17 anyui_cover-view" className="_content_752ng_17 anyui_cover-view">
+         <cover-view class="_content__main-text_752ng_21 anyui_cover-view" className="_content__main-text_752ng_21 anyui_cover-view">{{customizeParams.label}}</cover-view>
+         <cover-view class="_content__vertical-line_752ng_30 anyui_cover-view" className="_content__vertical-line_752ng_30 anyui_cover-view" wx:if="{{customizeParams.value}}"></cover-view>
+         <cover-view class="_content__sub-text_752ng_26 anyui_cover-view" className="_content__sub-text_752ng_26 anyui_cover-view">{{customizeParams.value}}</cover-view>
+         </cover-view>
+       <cover-image class="_arrow-icon_752ng_38" className="_arrow-icon_752ng_38" __slots="{{ []}}" anyuiProps="{{proputil.getProps('_1')}}" bindparentmounted="returnRef" src="{{customizeParams.arrowRightImg}}"></cover-image>
+       </cover-view>
+     <cover-image class="_triangle-img_752ng_44" className="_triangle-img_752ng_44" __slots="{{ []}}" anyuiProps="{{proputil.getProps('_2')}}" bindparentmounted="returnRef" src="{{customizeParams.layoutXmlTriangleImg}}"></cover-image>
+     </cover-view>
+   

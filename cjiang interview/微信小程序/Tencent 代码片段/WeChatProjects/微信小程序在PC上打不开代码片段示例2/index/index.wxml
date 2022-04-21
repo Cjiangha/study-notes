@@ -1,0 +1,5 @@
+<view style="padding:32rpx;">
+  <view>微信小程序在PC上有的正常打开，有的电脑可以正常打开，有的不行？</view>
+  <view wx:for="{{list}}" style="padding: 10rpx;">{{item}}</view>
+  <pager id="pager" list-length="{{list.length}}" list-page="{{listPage}}" bind:getList="getList"></pager>
+</view>

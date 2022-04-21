@@ -1,0 +1,86 @@
+/* 上传 */
+.upload_image_view {
+  width: 100%;
+  margin: 20rpx 20rpx;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.upload_image_view .title {
+  width: 100%;
+  font-family: PingFang-SC-Regular;
+  font-size: 24rpx;
+  color: #4a4a4a;
+  margin-bottom: 15rpx;
+  line-height: 100%;
+}
+
+.upload_image_view .image_view {
+  height: 130rpx;
+  width: 130rpx;
+  position: relative;
+  margin: 15rpx 30rpx 15rpx 0rpx;
+  border-radius: 8rpx;
+}
+
+.upload_image_view .image_view image {
+  height: 100%;
+  width: 100%;
+  border-radius: 8rpx;
+}
+
+.upload_image_view .image_view .del_btn {
+  background-color: #f67371;
+  border-radius: 50%;
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  top: -12rpx;
+  right: -12rpx;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload_image_view .image_view .del_btn .baicha {
+  display: inline-block;
+  width: 20rpx;
+  height: 5rpx;
+  background: #fff;
+  line-height: 0;
+  font-size: 0;
+  vertical-align: middle;
+  -webkit-transform: rotate(45deg);
+}
+
+.upload_image_view .image_view .del_btn .baicha:after {
+  content: '/';
+  display: block;
+  width: 20rpx;
+  height: 5rpx;
+  background: #fff;
+  -webkit-transform: rotate(-90deg);
+}
+
+.upload_image_view .video-play {
+  position: absolute;
+  left: 35rpx;
+  top: 35rpx;
+  z-index: 6;
+}
+
+.upload_image_view .add_view {
+  height: 130rpx;
+  width: 130rpx;
+  margin: 15rpx 15rpx 15rpx 0rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.00);
+  border: 4rpx dashed #979797;
+  border-radius: 8rpx;
+}
+

@@ -1,0 +1,11 @@
+<view class="intro">
+    欢迎使用代码片段，可在控制台查看代码片段的说明和文档
+    <swiper class="sw" current="{{current}}" bindchange="onChange">
+        <swiper-item>
+            <video src="https://user-platform-oss.kujiale.com/design-zone/MG5QA5FMDSZYKAABAAAAACQ8.mp4" controls="true" autoplay="true" play-btn-position="center" />
+        </swiper-item>
+        <swiper-item>
+            <view>第二个第二个</view>
+        </swiper-item>
+    </swiper>
+</view>

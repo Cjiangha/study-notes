@@ -1,0 +1,23 @@
+
+<wxs module='proputil'>
+var propsInfo={_4:{show:"isShow",zIndex:"102",position:"bottom",mask:"false"},_5:{nodes:"areaDes"}};module.exports.getProps=function(o){return propsInfo[o]};
+</wxs>
+<v-popup position="bottom" className="{{className || ''}}" class="anyui_popup" __slots="{{ ['default']}}" wx:if="{{__ready__}}" anyuiProps="{{proputil.getProps('_4')}}" bindparentmounted="returnRef" show="{{isShow}}" zIndex="{{102}}" mask="{{false}}">
+     <view class="_control-area-wrap_1jxzb_1 anyui_view">
+       <image mode="scaleToFill" src="https://gw.alicdn.com/imgextra/i1/O1CN01Vn6Qfg1yvcxEN4bV1_!!6000000006641-2-tps-750-141.png" class="_head-img_1jxzb_9 anyui_image"/>
+       <view class="_content_1jxzb_15 anyui_view">
+         <view class="_title_1jxzb_20 anyui_view">{{areaName}}</view>
+         <v-rich-text class="_des_1jxzb_27 anyui_rich-text" className="_des_1jxzb_27 anyui_rich-text" anyuiProps="{{proputil.getProps('_5')}}" bindparentmounted="returnRef" nodes="{{areaDes}}"/>
+         <view class="_ponit_1jxzb_34 anyui_view">
+           <text class="_ponit-name_1jxzb_51 anyui_text">{{ponitName}}</text>
+           </view>
+         </view>
+       <!-- 底部按钮 -->
+       <view class="_foot-btns_1jxzb_59 anyui_view">
+         <button class="anyui_button" bindtap="hardleOk">确认上车点</button>
+         <view class="_go-seach_1jxzb_77 anyui_view" bindtap="goSeach">不在此区域上车<image class="_seach-arrow_1jxzb_84 anyui_image" mode="scaleToFill" src="/common/images/station-arrow-right.png"/>
+           </view>
+         </view>
+       </view>
+     </v-popup>
+   

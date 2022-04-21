@@ -1,0 +1,64 @@
+/* 等待页面 */
+.wait{
+  display:block;  
+  width: 100vw;
+  height: 100vh;
+  background-color: #d1e3e7;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+  /* .wait_center{
+display:flex; 
+  flex-direction:column;
+  align-items:center; 
+  justify-content:center;
+  text-align: center;
+} */
+.wait_img{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20vh auto 20rpx;
+  display: block;
+  text-align: center;
+  
+}
+.wait_gy{
+  color: #1f4754;
+  font-size: 36rpx;
+  display: block;
+  text-align: center;
+}
+.wait_peo{
+  color: #1f4754;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  display: block;
+  text-align: center;
+}
+
+.hungup{
+  width: 100vw;
+  position: absolute;
+  bottom: 6vh;
+  left: 0;
+  text-align: center;
+}
+.wait_hangup{
+  width: 100rpx;
+  height:100rpx;
+}
+
+/* 图标下面的字体 */
+.hangup-text{
+  font-size: 24rpx;
+  color: #1f4754;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+/* .stop{
+  font-size: 28rpx;
+  color:#1f4754;
+  margin-top: 90%;
+} */

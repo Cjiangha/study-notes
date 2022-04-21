@@ -1,0 +1,52 @@
+@keyframes act {
+	from {
+		top: 20%;
+	}
+
+	to {
+		top: 80%;
+	}
+}
+
+.thecars {
+	position: relative;
+	width: 100%;
+	height: 420rpx;
+}
+
+.thebor {
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	border: 4rpx solid #4CD964;
+	bottom: 0;
+	padding: 20rpx;
+	width: 80%;
+	height: 280rpx;
+}
+
+.acting {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 60%;
+	height: 4rpx;
+	background-color: #4CD964;
+	box-shadow: 0 -5px 10px green;
+	animation: act 1s linear alternate infinite;
+}
+
+.cemar {
+	background-color: white;
+	color: black;
+	padding: 10rpx 0;
+	font-size: 22rpx;
+	display: inline-block;
+	width: 24%;
+	position: absolute;
+	right: 0;
+}

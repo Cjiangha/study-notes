@@ -1,0 +1,98 @@
+page ._wrap_pz00z_1 {
+  position: relative;
+}
+
+page ._wrap-mash_pz00z_4 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 88rpx;
+  width: 20rpx;
+}
+
+page ._wrap-lately_pz00z_12 {
+  position: absolute;
+  display: flex;
+  height: 30rpx;
+  padding: 0 10rpx;
+  top: -15rpx;
+  left: -27rpx;
+  background: #FF4B4B;
+  border-radius: 18px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 18rpx;
+}
+
+page ._com_pz00z_28 {
+  display: flex;
+  height: 88rpx;
+  max-width: 652rpx;
+}
+
+page ._nav_pz00z_34 {
+  position: relative;
+  display: flex;
+  flex: 1;
+  padding: 0 20rpx;
+  margin: 0 28rpx;
+  font-size: 28rpx;
+  color: #000000;
+  align-items: center;
+}
+
+page ._nav_pz00z_34::before {
+  position: absolute;
+  top: 50%;
+  margin-top: -17rpx;
+  left: -15rpx;
+  content: "";
+  height: 34rpx;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+page ._nav-icon_pz00z_54 {
+  display: inline-block;
+  width: 25rpx;
+  height: 24rpx;
+  margin-right: 6rpx;
+}
+
+page ._nav-name_pz00z_60 {
+  opacity: 0.6;
+  display: inline-block;
+  font-size: 28rpx;
+  width: max-content;
+}
+
+page ._nav-line_pz00z_66 {
+  height: 34rpx;
+  background: rgba(0, 0, 0, 0.06);
+  width: 1px;
+}
+
+page ._nav_pz00z_34:first-child {
+  margin-left: 0 !important;
+}
+
+page ._nav_pz00z_34:last-child {
+  padding-right: 16rpx;
+  margin-right: 0 !important;
+}
+
+page ._nav3_pz00z_79:last-child {
+  padding-right: 0;
+}
+
+page ._before-line_pz00z_83::before {
+  left: -28rpx;
+}
+
+page ._activity_pz00z_87 ._activity-name_pz00z_87 {
+  font-weight: bold;
+  opacity: 1;
+  color: #1A69FF;
+}

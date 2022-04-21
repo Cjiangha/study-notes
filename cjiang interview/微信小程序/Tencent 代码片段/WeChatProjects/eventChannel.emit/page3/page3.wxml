@@ -1,0 +1,4 @@
+<!--page3/page3.wxml-->
+<view bindtap="backPage2">返回第二页</view>
+
+<view bindtap="backPage1">返回第一页</view>

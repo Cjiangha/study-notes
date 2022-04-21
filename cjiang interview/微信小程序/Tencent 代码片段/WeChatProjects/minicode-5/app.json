@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/mainP/mainP",
+    "pages/userInfo/userInfo"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "是否允许授权获取当前位置" 
+    }
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "BZ",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a0a0a0",
+    "selectedColor": "#ec5c30",
+    "backgroundColor": "#f2f2f2",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/mainP/mainP",
+        "text": "首页"
+
+      },
+      {
+        "pagePath": "pages/userInfo/userInfo",
+        "text": "我的"
+
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

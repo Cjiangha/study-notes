@@ -1,0 +1,4 @@
+<scroll-view scroll-y="{{true}}" style="height: 100vh;" scroll-with-animation="{{true}}" scroll-top="{{scrollTop}}">
+    <view bindtap="tap" style="background-color: green;position: fixed;bottom:50%;height: 40px">click to scroll</view>
+    <view style="height: 2000px;background-color: red;"> </view>
+</scroll-view>

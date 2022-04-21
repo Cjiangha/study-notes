@@ -1,0 +1,5 @@
+<view class='container'>
+  <view>
+    <textarea class='textarea' placeholder='textarea.....' adjust-keyboard-to="bottom" ></textarea>
+  </view>
+</view>

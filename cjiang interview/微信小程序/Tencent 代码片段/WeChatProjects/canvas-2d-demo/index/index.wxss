@@ -1,0 +1,15 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.image{
+  width: 300rpx;
+  height: 300rpx;
+  background: #efefef;
+}
+.canvas_view{
+  background: #efefef;
+}
+.btn {
+  margin: 30rpx 0;
+}

@@ -1,0 +1,4 @@
+<view class="intro">
+  <button style="margin: 30rpx;" bindtap="startUdp">打开UDP</button>
+  <button style="margin: 30rpx;" bindtap="stopUdp">关闭UDP</button>
+</view>

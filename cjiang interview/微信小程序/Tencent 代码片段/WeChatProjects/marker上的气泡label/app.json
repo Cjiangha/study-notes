@@ -1,0 +1,25 @@
+{
+    "pages": [
+        "index/index",
+        "pages/index2/index2"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "navigationBarTitleText": "map",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "index/index",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/index2/index2",
+                "text": "日志"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
+}

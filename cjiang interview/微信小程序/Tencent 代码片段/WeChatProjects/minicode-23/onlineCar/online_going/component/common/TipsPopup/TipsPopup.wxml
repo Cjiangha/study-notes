@@ -1,0 +1,20 @@
+
+<wxs module='proputil'>
+var propsInfo={_3:{show:"show",position:"center",disableScroll:"false"},_4:{nodes:"richTipsTitle"}};module.exports.getProps=function(o){return propsInfo[o]};
+</wxs>
+
+<wxs module="m">
+var anyui = require("../../../../../_anyui/utils/helper.wxs");
+module.exports._expId1 = function (buttonData) {return anyui.processStyle({
+  'background-image': "url(".concat(buttonData.bgImg, ")")
+});;};</wxs>
+<v-popup position="center" className="{{className || ''}}" class="anyui_popup" __slots="{{ ['default']}}" wx:if="{{__ready__}}" anyuiProps="{{proputil.getProps('_3')}}" bindparentmounted="returnRef" show="{{show}}" disableScroll="{{false}}">
+     <view class="_tips-popup_k0lnc_1 anyui_view">
+       <image class="_tips-popup__bg_k0lnc_14 anyui_image" mode="widthFix" src="{{contentData.bgImg}}"/>
+       <v-rich-text class="_tips-popup__title_k0lnc_22 anyui_rich-text" className="_tips-popup__title_k0lnc_22 anyui_rich-text" __slots="{{ []}}" anyuiProps="{{proputil.getProps('_4')}}" bindparentmounted="returnRef" nodes="{{richTipsTitle}}"></v-rich-text>
+       <text class="_tips-popup__des_k0lnc_33 anyui_text">{{contentData.description || ''}}</text>
+       <text class="_tips-popup__text_k0lnc_33 anyui_text">{{contentData.text || ''}}</text>
+       <view class="_tips-popup__btn_k0lnc_48 anyui_view" bindtap="onCloseAction" style="{{m._expId1(buttonData, _a_)}}">{{buttonData.text || ''}}</view>
+       </view>
+     </v-popup>
+   

@@ -1,0 +1,5 @@
+<textarea wx:if="{{ show }}" name="" id="" cols="30" rows="10" placeholder="测试placeholder" placeholder-style="color:red"></textarea>
+<button bindtap="click">show</button>
+<page-container show="{{ show }}">
+  <textarea name="" id="" cols="30" rows="10" placeholder="测试placeholder" placeholder-style="color:red"></textarea>
+</page-container>

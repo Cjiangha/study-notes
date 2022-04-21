@@ -1,0 +1,5 @@
+<swiper style="height: 100vh;" vertical="{{true}}" current="{{current}}" bindanimationfinish="oncurrentchange">
+  <swiper-item wx:for="{{swiperList}}" wx:key="id" item-id="{{item.id}}">
+    <view>{{item.text}}</view>
+  </swiper-item>
+</swiper>

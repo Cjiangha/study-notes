@@ -1,0 +1,26 @@
+{
+    "pages": [
+        "pages/loading/loading",
+        "pages/project/list/list",
+        "pages/login/login"
+    ],
+    "subPackages": [],
+    "window": {
+        "pageOrientation": "portrait",
+        "navigationBarTitleText": "函速通平台",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#F8F8F8",
+        "backgroundColorTop": "#F4F5F6",
+        "backgroundColorBottom": "#F4F5F6",
+        "navigationStyle": "custom"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "演示定位能力"
+        }
+    },
+    "usingComponents": {},
+    "sitemapLocation": "sitemap.json"
+}

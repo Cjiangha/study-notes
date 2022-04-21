@@ -1,0 +1,33 @@
+.scroll_x{
+  margin-top: 60rpx;
+  background: #F2F2F2;
+  position: relative;
+}
+.scroll_x>view:nth-of-type(1){
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100rpx;
+  height: 607rpx;
+  z-index: 100;
+  background:linear-gradient(-90deg,rgb(248,248,248,0),	rgb(255,255,255,0.5));
+}
+.scroll_box{
+  white-space: nowrap;
+  /* width:2350rpx; */
+  height: 607rpx;
+  position: relative;
+  
+}
+
+.image_list{
+  position: absolute;
+  display: inline-block;
+}
+.image_list>image{
+  border-radius: 30rpx;
+}
+.shadow{
+box-shadow: 5rpx 5rpx 20rpx rgba(0,0,0,0.2);
+}

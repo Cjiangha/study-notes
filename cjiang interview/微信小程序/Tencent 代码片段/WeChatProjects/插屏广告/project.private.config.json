@@ -1,0 +1,30 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "two/index",
+          "pathName": "two/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "index/two/index",
+          "pathName": "index/two/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

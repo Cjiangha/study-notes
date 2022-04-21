@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+page ._station-guidance-content_eh3t3_2 {
+  flex-direction: column;
+  background: url("https://gw.alicdn.com/imgextra/i4/O1CN01QVJJhF1SGnw1HGkTP_!!6000000002220-2-tps-751-262.png") no-repeat top left;
+  background-size: 100%;
+  padding: 40rpx;
+}
+
+page ._station-guidance-title_eh3t3_9 {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.87);
+  margin-bottom: 11rpx;
+  display: flex;
+  flex-direction: column;
+  /* 默认view会用anyui全局，不会继承，需要强制设置 */
+}
+
+page ._station-guidance-title_eh3t3_9 .anyui_view,
+page ._station-guidance-title_eh3t3_9 .anyui_text {
+  line-height: 60rpx;
+}
+
+page ._statison-guidance-text_eh3t3_22 {
+  font-size: 28rpx;
+  min-height: 40rpx;
+  color: rgba(0, 0, 0, 0.57);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+page .station-indicator {
+  background-color: #EEEEEF;
+  border-radius: 18rpx;
+  z-index: 0;
+}
+
+page ._station-picker-box_eh3t3_37 {
+  display: flex;
+  flex-direction: column;
+  height: 220rpx;
+  margin: 50rpx 0 18rpx;
+}
+
+page ._station-picker_eh3t3_37 {
+  height: 100%;
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+page ._station-picker_eh3t3_37 ._station-picker-item_eh3t3_49 {
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  color: rgba(0, 0, 0, 0.6);
+}

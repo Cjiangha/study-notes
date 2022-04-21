@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "index/index"
+  ],
+  "subPackages": [
+    {
+      "root": "user",
+      "pages": [
+        "index/index"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

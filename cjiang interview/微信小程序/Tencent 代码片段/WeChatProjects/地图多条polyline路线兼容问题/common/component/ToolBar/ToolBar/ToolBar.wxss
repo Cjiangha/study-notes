@@ -1,0 +1,79 @@
+page ._wrap-card-toolBar_11o5k_1 {
+  position: relative;
+  display: flex;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  width: 100%;
+  flex-direction: row;
+  z-index: 1;
+}
+
+page ._wrap-card-toolBar_11o5k_1 ._wrap-more-icon_11o5k_9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72rpx;
+  height: 120rpx;
+  margin: 16rpx 0;
+}
+
+page ._card-toolBar_11o5k_18 {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+  height: 120rpx;
+  margin: 16rpx 0;
+  background: #ffffff;
+}
+
+page ._card-toolBar_11o5k_18 > .anyui_view,
+page ._card-toolBar_11o5k_18 > .anyui_button {
+  position: relative;
+  height: 83rpx;
+  max-width: 88rpx;
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+  box-sizing: border-box;
+  align-items: center;
+  font-size: 20rpx;
+  color: #000000;
+  opacity: 0.9;
+}
+
+page ._card-toolBar_11o5k_18 > .anyui_view ._tool-icon_11o5k_40,
+page ._card-toolBar_11o5k_18 > .anyui_button ._tool-icon_11o5k_40 {
+  margin-bottom: 8rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+page ._card-toolBar_11o5k_18 > .anyui_view ._info-amount_11o5k_45,
+page ._card-toolBar_11o5k_18 > .anyui_button ._info-amount_11o5k_45 {
+  position: absolute;
+  top: -6rpx;
+  left: 46rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  background-color: #FF4B4B;
+  border-radius: 16rpx;
+  font-size: 20rpx;
+  color: #fff;
+  font-weight: medium;
+  text-align: center;
+  padding: 0 10.5rpx;
+}
+
+page ._card-toolBar_11o5k_18 .anyui_button {
+  line-height: 1.2;
+  background-color: transparent;
+  border: none;
+}
+
+page ._single-style_11o5k_65 {
+  border: none;
+}
+
+page ._single-style_11o5k_65 ._card-toolBar_11o5k_18 {
+  border-radius: 24rpx;
+}

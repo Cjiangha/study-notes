@@ -1,0 +1,98 @@
+page{
+  height: 100%;
+}
+.page-body{
+  width:100%;
+  height: 100%;
+}
+.page-section-gap{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  height: 100%;
+}
+
+.page-body-button {
+  margin-bottom: 30rpx;
+}
+
+.page-control{
+  box-sizing:border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.txtCount{
+  margin: 0rpx 20rpx;
+}
+
+.btnRefresh{
+  margin: 0rpx 20rpx;
+  border:1rpx solid blue;
+  padding: 5rpx 15rpx 5rpx 15rpx;
+  border-radius: 20rpx;
+  color: blue;
+} 
+.page-status{
+  box-sizing:border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding:20rpx 20rpx;
+
+}
+.imgstatus{
+  width:100rpx;
+  height:100rpx;
+  display:block;
+}
+.block{ display: block}
+
+#myMap{
+  height: calc(100% - 280rpx)
+}
+
+.customCallout{
+  width: 400rpx;
+  height: 450rpx;
+  background-color: white;
+}
+
+.callout-title{
+  display: flex;
+  background-color: rgb(19, 135, 180);
+}
+
+.callout-icon{
+  width: 40rpx;
+  height: 40rpx;
+  flex: 1;
+}
+
+.callout-info{
+  flex: 8;
+  text-align: center;
+}
+
+.callout-content{
+  display: flex;
+  flex-direction: column;
+}
+.content-row{
+  display: flex;
+  flex-direction: row;
+  margin: 5rpx 10rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.lbl{
+  padding: 5rpx 5rpx;
+  font-size: 28rpx;
+}
+.txt{
+  padding: 5rpx 5rpx;
+  font-size: 28rpx;
+}

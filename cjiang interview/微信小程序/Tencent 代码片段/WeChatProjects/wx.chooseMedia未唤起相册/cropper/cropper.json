@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "选择文件",
+  "disableScroll": true,
+  "navigationBarBackgroundColor": "#292929",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#292929",
+  "usingComponents": {
+    "image-cropper": "../image-cropper/image-cropper"
+  }
+}

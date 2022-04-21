@@ -1,0 +1,3 @@
+<cBar title="{{title}}" showBack="true" showHome="true"></cBar>
+<view class="intro">分包 - 发布页面</view>
+<fBar idx="1"></fBar>

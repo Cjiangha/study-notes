@@ -1,0 +1,10 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.camera_content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}

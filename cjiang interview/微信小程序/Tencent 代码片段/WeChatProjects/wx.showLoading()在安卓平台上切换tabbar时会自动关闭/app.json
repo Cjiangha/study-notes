@@ -1,0 +1,28 @@
+{
+  "pages":[
+    "index/index",
+    "logs/logs"
+  ],
+  "tabBar": {
+		"selectedColor": "#409EFF",
+		"backgroundColor": "#F2F6FC",
+		"list": [
+			{
+				"pagePath": "index/index",
+				"text": "首页"
+			},
+			{
+				"pagePath": "logs/logs",
+				"text": "测试"
+			}
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,46 @@
+<!--pages/about/about.wxml-->
+
+<custom style='height:{{CustomBar}}rpx;'>
+  <bar style='height:100%;padding-top:{{StatusBar}}rpx'>
+    <navigator class='' style='margin-left:30rpx;width:60rpx;height:60rpx;' open-type="navigateBack" delta="1">
+    <view class="icon-back">
+      <text class='icon-back1'></text>
+      <text class='icon-back2'></text>
+    </view>
+      <!-- <image mode='aspectFit' src='../../images/icon_user.png' class='user-img-index'></image> -->
+    </navigator>    
+  </bar>
+</custom>
+
+<view class="container-bg">
+  <view class="userinfo" d-d='{{userInfo}}'>
+    <image src="../../images/basicprofile.png" class="userinfo-avatar" bindtap='imgsrcBindtap'></image>
+    <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+    <text class="userinfo-nickname">{{userInfo}}</text>
+  </view>
+
+  
+  <view class="page__bd">
+    <button class="weui-btn weui-btn-abo" bindtap='showModal' data-target="DialogModal2"  hover-class="button-hover">切换账号</button>
+    <!-- <view class="" bindtap='syncBindtap'>清除账号缓存</view> -->
+  </view> 
+</view>
+<modal-box class="{{modalName=='DialogModal2'?'show':''}}">
+  <dialog class='aboutDialog'>
+    <bar class="justify-end">
+      <view class='content'>退出登录</view>
+      <view class='action' bindtap='hideModal'>
+        <text class='icon-close text-red'></text>
+      </view>
+    </bar>
+    <view class='padding-xl'>
+      确认退出登录？
+    </view>
+    <bar>
+      <!-- <view class='action margin-0 flex-sub text-green ' bindtap='hideModal'>
+        <text class='icon-moneybag'></text>微信支付</view> -->
+      <view class='action margin-0 flex-sub text-green solid-left' bindtap='hideModal'  hover-class="cell_active">取消</view>
+      <view class='action margin-0 flex-sub  solid-left' bindtap='logoutBindtap'  hover-class="cell_active">确定</view>
+    </bar>
+  </dialog>
+</modal-box>

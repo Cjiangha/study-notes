@@ -1,0 +1,557 @@
+<template>
+	<view class="call">
+		<view class="user" v-if="calling">
+			<image :src="options.image" mode="aspectFill"></image>
+			<view class="info">
+				<text class="name">{{options.name ? options.name : ''}}</text>
+				<text class="des">正在等待对方接受邀请</text>
+			</view>
+		</view>
+		<live-pusher v-if="startPush" :class="[calling ? 'pusher' : 'pushering']" :url="pusher.url" :mode="pusher.mode"
+			:enable-mic="pusher.enableMic" :autopush="pusher.autopush" :device-position="pusher.frontCamera" 
+			:min-bitrate="pusher.minBitrate" :max-bitrate="pusher.maxBitrate" :beauty="pusher.beautyLevel"
+			:whiteness="pusher.whitenessLevel" orientation="vertical" 
+			:beauty-style="pusher.beautyStyle" :filter="pusher.filter" @statechange="_pusherStateChangeHandler"
+			@netstatus="_pusherNetStatusHandler" @error="_pusherErrorHandler" 
+			waiting-image="https://backend-1255361217.cos.ap-beijing.myqcloud.com/Wechat/20220126/leave.png"
+			@audiovolumenotify="_pusherAudioVolumeNotify" />
+		<!-- 这个playerList应该是个长度为3的数组，具体会由房间内有多少人决定 -->
+		<view v-for="(item,index) in playerList" :key="index" :id="'player-'+item.streamID">
+			<live-player class="player" :id="item.id" :data-streamid="item.streamID" :src="item.src" :mode="RTC"
+				:autoplay="item.autoplay" :mute-audio="false" :mute-video="false"
+				:orientation="item.orientation" :object-fit="item.objectFit" :min-cache="item.minCache"
+				:max-cache="item.maxCache" :sound-mode="item.soundMode" @statechange="_playerStateChange"
+				@audiovolumenotify="_playerAudioVolumeNotify"/>
+		</view>
+		<view class="time" v-if="!calling">
+			{{durationTitleStr}} {{durationStr}}
+		</view>
+		<view class="operation">
+			<button type="default" class="audio" @click="soundChange" >
+				<image v-show="sound" src="/static/trtc_room/audio-true.png" mode="aspectFill"></image>
+				<image v-show="!sound" src="/static/trtc_room/audio-false.png" mode="aspectFill"></image>
+			</button>
+			<!-- <view v-else></view> -->
+			<button type="default" class="hangup" @click="hangup">
+				<image src="/static/trtc_room/hangup.png" mode="aspectFill"></image>
+			</button>
+			<button type="default" class="camera" @click="cameraChange">
+				<image src="/static/trtc_room/switch.png" mode="aspectFill"></image>
+			</button>
+			<!-- <view v-else></view> -->
+		</view>
+	</view>
+</template>
+<script>
+	import TRTC from 'trtc-wx-sdk'
+	const audioContext = uni.createInnerAudioContext()
+	export default {
+		data() {
+			return {
+				playerList: {},
+				pusher: {},
+				options: {},
+				homeid: '',
+				calling: true,
+				user: uni.getStorageSync('data'),
+				//sdkAppID: '1400194484',	正式sdk
+				sdkAppID: '1400407697', //测试sdk
+				sound: true, //麦克风状态	true打开	false关闭
+				duration: 0,
+				durationStr: '00:00:00',
+				durationTitleStr: '',	//通话时长标题
+				durationTimer: null,	//普通服务计时，正序
+				durationPrivateDoctorTimer: null,	//私人医生倒计时，正序
+				waitingTime: 90	,//主动拨打等待多少时间后自动挂断
+				waitingTimer: null,
+				isAutoHangUp: true	,//默认等待多少时间后自动挂断
+				startPush: false	//是否开始推流
+			}
+		},
+		onLoad(options) {
+			console.log('onLoad')
+			if (!this.$util.isEmpty(options)) {
+				this.options = options
+			}
+			//监听im消息，用于挂断视频
+			this.$tim.tim.off(this.TIM.EVENT.MESSAGE_RECEIVED, this.onMessageReceived)
+			this.$tim.tim.on(this.TIM.EVENT.MESSAGE_RECEIVED, this.onMessageReceived)
+			//播放铃声
+			this.openAudio(1)
+		},
+		onShow() {
+			this.checkDeviceAuthorize()
+		},
+		onUnload() {
+			this.endCallTime()
+			this.endPrivateDoctorCallTime()
+			this.endWaitTime()
+			if(this.TRTC){
+				const result = this.TRTC.exitRoom()
+				this.pusher = result.pusher
+				this.playerList = result.playerList
+			}
+			this.$tim.tim.off(this.TIM.EVENT.MESSAGE_RECEIVED, this.onMessageReceived)
+			//停止铃声
+			this.openAudio(0)
+		},
+		methods: {
+			initTRTC(){
+				if(this.TRTC){
+					return
+				}
+				this.startPush = true
+				this.TRTC = new TRTC(this)
+				// rtcConfig 是初始化参数，返回初始化后的推流状态，需要与模板相结合
+				let rtcConfig = {
+					enableCamera: true,
+					enableMic: false,
+					autopush: true,
+					frontCamera: 'front',
+					//beautyLevel: 3, //美颜3级
+					//whitenessLevel: 5, //美白5级
+					//filter: 'solor' //日系
+				}
+				this.pusher = this.TRTC.createPusher(rtcConfig).pusherAttributes
+				// 这里需要绑定一系列的事件监听方法，下文会详细介绍
+				this.onEvent() //监听事件
+				this.beforeEnterRoom()
+			},
+			//超时自动挂断
+			initTimeOut(){
+				this.endWaitTime()
+				this.waitingTimer = setInterval(()=>{
+					this.waitingTime--
+					if(this.waitingTime <= 0){
+						clearInterval(this.waitingTimer)
+						if(this.isAutoHangUp === true){
+							//自动挂断，只退出房间，不发送im消息
+							//this.hangup()
+							this.openAudio(0)
+							uni.navigateBack({
+								delta: 1
+							})
+						}
+					}
+				},1000)
+			},
+			beforeEnterRoom() {
+				if (this.$util.isEmpty(this.user.account_number)) {
+					this.showError('您的账号有误，请联系客服')
+					return
+				} else {
+					let data = {
+						chatid: this.options.chatid,
+						unionid: this.user.unionid,
+						account_number: this.user.account_number,
+						is_send: 1
+					}
+					this.$minApi.videoHomePatient(data).then(res => {
+						if (res.code == 1) {
+							if(res.data.is_have == 2){
+								//发送im打视频消息，发送成功后进入房间
+								this.homeid = res.data.homeid
+								if(this.options.inquiry_id != 22){
+									this.duration = res.data.duration
+								}
+								this.enterRoom(res.data.patient_sig)
+							}else{
+								this.showError(res.data.remind)
+							}
+						} else {
+							this.showError(res.msg)
+						}
+					}).catch(err => {
+						console.log('err', err)
+					})
+				}
+			},
+			enterRoom(patient_sig) {
+				this.call = false
+				this.context = uni.createLivePusherContext("livePusher", this)
+				let homeid = this.homeid
+				this.pusher = this.TRTC.enterRoom({
+					sdkAppID: this.sdkAppID, // 您的腾讯云账号
+					userID: this.user.account_number, //当前进房用户的userID
+					userSig: patient_sig, // 您服务端生成的userSig
+					roomID: homeid, // 您进房的房间号，
+					enableMic: true, // 进房默认开启音频上行
+					enableCamera: true, // 进房默认开启视频上行
+				})
+				this.TRTC.getPusherInstance().start()
+				this.initTimeOut()	//超时自动挂断
+				this.playerList = this.TRTC.getPlayerList()
+			},
+			//挂断
+			hangup() {
+				this.$tim.sendCloseVideocall(this.options.chatid, this.homeid)
+				this.openAudio(0)
+				uni.navigateBack({
+					delta: 1
+				})
+			},
+			onEvent() {
+				let onError = (event) => {
+					console.log('发生错误', event)
+				}
+				let onLocalJoin = (event) => {
+					console.log('本地进房成功', event)
+				}
+				let onLocalLeave = (event) => {
+					console.log('本地退房成功')
+				}
+				let onLocalNetStateUpdate = (event) => {
+					// 这里会返回更新后的 pusherAttributes，上面有个属性是 netStatus 对应网络状态的对象
+					// 其中 netQualityLevel 对应网络状态的好坏，1 代表最好，数字越大代表网络越差
+					//console.log('网络状态发生变化', event)
+				}
+				let onRemoteUserJoin = (event) => {
+					console.log('远程进房成功', event)
+					//双方连接成功，开始计时，取消等待多少时间后自动挂断
+					this.isAutoHangUp = false
+					if(this.options.inquiry_id == 22){
+						//私人医生，开启正序计时
+						this.startPrivateDoctorCallTime()
+					}else{
+						this.startCallTime()
+					}
+					//停止铃声
+					this.openAudio(0)
+					//开启麦克风
+					this.TRTC.setPusherAttributes({
+						enableMic: true // 开启音频上行
+					})
+				}
+				let onRemoteUserLeave = (event)=>{
+					console.log('远程离开房间',event)
+					this.hangup()
+				}
+				let onRemoteVideoAdd = (event) => {
+					console.log('远端视频流发生改变', event)
+					this.calling = false
+					this.playerList = event.data.playerList
+					uni.hideLoading()
+				}
+				let onKickedout = (event) => {
+					console.log('被服务端踢出或房间被解散')
+				}
+				this.TRTC.on(this.TRTC.EVENT.REMOTE_VIDEO_ADD, onRemoteVideoAdd)
+				this.TRTC.on(this.TRTC.EVENT.REMOTE_USER_JOIN, onRemoteUserJoin)
+				this.TRTC.on(this.TRTC.EVENT.LOCAL_LEAVE, onLocalLeave)
+				this.TRTC.on(this.TRTC.EVENT.LOCAL_NET_STATE_UPDATE, onLocalNetStateUpdate)
+				this.TRTC.on(this.TRTC.EVENT.REMOTE_USER_LEAVE, onRemoteUserLeave)
+				this.TRTC.on(this.TRTC.EVENT.LOCAL_JOIN, onLocalJoin)
+				this.TRTC.on(this.TRTC.EVENT.ERROR, onError)
+				this.TRTC.on(this.TRTC.EVENT.KICKED_OUT, onKickedout)
+			},
+			//开启/关闭麦克风
+			soundChange() {
+				if (this.sound) {
+					this.TRTC.setPusherAttributes({
+						enableMic: false // 关闭音频上行
+					})
+				} else {
+					//开启麦克风
+					this.TRTC.setPusherAttributes({
+						enableMic: true // 开启音频上行
+					})
+				}
+				this.sound = !this.sound
+			},
+			//开启前置/后置摄像头
+			cameraChange() {
+				this.context.switchCamera()
+			},
+			//开始通话计时
+			startCallTime() {
+				this.durationTitleStr = '剩余时长'
+				this.endCallTime()
+				this.durationTimer = setInterval(() => {
+					if(this.duration <= 0){
+						this.endCallTime()
+					}else{
+						this.duration--
+						this.durationStr = this.$util.formatSeconds(this.duration)
+					}
+				}, 1000)
+			},
+			//私人医生通话计时，正序
+			startPrivateDoctorCallTime(){
+				this.durationTitleStr = '已通话'
+				this.endPrivateDoctorCallTime()
+				this.durationPrivateDoctorTimer = setInterval(()=>{
+					this.duration++
+					this.durationStr = this.$util.formatSeconds(this.duration)
+				},1000)
+			},
+			onMessageReceived(event) {
+				let index = +event.data.length - 1;
+				let data = JSON.parse(event.data[index].payload.data)
+				//判断当前消息是医生拒绝视频，并且房间号相同，就挂断
+				if (data.type == "hangUpVideoNew") {
+					if (this.options.chatid == event.data[index].to) {
+						//挂断
+						uni.showToast({
+							title: '已挂断',
+							icon: 'none',
+							duration: 2000,
+							success: () => {
+								uni.navigateBack({
+									delta: 1
+								})
+							}
+						})
+					}
+				}
+				if (data.type == "closeVideoNew") {
+					if (this.options.chatid == event.data[index].to) {
+						//拒绝
+						uni.showToast({
+							title: '已拒绝',
+							icon: 'none',
+							duration: 2000,
+							success: () => {
+								uni.navigateBack({
+									delta: 1
+								})
+							}
+						})
+					}
+				}
+			},
+			//结束通话计时
+			endCallTime() {
+				clearInterval(this.durationTimer)
+			},
+			endPrivateDoctorCallTime(){
+				clearInterval(this.durationPrivateDoctorTimer)
+			},
+			endWaitTime(){
+				clearInterval(this.waitingTimer)
+			},
+			_pusherStateChangeHandler(event) {
+				this.TRTC.pusherEventHandler(event)
+			},
+			_pusherNetStatusHandler(event) {
+				this.TRTC.pusherNetStatusHandler(event)
+			},
+			_pusherErrorHandler(event) {
+				this.TRTC.pusherErrorHandler(event)
+			},
+			_pusherAudioVolumeNotify(event){
+				this.TRTC.pusherAudioVolumeNotify(event)
+			},
+			_playerStateChange(event) {
+				this.TRTC.playerEventHandler(event)
+			},
+			_playerAudioVolumeNotify(event) {
+				this.TRTC.playerAudioVolumeNotify(event)
+			},
+			showError(content) {
+				uni.hideLoading()
+				uni.showModal({
+					showCancel: false,
+					content: content,
+					success: (data) => {
+						if (data.confirm) {
+							uni.navigateBack({
+								delta: 1
+							})
+						}
+					}
+				})
+			},
+			/**
+			 * 判断授权 
+			 */
+			checkDeviceAuthorize() {
+				uni.getSetting({
+					success: (result) => {
+						this.authorizeMic = result.authSetting['scope.record']
+						this.authorizeCamera = result.authSetting['scope.camera']
+						if (!this.authorizeMic || !this.authorizeCamera) {
+							//授权麦克风
+							uni.authorize({
+								scope: 'scope.record',
+								complete: (res) => {
+									if (res.errMsg == 'authorize:ok') {
+										//授权成功
+										this.authorizeMic = true
+										//授权摄像头
+										if (!this.authorizeCamera) {
+											uni.authorize({
+												scope: 'scope.camera',
+												complete: (res) => {
+													if (res.errMsg == 'authorize:ok') {
+														//授权成功
+														this.authorizeCamera = true
+														this.initTRTC()
+													} else {
+														this.openConfirm();
+													}
+												}
+											})
+										}else{
+											this.initTRTC()
+										}
+									} else {
+										//授权失败，授权摄像头
+										uni.authorize({
+											scope: 'scope.camera',
+											complete: (res) => {
+												if (res.errMsg == 'authorize:ok') {
+													//授权成功
+													this.authorizeCamera = true
+												}
+												if (!this.authorizeMic || !this
+													.authorizeCamera) {
+													this.openConfirm()
+												}
+											}
+										})
+									}
+								}
+							})
+						}else{
+							this.initTRTC()
+						}
+					}
+				})
+			},
+			/**打开订阅权限设置 */
+			openConfirm() {
+				return uni.showModal({
+					content: '您没有打开麦克风和摄像头的权限，是否去设置打开？',
+					confirmText: '确认',
+					cancelText: '取消',
+					success: res => {
+						if (res.confirm) {
+							uni.openSetting()
+						} else {
+							this.$tim.sendCloseVideocall(this.options.chatid, this.homeid)
+							uni.navigateBack({
+								delta:1
+							})
+						}
+					}
+				});
+			},
+			//播放铃声 type 1播放	其他停止
+			openAudio(type) {
+				if (type == 1) {
+					audioContext.autoplay = true
+					audioContext.loop = true
+					audioContext.startTime = 0
+					audioContext.src = "https://www.xiaodongai.com/xiaodongai/kongtian/Public/Wechat/inquiry/ring_tone.mp3"
+					audioContext.play()
+				} else {
+					audioContext.stop()
+					audioContext.destroy()
+				}
+			}
+		}
+	}
+</script>
+
+<style scoped>
+	.user{
+		display: flex;
+		align-items: center;
+		position: fixed;
+		top: calc(100rpx + constant(safe-area-inset-top));
+		top: calc(100rpx + env(safe-area-inset-top));
+		left: 40rpx;
+		z-index: 10;
+	}
+	.user image{
+		width: 120rpx;
+		height: 120rpx;
+		border-radius: 10rpx;
+		margin-right: 40rpx;
+	}
+	.info{
+		display: flex;
+		flex-direction: column;
+		color: #FFFFFF;
+	}
+	.name{
+		font-size: 36rpx;
+		margin-bottom: 16rpx;
+	}
+	.des{
+		font-size: 24rpx;
+	}
+	.pusher {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.pushering {
+		position: absolute;
+		top: 120rpx;
+		right: 0;
+		width: 240rpx;
+		height: 320rpx;
+		z-index: 10;
+	}
+
+	.player {
+		width: 100vw;
+		height: 100vh;
+	}
+
+	.time {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: calc(300rpx + constant(safe-area-inset-bottom));
+		bottom: calc(300rpx + env(safe-area-inset-bottom));
+		text-align: center;
+		font-size: 28rpx;
+		color: #FFFFFF;
+	}
+
+	.operation {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: calc(100rpx + constant(safe-area-inset-bottom));
+		bottom: calc(100rpx + env(safe-area-inset-bottom));
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 60rpx;
+	}
+
+	.operation image {
+		width: 60rpx;
+		height: 60rpx;
+	}
+
+	.operation button {
+		width: 120rpx;
+		height: 120rpx;
+		border-radius: 50%;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.operation button::after {
+		border: none;
+	}
+
+	.operation .audio,
+	.operation .camera {
+		background-color: #FFFFFF;
+	}
+
+	.operation .hangup {
+		background-color: red;
+	}
+</style>

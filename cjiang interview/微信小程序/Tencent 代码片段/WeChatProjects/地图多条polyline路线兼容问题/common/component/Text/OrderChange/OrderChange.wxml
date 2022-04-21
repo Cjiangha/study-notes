@@ -1,0 +1,16 @@
+<view class="_order_change_ocf24_1 anyui_view {{className || ''}}" wx:if="{{__ready__}}">
+     <block wx:if="{{isShow}}">
+       <view class="_order_change_text_ocf24_8 anyui_view" bindtap="handleHide">收起</view>
+       <view class="_order_change_text_ocf24_8 anyui_view" bindtap="accepted">司机接单(103)</view>
+       <view class="_order_change_text_ocf24_8 anyui_view" bindtap="arrived">司机到达(104)</view>
+       <view class="_order_change_text_ocf24_8 anyui_view" bindtap="charging">行程中(105)</view>
+       <view class="_order_change_text_ocf24_8 anyui_view" bindtap="driverCanceled">司机取消()</view>
+       <view class="_order_change_text_ocf24_8 anyui_view" bindtap="serviceCanceled">服务取消()</view>
+       <view class="_order_change_text_ocf24_8 anyui_view" bindtap="finished">行程结束(106)</view>
+       <view class="_order_change_message_ocf24_14 anyui_view">{{message}}</view>
+       </block>
+     <block wx:else>
+       <view class="_order_change_text_ocf24_8 anyui_view" bindtap="handleShow">展开</view>
+       </block>
+     </view>
+   

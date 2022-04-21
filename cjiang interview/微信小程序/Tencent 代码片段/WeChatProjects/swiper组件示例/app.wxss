@@ -1,0 +1,8 @@
+::wekbit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color:transparent;
+  background: transparent;
+  opacity: 0;
+}

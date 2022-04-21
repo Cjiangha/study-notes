@@ -1,0 +1,4 @@
+<view class="intro">
+<button bindtap='preview'>预览</button>
+
+</view>

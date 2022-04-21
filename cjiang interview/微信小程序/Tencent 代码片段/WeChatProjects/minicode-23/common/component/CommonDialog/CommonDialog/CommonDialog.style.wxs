@@ -1,0 +1,9 @@
+
+        function wrap () {
+            var classInfo = {"common-dialog":"_common-dialog_1gslf_1","flex-vc":"_flex-vc_1gslf_5","flex-hc":"_flex-hc_1gslf_12","common-dialog__mask":"_common-dialog__mask_1gslf_27","common-dialog__wrap":"_common-dialog__wrap_1gslf_35","common-dialog__title":"_common-dialog__title_1gslf_41","common-dialog__content":"_common-dialog__content_1gslf_49","common-dialog__footer":"_common-dialog__footer_1gslf_56","common-dialog__btn":"_common-dialog__btn_1gslf_64","common-dialog__btn_cancel":"_common-dialog__btn_cancel_1gslf_75","common-dialog__btn_ok":"_common-dialog__btn_ok_1gslf_78"};
+            return classInfo;
+        }
+        module.exports = {
+            wrap: wrap
+        }
+    

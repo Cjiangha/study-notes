@@ -1,0 +1,59 @@
+<view class='title-top'>请输入连麦红包金额，最小<text class='minimum'>5元</text>起</view>
+<view class="container">
+ <radio-group bindchange="radioCheckedChange"> 
+  <view class="flex_box"> 
+   <view class="flex_item {{radioCheckVal==0?'active':''}}"> 
+    <label class=""><text class='num'>5 </text>元
+     <radio value="0"  hidden="true"></radio> 
+    </label> 
+   </view> 
+   <view class="flex_item {{radioCheckVal==1?'active':''}}" data-num="5"> 
+    <label class=""><text class='num'>10 </text>元
+     <radio value="1" hidden="true"></radio> 
+    </label> 
+   </view> 
+   <view class="flex_item {{radioCheckVal==2?'active':''}}" data-num="10"> 
+    <label class=""><text class='num'>20 </text>元
+     <radio value="2" hidden="true"></radio> 
+    </label> 
+   </view>
+   <view class="flex_item {{radioCheckVal==3?'active':''}}" data-num="10"> 
+    <label class=""><text class='num'>99 </text>元
+     <radio value="3" hidden="true"></radio> 
+    </label> 
+   </view>
+   <view class="flex_item {{radioCheckVal==4?'active':''}}" data-num="10" bindtap='aa'> 
+    <label class=""><text class='num'>199 </text>元
+     <radio value="4" hidden="true"></radio> 
+    </label> 
+   </view> 
+   <view class="flex_item {{radioCheckVal==5?'active':''}}" data-num="10"> 
+    <label class=""><text class='num'>299 </text>元
+     <radio value="5" hidden="true"></radio> 
+    </label> 
+   </view>   
+  </view> 
+ </radio-group> 
+</view>
+<view class="section">
+  <input type='digit' placeholder="输入红包金额" value='{{moneyvalue}}' bindfocus="sendmoney" bindinput="moneyvalue" placeholder-class="placeholderStyle" class='input-money' bindblur="loseinput"></input>
+</view>
+<view class='wechat'>设置微信号</view>
+<view class="section">
+  <input type='text' placeholder="与连麦的人交朋友" bindinput="wechatid" placeholder-class="placeholderStyle" class='input-money'></input>
+</view>
+<view class='wechat'>设置连麦签名（50字以内）</view>
+<view class="section">
+  <input type='text' placeholder="大家好，快来与我连麦领红包吧" bindinput='signature' placeholder-class="placeholderStyle" class='input-money'></input>
+</view>
+<view class='click-btn' bindtap='sendpacket'>
+  <image src='/images/send_bg.png'></image>
+  <form class='cfrom' bindsubmit="submitInfo" report-submit='true' >
+    <button class='text' style='width:100%;height:100%;border-radius:0;opacity:0;' form-type="submit" type="default" size="mini">发连麦红包</button>
+  </form>
+  <text class='text'>发连麦红包</text>
+</view>
+<view class='botton-text'>与你连麦<text class='minimum'>满一整首歌</text>的用户，会得到你发出的连麦红包 若你连麦中途操作切歌退出，则红包会直接发给连麦对方 若本次欢唱无人与你连麦，则红包会通过<text class='minimum'>微信原路退回</text></view>
+<loading hidden="{{hidden}}">
+    加载中...
+</loading>

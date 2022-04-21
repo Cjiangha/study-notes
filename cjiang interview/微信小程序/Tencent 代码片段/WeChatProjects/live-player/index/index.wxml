@@ -1,0 +1,4 @@
+<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
+<!-- <live-player src="http://3891.liveplay.myqcloud.com/live/3891_user_eca7b14c_b043.flv" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="width: 300px; height: 225px;" /> -->
+
+<video src="https://video2.qfc.cn/2b8dd222549341969d43beb9ed531077/6b6c3d011e6744b9814546f550a7eef4-e8907776c44a2edf36941a664dc17d12-ld.mp4"></video>

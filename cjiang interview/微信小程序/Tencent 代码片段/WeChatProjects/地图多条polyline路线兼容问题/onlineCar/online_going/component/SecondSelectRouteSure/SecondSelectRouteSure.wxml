@@ -1,0 +1,26 @@
+
+<wxs module='proputil'>
+var propsInfo={_3:{show:"show",position:"center",disableScroll:"false"}};module.exports.getProps=function(o){return propsInfo[o]};
+</wxs>
+<!-- 一口价，弹窗提示 -->
+   <v-popup position="center" className="free-upgrades {{className || ''}}" class="anyui_popup" __slots="{{ ['default']}}" wx:if="{{__ready__}}" anyuiProps="{{proputil.getProps('_3')}}" bindparentmounted="returnRef" show="{{show}}" disableScroll="{{false}}">
+     <view class="_content_1dsno_1 anyui_view">
+       <!-- <image :src="bgUrl" mode="widthFix" class="content-titlebg" /> -->
+       <view class="_content-content_1dsno_10 anyui_view">
+         <view class="_top-label_1dsno_48 anyui_view">
+           <view class="anyui_view">确认修改路线？</view>
+           </view>
+         <view class="_content-content_text_1dsno_22 anyui_view">确认后司机将按新路线送您，建议您同时和司机沟通告知已修改路线</view>
+         <view class="_no-tips_1dsno_75 anyui_view">
+           <image class="_no-tips_yes_1dsno_88 anyui_image" src="https://img.alicdn.com/imgextra/i4/O1CN01WdQCJS1y4V2lENkin_!!6000000006525-2-tps-30-30.png" mode="scaleToFill" wx:if="{{isTip}}" bindtap="handleTip"/>
+           <view class="_no-tips_no_1dsno_93 anyui_view" wx:else bindtap="handleTip"></view>
+           <view class="_no-tips_text_1dsno_83 anyui_view">不再提示</view>
+           </view>
+         <view class="_content-content_wrap_1dsno_27 anyui_view">
+           <view class="_content-content_btn_1dsno_32 anyui_view" bindtap="onCancelAction">{{btnCancelText}}</view>
+           <view class="_content-content_btn_1dsno_32 anyui_view" bindtap="onOkAction">{{btnText}}</view>
+           </view>
+         </view>
+       </view>
+     </v-popup>
+   

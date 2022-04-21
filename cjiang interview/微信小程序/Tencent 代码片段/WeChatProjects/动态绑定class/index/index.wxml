@@ -1,0 +1,6 @@
+<view class="big" style="height: 100%">
+  <view class="{{classStatus?'blue':'yellow'}}" style="height: 100%"></view>
+
+  <button bindtap="dianwo" class="dian">点我换色</button>
+  <view class="zhezhao" style="height: 100%"></view>
+</view>

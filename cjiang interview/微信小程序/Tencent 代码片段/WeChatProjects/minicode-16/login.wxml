@@ -1,0 +1,52 @@
+<view class="login">
+  <view class="top_title">
+    <view class="iconfont icon-logo"></view>
+    <view class="title">欢迎您登录</view>
+  </view>
+  <view>
+    <form catchsubmit="formSubmit">
+      <view class="login-cell__bd">
+        <view class="input_lable dis-flex">
+          <view>酒店名</view>
+          <view class="ml-30 tip" wx:if="{{!hotelName}}">请输入酒店名</view>
+        </view>
+        <view class="dis-flex">
+          <input bindinput="hotelInput" class="login-input" name="input" placeholder="请输入" value="{{hotelName}}" />
+          <text wx:if="{{hotelName}}" catchtap="delete" data-type="hotelName" class="iconfont icon-delete"></text>
+        </view>
+        <view wx:if="{{hotelNameShow}}" class="hotle_text">
+          <view class="hotle" wx:for="{{hotelData}}" catchtap="hotles" data-item="{{item}}" wx:key="this">{{item.hotelName}}</view>
+        </view>
+      </view>
+      <view class="login-cell__bd mt-55">
+        <view class="input_lable dis-flex">
+          <view>登录名</view>
+          <view class="ml-30 tip" wx:if="{{!userName}}">请输入登录名</view>
+        </view>
+        <view class="dis-flex">
+          <input bindinput="loginInput" class="login-input" name="input" placeholder="请输入" value="{{userName}}" />
+          <text wx:if="{{userName}}" catchtap="delete" data-type="userName" class="iconfont icon-delete"></text>
+        </view>
+      </view>
+      <view class="login-cell__bd mt-55">
+        <view class="password_name input_lable">
+          <view class="m_flex">密码
+            <view class="ml-30 tip" wx:if="{{!password}}">请输入密码</view>
+          </view>
+          <view wx:if="{{typeInput == true}}"  catchtap="showOrHide">显示</view>
+          <view wx:else catchtap="showOrHide">隐藏</view>
+        </view>
+        <view class="dis-flex">
+          <input bindinput="pwsInput" password="{{typeInput}}" class="login-input" name="input" placeholder="请输入"
+            value="{{password}}" />
+          <text wx:if="{{password}}" catchtap="delete" data-type="password" class="iconfont icon-delete"></text>
+        </view>
+      </view>
+      <view class="btn-area">
+        <button class="login_btn btn-normal" disabled="{{disabled}}" hover-class="none" type="primary" formType="submit">立即登录</button>
+      </view>
+    </form>
+
+  </view>
+</view>
+<view class="footer_text">© 天下房仓旗下品牌</view>

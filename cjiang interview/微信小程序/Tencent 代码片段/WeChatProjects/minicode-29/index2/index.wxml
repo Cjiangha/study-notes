@@ -1,0 +1,3 @@
+<!--index2/index.wxml-->
+<text>index2/index.wxml</text>
+<textarea bindfocus="onfocus" bindblur="onblur" placeholder="这是一个TEXTAREA"></textarea>
