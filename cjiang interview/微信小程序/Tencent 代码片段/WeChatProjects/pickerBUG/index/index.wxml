@@ -1,4 +1,0 @@
-
-<picker mode="date" class="user-pickerB" value="{{parameters.issueDate}}" bindchange="datePicker" end="{{endDate}}">
-  <view>选择日期：{{parameters.issueDate}}</view>
-</picker>

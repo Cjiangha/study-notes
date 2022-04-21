@@ -1,5 +1,0 @@
-  <pab-pusher class='big' debug="{{true}}" enableCamera="{{enableCamera}}" url='{{pushUrl}}'
-    config="{{pushConfig}}" mode="RTC" muted="{{false}}">
-  </pab-pusher>
-  <pab-player id="yunxinplayer-111" uid="111" url='{{pullUrl}}' config="{{pullConfig}}" class="optlook"
-    bindstatechange="playChange" mode='{{playMod}}' min-cache="0.2" max-cache="0.8"></pab-player>

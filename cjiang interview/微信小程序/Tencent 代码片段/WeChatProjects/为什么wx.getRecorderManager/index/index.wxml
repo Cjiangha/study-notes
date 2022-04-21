@@ -1,1 +1,0 @@
-<button type="primary" bindtap="init_recording_start">点击开始录音</button>

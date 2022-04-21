@@ -1,4 +1,0 @@
-<view class="_toast-content-box_ya2sb_1 anyui_view {{className || ''}}" wx:if="{{__ready__ && (isShow) }}">
-     <view class="_toast-content_ya2sb_1 anyui_view">{{content}}</view>
-     </view>
-   

@@ -1,2 +1,0 @@
-<!--Area/Area.wxml-->
-<van-area area-list="{{ areaList }}" />

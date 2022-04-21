@@ -1,9 +1,0 @@
-
-        function wrap () {
-            var classInfo = {"wrap-card-toolBar":"_wrap-card-toolBar_11o5k_1","wrap-more-icon":"_wrap-more-icon_11o5k_9","card-toolBar":"_card-toolBar_11o5k_18","tool-icon":"_tool-icon_11o5k_40","info-amount":"_info-amount_11o5k_45","single-style":"_single-style_11o5k_65"};
-            return classInfo;
-        }
-        module.exports = {
-            wrap: wrap
-        }
-    

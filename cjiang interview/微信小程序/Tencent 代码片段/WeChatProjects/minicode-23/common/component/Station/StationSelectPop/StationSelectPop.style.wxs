@@ -1,9 +1,0 @@
-
-        function wrap () {
-            var classInfo = {"station-select-wrap":"_station-select-wrap_brkfc_1","station-close":"_station-close_brkfc_7","guidance-animation":"_guidance-animation_brkfc_16","move-to-right":"_move-to-right_brkfc_22","animation-item":"_animation-item_brkfc_25","area-text":"_area-text_brkfc_30","recom-text":"_recom-text_brkfc_36","second-title":"_second-title_brkfc_40","back-img":"_back-img_brkfc_45","statison-foot-btns":"_statison-foot-btns_brkfc_51","go-seach":"_go-seach_brkfc_69","seach-arrow":"_seach-arrow_brkfc_77"};
-            return classInfo;
-        }
-        module.exports = {
-            wrap: wrap
-        }
-    

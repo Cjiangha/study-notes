@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "audioPlay": "../component/audio"
-  },
-  "pageOrientation": "auto"
-}

@@ -1,9 +1,0 @@
-
-        function wrap () {
-            var classInfo = {"current-location-icon":"_current-location-icon_awc9k_1","img":"_img_awc9k_11"};
-            return classInfo;
-        }
-        module.exports = {
-            wrap: wrap
-        }
-    

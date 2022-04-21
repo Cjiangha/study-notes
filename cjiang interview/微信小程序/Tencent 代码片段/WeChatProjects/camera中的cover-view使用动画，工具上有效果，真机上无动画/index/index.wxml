@@ -1,6 +1,0 @@
-<camera class="thecars" mode="scanCode" device-position="back" >
-	<cover-view class="cemar">闪光灯</cover-view>
-	<cover-view class="thebor">
-		<cover-view class="acting"></cover-view>
-	</cover-view>
-</camera>

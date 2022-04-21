@@ -1,7 +1,0 @@
-<view class="_cp-driver-card-wrap_jag3j_1 anyui_view {{className || ''}}" wx:if="{{__ready__}}">
-     <image class="_cp-driver-head_jag3j_11 anyui_image" mode="scaleToFill" src="{{driverInfo.avatar}}"></image>
-     <view class="cp-name anyui_view">{{driverInfo.brandName}}</view>
-     <view class="cp-driver-name anyui_view">{{driverInfo.name}}</view>
-     <view class="cp-car-num anyui_view">{{driverInfo.licensePlate}}</view>
-     </view>
-   

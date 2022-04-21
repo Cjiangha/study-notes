@@ -1,7 +1,0 @@
-{
-  "publicComponents": {
-    "LivePlayer": "components/LivePlayer/index",
-    "WVideo": "components/WVideo/index"
-  },
-  "main": "index.js"
-}

@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "v-rich-text": "@alife/anyui-wx-component/components/RichText/RichText",
-    "cp-group-space": "../../CpGroupSpace/CpGroupSpace"
-  },
-  "component": true
-}

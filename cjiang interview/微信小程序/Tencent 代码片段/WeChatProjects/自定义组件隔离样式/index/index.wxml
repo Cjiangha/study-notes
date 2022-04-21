@@ -1,3 +1,0 @@
-<view style="white-space: nowrap;height: 200px;background-color: aqua;">
-  <custom-component></custom-component>
-</view>

@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "test": "../pack_a/test"
-  },
-  "componentPlaceholder": {
-    "test": "view"
-  }
-}

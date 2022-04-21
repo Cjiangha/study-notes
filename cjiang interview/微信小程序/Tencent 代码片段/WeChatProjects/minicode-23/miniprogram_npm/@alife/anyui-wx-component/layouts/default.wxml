@@ -1,6 +1,0 @@
-<view class="anyui-default anyui_view {{className || ''}}" wx:if="{{__ready__}}">
-     <block wx:if="{{ !__slotObj['default'] }}"></block>
-     <slot>
-       </slot>
-     </view>
-   

@@ -1,9 +1,0 @@
-<map 
-  wx:if="{{height}}"
-  id="map" 
-  style="width:100%;height:{{height}}px"
-  show-location="{{true}}" 
-  latitude="{{latitude || 39.908710}}" 
-  longitude="{{longitude || 116.397499}}" 
- >
-</map>

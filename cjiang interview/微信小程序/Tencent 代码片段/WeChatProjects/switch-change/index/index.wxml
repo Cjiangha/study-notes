@@ -1,3 +1,0 @@
-<switch bindchange="change1" checked="{{checked1}}" />
-
-<button bindtap="toggle1">切换 checked</button>

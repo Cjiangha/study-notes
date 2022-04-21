@@ -1,3 +1,0 @@
-<textarea auto-height="{{true}}" value="{{test}}" style="line-height: 1.5"></textarea>
-
-<input bindconfirm="ggg"  type="text" style="width: 100px;height: 100px;border: 1px solid #ccc;"/>

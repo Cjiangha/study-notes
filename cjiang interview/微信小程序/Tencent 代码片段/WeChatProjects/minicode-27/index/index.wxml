@@ -1,4 +1,0 @@
-<map id="myMap" style="width: {{mapWidth}}rpx; height: {{mapHeight}}rpx;" scale="{{scale}}"
-  markers="{{markers}}" longitude="{{longitude}}" latitude="{{latitude}}" show-location="{{showLocation}}"
-  customCallout="{{customCallout}}" include-points="true">
-</map>

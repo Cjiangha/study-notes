@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "LivePlayer": "plugin://LiveService/LivePlayer",
-    "WVideo": "plugin://LiveService/WVideo"
-  },
-  "navigationStyle": "custom"
-}

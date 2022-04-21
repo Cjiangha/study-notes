@@ -1,7 +1,0 @@
-.intro {
-  margin: 30px;
-  text-align: center;
-  padding:50rpx;
-  background-color: #000;
-  color: #ffffff;
-}

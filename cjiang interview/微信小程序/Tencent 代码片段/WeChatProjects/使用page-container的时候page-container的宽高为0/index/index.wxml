@@ -1,7 +1,0 @@
-<page-container show="{{true}}"  style="z-index: 999;height: auto">
-    <scroll-view scroll-y="true" style="max-height: 500rpx;" show-scrollbar="false" enhanced="true">
-        <view wx:for="{{100}}" style="text-align: center;padding: 30rpx 0;">
-                <text>按钮 {{item}}</text>
-        </view>
-    </scroll-view>
-</page-container>

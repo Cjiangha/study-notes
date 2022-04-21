@@ -1,9 +1,0 @@
-<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
-<button bindtap="hello">你好</button>
-<view style="padding: 40rpx; z-index: 10;">
-  <textarea name="enen" id="enen" cols="30" rows="10" style="z-index: 10;" placeholder="placeholder是存在的"></textarea>
-</view>
-<view style="padding: 40rpx; z-index: 10;">
-  <input maxlength="10" placeholder="最大输入长度为10" always-embed="{{true}}"  style="z-index: 10;"/>
-</view>
-<view class="all-screen" style="z-index: 999;"></view>

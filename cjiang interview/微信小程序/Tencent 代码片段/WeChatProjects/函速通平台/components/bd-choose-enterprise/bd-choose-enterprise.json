@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
-    "uni-easyinput": "/components/uni-easyinput/uni-easyinput"
-  },
-  "component": true
-}

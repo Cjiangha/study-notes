@@ -1,7 +1,0 @@
-<video style="width:100%;" src="{{src}}" id="myvideo" enable-progress-gesture="{{false}}" bindprogress="progress" bindloadedmetadata="loadEnd" bindplay="play"></video>
-<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
-<input type="text" adjust-position="{{true}}" style="border:1px solid #ccc;" /><input type="text" adjust-position="{{true}}" style="border:1px solid #ccc;" /><input type="text" adjust-position="{{true}}" style="border:1px solid #ccc;" /><input type="text" adjust-position="{{true}}" style="border:1px solid #ccc;" />
-<input type="text"  style="border:1px solid #ccc;"/>
-<input type="text"  style="border:1px solid #ccc;"/>
-<input type="text"  style="border:1px solid #ccc;"/>
-<input type="text"  style="border:1px solid #ccc;"/>

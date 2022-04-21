@@ -1,4 +1,0 @@
-<view style="width: 100%;height: auto;margin: auto;">
-    <video  object-fit="fill" referrer-policy="origin" src="http://1300167788.vod2.myqcloud.com/5d4e2d93vodtranscq1300167788/26b2bcfe387702296784166139/v.f100230.m3u8" bindwaiting="video_waiting" binderror="video_error" bindloadedmetadata="video_loadedemetadata" bindprogress="video_progress">
-        </video>
-</view>

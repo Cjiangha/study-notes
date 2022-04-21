@@ -1,9 +1,0 @@
-<view class="intro">
-  <view class="live">
-    <live-pusher url="https://domain/push_stream" mode="RTC"  bindstatechange="statechange" enable-camera="true" class="pusher" waiting-image="https://backend-1255361217.cos.ap-beijing.myqcloud.com/Wechat/20220126/leave.png"/>
-</view>
-
-<button bindtap="changeName" class="btn">
-  横竖屏切换
-</button>
-</view>

@@ -1,9 +1,0 @@
-
-        function wrap () {
-            var classInfo = {"flex-vc":"_flex-vc_pra15_1","flex-hc":"_flex-hc_pra15_8","customize-dialog":"_customize-dialog_pra15_15","customize-dialog_mask":"_customize-dialog_mask_pra15_23","customize-dialog_main":"_customize-dialog_main_pra15_32","customize-dialog_main-body":"_customize-dialog_main-body_pra15_37","customize-dialog_main-head-img":"_customize-dialog_main-head-img_pra15_40","customize-dialog_main-rich-title":"_customize-dialog_main-rich-title_pra15_45","customize-dialog_main-desc":"_customize-dialog_main-desc_pra15_52","customize-dialog_main-footer":"_customize-dialog_main-footer_pra15_60"};
-            return classInfo;
-        }
-        module.exports = {
-            wrap: wrap
-        }
-    

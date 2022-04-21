@@ -1,2 +1,0 @@
-<!--index/index.wxml-->
-<navigator url='/test/index'>跳转</navigator>

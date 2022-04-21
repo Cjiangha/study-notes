@@ -1,8 +1,0 @@
-<!--index/index.wxml-->
-<text>index/index.wxml</text>
-<button bindtap="dianwo">点我</button>
-
-<button bindtap="ddd">扫码</button>
-
-
-<map id="iii" style="width: 400px;height: 400px;"></map>

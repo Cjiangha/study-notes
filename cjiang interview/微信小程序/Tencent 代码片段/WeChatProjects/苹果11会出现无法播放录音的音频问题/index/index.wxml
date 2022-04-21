@@ -1,2 +1,0 @@
-<!--pages/test.wxml-->
-<button bindtap="playHandler" class="play_voice">playvoice</button>

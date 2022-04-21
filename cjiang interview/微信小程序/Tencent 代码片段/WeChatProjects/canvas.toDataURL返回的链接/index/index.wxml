@@ -1,9 +1,0 @@
-<canvas type="2d" id="myCanvas" canvas-id="Canvas"></canvas>
-<view class="page-body">
-  <view class="page-body-wrapper">
-    <view class="preview-tips">预览</view>
-    <image wx:if="{{src}}" mode="widthFix" src="{{src}}"></image>
-    <image  mode="widthFix" src="{{img}}"></image>
-    <video wx:if="{{videoSrc}}" class="video" src="{{videoSrc}}"></video>
-  </view>
-</view>

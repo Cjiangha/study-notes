@@ -1,7 +1,0 @@
-<!--pages/demo.wxml-->
-<view style="position: relative;padding: 20px;"> 
-  <!-- 以下是对一个自定义组件的引用 -->
-  <input always-embed="{{false}}" style="border: 1px solid #aaa;padding: 5px;z-index: -1;" placeholder="请输入"/>
-  <button bindtap="clickMe">点击事件</button>
-  <view bindtap="clickMask" style="position: absolute;top: 0;left: 0;height: 100vh;width: 100vw;background-color: rgba(1, 1, 1, 0.6);z-index: 99;"></view>
-</view>

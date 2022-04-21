@@ -1,2 +1,0 @@
-<button bindtap="dianwo">点我打开“粤省事”</button>
-<button bindtap="suikang">点我打开“穗康”</button>

@@ -1,2 +1,0 @@
-<view class="anyui_view {{className || ''}}" wx:if="{{__ready__}}"></view>
-   

@@ -1,9 +1,0 @@
-
-<wxs module="m">
-var anyui = require("../../../_anyui/utils/helper.wxs");
-module.exports._expId1 = function (position) {return anyui.processStyle(position);;};
-module.exports._expId2 = function (style) {return anyui.processStyle(style);;};</wxs>
-<view class="_call-service_14k6w_1 anyui_view {{className || ''}}" wx:if="{{__ready__}}" style="{{m._expId1(position, _a_)}}">
-     <view class="_call-service__content_14k6w_4 anyui_view" bindtap="handleClick" style="{{m._expId2(style, _a_)}}">{{title}}</view>
-     </view>
-   

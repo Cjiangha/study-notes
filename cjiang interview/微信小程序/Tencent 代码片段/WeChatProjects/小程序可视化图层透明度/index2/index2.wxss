@@ -1,8 +1,0 @@
-/* index2/index2.wxss */
-
-textarea {
-  margin: auto;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #eee;
-}

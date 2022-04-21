@@ -1,7 +1,0 @@
-<view class="intro"><button type="primary" color="rgba(4, 180, 193, 1)" block bindtap="yuYue">企业预约(申报)</button></view>
-
-<!-- <web-view  src="https://www.liketon.cn/agreement/agreement1.html"></web-view> -->
-<video 
- id="myVideo22" 
- src="https://wx.jiayuntong.com:558/Files/Temp/1f3528e387caea997f6ba2b69bddc8e4/ZBZZ.mp4" 
-></video>

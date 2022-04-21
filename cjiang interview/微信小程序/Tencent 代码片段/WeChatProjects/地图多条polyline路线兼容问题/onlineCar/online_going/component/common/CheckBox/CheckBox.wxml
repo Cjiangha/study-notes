@@ -1,3 +1,0 @@
-<view class="_check_box_pv405_1 anyui_view {{className || ''}}" wx:if="{{__ready__}}" bindtap="checkClick">{{item.msg}}<image class="_cancel-reason-images_pv405_12 anyui_image" mode="widthFix" src="{{imageSrc}}"/>
-     </view>
-   

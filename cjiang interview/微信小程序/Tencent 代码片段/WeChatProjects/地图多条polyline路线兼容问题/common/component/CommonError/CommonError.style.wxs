@@ -1,9 +1,0 @@
-
-        function wrap () {
-            var classInfo = {"common-error":"_common-error_jygsw_1","error-img-wrap":"_error-img-wrap_jygsw_11","error-img":"_error-img_jygsw_11","error-title":"_error-title_jygsw_15","error-desc":"_error-desc_jygsw_21","error-btn-wrap":"_error-btn-wrap_jygsw_27","error-btn":"_error-btn_jygsw_27"};
-            return classInfo;
-        }
-        module.exports = {
-            wrap: wrap
-        }
-    

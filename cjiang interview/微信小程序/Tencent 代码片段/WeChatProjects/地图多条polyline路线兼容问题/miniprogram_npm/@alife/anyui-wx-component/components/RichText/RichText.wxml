@@ -1,6 +1,0 @@
-
-<wxs module="m">
-var anyui = require("../../_anyui/utils/helper.wxs");
-module.exports._expId1 = function (style) {return anyui.processStyle(style);;};</wxs>
-<rich-text class="anyui_rich-text" wx:if="{{__ready__}}" style="{{m._expId1(style, _a_)}}" nodes="{{nodes && nodes.length > 0 ? nodes : html}}"></rich-text>
-   

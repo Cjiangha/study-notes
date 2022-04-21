@@ -28,5 +28,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
-}
+  backdrop-filter: blur(20px);
+  /* -webkit-backdrop-filter: blur(20px); */
+  }
 </style>

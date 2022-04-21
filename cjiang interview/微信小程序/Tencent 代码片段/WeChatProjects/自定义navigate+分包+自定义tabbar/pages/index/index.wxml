@@ -1,9 +1,0 @@
-<cBar id="c-bar" title="{{title}}"></cBar>
-<view class="container" style="{{mainHeight}}">
-  <view class="intro">hi, Custom Bar</view>
-  <button class="intro" bindtap="goto">体验Custom NavigateBar</button>
-  <button class="intro" bindtap="gotoA" data-custom="0">分包A</button>
-  <button class="intro" bindtap="gotoA" data-custom="1">体验Custom Tabbar</button>
-  <button class="intro" bindtap="index4">原生导航</button>
-  <image src="{{imgurl}}" />
-</view>

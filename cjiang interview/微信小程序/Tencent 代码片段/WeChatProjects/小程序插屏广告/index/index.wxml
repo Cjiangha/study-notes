@@ -1,3 +1,0 @@
-<view class="intro">
-  <button bindtap="toAdv">去广告页面</button>
-</view>

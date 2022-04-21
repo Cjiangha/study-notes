@@ -1,6 +1,0 @@
-
-<wxs module='proputil'>
-var propsInfo={_1:{"bind:_ref":"_saveRef1"}};module.exports.getProps=function(e){return propsInfo[e]};
-</wxs>
-<cp-fixed-price-desc-popup className="{{className || ''}}" __slots="{{ []}}" bind:_ref="_saveRef1" wx:if="{{__ready__}}" anyuiProps="{{proputil.getProps('_1')}}" bindparentmounted="returnRef"></cp-fixed-price-desc-popup>
-   

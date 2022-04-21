@@ -1,6 +1,0 @@
-<!-- <button bindtap="down" >下载保存</button> -->
-
-
-<form bindsubmit="submit">
-  <button form-type="submit">submit</button>
-</form>

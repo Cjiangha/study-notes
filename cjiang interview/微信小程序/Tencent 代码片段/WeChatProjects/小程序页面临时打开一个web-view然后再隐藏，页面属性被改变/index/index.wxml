@@ -1,4 +1,0 @@
-<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
-<view wx-if="{{showWebview}}" class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
-<web-view wx-if="{{showWebview}}" src="https://baidu.com" 
-bindload="bindload" binderror="binderror"></web-view>

@@ -1,9 +1,0 @@
-/* components/component-tag-name.wxss */
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.wrapper > view, button {
-  margin: 16rpx;
-}

@@ -1,4 +1,0 @@
-<view class="intro">
-    页面b
-    <navigator url="/index/index">跳转a页面</navigator>
-</view>

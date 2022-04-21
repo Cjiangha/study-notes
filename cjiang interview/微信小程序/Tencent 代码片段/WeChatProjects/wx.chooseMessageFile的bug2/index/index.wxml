@@ -1,8 +1,0 @@
-<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view>
-
-<view class="btn" catchtap="chooseFile">选择文件</view>
-
-<view class="tips">复现视频</view>
-<video class="video-demo" src="http://video.mcloud.139.com:80/StorageWeb/servlet/GetFileByURLServlet?dm=D960&root=/mnt/wfs138&pt=/c0e/9e&fileid=K8c0e9e3c5ed87942abb1a7544431f35bb.mp4&type=5&ui=MDExMWZrakpmMXRK&ci=0111fkjJf1tJ146202202231424054iu&cn=yidongbangong2022022...&ct=3&time=1645597562&exp=86400&code=5D82A79B796403461D0FF0FE1F09C8EB806F7FF5FC1C46CBDEB6135FF5332443&ec=1&bucketName=hcy-a-02"></video>
-
-<video src="https://yeyjk.hhjlxxkj.com:18443/icloud/qiniu/live?tk=eLZDeuQKdZpYyu7wqeeGurDnPNF_ne5syrEkf8Nnc2m6vuPfwv60GA=="></video>

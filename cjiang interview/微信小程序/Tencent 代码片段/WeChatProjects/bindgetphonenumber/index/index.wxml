@@ -1,9 +1,0 @@
-<button open-type="getPhoneNumber" type="primary" bind:getphonenumber="getPhoneNumberFn">获取手机号</button>
-
-<block wx:for="{{siteData}}" wx:for-index="key" wx:for-item="value">
-  <view>
-    <view>
-      {{key}}{{value}}
-    </view>
-  </view>
-</block>

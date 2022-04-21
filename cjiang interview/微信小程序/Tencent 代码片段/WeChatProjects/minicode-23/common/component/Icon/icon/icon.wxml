@@ -1,8 +1,0 @@
-
-<wxs module="m">
-var anyui = require("../../../../_anyui/utils/helper.wxs");var anyuiClass = require("./icon.style.wxs");
-
-module.exports._expId1 = function (type) {return anyui.processClass(['icon', 'iconfont', type ? "taxi-".concat(type) : ''], anyuiClass.wrap());;};
-module.exports._expId2 = function (customStyle) {return anyui.processStyle(customStyle);;};</wxs>
-<view class="anyui_view {{m._expId1(type, _a_)}} {{className || ''}}" wx:if="{{__ready__}}" style="{{m._expId2(customStyle, _a_)}}"></view>
-   

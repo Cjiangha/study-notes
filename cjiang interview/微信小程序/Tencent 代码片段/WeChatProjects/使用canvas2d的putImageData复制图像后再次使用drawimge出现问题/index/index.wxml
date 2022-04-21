@@ -1,4 +1,0 @@
-<view>
-<view style="width:100rpx;height:100rpx;background-color: red;color:white" bindtap="frameSelect">点击绘制</view>
-<canvas bindtap="tt" canvas-id="cvs" bindtouchstart="ts" bindtouchmove="tm" bindtouchend="te" type="2d" class="cvs" id="cvs" style="width: 700rpx; height: 1200rpx;margin-left:25rpx"></canvas>
-</view>

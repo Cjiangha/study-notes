@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "cp-fixed-price-desc-popup": "../../../../../common/component/CpFixedPriceDescPopup/CpFixedPriceDescPopup"
-  },
-  "component": true
-}

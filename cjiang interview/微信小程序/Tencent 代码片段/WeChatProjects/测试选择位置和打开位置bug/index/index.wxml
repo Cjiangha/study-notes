@@ -1,3 +1,0 @@
-<view class="intro">wx.choosePoi 返回的（名称和地址虽然不同）但是openLocatio打开地图都是同个地方</view>
-
-<view class="theMeetPoi" bindtap="change_meetPoi">点击这里测试，选择地方名称</view>

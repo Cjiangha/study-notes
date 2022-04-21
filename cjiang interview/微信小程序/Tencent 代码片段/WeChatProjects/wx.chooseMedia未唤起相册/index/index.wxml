@@ -1,7 +1,0 @@
-<!-- pages/cropper/cropper.wxml -->
-<!-- components/image-scopper/image-scopper.wxml -->
-<view>
-  <text catchtap='upload'>
-    选择图片
-  </text>
-  </view>

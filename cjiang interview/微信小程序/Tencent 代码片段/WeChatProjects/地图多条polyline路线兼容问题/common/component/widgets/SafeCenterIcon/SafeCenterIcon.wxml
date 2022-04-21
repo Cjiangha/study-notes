@@ -1,5 +1,0 @@
-<view class="_safe-center_li9ck_1 anyui_view {{className || ''}}" wx:if="{{__ready__}}" bindtap="handleClick">
-     <image class="_safe-center__img_li9ck_9 anyui_image" src="https://gw.alicdn.com/imgextra/i3/O1CN0169v82229w37Bf7z4O_!!6000000008131-2-tps-124-124.png" mode="scaleToFill"/>
-     <view class="_safe-center__text_li9ck_14 anyui_view">安全中心</view>
-     </view>
-   

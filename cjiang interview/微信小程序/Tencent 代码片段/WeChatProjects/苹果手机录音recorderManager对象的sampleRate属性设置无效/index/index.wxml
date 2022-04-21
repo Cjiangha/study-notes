@@ -1,3 +1,0 @@
-<view style="border:1px solid red;" bindtap="startAudio" >点我开始录音(录够五秒钟)</view>
-<view style="border:1px solid red;" bindtap="endAudio" >点我结束录音</view>
-<view style="word-wrap:break-word;">录音文件路径：{{audioFileUrl}}</view>

@@ -1,2 +1,0 @@
-<view class="intro">首页</view>
-<button bindtap="handleGoSubPage">子页面</button>

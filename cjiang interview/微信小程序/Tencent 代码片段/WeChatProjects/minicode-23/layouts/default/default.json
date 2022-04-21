@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "anyui-default-page": "@alife/anyui-wx-component/layouts/default",
-    "im-popup": "../../common/component/InstantMessaging/ImPopup/ImPopup"
-  },
-  "component": true
-}

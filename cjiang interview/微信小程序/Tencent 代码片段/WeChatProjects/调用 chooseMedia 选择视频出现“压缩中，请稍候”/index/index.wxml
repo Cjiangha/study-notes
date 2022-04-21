@@ -1,7 +1,0 @@
-<view class="box">
-  <view>添加视频</view>
-    <view class="img_box" wx:for="{{videoList}}" wx:for-item="item" wx:key="">
-      <video src="{{item.tempFilePath}}" class="logo" show-mute-btn="true"></video>
-    </view>
-    <view class="flex_col_c up_box" bindtap="uploadVideo">上传</view>
-</view>

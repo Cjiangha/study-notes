@@ -1,4 +1,0 @@
-<input placeholder="请填写预订人姓名" />
-
-<input type="number" placeholder="请输入手机号码" />
-<view bindtap="submit" class="submit">按钮por1</view>

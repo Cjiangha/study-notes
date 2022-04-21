@@ -1,9 +1,0 @@
-{
-  "usingComponents": {
-    "uni-easyinput": "/components/uni-easyinput/uni-easyinput",
-    "uni-file-picker": "/components/uni-file-picker/uni-file-picker",
-    "mx-datepicker": "/components/mx-datepicker/mx-datepicker",
-    "bd-qua-picker": "/components/bd-qua-picker/bd-qua-picker"
-  },
-  "component": true
-}

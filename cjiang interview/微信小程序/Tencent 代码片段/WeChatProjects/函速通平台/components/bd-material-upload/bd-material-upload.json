@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
-    "uni-file-picker": "/components/uni-file-picker/uni-file-picker"
-  },
-  "component": true
-}

@@ -1,7 +1,0 @@
-<view class="intro">
-  <map class="map" longitude="104.07407170685265"
-            latitude="30.695489359588244"
-            circles="{{circles}}"></map>
-            <view>{{circles}}</view>
-            <button bindtap="handleTap">remove</button>
-</view>

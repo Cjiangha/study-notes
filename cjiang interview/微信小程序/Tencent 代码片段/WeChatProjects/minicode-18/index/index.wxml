@@ -1,4 +1,0 @@
-<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="13" bind:tap="handleTapMap"
-  bind:markertap="handleTapMarker" markers="{{markers}}">
-  <cover-view>{{A}}</cover-view>
-  </map>

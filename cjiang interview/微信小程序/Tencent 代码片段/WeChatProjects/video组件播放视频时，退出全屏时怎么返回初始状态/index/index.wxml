@@ -1,6 +1,0 @@
-<view class="page-body">
-  <button bindtap="selectVideo">选择视频</button>
-  <view bindtap="previewVideo" wx:if="{{files.src}}">
-    <video id="myvideo" class="video" src="{{files.src}}" objectFit="cover" autoplay="{{false}}" controls="{{true}}" bindfullscreenchange="fullscreenchange" play-btn-position="center"></video>
-  </view>
-</view>

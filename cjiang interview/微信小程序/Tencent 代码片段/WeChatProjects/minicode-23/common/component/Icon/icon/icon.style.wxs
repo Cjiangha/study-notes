@@ -1,9 +1,0 @@
-
-        function wrap () {
-            var classInfo = {};
-            return classInfo;
-        }
-        module.exports = {
-            wrap: wrap
-        }
-    

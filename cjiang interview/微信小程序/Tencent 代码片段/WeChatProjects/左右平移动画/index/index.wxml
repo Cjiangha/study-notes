@@ -1,8 +1,0 @@
-<view class="scroll_x">
-      <view></view>
-      <scroll-view class="scroll_box" scroll-x="true">
-        <view wx:for="{{listIamge}}" wx:key="index" class="image_list" style="left:{{item.x}}rpx;top:{{item.y}}rpx;z-index:{{item.Zindex}};">
-          <image src="{{item.img}}" class="{{index ==0||index ==1||index ==4||index ==5||index ==7||index ==3||index ==6?'shadow':''}}" animation="{{index ==0||index ==1||index ==4||index ==5||index ==7? animation1 : animation}}" style="width:{{item.wth}}rpx;height:{{item.ght}}rpx;"></image>
-        </view>
-      </scroll-view>
-    </view>

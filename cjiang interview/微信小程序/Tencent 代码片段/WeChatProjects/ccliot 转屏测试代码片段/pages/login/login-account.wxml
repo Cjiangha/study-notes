@@ -1,8 +1,0 @@
-<!--pages/login/login-account.wxml-->
-<!-- 账号登录 -->
-<view class='login-account'> 
-  <view class='login-reg'>
-    <button class='login-btn' bindtap='login'  style='color:#fff;'>登录</button>
-  </view>
-  <view class="login-tip">此小程序为CCL产品使用，请凭用户账号和密码登陆</view>
-</view>

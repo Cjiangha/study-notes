@@ -1,4 +1,0 @@
-<view class="intro">
-  <camera device-position="font" flash="off" binderror="error" style="width: 100vw;height: 80vh;"></camera>
-  <button bindtap="startShard">开始轮流录制</button>
-</view>

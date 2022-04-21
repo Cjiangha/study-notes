@@ -1,3 +1,0 @@
-<cBar title="{{title}}" showBack="{{true}}"></cBar>
-<view class="intro">hi, Custom Bar</view>
-<view class="intro">首页不在tabbar的情况</view>

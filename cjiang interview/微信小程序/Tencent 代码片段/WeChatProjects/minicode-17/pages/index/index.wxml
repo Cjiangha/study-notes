@@ -1,6 +1,0 @@
-<import src="/wxParse/wxParse.wxml" />
-<template is="wxParse" data="{{wxParseData:content.nodes}}" />
-
-<map bindpoitap="e"></map>
-
-<!-- <image src="wxfile://tmp_f5620b1d341abd68fe23b9b1f79317033fb3bb638e2887b6.jpg"></image> -->

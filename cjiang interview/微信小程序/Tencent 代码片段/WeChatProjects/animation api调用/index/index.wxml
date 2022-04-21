@@ -1,4 +1,0 @@
-<view class="one" wx:if="{{index==0}}" animation="{{animation[0].animationData}}"  bindtransitionend="jieshu">123456</view>
-<view class="two"  wx:if="{{index==1}}"  animation="{{animation[1].animationData}}"  animationend='jieshu' bindtransitionend="jieshu">123456</view>
-
-<button bindtap="dd">dw</button>

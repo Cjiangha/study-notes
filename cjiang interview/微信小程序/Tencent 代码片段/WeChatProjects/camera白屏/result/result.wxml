@@ -1,9 +1,0 @@
-<mp-msg type="warn" title="验证失败">
-  <view slot="desc" wx:if="{{errMsgList.length}}">
-    <text wx:for="{{errMsgList}}" wx:key="index">{{item}}</text>
-  </view>
-  <view slot="handle">
-    <view class="weui-btn weui-btn_primary" data-evt="click_photo_retake#重新拍照" bindtap="reTake">重新拍照</view>
-    <view class="weui-btn weui-btn_default" data-evt="click_photo_cancel#取消" bindtap="back">取消</view>
-  </view>
-</mp-msg>

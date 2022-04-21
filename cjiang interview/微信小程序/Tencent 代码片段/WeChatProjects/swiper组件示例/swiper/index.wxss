@@ -1,7 +1,0 @@
-/* swiper/index.wxss */
-.swiper {
-  height: 500rpx;
-  width: 500rpx;
-  margin: auto;
-  background: #d11;
-}

@@ -1,3 +1,0 @@
-<view style="width:750rpx;height:750rpx;">
-  <button style="width:750rpx;" bindtap="btnTap">{{btnStr}}</button>
-</view>

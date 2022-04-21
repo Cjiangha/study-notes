@@ -1,6 +1,0 @@
-<view class="intro">
-  <video 
-      id="myVideo" 
-      src="http://yk.nataila.cn:8016/api/v1/mp/video/stream/1634203679275.mp4/" 
-    ></video>
-</view>

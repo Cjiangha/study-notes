@@ -1,3 +1,0 @@
-<!--image-cropper/image-cropper.wxml-->
-
-<image src="{{url}}"></image>

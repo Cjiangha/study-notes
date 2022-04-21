@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "copy": "./copy",
-    "send-coupon": "plugin://sendCoupon/send-coupon"
-  }
-}

@@ -1,6 +1,0 @@
-
-<wxs module='proputil'>
-var propsInfo={_3:{visible:"visible",popupInfo:"popupInfo","bind:onOk":"handleOk_custHd_1"}};module.exports.getProps=function(o){return propsInfo[o]};
-</wxs>
-<dialog-picture-card className="{{className || ''}}" bind:onOk="handleOk_custHd_1" wx:if="{{__ready__ && (type === 'DIALOG_PICTURE_CARD') }}" anyuiProps="{{proputil.getProps('_3')}}" bindparentmounted="returnRef" visible="{{visible}}" popupInfo="{{popupInfo}}"/>
-   

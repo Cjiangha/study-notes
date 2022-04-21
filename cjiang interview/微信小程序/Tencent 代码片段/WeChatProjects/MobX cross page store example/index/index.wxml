@@ -1,7 +1,0 @@
-<view class="list">
-  <view class="item" wx:for="{{list}}" wx:key="date" data-index="{{index}}">
-    <view class="title">{{item.date}} {{item.summary}}</view>
-    <view class="abstract">{{item.temperature}}</view>
-    <navigator class="show-detail" url="./item?index={{index}}">查看详情</navigator>
-  </view>
-</view>

@@ -1,7 +1,0 @@
-<!-- <view class="feature-content">
-    <text class="feature-label">显示标准热力图</text>
-    <switch color="#3875FF" checked="{{isHasHeatLayer}}" bindchange="onChangeHeatLayer"></switch>
-    <map class="map" id="mapId" subkey="LO3BZ-DTY35-K65I6-QWAOP-3BQMZ-JFFKZ" layer-style="1" latitude="40.040415" longitude="116.273511" scale="17" enable-3D="{{true}}" enable-overlooking="{{true}}" enable-traffic="{{true}}" enable-poi="{{true}}" enable-rotate style="width:500px;height:500px;"></map>
-</view> -->
-
-<video src="https://young.linkedbyx.com:3443/file/hde/1643100882691/2.mp4" binderror="g"></video>

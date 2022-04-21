@@ -1,2 +1,0 @@
-<button  bindtap="positioning" data-type="1" >获取位置</button>
-<view>{{longitude}},{{latitude}}</view>

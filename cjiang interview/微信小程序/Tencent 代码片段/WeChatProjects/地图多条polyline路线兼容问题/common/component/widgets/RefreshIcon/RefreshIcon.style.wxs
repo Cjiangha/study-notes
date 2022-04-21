@@ -1,9 +1,0 @@
-
-        function wrap () {
-            var classInfo = {"refresh-icon":"_refresh-icon_3tpql_1","img":"_img_3tpql_11"};
-            return classInfo;
-        }
-        module.exports = {
-            wrap: wrap
-        }
-    
