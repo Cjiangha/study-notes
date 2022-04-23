@@ -1,6 +1,6 @@
 <template>
   <div>
-      我是Home页面
+    我是 HOme
   </div>
 </template>
 
@@ -17,12 +17,6 @@ export default {
 };
 </script>
 
-<style lang="less">
-    .el-header{
-        background: #ccc;
-    }
-
-    .el-main{
-        padding-top: 0;
-    }
+<style lang="less" scoped>
+ 
 </style>

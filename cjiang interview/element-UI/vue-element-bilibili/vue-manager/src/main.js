@@ -12,10 +12,16 @@ import {
   Menu,
   Submenu,
   MenuItem,
-  MenuItemGroup
+  MenuItemGroup,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import router from "./../router/index";
+import '../src/assets/less/home.less'
+import vuex from 'vuex'
+
 
 Vue.config.productionTip = false;
 // Vue.use(ElementUI);
@@ -29,8 +35,20 @@ Vue.use(Menu);
 Vue.use(Submenu);
 Vue.use(MenuItem);
 Vue.use(MenuItemGroup);
+Vue.use(Dropdown);
+Vue.use(DropdownItem);
+Vue.use(DropdownMenu);
+
+Vue.use(vuex)
+
+var store = new vuex.Store({//store对象
+  state:{
+      show:false
+  }
+})
 
 new Vue({
   render: (h) => h(App),
   router,
+  store,//使用store
 }).$mount("#app");
