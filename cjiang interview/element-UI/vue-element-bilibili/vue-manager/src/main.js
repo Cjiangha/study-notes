@@ -1,6 +1,9 @@
 import Vue from "vue";
 import App from "./App.vue";
 
+
+
+
 // import ElementUI from 'element-ui';
 import {
   Button,
@@ -16,11 +19,12 @@ import {
   Dropdown,
   DropdownItem,
   DropdownMenu,
+  Dialog
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import router from "./../router/index";
-import '../src/assets/less/home.less'
-import vuex from 'vuex'
+import '../src/assets/less/index.less'
+// import vuex from 'vuex'
 
 
 Vue.config.productionTip = false;
@@ -38,17 +42,18 @@ Vue.use(MenuItemGroup);
 Vue.use(Dropdown);
 Vue.use(DropdownItem);
 Vue.use(DropdownMenu);
+Vue.use(Dialog);
 
-Vue.use(vuex)
+// Vue.use(vuex)
 
-var store = new vuex.Store({//store对象
-  state:{
-      show:false
-  }
-})
+// var store = new vuex.Store({//store对象
+//   state:{
+//       show:false
+//   }
+// })
 
 new Vue({
   render: (h) => h(App),
   router,
-  store,//使用store
+  // store,//使用store
 }).$mount("#app");

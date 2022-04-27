@@ -19,7 +19,9 @@
 
 <script>
 export default {
-  name: "header",
+  // 报错 ： [Vue warn]: Do not use built-in or reserved HTML elements as component id: header  
+  // header -> headers
+  name: "headers",
   data() {
     return {
       imageUrl: require("../assets/images/user-default.png"),

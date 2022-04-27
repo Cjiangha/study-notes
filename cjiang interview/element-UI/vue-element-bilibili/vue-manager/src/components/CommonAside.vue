@@ -11,19 +11,29 @@
       active-text-color="#FFD04B"
     >
       <h3>通用后台管理系统</h3>
-      <el-menu-item @click="goto(item)" :index="item.path" v-for="item in nochildren" v-bind:key="item.path">
+      <el-menu-item
+        @click="goto(item)"
+        :index="item.path"
+        v-for="item in nochildren"
+        v-bind:key="item.path"
+      >
         <template slot="title">
           <i :class="'el-icon-' + item.icon"></i>
           <span slot="title">{{ item.label }}</span>
         </template>
       </el-menu-item>
-        <el-submenu index="2" v-for="item in haschildren" v-bind:key="item.path">
+      <el-submenu index="2" v-for="item in haschildren" v-bind:key="item.path">
         <template slot="title">
-          <i :class="'el-icon-'+item.icon"></i>
-          <span slot="title">{{item.label}}</span>
+          <i :class="'el-icon-' + item.icon"></i>
+          <span slot="title">{{ item.label }}</span>
         </template>
-        <el-menu-item-group v-for="itemchildren in item.children" v-bind:key="itemchildren.path">
-          <el-menu-item :index="itemchildren.path">{{itemchildren.label}}</el-menu-item>
+        <el-menu-item-group
+          v-for="itemchildren in item.children"
+          v-bind:key="itemchildren.path"
+        >
+          <el-menu-item :index="itemchildren.path">{{
+            itemchildren.label
+          }}</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
@@ -57,6 +67,13 @@ export default {
           label: "用户管理",
           icon: "user",
           url: "UserManage/UserManage",
+        },
+        {
+          path: "/dialag",
+          name: "dialag",
+          label: "el-dialag",
+          icon: "folder",
+          url: "dialag/dialag",
         },
         {
           label: "其他",
@@ -95,9 +112,9 @@ export default {
       console.log(this.isCollapse);
       this.isCollapse = !this.isCollapse;
     },
-    goto(item){
-      console.log(`/${item.name}`)
-    
+    goto(item) {
+      console.log(`/${item.name}`);
+
       // 1、常规方法
       // this.$router.push('item.path')
 
@@ -114,21 +131,23 @@ export default {
 
       // 4、使用对象的形式 ，参数为params 不会显示在地址栏
       this.$router.push({
-        name:item.name,
-        params: {id:123}
-      })
-    }
+        name: item.name,
+        params: { id: 123 },
+      });
+    },
   },
 
-  computed:{
-    nochildren(){
-      return this.MenuJson.filter(item=>!item.children)
+  computed: {
+    // 该路由下没有子菜单
+    nochildren() {
+      return this.MenuJson.filter((item) => !item.children);
     },
-    haschildren(){
-       return this.MenuJson.filter(item=>item.children)
-    }
 
-  }
+    // 该路由下子菜单
+    haschildren() {
+      return this.MenuJson.filter((item) => item.children);
+    },
+  },
 };
 </script>
 
@@ -138,10 +157,10 @@ export default {
   min-height: 400px;
 }
 
-.el-menu{
+.el-menu {
   height: 100%;
   border: none;
-  h3{
+  h3 {
     color: #fff;
     text-align: center;
     line-height: 48px;
