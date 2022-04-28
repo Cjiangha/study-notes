@@ -1,7 +1,7 @@
 <template>
   <div class="Headerdiv">
     <div class="l-content">
-      <el-button size="mini" icon="el-icon-menu"></el-button>
+      <el-button size="mini" icon="el-icon-menu" @click="changeStatus"></el-button>
       <h4 style="color: #fff">首页</h4>
     </div>
     <div class="r-content">
@@ -27,6 +27,11 @@ export default {
       imageUrl: require("../assets/images/user-default.png"),
     };
   },
+  methods:{
+    changeStatus(){
+      this.$store.state.tab.isCollapse = !this.$store.state.tab.isCollapse
+    }
+  }
 };
 </script>
 

@@ -10,6 +10,7 @@
       text-color="#fff"
       active-text-color="#FFD04B"
     >
+ 
       <h3>通用后台管理系统</h3>
       <el-menu-item
         @click="goto(item)"
@@ -17,12 +18,10 @@
         v-for="item in nochildren"
         v-bind:key="item.path"
       >
-        <template slot="title">
           <i :class="'el-icon-' + item.icon"></i>
           <span slot="title">{{ item.label }}</span>
-        </template>
       </el-menu-item>
-      <el-submenu index="2" v-for="item in haschildren" v-bind:key="item.path">
+      <el-submenu  v-for="item in haschildren" v-bind:key="item.path" :index="item.name">
         <template slot="title">
           <i :class="'el-icon-' + item.icon"></i>
           <span slot="title">{{ item.label }}</span>
@@ -31,14 +30,15 @@
           v-for="itemchildren in item.children"
           v-bind:key="itemchildren.path"
         >
-          <el-menu-item :index="itemchildren.path">{{
-            itemchildren.label
-          }}</el-menu-item>
+          <el-menu-item :index="itemchildren.path">
+            <i :class="`el-icon-${itemchildren.icon}`"></i>
+            <span slot="title">{{itemchildren.label}}</span>
+          </el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
-    <!-- <button @click="dianwo">点我收起折叠面板</button> -->
   </div>
+
 </template>
 
 <script>
@@ -97,7 +97,8 @@ export default {
         },
       ],
       //控制折叠面板的开关  isCollapse,true->关闭
-      isCollapse: false,
+      // isCollapse: false,
+      isTrue: false,
     };
   },
   methods: {
@@ -107,11 +108,7 @@ export default {
     handleClose(key, keyPath) {
       console.log(key, keyPath);
     },
-    dianwo() {
-      console.log(this);
-      console.log(this.isCollapse);
-      this.isCollapse = !this.isCollapse;
-    },
+
     goto(item) {
       console.log(`/${item.name}`);
 
@@ -147,8 +144,29 @@ export default {
     haschildren() {
       return this.MenuJson.filter((item) => item.children);
     },
+
+    isCollapse() {
+      console.log(this.$store.state.tab);
+      return this.$store.state.tab.isCollapse;
+    },
   },
 };
+
+// export default {
+//   data() {
+//     return {
+//       isCollapse: true,
+//     };
+//   },
+//   methods: {
+//     handleOpen(key, keyPath) {
+//       console.log(key, keyPath);
+//     },
+//     handleClose(key, keyPath) {
+//       console.log(key, keyPath);
+//     },
+//   },
+// };
 </script>
 
 <style lang="less" scope>
