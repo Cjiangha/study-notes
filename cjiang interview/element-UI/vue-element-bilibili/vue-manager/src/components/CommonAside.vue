@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="vh">
     <el-menu
       default-active="1-4-1"
       class="el-menu-vertical-demo"
@@ -11,17 +11,17 @@
       active-text-color="#FFD04B"
     >
  
-      <h3>通用后台管理系统</h3>
+      <h3 >{{this.$store.state.tab.isCollapse == true?'后台':'通用后台管理系统'}}</h3>
       <el-menu-item
         @click="goto(item)"
-        :index="item.path"
+        :index="item.path + ''"
         v-for="item in nochildren"
         v-bind:key="item.path"
       >
           <i :class="'el-icon-' + item.icon"></i>
           <span slot="title">{{ item.label }}</span>
       </el-menu-item>
-      <el-submenu  v-for="item in haschildren" v-bind:key="item.path" :index="item.name">
+      <el-submenu  v-for="item in haschildren" v-bind:key="item.path" :index="item.name+ ''">
         <template slot="title">
           <i :class="'el-icon-' + item.icon"></i>
           <span slot="title">{{ item.label }}</span>
@@ -30,7 +30,7 @@
           v-for="itemchildren in item.children"
           v-bind:key="itemchildren.path"
         >
-          <el-menu-item :index="itemchildren.path">
+          <el-menu-item :index="itemchildren.path+ ''">
             <i :class="`el-icon-${itemchildren.icon}`"></i>
             <span slot="title">{{itemchildren.label}}</span>
           </el-menu-item>
@@ -152,24 +152,12 @@ export default {
   },
 };
 
-// export default {
-//   data() {
-//     return {
-//       isCollapse: true,
-//     };
-//   },
-//   methods: {
-//     handleOpen(key, keyPath) {
-//       console.log(key, keyPath);
-//     },
-//     handleClose(key, keyPath) {
-//       console.log(key, keyPath);
-//     },
-//   },
-// };
 </script>
 
 <style lang="less" scope>
+.vh{
+  height: 100vh;
+}
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
   min-height: 400px;
