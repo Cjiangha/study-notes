@@ -1,7 +1,7 @@
-import Vue from "vue";
-import App from "./App.vue";
+import Vue from "vue"
+import App from "./App.vue"
 
-// import ElementUI from 'element-ui';
+// import ElementUI from 'element-ui'
 import {
   Button,
   Radio,
@@ -18,39 +18,48 @@ import {
   DropdownMenu,
   Dialog,
   RadioGroup,
-  RadioButton
-} from "element-ui";
-import "element-ui/lib/theme-chalk/index.css";
+  RadioButton,
+  Col,
+  Row,
+  Card,
+  Table,
+  TableColumn
+} from "element-ui"
+import "element-ui/lib/theme-chalk/index.css"
 import '../src/assets/less/index.less'
-import router from "./../router/index";
+import router from "./../router/index"
 import store from '../store'
-// import vuex from 'vuex'
+import http from 'axios'
 
 
-
-Vue.config.productionTip = false;
-// Vue.use(ElementUI);
-Vue.use(Button);
-Vue.use(Radio);
-Vue.use(Container);
-Vue.use(Header);
-Vue.use(Aside);
-Vue.use(Main);
-Vue.use(Menu);
-Vue.use(Submenu);
-Vue.use(MenuItem);
-Vue.use(MenuItemGroup);
-Vue.use(Dropdown);
-Vue.use(DropdownItem);
-Vue.use(DropdownMenu);
-Vue.use(Dialog);
-Vue.use(RadioGroup);
-Vue.use(RadioButton);
-
+Vue.config.productionTip = false
+Vue.prototype.$http = http
+// Vue.use(ElementUI)
+Vue.use(Button)
+Vue.use(Radio)
+Vue.use(Container)
+Vue.use(Header)
+Vue.use(Aside)
+Vue.use(Main)
+Vue.use(Menu)
+Vue.use(Submenu)
+Vue.use(MenuItem)
+Vue.use(MenuItemGroup)
+Vue.use(Dropdown)
+Vue.use(DropdownItem)
+Vue.use(DropdownMenu)
+Vue.use(Dialog)
+Vue.use(RadioGroup)
+Vue.use(RadioButton)
+Vue.use(Col)
+Vue.use(Row)
+Vue.use(Card)
+Vue.use(Table)
+Vue.use(TableColumn )
 
 
 new Vue({
   store,//使用store
   router,
   render: (h) => h(App),
-}).$mount("#app");
+}).$mount("#app")

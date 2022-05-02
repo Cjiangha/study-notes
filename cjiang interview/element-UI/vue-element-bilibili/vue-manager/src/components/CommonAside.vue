@@ -1,5 +1,5 @@
 <template>
-  <div class="vh">
+  <div >
     <el-menu
       default-active="1-4-1"
       class="el-menu-vertical-demo"
@@ -155,9 +155,7 @@ export default {
 </script>
 
 <style lang="less" scope>
-.vh{
-  height: 100vh;
-}
+
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
   min-height: 400px;

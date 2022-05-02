@@ -32,6 +32,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.el-aside{
+  background-color:#545c64;
+}
 .el-header {
   background: rgb(51, 51, 51);
 }
