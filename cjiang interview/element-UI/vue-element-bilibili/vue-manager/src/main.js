@@ -30,6 +30,7 @@ import '../src/assets/less/index.less'
 import router from "./../router/index"
 import store from '../store'
 import http from 'axios'
+import '../api/mock'
 
 
 Vue.config.productionTip = false

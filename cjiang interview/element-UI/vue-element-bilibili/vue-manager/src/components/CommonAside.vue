@@ -146,7 +146,7 @@ export default {
     },
 
     isCollapse() {
-      console.log(this.$store.state.tab);
+      // console.log(this.$store.state.tab);
       return this.$store.state.tab.isCollapse;
     },
   },

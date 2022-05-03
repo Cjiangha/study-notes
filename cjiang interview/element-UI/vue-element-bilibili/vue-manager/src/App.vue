@@ -6,9 +6,7 @@
       <router-link to="/user">
        <el-button type="primary">主要按钮</el-button>
     </router-link> -->
-
     <router-view></router-view>
-
     <!-- <el-radio v-model="radio" label="1">备选项</el-radio>
     <el-radio v-model="radio" label="2">备选项</el-radio> -->
   </div>
