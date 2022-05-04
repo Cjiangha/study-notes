@@ -59,7 +59,9 @@
         <el-card style="height: 260px">
           <div style="height: 260px" ref="userEcharts"></div>
         </el-card>
-        <el-card style="height: 260px"></el-card>
+        <el-card style="height: 260px">
+          <div style="height: 260px" ref="videoEcharts"></div>
+        </el-card>
       </div>
 
       <!-- <el-col :span="16"
@@ -136,6 +138,9 @@ export default {
     commonHomebreadcrumbs,
   },
   mounted() {
+    var a = 1;
+    console.log()
+
     getData().then((res) => {
       const { code, data } = res.data;
       if (code === 20000) {
@@ -234,7 +239,30 @@ export default {
         const F = echarts.init(this.$refs.userEcharts);
         F.setOption(userOption);
 
+        //饼图
+        const videoOption = {
+          tooltip: {
+            trigger: "item",
+          },
+          color: [
+            "#0f78f4",
+            "#dd536b",
+            "#9462e5",
+            "#a6a6a6",
+            "#e1bb22",
+            "#39c362",
+            "#3ed1cf",
+          ],
+          series: [
+            {
+              data:data.videoData,
+              type:'pie'
+            }
+          ],
+        }
      
+        const G = echarts.init(this.$refs.videoEcharts);
+        G.setOption(videoOption);
       }
     });
   },
