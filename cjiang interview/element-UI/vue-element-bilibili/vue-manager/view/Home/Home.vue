@@ -52,9 +52,13 @@
           </el-card>
         </div>
       </el-col>
-      <el-card style="height: 280px"> </el-card>
+      <el-card style="height: 280px">
+        <div style="height: 280px" ref="echarts"></div>
+      </el-card>
       <div class="graph">
-        <el-card style="height: 260px"></el-card>
+        <el-card style="height: 260px">
+          <div style="height: 260px" ref="userEcharts"></div>
+        </el-card>
         <el-card style="height: 260px"></el-card>
       </div>
 
@@ -74,7 +78,8 @@
 <script>
 // import CommonAside from "../../src/components/CommonAside.vue";
 import commonHomebreadcrumbs from "../../src/components/commonHomebreadcrumbs.vue";
-import {getData} from '../../api/data.js'
+import { getData } from "../../api/data.js";
+import * as echarts from "echarts";
 
 export default {
   data() {
@@ -131,25 +136,107 @@ export default {
     commonHomebreadcrumbs,
   },
   mounted() {
-  //   this.$http.get('/user?ID=12345')
-  // .then(function (response) {
-  //   console.log(response);
-  // })
-  // .catch(function (error) {
-  //   console.log(error);
-  // });
+    getData().then((res) => {
+      const { code, data } = res.data;
+      if (code === 20000) {
+        // 订单支付金额
+        this.tableData = data.tableData;
+        console.log("--data--", data);
+        // 折线图
+        const order = data.orderData;
+        const xData = order.date;
+        const keyArray = Object.keys(order.data[0]);
+        const series = [];
+        keyArray.forEach((key) => {
+          series.push({
+            name: key,
+            /* 两种写法
+            order.data.map((item) => {return item[key]}),
+            order.data.map((item) => item[key]),
+            */
+            data: order.data.map((item) => {
+              return item[key];
+            }),
+            type: "line",
+          });
+        });
+        console.log("---series---", series);
+        console.log("---xData---", xData);
+        const options = {
+          xAxis: {
+            data: xData,
+          },
+          yAxis: {},
+          legend: {
+            data: keyArray,
+          },
+          series,
+        };
+        const E = echarts.init(this.$refs.echarts);
+        E.setOption(options);
+        console.log("--res--", res);
 
-  // getMenu().then(res=>{
-  //   console.log(res)
-  // })
+        // 柱形图
+        const userData = data.userData;
+        const userOption = {
+          legend: {
+            //图例的文字颜色
+            textStyle: {
+              color: "#333",
+            },
+          },
+          grid: {
+            left: "20%",
+          },
+          // 提示框
+          tooltip: {
+            trigger: "axis",
+          },
+          xAxis: {
+            type: "category", // 类目轴
+            data: userData.map((item) => item.date),
+            axisLine: {
+              lineStyle: {
+                color: "#17b3a3",
+              },
+            },
+            axisLabel: {
+              interval: 0,
+              color: "#333",
+            },
+          },
+          yAxis: [
+            {
+              type: "value",
+              axisLine: {
+                lineStyle: {
+                  color: "#17b3a3",
+                },
+              },
+            },
+          ],
+          color: ["#2ec7c9", "#b6a2de"],
+          // 控制柱形图的相关参数
+          series: [
+            {
+              name: "新增用户",
+              data: data.userData.map((item) => item.new),
+              type: "bar",
+            },
+            {
+              name: "活跃用户",
+              data: data.userData.map((item) => item.active),
+              type: "bar",
+            },
+          ],
+        };
 
-  getData().then(res=>{
-    const {code,data} = res.data
-    if(code === 20000){
-      this.tableData = data.tableData
-    }
-    console.log(res)
-  })
+        const F = echarts.init(this.$refs.userEcharts);
+        F.setOption(userOption);
+
+     
+      }
+    });
   },
 };
 </script>
