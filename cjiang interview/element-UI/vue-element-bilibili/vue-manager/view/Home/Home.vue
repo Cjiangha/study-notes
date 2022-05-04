@@ -53,7 +53,8 @@
         </div>
       </el-col>
       <el-card style="height: 280px">
-        <div style="height: 280px" ref="echarts"></div>
+        <!-- <div style="height: 280px" ref="echarts"></div> -->
+        <echart :chart-data="chartData.linechart" :is-axis-chart="true" style="height:280px;"></echart>
       </el-card>
       <div class="graph">
         <el-card style="height: 260px">
@@ -82,10 +83,49 @@
 import commonHomebreadcrumbs from "../../src/components/commonHomebreadcrumbs.vue";
 import { getData } from "../../api/data.js";
 import * as echarts from "echarts";
+import echart from "../../src/components/echart.vue";
 
 export default {
   data() {
     return {
+      // tableData: [
+      //   {
+      //     name: 'oppo',
+      //     todayBuy: 100,
+      //     monthBuy: 300,
+      //     totalBuy: 800
+      //   },
+      //   {
+      //     name: 'vivo',
+      //     todayBuy: 100,
+      //     monthBuy: 300,
+      //     totalBuy: 800
+      //   },
+      //   {
+      //     name: '苹果',
+      //     todayBuy: 100,
+      //     monthBuy: 300,
+      //     totalBuy: 800
+      //   },
+      //   {
+      //     name: '小米',
+      //     todayBuy: 100,
+      //     monthBuy: 300,
+      //     totalBuy: 800
+      //   },
+      //   {
+      //     name: '三星',
+      //     todayBuy: 100,
+      //     monthBuy: 300,
+      //     totalBuy: 800
+      //   },
+      //   {
+      //     name: '魅族',
+      //     todayBuy: 100,
+      //     monthBuy: 300,
+      //     totalBuy: 800
+      //   }
+      // ],
       tableData: [],
       tableLabel: {
         name: "课程",
@@ -131,15 +171,21 @@ export default {
           color: "#5ab1ef",
         },
       ],
+      chartData: {
+        linechart:{
+           xData: [],
+           series: [],
+        },
+      },
       userImage: require("../../src/assets/images/user.png"),
     };
   },
   components: {
     commonHomebreadcrumbs,
+    echart,
   },
   mounted() {
-    var a = 1;
-    console.log()
+    console.log();
 
     getData().then((res) => {
       const { code, data } = res.data;
@@ -149,7 +195,6 @@ export default {
         console.log("--data--", data);
         // 折线图
         const order = data.orderData;
-        const xData = order.date;
         const keyArray = Object.keys(order.data[0]);
         const series = [];
         keyArray.forEach((key) => {
@@ -165,21 +210,27 @@ export default {
             type: "line",
           });
         });
-        console.log("---series---", series);
+    
+        //折现图
+        const xData = order.date;
+          console.log("---series---", series);
         console.log("---xData---", xData);
-        const options = {
-          xAxis: {
-            data: xData,
-          },
-          yAxis: {},
-          legend: {
-            data: keyArray,
-          },
-          series,
-        };
-        const E = echarts.init(this.$refs.echarts);
-        E.setOption(options);
-        console.log("--res--", res);
+        this.chartData.linechart.xData = xData;
+        console.log(this.chartData.linechart)
+        this.chartData.linechart.series = series;
+        // console.log(this.chartData);
+        // const options = {
+        //   xAxis: {
+        //     data: xData,
+        //   },
+        //   yAxis: {},
+        //   legend: {
+        //     data: keyArray,
+        //   },
+        //   series,
+        // };
+        // const E = echarts.init(this.$refs.echarts);
+        // E.setOption(options);
 
         // 柱形图
         const userData = data.userData;
@@ -255,12 +306,12 @@ export default {
           ],
           series: [
             {
-              data:data.videoData,
-              type:'pie'
-            }
+              data: data.videoData,
+              type: "pie",
+            },
           ],
-        }
-     
+        };
+
         const G = echarts.init(this.$refs.videoEcharts);
         G.setOption(videoOption);
       }
