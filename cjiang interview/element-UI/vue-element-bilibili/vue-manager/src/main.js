@@ -23,7 +23,9 @@ import {
   Row,
   Card,
   Table,
-  TableColumn
+  TableColumn,
+  Breadcrumb,
+  BreadcrumbItem
 } from "element-ui"
 import "element-ui/lib/theme-chalk/index.css"
 import '../src/assets/less/index.less'
@@ -57,6 +59,8 @@ Vue.use(Row)
 Vue.use(Card)
 Vue.use(Table)
 Vue.use(TableColumn )
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
 
 
 new Vue({
