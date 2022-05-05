@@ -30,7 +30,7 @@
           v-for="itemchildren in item.children"
           v-bind:key="itemchildren.path"
         >
-          <el-menu-item :index="itemchildren.path+ ''">
+          <el-menu-item  :index="itemchildren.path+ ''"    @click="goto(itemchildren)">
             <i :class="`el-icon-${itemchildren.icon}`"></i>
             <span slot="title">{{itemchildren.label}}</span>
           </el-menu-item>
@@ -101,6 +101,9 @@ export default {
       isTrue: false,
     };
   },
+  mounted(){
+    console.log('haschildren()',this.haschildren)
+  },
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
@@ -131,6 +134,7 @@ export default {
         name: item.name,
         params: { id: 123 },
       });
+      this.$store.commit('selectMenu', item)
     },
   },
 

@@ -16,6 +16,11 @@
   </div>
 </template>
 <script>
+/*
+  编码的时候出现的报错 error Mixed spaces and tabs no-mixed-spaces-and-tabs
+  参考文章 https://www.panziye.com/java/web/3441.html
+  解决方法 鼠标右键 代码格式化
+*/ 
 // 引入 mapMutations
 import { mapMutations } from "vuex";
 

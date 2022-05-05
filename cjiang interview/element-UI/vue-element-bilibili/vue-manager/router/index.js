@@ -19,6 +19,11 @@ const routes = [{
                 component: () =>import('../view/Home/Home.vue')
             },
             {
+                path: '/',
+                name: 'home',
+                component: () =>import('../view/Home/Home.vue')
+            },
+            {
                 path: '/mall',
                 name: 'mall',
                 component: () =>import('../view/Mall/Mall.vue')
@@ -31,7 +36,17 @@ const routes = [{
             {
                 path: '/dialag',
                 name: 'dialag',
-                component: () =>import('../view/Dialag/Dialag.vue')
+                component: () =>import('../view/Dialag/Dialag.vue'),
+            },
+            {
+                path: '/page1',
+                name: 'page1',
+                component: () => import('../view/other/pageOne.vue')
+            },
+            {
+                path: '/page2',
+                name: 'page2',
+                component: () => import('../view/other/pageTwo.vue')
             },
         ]
     },

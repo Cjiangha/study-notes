@@ -8,7 +8,7 @@
       ></el-button>
       <!-- <h4 style="color: #fff">首页</h4> -->
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item v-for="item in tags" :key="item.label" :to="{ path: item.path }">{{item.label}}</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="r-content">
@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 export default {
   // 报错 ： [Vue warn]: Do not use built-in or reserved HTML elements as component id: header
   // header -> headers
@@ -39,6 +41,14 @@ export default {
       this.$store.state.tab.isCollapse = !this.$store.state.tab.isCollapse;
     },
   },
+  mounted(){
+        console.log('tags',this.tags)
+  },
+  computed:{
+    ...mapState({
+      tags:state => state.tab.tabsList
+    })
+  }
 };
 </script>
 
