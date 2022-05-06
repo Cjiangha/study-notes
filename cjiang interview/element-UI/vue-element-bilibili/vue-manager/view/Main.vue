@@ -1,5 +1,4 @@
 <template>
-  <div>
     <el-container>
       <el-aside width="auto">
         <CommonAside></CommonAside>
@@ -14,7 +13,6 @@
         </el-main>
       </el-container>
     </el-container>
-  </div>
 </template>
 
 <script>
