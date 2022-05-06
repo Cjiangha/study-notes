@@ -1,49 +1,65 @@
 <template>
   <!-- input  switch date-picker select->option-->
-  <el-form ref="form" :model="form" label-width="80px">
-    <el-form-item label="活动名称">
-      <el-input v-model="form.name"></el-input>
-      <el-col :span="11">
-        <el-date-picker
-          type="date"
-          placeholder="选择日期"
-          v-model="form.date1"
-          style="width: 100%"
-        ></el-date-picker>
-      </el-col>
-      <el-select v-model="form.region" placeholder="活动区域">
-        <el-option label="区域一" value="shanghai"></el-option>
-        <el-option label="区域二" value="beijing"></el-option>
+  <el-form ref="form" :model="form" label-width="80px" :inline="inline">
+    <el-form-item
+      v-for="item in formLabel"
+      :key="item.label"
+      :label="item.label"
+    >
+      <el-input
+        v-if="item.type === 'input'"
+        :placeholder="`请输入${item.label}`"
+        v-model="form[item.model]"
+      >
+      </el-input>
+
+      <el-switch
+        v-if="item.type === 'switch'"
+        v-model="form[item.model]"
+      ></el-switch>
+
+      <el-date-picker
+        v-if="item.type === 'date'"
+        v-model="form[item.model]"
+        value-format="yyyy-MM-dd"
+        type="date"
+        placeholder="选择日期"
+        style="width: 100%"
+      ></el-date-picker>
+
+      <el-select
+        v-if="item.type === 'select'"
+        v-model="form[item.model]"
+        placeholder="请选择"
+      >
+        <el-option
+          v-for="item in item.opts"
+          :key="item.label"
+          :label="item.label"
+          :value="item.value"
+        ></el-option>
       </el-select>
     </el-form-item>
+
     <el-form-item>
-      <el-button type="primary" @click="onSubmit">立即创建</el-button>
-      <el-button>取消</el-button>
+        <slot></slot>
     </el-form-item>
   </el-form>
 </template>
 
 <script>
 export default {
+  props: {
+    formLabel: Array,
+    form: Object,
+    inline: Boolean,
+  },
   data() {
-    return {
-      form: {
-        name: "",
-        region: "",
-        date1: "",
-        date2: "",
-        formInline: {
-          //el-select
-          user: "",
-          region: "",
-        },
-      },
-    };
+    return {};
   },
   methods: {
     onSubmit() {
-      console.log("submit!");
-      console.log('form',this.form)
+      console.log("form", this.form);
     },
   },
 };
