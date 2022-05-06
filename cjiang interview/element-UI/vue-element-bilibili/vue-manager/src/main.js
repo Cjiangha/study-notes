@@ -33,7 +33,10 @@ import {
   Switch,
   DatePicker,
   Select,
-  Option
+  Option,
+  Pagination,
+  MessageBox,
+  Message
 } from "element-ui"
 import "element-ui/lib/theme-chalk/index.css"
 import '../src/assets/less/index.less'
@@ -45,6 +48,8 @@ import '../api/mock'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = http
+Vue.prototype.$confirm = MessageBox.confirm
+Vue.prototype.$message  = Message
 // Vue.use(ElementUI)
 Vue.use(Button)
 Vue.use(Radio)
@@ -77,9 +82,7 @@ Vue.use(Switch)
 Vue.use(DatePicker)
 Vue.use(Select)
 Vue.use(Option)
-
-
-
+Vue.use(Pagination)
 
 new Vue({
   store,//使用store

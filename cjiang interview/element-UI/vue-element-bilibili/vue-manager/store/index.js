@@ -11,6 +11,11 @@ Vue.use(Vuex)
 
 
 export default new Vuex.Store({
+    state () {
+        return {
+          page: 0
+        }
+      },
     modules:{
         tab
     }

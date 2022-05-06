@@ -31,7 +31,7 @@ class HttpRequest {
             return response;
         }, function (error) {
             // 对响应错误做点什么
-            console.log('--相应的拦截--',error)
+            console.log('--响应的拦截--',error)
             return Promise.reject(error);
         });
     }

@@ -29,11 +29,16 @@
         <el-button type="primary" @click="getList">搜索</el-button>
       </common-form>
     </div>
+    <common-table @edit="editUser" :propspage="2"></common-table>
   </div>
 </template>
 
 <script>
 import CommonForm from "../../src/components/CommonForm.vue";
+import CommonTable from "../../src/components/CommonTable.vue";
+
+import debounce from "../../config/VueDebounce";
+
 export default {
   data() {
     return {
@@ -121,32 +126,81 @@ export default {
     };
   },
   methods: {
-    confirm() {
-      console.log("弹框确认");
-      console.log("operateForm", this.operateForm);
-      if (this.operateType === "edit") {
-        // 编辑
-        this.$http.post("/user/edit", this.operateForm).then((res) => {
-          console.log(res);
-          this.isShow = false;
-        });
-      } else if (this.operateType === "add") {
-        //增加
-        this.$http.post("/user/add", this.operateForm).then((res) => {
-          console.log(res);
-          this.isShow = false;
-        });
+    // async confirm() {
+    //   console.log("弹框确认");
+    //   console.log("operateForm", this.operateForm);
+    //   if (this.operateType === "edit") {
+    //     // 编辑
+    //     this.$http.post("/user/edit", this.operateForm).then((res) => {
+    //       console.log(res);
+    //       this.isShow = false;
+    //     });
+    //   } else if (this.operateType === "add") {
+    //     //增加
+    //     await this.$http.post("/user/add", this.operateForm).then((res) => {
+    //       console.log(res);
+    //       this.isShow = false;
+    //     });
+    //   }
+    //   await this.$children[3].getList(1)
+    // },
+    confirm: debounce(async function()  {
+      {
+        console.log("弹框确认");
+        console.log("operateForm", this.operateForm);
+        if (this.operateType === "edit") {
+          // 编辑
+          this.$http.post("/user/edit", this.operateForm).then((res) => {
+            console.log(res);
+            this.isShow = false;
+          });
+        } else if (this.operateType === "add") {
+          //增加
+          await this.$http.post("/user/add", this.operateForm).then((res) => {
+            console.log(res);
+            this.isShow = false;
+          });
+        }
+        await this.$children[3].getList(1);
       }
+    },500),
+    // confirmfangdou(){
+    //   console.log(this.confirm)
+    //   //  函数的 执行顺序 => confirm() 进行防抖，防抖了之后，进行接口的调用
+    //   debounce(this.confirm,10000)
+    // },
+
+    //  confirm:debounce(async ()=>{
+    //   await setTimeout(()=>{
+    //     console.log(1)
+    //   },1000)
+    //   console.log(2)
+    //    await setTimeout(()=>{
+    //     console.log(3)
+    //     console.log('我是防抖')
+    //   },2000)
+    //   console.log(4)
+    // },1000),
+    editUser(row) {
+      this.isShow = true;
+      this.operateType = "edit";
+      this.operateForm = row;
+      // 重新渲染
     },
     addUser() {
-      this.isShow = !this.isShow;
+      this.isShow = true;
+      this.operateType = "add";
+      this.operateForm = {};
+      // 重新渲染
     },
     getList() {
       console.log("搜索");
     },
   },
+  mounted() {},
   components: {
     CommonForm,
+    CommonTable,
   },
 };
 </script>
