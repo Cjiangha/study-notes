@@ -1,16 +1,12 @@
 <template>
-    <div>
-       <common-tag></common-tag>
-        我是User页面
-    </div>
+    <common-form></common-form>
 </template>
 
 <script>
-import CommonTag from "../../src/components/CommonTag.vue"
-
+import CommonForm from '../../src/components/CommonForm.vue'
 export default {
     components:{
-        CommonTag
+        CommonForm
     }
 }
 </script>

@@ -26,7 +26,14 @@ import {
   TableColumn,
   Breadcrumb,
   BreadcrumbItem,
-  Tag
+  Tag,
+  Form,
+  FormItem,
+  Input,
+  Switch,
+  DatePicker,
+  Select,
+  Option
 } from "element-ui"
 import "element-ui/lib/theme-chalk/index.css"
 import '../src/assets/less/index.less'
@@ -63,6 +70,15 @@ Vue.use(TableColumn )
 Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
 Vue.use(Tag)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Input)
+Vue.use(Switch)
+Vue.use(DatePicker)
+Vue.use(Select)
+Vue.use(Option)
+
+
 
 
 new Vue({

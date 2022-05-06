@@ -2,7 +2,6 @@
   <div>
     <el-row class="home">
       <el-col :span="24" style="margin-bottom: 10px">
-        <common-tag></common-tag>
       </el-col>
       <el-col :span="8" style="margin-top: 20px">
         <el-card shadow="hover">
@@ -79,7 +78,6 @@
 </template>
 
 <script>
-import CommonTag from "../../src/components/CommonTag.vue"
 // import CommonAside from "../../src/components/CommonAside.vue";
 import { getData } from "../../api/data.js";
 import * as echarts from "echarts";
@@ -182,7 +180,6 @@ export default {
   },
   components: {
     echart,
-    CommonTag
   },
   mounted() {
     console.log();
