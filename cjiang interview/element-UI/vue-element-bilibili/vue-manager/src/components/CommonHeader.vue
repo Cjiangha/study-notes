@@ -27,6 +27,7 @@
 <script>
 import {mapState} from 'vuex'
 
+
 export default {
   // 报错 ： [Vue warn]: Do not use built-in or reserved HTML elements as component id: header
   // header -> headers
@@ -43,6 +44,7 @@ export default {
   },
   mounted(){
         console.log('tags',this.tags)
+        // console.log('mapState',mapState)
   },
   computed:{
     ...mapState({

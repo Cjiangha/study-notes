@@ -1,5 +1,6 @@
 <template>
     <div>
+        <common-tag></common-tag>
         <a href="javascript:;" @click="show = true">点击</a>
         <Dialag-component :show.sync="show"></Dialag-component>
     </div>
@@ -11,6 +12,8 @@
 
 */ 
 import DialagComponent from '../../src/components/DialagComponent.vue'
+import CommonTag from '../../src/components/CommonTag.vue'
+
 export default {
     data(){
         return{
@@ -18,7 +21,8 @@ export default {
         }
     },
     components:{
-        DialagComponent
+        DialagComponent,
+        CommonTag
     }
 }
 </script>

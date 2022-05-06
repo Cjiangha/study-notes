@@ -1,3 +1,6 @@
 <template>
-    <div>other PageTwo</div>
+    <div>
+        <common-tag></common-tag>
+        other PageTwo
+    </div>
 </template>
