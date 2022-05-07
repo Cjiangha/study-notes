@@ -4,7 +4,8 @@
     <el-table :data="tableData" style="width: 100%">
       <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
       <el-table-column prop="age" label="年龄" width="180"> </el-table-column>
-      <el-table-column prop="sexLabel" label="性别" width="180"> </el-table-column>
+      <el-table-column prop="sexLabel" label="性别" width="180">
+      </el-table-column>
       <el-table-column prop="birth" label="出生日期" width="180">
       </el-table-column>
       <el-table-column prop="addr" label="地址"> </el-table-column>
@@ -31,33 +32,39 @@
 <script>
 import { getUser, delUser } from "../../api/data";
 export default {
+  props: {
+    propspage: {
+      type: Number,
+      required: true,
+    },
+  },
   data() {
     return {
-      isshow: [],
       tableData: [],
       config: {
         page: 1,
         total: 200,
       },
+      isOpen: true,
     };
   },
   methods: {
-    getList(page) {
-      getUser({
+    async getList(page) {
+      await getUser({
         page,
         // name,
       }).then(({ data: res }) => {
-          console.log(',getListgetListgetListgetList',res)
+        console.log("getList", res);
         this.tableData = res.list;
         this.tableData = res.list.map((item) => {
-       //  第一种写法：
-         item.sexLabel = item.sex === 0 ? "女" : "男";
-        //  第二种写法
-        // if(item.sex === 0){
-        //     item.sexLabel = '女'
-        // }else{
-        //     item.sexLabel = '男'
-        // }
+          //  第一种写法：
+          item.sexLabel = item.sex === 0 ? "女" : "男";
+          //  第二种写法
+          // if(item.sex === 0){
+          //     item.sexLabel = '女'
+          // }else{
+          //     item.sexLabel = '男'
+          // }
           return item;
         });
         this.config.total = res.count;
@@ -90,13 +97,14 @@ export default {
       });
     },
     editor(row) {
-       this.$emit('edit', row)
+      this.$emit("edit", row);
     },
+    // 存一个状态丢到子组件
   },
   created() {
     this.getList(this.config.page);
+    console.log("--props--", this.$options.propsData);
   },
-  computed: {},
 };
 </script>
 

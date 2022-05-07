@@ -210,7 +210,7 @@ export default {
     
         //折现图
         const xData = order.date;
-          console.log("---series---", series);
+        console.log("---series---", series);
         console.log("---xData---", xData);
         this.chartData.linechart.xData = xData;
         console.log(this.chartData.linechart)

@@ -26,18 +26,27 @@
         :inline="true"
         ref="form2"
       >
-        <el-button type="primary" @click="getList">搜索</el-button>
+        <el-button type="primary" @click="getList(searchForm.keyword)">搜索</el-button>
       </common-form>
     </div>
-    <common-table @edit="editUser" :propspage="2"></common-table>
+    <common-table
+      @edit="editUser"
+      @changePage="getList"
+      @del="deleteUser"
+      :config="this.config"
+      :tableData="tableData"
+      :tableLabel="tableLabel"
+    ></common-table>
   </div>
 </template>
 
 <script>
 import CommonForm from "../../src/components/CommonForm.vue";
 import CommonTable from "../../src/components/CommonTable.vue";
+import debounce from "../../config/VueDebounce"; //防抖
 
-import debounce from "../../config/VueDebounce";
+import { getUser, delUser } from "../../api/data";
+
 
 export default {
   data() {
@@ -120,31 +129,43 @@ export default {
           type: "input",
         },
       ],
+      //搜索
       searchForm: {
         keyword: "",
       },
+      config: {
+        page: 1,
+        total: 200,
+      },
+      tableData: [], //拿到的 Table数据
+      tableLabel: [
+        {
+          prop: 'name',
+          label: '姓名',
+        },
+        {
+          prop: 'age',
+          label: '年龄',
+        },
+        {
+          prop: 'sexLabel',
+          label: '性别',
+        },
+        {
+          prop: 'birth',
+          label: '出生日期',
+          width: 200
+        },
+        {
+          prop: 'addr',
+          label: '地址',
+          width: 320
+        },
+      ],
     };
   },
   methods: {
-    // async confirm() {
-    //   console.log("弹框确认");
-    //   console.log("operateForm", this.operateForm);
-    //   if (this.operateType === "edit") {
-    //     // 编辑
-    //     this.$http.post("/user/edit", this.operateForm).then((res) => {
-    //       console.log(res);
-    //       this.isShow = false;
-    //     });
-    //   } else if (this.operateType === "add") {
-    //     //增加
-    //     await this.$http.post("/user/add", this.operateForm).then((res) => {
-    //       console.log(res);
-    //       this.isShow = false;
-    //     });
-    //   }
-    //   await this.$children[3].getList(1)
-    // },
-    confirm: debounce(async function()  {
+    confirm: debounce(async function () {
       {
         console.log("弹框确认");
         console.log("operateForm", this.operateForm);
@@ -161,26 +182,11 @@ export default {
             this.isShow = false;
           });
         }
-        await this.$children[3].getList(1);
+        // await this.$children[3].getList(1);
+        await this.getList();
       }
-    },500),
-    // confirmfangdou(){
-    //   console.log(this.confirm)
-    //   //  函数的 执行顺序 => confirm() 进行防抖，防抖了之后，进行接口的调用
-    //   debounce(this.confirm,10000)
-    // },
+    }, 500),
 
-    //  confirm:debounce(async ()=>{
-    //   await setTimeout(()=>{
-    //     console.log(1)
-    //   },1000)
-    //   console.log(2)
-    //    await setTimeout(()=>{
-    //     console.log(3)
-    //     console.log('我是防抖')
-    //   },2000)
-    //   console.log(4)
-    // },1000),
     editUser(row) {
       this.isShow = true;
       this.operateType = "edit";
@@ -193,11 +199,47 @@ export default {
       this.operateForm = {};
       // 重新渲染
     },
-    getList() {
-      console.log("搜索");
+    deleteUser() {
+      var that = this;
+      this.$confirm("此操作将永久删除此组件，是否继续？", "提示", {
+        confirmButtonText: "确认",
+        cancelButtonText: "取消",
+        type: "warning",
+      }).then(() => {
+        const id = row.id;
+        console.log("--id--", id);
+        console.log("--row--", row);
+        delUser({
+          id: id,
+        }).then((res) => {
+          console.log("res", res);
+          this.$message({
+            type: "success",
+            message: "删除成功",
+          });
+          that.getList(this.config.page).bind(this);
+        });
+      });
+    },
+    async getList() {
+      await getUser({
+        page: this.config.page,
+        // name,
+      }).then(({ data: res }) => {
+        console.log("getList", res);
+        this.tableData = res.list;
+        console.log('--tableData--',this.tableData)
+        this.tableData = res.list.map((item) => {
+          item.sexLabel = item.sex === 0 ? "女" : "男";
+          return item;
+        });
+        this.config.total = res.count;
+      });
     },
   },
-  mounted() {},
+  created() {
+    this.getList();
+  },
   components: {
     CommonForm,
     CommonTable,
