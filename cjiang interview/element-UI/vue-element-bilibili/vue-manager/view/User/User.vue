@@ -199,14 +199,15 @@ export default {
       this.operateForm = {};
       // 重新渲染
     },
-    deleteUser() {
+    deleteUser(row) {
       var that = this;
       this.$confirm("此操作将永久删除此组件，是否继续？", "提示", {
         confirmButtonText: "确认",
         cancelButtonText: "取消",
         type: "warning",
       }).then(() => {
-        const id = row.id;
+        console.log(row)
+        let id = row.id;
         console.log("--id--", id);
         console.log("--row--", row);
         delUser({
