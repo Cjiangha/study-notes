@@ -8,19 +8,19 @@
  */
 import VueRouter from "vue-router";
 import Vue from "vue";
-// import Main from '../view/Main'
+import Main from '../view/Main'
 
 
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err => err)
+    return originalPush.call(this, location).catch(err => err)
 }
 
 const routes = [{
         path: '/',
         name: 'Main',
-        component:()=>import('../view/Main.vue'),
-        // component: Main,
+        component: () => import('../view/Main.vue'),
+        component: Main,
         children: [{
                 path: '/home',
                 name: 'home',
@@ -58,6 +58,11 @@ const routes = [{
             },
         ]
     },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('../view/login/login')
+    }
 
 ]
 

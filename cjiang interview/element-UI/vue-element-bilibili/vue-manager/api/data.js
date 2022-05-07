@@ -1,5 +1,6 @@
 import axios from "./axios";
 
+//登录的接口
 export const getMenu = (param)=>{
     return axios.request({
         url:'/permission/getMenu',

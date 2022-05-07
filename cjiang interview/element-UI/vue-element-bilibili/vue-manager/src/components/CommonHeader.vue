@@ -12,12 +12,12 @@
       </el-breadcrumb>
     </div>
     <div class="r-content">
-      <!-- dropdown 默认为hover的状态 -->
+      <!-- el-dropdown-item  -->
       <el-dropdown>
-        <img :src="imageUrl" class="user" />
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>首页</el-dropdown-item>
-          <el-dropdown-item>狮子头</el-dropdown-item>
+        <img :src="imageUrl" class="user" split-button="true" />
+        <el-dropdown-menu @click="shouye" slot="dropdown">
+          <el-dropdown-item @click="shouye">首页</el-dropdown-item>
+          <el-dropdown-item @click.native="quit">退出</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -41,6 +41,14 @@ export default {
     changeStatus() {
       this.$store.state.tab.isCollapse = !this.$store.state.tab.isCollapse;
     },
+    quit(){
+      console.log('点我点我')
+      this.$router.push('/login')
+    },
+    shouye(){
+      console.log('点我点我')
+      this.$router.push('/')
+    }
   },
   mounted(){
         console.log('tags',this.tags)
