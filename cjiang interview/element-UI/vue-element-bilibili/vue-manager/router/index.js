@@ -20,42 +20,43 @@ const routes = [{
         path: '/',
         name: 'Main',
         component: () => import('../view/Main.vue'),
-        component: Main,
-        children: [{
-                path: '/home',
-                name: 'home',
-                component: () =>import('../view/Home/Home.vue')
-            },
-            {
-                path: '/',
-                name: 'home',
-                component: () =>import('../view/Home/Home.vue')
-            },
-            {
-                path: '/mall',
-                name: 'mall',
-                component: () =>import('../view/Mall/Mall.vue')
-            },
-            {
-                path: '/user',
-                name: 'user',
-                component: () =>import('../view/User/User.vue')
-            },
-            {
-                path: '/dialag',
-                name: 'dialag',
-                component: () =>import('../view/Dialag/Dialag.vue'),
-            },
-            {
-                path: '/page1',
-                name: 'page1',
-                component: () => import('../view/other/pageOne.vue')
-            },
-            {
-                path: '/page2',
-                name: 'page2',
-                component: () => import('../view/other/pageTwo.vue')
-            },
+        // component: Main,
+        children: [
+            // {
+            //     path: '/home',
+            //     name: 'home',
+            //     component: () =>import('../view/Home/Home.vue')
+            // },
+            // {
+            //     path: '/',
+            //     name: 'home',
+            //     component: () =>import('../view/Home/Home.vue')
+            // },
+            // {
+            //     path: '/mall',
+            //     name: 'mall',
+            //     component: () =>import('../view/Mall/Mall.vue')
+            // },
+            // {
+            //     path: '/user',
+            //     name: 'user',
+            //     component: () =>import('../view/User/User.vue')
+            // },
+            // {
+            //     path: '/dialag',
+            //     name: 'dialag',
+            //     component: () =>import('../view/Dialag/Dialag.vue'),
+            // },
+            // {
+            //     path: '/page1',
+            //     name: 'page1',
+            //     component: () => import('../view/Other/PageOne.vue')
+            // },
+            // {
+            //     path: '/page2',
+            //     name: 'page2',
+            //     component: () => import('../view/Other/PageTwo.vue')
+            // },
         ]
     },
     {

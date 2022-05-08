@@ -4,5 +4,6 @@ export default {
         dev:'/api/',
         //生产环境
         pro:''
-    }
+    },
+    devtool: 'source-map',
 }

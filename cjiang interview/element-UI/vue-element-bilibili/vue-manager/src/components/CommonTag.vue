@@ -1,16 +1,16 @@
 <template>
   <div>
-      <el-tag
-        v-for="(tag,index) in tags"
-        :key="tag.name"
-        :closable="tag.name !== 'home'"
-        :effect="$route.name == tag.name ? 'dark':'plain'"
-        @click="changeMenu(tag)"
-        @close="handleClose(tag,index)"
-        size="small"
-      >
-        {{tag.label}}
-      </el-tag>
+    <el-tag
+      v-for="(tag, index) in tags"
+      :key="tag.name"
+      :closable="tag.name !== 'home'"
+      :effect="$route.name == tag.name ? 'dark' : 'plain'"
+      @click="changeMenu(tag)"
+      @close="handleClose(tag, index)"
+      size="small"
+    >
+      {{ tag.label }}
+    </el-tag>
   </div>
 </template>
 
@@ -28,13 +28,16 @@ export default {
     handleClose(tag, index) {
       const length = this.tags.length - 1; //索引
       this.close(tag);
-      if (tag.name !== this.$route.name) { //当路由和tag.name 不匹配
+      if (tag.name !== this.$route.name) {
+        //当路由和tag.name 不匹配
         return;
-      }  if (index === length) {
+      }
+      if (index === length) {
         this.$router.push({
           name: this.tags[index - 1].name,
         });
-      } else {// 匹配的话 push到对应的tags
+      } else {
+        // 匹配的话 push到对应的tags
         this.$router.push({
           name: this.tags[index],
         });

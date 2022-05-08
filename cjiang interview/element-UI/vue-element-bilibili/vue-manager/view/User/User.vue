@@ -227,6 +227,7 @@ export default {
         page: this.config.page,
         // name,
       }).then(({ data: res }) => {
+        
         console.log("getList", res);
         this.tableData = res.list;
         console.log('--tableData--',this.tableData)

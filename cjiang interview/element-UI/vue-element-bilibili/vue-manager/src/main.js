@@ -50,6 +50,20 @@ Vue.config.productionTip = false
 Vue.prototype.$http = http
 Vue.prototype.$confirm = MessageBox.confirm
 Vue.prototype.$message  = Message
+
+//路由守卫   用的比较多的是 to 和 next参数
+// router.beforeEach((to,from,next)=>{
+//   store.commit('clearToken')
+//   const token = store.state.user.token
+//   console.log('token',token)
+//   if(!token && to.name !=='login'){// 没token也不来自登录页
+//     next({name:'login'})
+//   }  else if(token && to.name === 'login'){ //来源是登录页 带token
+//     next({name:'home'})
+//   }else{
+//     next()
+//   }
+// })
 // Vue.use(ElementUI)
 Vue.use(Button)
 Vue.use(Radio)
@@ -88,4 +102,7 @@ new Vue({
   store,//使用store
   router,
   render: (h) => h(App),
+  created(){
+    // store.commit('addMenu',router)
+  }
 }).$mount("#app")

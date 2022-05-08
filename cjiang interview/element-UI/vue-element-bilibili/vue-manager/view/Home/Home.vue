@@ -86,44 +86,6 @@ import echart from "../../src/components/echart.vue";
 export default {
   data() {
     return {
-      // tableData: [
-      //   {
-      //     name: 'oppo',
-      //     todayBuy: 100,
-      //     monthBuy: 300,
-      //     totalBuy: 800
-      //   },
-      //   {
-      //     name: 'vivo',
-      //     todayBuy: 100,
-      //     monthBuy: 300,
-      //     totalBuy: 800
-      //   },
-      //   {
-      //     name: '苹果',
-      //     todayBuy: 100,
-      //     monthBuy: 300,
-      //     totalBuy: 800
-      //   },
-      //   {
-      //     name: '小米',
-      //     todayBuy: 100,
-      //     monthBuy: 300,
-      //     totalBuy: 800
-      //   },
-      //   {
-      //     name: '三星',
-      //     todayBuy: 100,
-      //     monthBuy: 300,
-      //     totalBuy: 800
-      //   },
-      //   {
-      //     name: '魅族',
-      //     todayBuy: 100,
-      //     monthBuy: 300,
-      //     totalBuy: 800
-      //   }
-      // ],
       tableData: [],
       tableLabel: {
         name: "课程",
@@ -182,14 +144,12 @@ export default {
     echart,
   },
   mounted() {
-    console.log();
-
     getData().then((res) => {
       const { code, data } = res.data;
       if (code === 20000) {
         // 订单支付金额
         this.tableData = data.tableData;
-        console.log("--data--", data);
+        // console.log("--data--", data);
         // 折线图
         const order = data.orderData;
         const keyArray = Object.keys(order.data[0]);
@@ -210,10 +170,10 @@ export default {
     
         //折现图
         const xData = order.date;
-        console.log("---series---", series);
-        console.log("---xData---", xData);
+        // console.log("---series---", series);
+        // console.log("---xData---", xData);
         this.chartData.linechart.xData = xData;
-        console.log(this.chartData.linechart)
+        // console.log(this.chartData.linechart)
         this.chartData.linechart.series = series;
         // console.log(this.chartData);
         // const options = {

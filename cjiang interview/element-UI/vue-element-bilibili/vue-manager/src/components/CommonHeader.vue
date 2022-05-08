@@ -8,15 +8,15 @@
       ></el-button>
       <!-- <h4 style="color: #fff">首页</h4> -->
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item v-for="item in tags" :key="item.label" :to="{ path: item.path }">{{item.label}}</el-breadcrumb-item>
+        <el-breadcrumb-item class="el" v-for="item in tags" :key="item.label" :to="{ path: item.path }">{{item.label}}</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="r-content">
       <!-- el-dropdown-item  -->
       <el-dropdown>
         <img :src="imageUrl" class="user" split-button="true" />
-        <el-dropdown-menu @click="shouye" slot="dropdown">
-          <el-dropdown-item @click="shouye">首页</el-dropdown-item>
+        <el-dropdown-menu  slot="dropdown">
+          <el-dropdown-item @click.native="shouye">首页</el-dropdown-item>
           <el-dropdown-item @click.native="quit">退出</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -26,7 +26,6 @@
 
 <script>
 import {mapState} from 'vuex'
-
 
 export default {
   // 报错 ： [Vue warn]: Do not use built-in or reserved HTML elements as component id: header

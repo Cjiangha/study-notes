@@ -9,4 +9,8 @@
 module.exports = {
     lintOnSave: false,
     publicPath: './',
+    // Vue3 才使用
+    // configureWebpack: {
+    //     devtool: 'source-map'
+    // }
 }

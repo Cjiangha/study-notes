@@ -9,7 +9,7 @@ export const getMenu = (param)=>{
     })
 }
 
-//查询
+//查询表格数据
 export const getData = ()=>{
     return axios.request({
         url:'/home/getData',
@@ -17,7 +17,7 @@ export const getData = ()=>{
     })
 }
 
-//查询
+//查询用户
 export const getUser = (params)=>{
     return axios.request({
         url: '/user/getUser',
@@ -26,7 +26,7 @@ export const getUser = (params)=>{
     })
 }
 
-//删除
+//删除用户
 export const delUser = (params)=>{
     return axios.request({
         url: '/user/del',

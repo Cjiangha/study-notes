@@ -70,15 +70,15 @@ export default {
       // this.$store.commit('setToken',token)
       // this.$router.push({name:'home'})
       getMenu(this.form).then(({ data: res }) => {
-        console.log("res", res);
         if (res.code === 20000) {
-          this.$store.commit("clearMenu");
-          this.$store.commit("setMenu", res.data.menu);
-          this.$store.commit("setToken", res.data.token);
-          this.$store.commit("addMenu", this.$router);
+          console.log("res.data.menu", res.data.menu);
+          this.$store.commit("clearMenu"); //清除 导航菜单路由
+          this.$store.commit("setMenu", res.data.menu); // 设置路由给导航使用
+          this.$store.commit("setToken", res.data.token); //设置token
+          this.$store.commit("addMenu", this.$router); // router 组件注册
           this.$router.push({ name: "home" });
         } else {
-          this.$message.warning(res.data.message);
+          this.$message.warning(res.data.message); //账号或者密码错误
         }
       });
     },
