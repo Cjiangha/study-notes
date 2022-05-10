@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /*
+        Date.parse() Date.parse() 方法解析一个表示某个日期的字符串，
+        并返回从1970-1-1 00:00:00 UTC 到该日期对象（该日期对象的UTC时间）
+        的毫秒数，如果该字符串无法识别，或者一些情况下，
+        包含了不合法的日期数值（如：2015-02-31），
+        则返回值为NaN。
+    */ 
+    const javaScriptRelease = Date.parse("04 Dec 1995 00:12:00 GMT");
+    console.log(javaScriptRelease);
+
+    /*
+        这个案例返回时间为小时的 没有进行24小时进1 的处理
+
+        传值
+        startDate 传 '2022/01/01 10:00:00'
+        orderTime 传 '2022/01/01 09:00:00'
+
+        返回值
+        01：00：00
+    */
+    function getTime(orderTime, endDate) {
+      var startDate = Date.parse(orderTime); //获取订单的时间戳
+      startDate++;
+      var endDate = Date.now(); // 当前时间戳
+      var decreaseVal = parseInt((endDate - startDate) / 1000); //差值毫秒数
+      console.log(decreaseVal);
+      var hour = parseInt(decreaseVal / 3600);
+      var minute = parseInt(
+        (decreaseVal - parseInt(decreaseVal / 3600) * 3600) / 60
+      );
+      var second = parseInt(decreaseVal % 60);
+      console.log("hour", hour + " minute ", minute + " second " + second);
+      return `${hour}:${minute}:${second}`;
+    }
+
+    setInterval(() => {
+      getTime("2022/01/01 10:00:00", "2022/01/01 09:00:00");
+    }, 1000);
+
+    getTime("2022/01/01 10:00:00", "2022/01/01 09:00:00");
+    console.log(getTime("2022/01/01 09:00:00", "2020/01/01 10:00:00"));
+  </script>
+</html>
