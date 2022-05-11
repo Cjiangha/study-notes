@@ -39,6 +39,7 @@ export default {
   methods: {
     changeStatus() {
       this.$store.state.tab.isCollapse = !this.$store.state.tab.isCollapse;
+      console.log('tags',this.tags)
     },
     quit(){
       console.log('点我点我')
