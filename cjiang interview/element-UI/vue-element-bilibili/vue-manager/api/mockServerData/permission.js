@@ -43,7 +43,13 @@ export default {
       return {
         code: 20000,
         data: {
-          menu: [
+          menu: [{
+              path: '/home',
+              name: 'home',
+              label: '首页',
+              icon: 's-home',
+              url: 'Home/Home'
+            },
             {
               path: '/mall',
               name: 'mall',
