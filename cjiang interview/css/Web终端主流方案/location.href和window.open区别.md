@@ -1,0 +1,2 @@
+* [window.location.href、document.location.href、window.open的区别](https://blog.csdn.net/lhban108/article/details/110929435)
+* [使用 JS 实现页面跳转的几种方式总结，小菜一碟！](https://blog.csdn.net/afreon/article/details/119617930)

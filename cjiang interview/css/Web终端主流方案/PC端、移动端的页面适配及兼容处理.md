@@ -1,4 +1,5 @@
-转自  [PC端、移动端的页面适配及兼容处理](https://blog.csdn.net/xiangyun20021990/article/details/80653910)
+参考：
+* [PC端、移动端的页面适配及兼容处理](https://blog.csdn.net/xiangyun20021990/article/details/80653910)
 一、关于移动端兼容性
 
    目前针对跨终端的方案，主要分为两大阵营：一套资源Vs两套资源。
