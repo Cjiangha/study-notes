@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+</body>
+<!-- <script src=https://cdn.bootcss.com/vue/2.6.10/vue.min.js> </script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#demo',
+        template: `<div>12356</div>`
+    })
+    /*
+        参考官方文档的网址：https://cn.vuejs.org/v2/guide/reactivity.html#%E5%A6%82%E4%BD%95%E8%BF%BD%E8%B8%AA%E5%8F%98%E5%8C%96
+
+        1、如何追踪变化
+            * 当你把一个普通的 JavaScript 对象传入 Vue 实例作为 data 选项，
+            Vue 将遍历此对象所有的 property，并使用 Object.defineProperty
+            把这些 property 全部转为 getter/setter。Object.defineProperty
+            是 ES5 中一个无法 shim 的特性，这也就是 Vue 不支持 IE8 以及更低版本浏览器的原因。
+
+            * property 修改的时候，对应的data数据会跟着改变，所以我们
+              建议安装 vue-devtools 来获取对检查数据更加友好的用户界面。
+
+
+             可以参考下文档的图片的流程图地址  https://cn.vuejs.org/images/data.png
+
+                                                                                                    collect
+                                                                                                  as Dependency
+                                     render                         tounch      getter          —— —— —— —— —— ——>    
+        Component Render Function  —— —— —— ——> Virtural DOM TREE —— —— —— ——>           （data）    Notify       （Watch）
+                |                                                               setter          —— —— —— —— —— ——>   |
+                |__ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ _|
+                                                                                                                  
+
+    */                                                                                                                      
+</script>
+
+</html>

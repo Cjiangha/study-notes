@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        {{a}}
+        {{someObject.b}}
+    </div>
+
+    <div id="demo2">
+        {{items[0]}}
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    /*
+        # 检测变化的注意事项
+
+            * 限制 
+               由于 JavaScript 的限制，Vue 不能检测数组和对象的变化。尽管如此我们还是有一些办法来回避这些限制并保证它们的响应性。
+            
+            
+            ## 对于数组
+
+    */
+    // ## 对于对象
+    // Vue.config.devtools = true;
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            a: 1,
+            someObject: {}
+        },
+        mounted() {
+            /*
+            对于已经创建的实例，Vue 不允许动态添加根级别的响应式 property。
+            但是，可以使用 Vue.set(object, propertyName, value) 
+            方法向嵌套对象添加响应式 property。例如，对于：
+             */
+            this.$set(this.someObject, 'b', 5)
+
+            /*
+                有时你可能需要为已有对象赋值多个新 property，
+                比如使用 Object.assign() 或 _.extend()。但是，这样添加到对象上的新 property 不会触发更新。
+                在这种情况下，你应该用原对象与要混合进去的对象的 property 一起创建一个新的对象。
+            
+            */
+            this.someObject = Object.assign({}, this.someObject, {
+                a: 1,
+                b: 2
+            })
+            // this.$set(this.someObject, "b", 2)
+        }
+
+    })
+    // "vm.a" 是响应式的
+    vm.b = 2
+    console.log(vm)
+    console.log(vm.b)
+    // "vm.b" 是非响应式的  
+    /*
+        如果使用了 这个进行修改 b的数据的话，那么b不会直接在 devtools-vue 里面出现。就是不会绑定在data.
+        即，我们可以打印下this的话，this._data 是找不到b挂载到 data的
+    */
+
+
+
+
+    /*
+        ## 对于对象
+    */
+    let vm2 = new Vue({
+        el: '#demo2',
+        data: {
+            items: ['a', 'b', 'c']
+        },
+        mounted() {
+            console.log(this)
+            //  Vue.set( target, propertyName/index, value )  
+            //  第一个参数是操作的数组  第二个参数是数组下标  第三个参数是修改后的值
+            this.$set(this.items, 0, 'ccccc')
+
+
+            // Array.prototype.splice,
+            // splice(start​,deleteCount ,item1, item2, ...) 方法通过删除或替换现有元素或者
+            //  原地添加新的元素来修改数组,并以数组形式返回被修改的内容。此方法会改变原数组。
+
+            // 语法   array.splice(start[, deleteCount[, item1[, item2[, ...]]]])   start 索引  deleteCount 删除个数？ item，添加数组的内容
+
+            this.items.splice(this.items, 2, 'abcdefg')
+            console.log(this.items)
+        }
+    })
+    // vm2.items[1] = 'x' // 不是响应式的，因为Vue的底层的data的数组形式是不可枚举型的，具体可以参考下掘金的Vue的源码文章
+    // vm2.items.length = 2; 
+</script>
+
+
+</html>

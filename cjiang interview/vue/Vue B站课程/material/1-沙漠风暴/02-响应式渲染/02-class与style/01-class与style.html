@@ -56,7 +56,10 @@
       })
 
       // vue2 解决方案， Vue.set(对象,属性，true) Vue.set(vm.classobj,"dd",true)
-
+      Vue.set(vm.classobj,"dd",true)
+      Vue.set(vm.classarr,"dd",3)
+      Vue.set(vm.classarr,"ff",3)
+      console.log(vm)
       // vue3 支持动态增加属性的拦截
   </script>
 </body>

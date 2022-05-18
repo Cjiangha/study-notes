@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    /*
+        如果你未在 data 选项中声明 message，Vue 将警告你渲染函数正在试图访问不存在的 property。
+        所以，我们要初始化变量的时候，给他赋值对应的类型。
+        
+    */ 
+    var vm = new Vue({
+        el:'#demo',
+        data: {
+            // 声明 message 为一个空值字符串
+            message: ''
+        },
+        template: '<div>{{ message }}</div>'
+    })
+    // 之后设置 `message`
+    vm.message = 'Hello!'
+</script>
+
+</html>

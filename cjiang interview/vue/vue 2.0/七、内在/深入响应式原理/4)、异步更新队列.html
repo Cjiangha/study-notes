@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="example">{{message}}</div>
+    <div id="son">
+      
+        <example ></example>
+        <p ref="p_ref">
+            当前姓名:<b>{{ name }}</b>
+        </p>
+        <button @click="changeName">改变名称</button>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    /*
+        这个case的坑   <example /></example>  如果写成 <example /> 那么该父组件的其他的节点是不会渲染的
+
+
+        底层原理 Vue 在内部对异步队列尝试使用原生的 Promise.then、
+        MutationObserver 和 setImmediate，如果执行环境不支持，则会采用 setTimeout(fn, 0) 代替。
+
+        
+        设置 vm.someData = 'new value' 该组件不会立即重新渲染。
+        虽然 Vue.js 通常鼓励开发人员使用“数据驱动”的方式思考，避免直接接触 DOM，
+        但是有时我们必须要这么做。为了在数据变化之后等待 Vue 完成更新 DOM，
+        可以在数据变化之后立即使用 Vue.nextTick(callback)。
+    
+        说白了 就是 $refs 配合 $nextTick 进行使用
+    */
+
+    Vue.component('example', {
+        template: '<span>{{ message }}</span>',
+        data: function () {
+            return {
+                message: '未更新'
+            }
+        },
+        methods: {
+            updateMessage: function () {
+                // this.message = '已更新'
+                // console.log(this.$el.textContent) // => '未更新'
+                this.message = '已更新'
+                console.log(this.$el.textContent) // => '未更新'
+                this.$nextTick(function () {
+                    console.log(this.$el.textContent) // => '已更新'
+                })
+            }
+        },
+        mounted() {
+            this.updateMessage();
+        }
+    })
+
+
+    var vm = new Vue({
+        el: '#example',
+        data: {
+            message: '123'
+        },
+        mounted() {
+            this.message = '321321'
+        }
+    })
+
+    var son = new Vue({
+        el: '#son',
+        data() {
+            return {
+                name: "张三",
+            };
+        },
+        methods: {
+            changeName() {
+             
+                this.name = '李四'
+                console.log('我是直接定义在methds里面的 $refs 拿到的值，拿不到最新更新的data层改变的数据',this.$refs["p_ref"].innerHTML)
+                this.$nextTick (()=>{
+                    console.log('我是直接定义在nextTick 里面的 $refs 拿到的值，拿不到最新更新的data层改变的数据',this.$refs["p_ref"].innerHTML)
+                })
+
+            }
+        },
+        mounted() {
+
+        }
+    })
+
+    vm.message = 'new message';
+    vm.$el.textContent === 'new message' ? vm.message = true : vm.message = false // false
+    var example = window.document.getElementById('example')
+    console.log(example)
+
+    // example.innerHTML === '12344523' ? vm.message = 'true' : vm.message = 'false' // false
+    Vue.nextTick(function () {
+        // Vue 想操作dom的时候，需要在这里面进行操作 
+        vm.$el.textContent === 'new message' //true
+        console.log('vm.$el.textContent', vm.$el.textContent)
+    })
+</script>
+
+</html>

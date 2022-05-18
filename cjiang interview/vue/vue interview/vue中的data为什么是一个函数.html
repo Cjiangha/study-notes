@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+        参考下文章 
+        vue中的data为什么是一个函数，https://blog.csdn.net/weixin_49320962/article/details/116276209
+
+        组件是一个可复用的Vue实例，一个组件被创建好之后，就可能被用在各个地方，
+        而组件不管被复用多少次，组件中data数据都应该是相互隔离，互不影响的，
+        基于这一理念，组件每复用一次，data数据就会被复制一次，
+    */ 
+   function Person(){
+       this.data = this.data();
+   }
+
+   Person.prototype.data = function(){
+       return{
+           name:'itclanCoder'
+       }
+   }
+
+   var p1 = new Person()
+   var p2 = new Person()
+   p1.data.name = '123'
+   console.log(p1) //'123'
+   console.log(p2) // 'itclanCoder'
+
+
+
+
+</script>
+
+</html>
