@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+        树形结构的算法 
+        https://zhuanlan.zhihu.com/p/80343180?ivk_sa=1024320u
+    
+    */ 
+    let arr = [
+        [
+            1,
+            [
+                2,
+                3
+            ]
+        ],
+        [
+            4,
+            [
+                [
+                    5,
+                    6
+                ],
+                7
+            ]
+        ]
+    ];
+
+    // function deepVisit(data, newData = []) {
+    //     for (var i = 0; i < data.length; i++) {
+    //         if (data[i] instanceof Array && data[i].length) {
+    //             newData.concat(...deepVisit(data[i], newData))
+    //         } else {
+    //             newData.push(data[i])
+    //         }
+    //     }
+    //     return newData
+    // }
+
+        function deepVisit(data,newData = []){
+            
+
+        }
+
+
+
+    deepVisit(arr) //[1, 2, 3, 4, 5, 6, 7]
+</script>
+
+</html>
