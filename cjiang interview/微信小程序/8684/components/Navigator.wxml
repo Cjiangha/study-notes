@@ -1,0 +1,50 @@
+<!--     
+            这里涉及的用到的api即组件有：
+            api
+            getCurrentPages()
+            wx.getMenuButtonBoundingClientRect()
+            wx.getSystemInfo()
+
+            组件
+            <navigator  open-type />
+
+
+            第一种case：可以修改成对应的图标 第一个图标可以定位到当前的城市
+            第二种case：可以修改成文字，//最普通的一种nav，即不引入自定义导航原生的导航
+                    第三个tabbar的 nav 图标可以把定位的数据做个数据管理，然后把值传递过来
+            第三种case：把她做成一个图标，比如图标按钮里有收藏的功能，点击收藏的按钮之后，可以把相应的内容收藏到我的
+
+            第四种case:
+         -->
+
+<view class="header-title">
+    <view style="height:{{statusBarHeight}}px;background-color:{{background}}"></view>
+    <view class="title-bar  {{titleClass}} bg-gradual-blue" style="height:{{titleBarHeight}}px;">
+        <view class='left-iconContent'>
+            <!-- <navigator class="{{isActive ? 'actives' : 'navigator'}}" open-type="navigateBack" wx:if="{{!isShowHome}}" />
+            <navigator class="{{isActive ? 'homeIndex' : 'homePage'}}" open-type="switchTab" url="/pages/index/index" wx:else /> -->
+
+            <!-- back + honme  -->
+            <!-- <view class="home-btn-com" style="width: 86px;height: 32px;">
+              <view class="citem" style="width: 86px;height: 32px;">
+                <text class="text" decode='true' style="height: 32px;">&lt;</text>
+              </view>
+              <view class="home-icon" style="width: 86px;height: 32px;">
+                <text class="text iconfont icon-wujiaoxing-" style="height: 32px;"></text>
+                <view class="" ></view>
+              </view>
+            </view>  -->
+            
+            <view class="place" style="width: 86px;height: 32px;">
+                <view class="text placetext" >广州</view>
+                <text class="iconfont icon-xiangxia place-icon" style="height: 64rpx;width: 64rpx;"
+                  bindtap="Seac"
+                ></text>
+              </view>
+        </view>
+        <view class="title"> 实时公交</view>
+        <view class="right-icon">
+            <!-- I'm right-icon -->
+        </view>
+    </view>
+</view>
