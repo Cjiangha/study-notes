@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 5.解析以下树形结构数据，并从中取出所有blocktype为text的block id
+    let json = {
+        blockId: 'aaa',
+        children: [{
+                blockId: 'bbb',
+                children: [],
+                type: 'otherType',
+            },
+            {
+                blockId: 'bbbb',
+                children: [],
+                type: 'text',
+            }
+        ],
+        type: 'root'
+    }
+
+    function getTextBlockkId(obj) {
+        const blockIds = [];
+        // your code
+
+        let childrenArray = obj.children
+        childrenArray.forEach(item => {
+            if (item.type === 'text') {
+                blockIds.push(item.blockId)
+            }
+        })
+
+        return blockIds;
+    }
+    console.log(getTextBlockkId(json))
+
+
+    /*
+        输入示例1:
+        []
+
+
+
+    */
+
+    let shuru = [{
+        blockId: 'aaaa ',
+        isQuote: true
+    }, {
+        blockId: 'bbb ',
+        isQuote: true
+    }, {
+        blockId: 'ccc ',
+        isQuote: false
+    }, {
+        blockId: 'ddd ',
+        isQuote: true,
+    }]
+
+    // 输出 
+
+    [
+        [{
+            blockId: 'aaaa',
+            isQuote: true,
+        }, {
+            blockId: 'bbb',
+            isQuote: true,
+        }],
+        [{
+            blockId: 'ddd',
+            isQuote: true,
+        }]
+    ]
+</script>
+</script>
+
+</html>

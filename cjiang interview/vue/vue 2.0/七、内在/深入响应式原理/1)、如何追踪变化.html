@@ -33,13 +33,13 @@
 
              可以参考下文档的图片的流程图地址  https://cn.vuejs.org/images/data.png
 
-                                                                                                    collect
-                                                                                                  as Dependency
+                                                                                                    
+                                                                                               collect as Dependency
                                      render                         tounch      getter          —— —— —— —— —— ——>    
         Component Render Function  —— —— —— ——> Virtural DOM TREE —— —— —— ——>           （data）    Notify       （Watch）
                 |                                                               setter          —— —— —— —— —— ——>   |
                 |__ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ _|
-                                                                                                                  
+                                                    Trigger re-render                                                        
 
     */                                                                                                                      
 </script>
