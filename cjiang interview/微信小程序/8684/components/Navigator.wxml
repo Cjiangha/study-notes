@@ -25,7 +25,7 @@
             <navigator class="{{isActive ? 'homeIndex' : 'homePage'}}" open-type="switchTab" url="/pages/index/index" wx:else /> -->
 
             <!-- back + honme  -->
-            <!-- <view class="home-btn-com" style="width: 86px;height: 32px;">
+            <view class="home-btn-com" style="width: 86px;height: 32px;">
               <view class="citem" style="width: 86px;height: 32px;">
                 <text class="text" decode='true' style="height: 32px;">&lt;</text>
               </view>
@@ -33,16 +33,16 @@
                 <text class="text iconfont icon-wujiaoxing-" style="height: 32px;"></text>
                 <view class="" ></view>
               </view>
-            </view>  -->
+            </view> 
             
-            <view class="place" style="width: 86px;height: 32px;">
+            <!-- <view class="place" style="width: 86px;height: 32px;">
                 <view class="text placetext" >广州</view>
-                <text class="iconfont icon-xiangxia place-icon" style="height: 64rpx;width: 64rpx;"
+                <text class="iconfont icon-xiangxia place-icon" 
                   bindtap="Seac"
                 ></text>
-              </view>
+              </view> -->
         </view>
-        <view class="title"> 实时公交</view>
+        <view class="title"> {{title}}</view>
         <view class="right-icon">
             <!-- I'm right-icon -->
         </view>

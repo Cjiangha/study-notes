@@ -35,6 +35,40 @@ Component({
       }
 
     },
+
+    pageLifetimes: {
+      // 组件所在页面的生命周期函数
+      show: function () {
+        var t = this
+        let { showNavigationBarLoading, hideNavigationBarLoading } = Object.assign({}, wx)
+        wx._showNavigationBarLoading || wx.__defineGetter__('showNavigationBarLoading', function () {
+          wx._showNavigationBarLoading = 1
+          return function (o) {
+            var p = getCurrentPages().pop() || {},
+              cb = p ? p.selectComponent('#c-bar') : false
+            cb && cb.setData && cb.setData({
+              loading: !0
+            })
+            
+            return showNavigationBarLoading(o)
+          }
+        })
+        wx._hideNavigationBarLoading || wx.__defineGetter__('hideNavigationBarLoading', function () {
+          wx._hideNavigationBarLoading = 1
+          return function (o) {
+            var p = getCurrentPages().pop() || {},
+              cb = p ? p.selectComponent('#c-bar') : false
+            cb && cb.setData && cb.setData({
+              loading: !1
+            })
+            return hideNavigationBarLoading(o)
+          }
+        })
+      },
+      hide: function () { },
+      resize: function () { },
+    },
+    
     data: {
         statusBarHeight: '',
         titleBarHeight: '',
