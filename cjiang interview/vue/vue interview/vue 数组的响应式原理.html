@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <!-- input change事件区别 -->
+        <input type="text" @input="handleInput" v-model="mytext" />
+        <ul>
+            <li v-for="(data,index) in datalist" :key="index">
+                {{data}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#box",
+            data: {
+                mytext: "",
+                datalist: ["aaa", "add", "bbb", "bbc", "ccc", "ddd", "eee", "ade"], // 要改的
+                originList: ["aaa", "add", "bbb", "bbc", "ccc", "ddd", "eee", "ade"] // 原始数据
+            },
+            methods: {
+                handleInput() {
+                   /*
+                      a. 使用以下方法操作数组，
+                        可以检测变动 push() pop() shift() unshift() splice() sort() reverse()
+                   */
+                    // this.datalist.push("向后推送数据")
+                    // this.datalist.pop();
+                    // this.datalist.shift();
+                    // this.datalist.unshift('向前插入数据');
+                    // this.datalist.splice(0,0,'向第一个元素的删除0个 查润我我我我我'); //删除0个 插入
+                    // this.datalist.sort()
+                    // this.datalist.reverse()  //reverse() 方法用于颠倒数组中元素的顺序。
+
+
+                    /*
+                        b. filter(), concat() 和 slice() ,map(),新数组替换旧数组
+                    */ 
+                    // setTimeout(()=>{
+                    //     this.datalist = this.originList.filter(item=> item.includes(this.mytext) )
+                    // },2000)
+
+                    // 遍历1 - 5
+                    function calculateItem(mytext){
+                        var arr = ['1','2','3','4','5']
+                        for(let  i of arr){
+                            if(i === mytext){
+                                return true
+                            }
+                        }
+                    }
+
+                    //输入1 - 5 后返回原数组
+                    if(calculateItem(this.mytext) ){
+                        this.datalist = this.originList
+                    }else{//否则执行数组的方法
+                        // this.datalist = this.originList.concat([1,2,3])
+                        // this.datalist = this.originList.slice(1,3)
+                        this.datalist = this.originList.map(item=>{
+                            return item = item +'a'
+                        })
+                    }
+
+                    /*c. 不能检测以下变动的数组
+                            vm.items[indexOfItem] = newValue
+                            *解决* 
+                                (1)Vue.set(example1.items, indexOfItem, newValue)
+                                (2)splice
+                     */
+
+                    //(1)
+                    this.$set(this.datalist,4,'我是改变的数据')
+                    // (2)
+                    // this.datalist.splice(0,0,'向第一个元素的删除0个 查润我我我我我')
+                    // console.log(newlist)
+
+                }
+            },
+            mounted(){
+                console.log('mounted',this)
+            }
+        })
+
+        var arr = ["aaa", "add", "bbb", "bbc", "ccc", "ddd", "eee", "ade"]
+
+        var newlist = arr.filter(item => item.includes("a"))
+
+        console.log(newlist, arr)
+    </script>
+</body>
+
+</html>
