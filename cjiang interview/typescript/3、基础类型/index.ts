@@ -1,3 +1,4 @@
+// 一、TypeScript 基础类型
 //  Number
 let binaryLiteral: number = 0b1010; // 二进制
 let octalLiteral: number = 0o744;    // 八进制
@@ -41,3 +42,11 @@ function hello():void{
     console.log("Hello Runoob");
 }
 hello();
+
+
+
+
+
+
+
+
