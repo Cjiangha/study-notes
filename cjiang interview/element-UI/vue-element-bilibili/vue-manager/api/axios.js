@@ -35,11 +35,11 @@ class HttpRequest {
             return Promise.reject(error);
         });
     }
-    // 看着像闭包
+
     request(options){
         const instance = axios.create()
         options = {...this.getInsideConfig(),...options}
-        this.instencepotors(instance) // 调用拦截器
+        this.instencepotors(instance) // 调用拦截器   （装饰器模式） 见文章 https://blog.csdn.net/qq_32442973/article/details/119757216
         return instance(options)
     }
 }
