@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+
+/**
+ * pre:代理模式
+ * 小明追求A，B是A的好朋友,小明比不知道A什么时候心情好，不好意思直接将花交给A，
+ * 于是小明将花交给B，再由B交给A.
+ */
+ 
+// 花的类 
+class Flower{
+    constructor(name){
+        this.name = name 
+    }
+}
+ 
+// 小明拥有sendFlower的方法
+let Xioaming = {
+    sendFlower(target){
+        var flower = new Flower("玫瑰花")
+        target.receive(flower)
+    }
+}
+// B对象中拥有接受花的方法，同时接收到花之后，监听A的心情，并且传入A心情好的时候函数
+let B = {
+    receive(flower){
+        this.flower =flower
+        A.listenMood(()=>{
+            A.receive(this.flower)
+        })
+    }
+ 
+}
+// A接收到花之后输出花的名字
+let A = {
+    receive(flower){
+        console.log(`A收到了${flower.name} `)
+        // A收到了玫瑰花 
+    },
+    listenMood(func){
+        setTimeout(func,1000)
+    }
+}
+Xioaming.sendFlower(B)
+
+
+
+let myImage = (function(){
+    let img = new Image
+    img.style.height="200px";
+    img.style.width="200px";
+    document.body.appendChild(img)
+    return {
+        setSrc:(src)=>{
+            img.src = src
+        }
+    }
+})()
+let imgProxy =(function(){
+    let imgProxy = new Image
+    // 这个地方我使用了setTimeout来增强演示效果，否则本地加载太快，根本看不到。
+    imgProxy.onload=function(){
+        setTimeout(()=>{
+            myImage.setSrc(this.src)
+        },2000)
+    }
+    
+    return (src)=>{
+        myImage.setSrc("./img/bgimg.jpg")
+        
+        imgProxy.src=src
+    }
+})()
+ 
+imgProxy("./img/background-cover.jpg")
+
+
+</script>
+</html>

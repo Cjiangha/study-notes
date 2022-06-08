@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let person = {
+        name: 'hello',
+        age: 24
+    }
+
+    let anotherPerson = Object.create(person);
+    console.log(anotherPerson.__proto__) //{name: "hello", age: 24}
+
+    anotherPerson.name = 'world'; //可以修改属性
+    anotherPerson.job = 'teacher';
+
+
+
+    
+    function F() {
+        console.log('FFFFF')
+    }
+
+    F.prototype.g = function () {}
+
+    //G类继承F类
+    function G() {
+        F.call(this);
+    }
+    G() // F里面执行的log会执行
+
+
+    //原型继承，其实用ES6语法就是fn 作为class 继承了 F的方法，即
+    function Fn() {};
+    Fn.prototype = F.prototype;
+    Fn(); //Fn里面的log不会执行。
+    new Fn(); //会继承Fn的方法
+
+
+    G.prototype = new Fn();
+
+    G.prototype.constructor = G;
+</script>
+
+</html>
