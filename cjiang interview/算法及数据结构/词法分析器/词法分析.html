@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 参考文章  https://blog.csdn.net/qq_42167135/article/details/105569062
+
+
+
+var code = `
+	K->number= 12.3;
+	K->object={" \\"a"}
+	K->string = "abc"
+	`;
+// 解析函数，懒得重写结构了
+// 这个东西也只是为了测试而写的
+function Lexed(code){
+	// 类型数组，储存类型
+	var varKeyWords = ["number","string","object"];
+	// 临时字符组
+	var temp = []
+	// 返回解析得到的字典组
+	var result = [];
+	// 代表当前状态，0为type.none
+	var state = 0;
+	// 当前行数
+	var line = 1;
+	// inde解析到的当前位置
+	var i = 0;
+	// 记录当前行的字符位置
+	var linePos = 0;
+	// 当前位置的字符，方便引用
+	var ch;
+	// 字符串长度
+	var codeLen = code.length;
+	// 判断是否为某个type，返回字典组会记录type以保证后面的AST抽象语法树生成
+	var is = {
+		// 是否为数字
+		"number": function(ch){
+			return /[0-9]/.test(ch);
+		},
+		// 是否为字符串，即 ("xx\"x") 或者 ("xxx") 这样结构的字符串
+		"string": function(ch){
+			return /^\"([\s\S]*)[^\\]\"$/.test(ch);
+		},
+		// 是否为标识符，即变量允许的名称
+		"identifier": function(ch){
+			return /[a-zA-Z$_]/.test(ch);
+		},
+		// 是否为变量类型，会检查varKeyWords变量类型关键字组
+		"variable": function(str){
+			for(var i in varKeyWords){
+				if(varKeyWords[i] === str){
+					return true;
+				}
+			}
+			return false;
+		},
+		// 是否为空格或制表符
+		"space": function(ch){
+			return /[ \t]/.test(ch);
+		},
+		// 是否为符号，这里的符号还连带了其处理方式，还可以放入函数，在处理前执行
+		"symbol": function(ch,fn){
+			var result = false;
+			if(typeof fn === 'function'){
+				fn(ch);
+			}
+			switch (ch) {
+				case '\"':
+					// 存入临时字符组
+					temp.push(ch);
+					// 改变状态为字符串解析
+					state = type.string;
+					// 改为true
+					result = true;
+					// 下同
+				break;
+				case '(':
+					temp.push(ch);
+					state = type.param;
+					result = true;
+				break;
+				case '{':
+					temp.push(ch);
+					state = type.block;
+					result = true;
+				break;
+				case ',':
+					// 逗号就直接写入字符
+					add.division(ch);
+					result = true;
+				break;
+				case '=':
+					// 赋值也一样
+					add.assignment();
+					result = true;
+				break;
+				case '-':
+					// 如果是 -> 类型声明符号
+					if(code[i+1] === '>'){
+						// 存入
+						add.dtype();
+						// 因为有两个字符所以index+1
+						i++;
+						result = true;
+					}
+				break;
+			}
+			// 返回
+			return result;
+		},
+		// 是否到结尾
+		"end": function(){
+			// 如果当前index+1就是代码的长度了，返回true
+			return i+1 === codeLen;
+		}
+		
+	};
+	// 添加，为了方便使用
+	var add = {
+		// 数字类型
+		"number": function(str){
+			result.push({
+				// 写入类型
+				"type": "Number",
+				// 写入行号
+				"line": line,
+				// 写入当前行的位置，方便差错
+				"position": linePos,
+				// 写入值
+				"value": str
+			});
+			// 下同
+		},
+		"string": function(str){
+			result.push({
+				"type": "String",
+				"line": line,
+				"position": linePos,
+				"value": str
+			});
+		},
+		"identifier": function(str){
+			result.push({
+				"type": "Identifier",
+				"line": line,
+				"position": linePos,
+				"value": str
+			});
+		},
+		"variable": function(str){
+			result.push({
+				"type": "Variable",
+				"line": line,
+				"position": linePos,
+				"value": str
+			});
+		},
+		// 如果是逗号分隔符
+		"division": function(str){
+			result.push({
+				"type": "Division",
+				"line": line,
+				"position": linePos,
+				"value": str
+			});
+		},
+		// 是定义类型
+		"dtype": function(){
+			result.push({
+				"type": "Dtype",
+				"line": line,
+				"position": linePos,
+				"value": "->"
+			});
+		},
+		// 是赋值的=
+		"assignment": function(){
+			result.push({
+				"type": "Assignment",
+				"line": line,
+				"position": linePos,
+				"value": "="
+			});
+		},
+		"block": function(str){
+			result.push({
+				"type": "Block",
+				"line": line,
+				"position": linePos,
+				"value": str
+			});
+		},
+		"param": function(str){
+			result.push({
+				"type": "Param",
+				"line": line,
+				"position": linePos,
+				"value": str
+			});
+		}
+	};
+	// 状态
+	var type = {
+		// 无状态
+		"none": 0,
+		// 是标识符
+		"identifier": 1,
+		// 是参数
+		"param": 2,
+		// 是作用域
+		"block": 3,
+		// 词法错误
+		"error": 4,
+		// 字符串
+		"string": 5,
+		// 数字
+		"number": 6
+	};
+	// 为了复用写的，不是权宜之策，只是懒得重写代码结构了
+	var running = {
+		// 是标识符
+		"identifier": function(){
+			// 字符组转换成字符串
+			temp = temp.join("");
+			// 如果是变量类型
+			if(is.variable(temp)){
+				// 写入
+				add.variable(temp);
+			// 否则就一定是标识符
+			}else{
+				// 写入
+				add.identifier(temp);
+			}
+			// 如果是换行
+			if(ch === '\n'){
+				// 行数+1
+				line++;
+				// 当前行位置重置
+				linePos = 0;
+			}
+			// 字符组重置
+			temp = [];
+			// 状态变为空
+			state = type.none;
+		},
+		// 如果是字符
+		"string": function(){
+			// 直接写入
+			add.string(temp.join(""));
+			if(ch === '\n'){
+				line++;
+				linePos = 0;
+			}
+			temp = [];
+			state = type.none;
+		},
+		// 如果是数字
+		"number": function(){
+			// 直接写入
+			add.number(temp.join(""));
+			if(ch === '\n'){
+				line++;
+				linePos = 0;
+			}
+			temp = [];
+			state = type.none;
+		},
+		// 如果是块级作用域
+		"block": function(){
+			// 直接写入
+			add.block(temp.join(""));
+			if(ch === '\n'){
+				line++;
+				linePos = 0;
+			}
+			temp = [];
+			state = type.none;
+		},
+		// 如果是参数，即'('和')'
+		"param": function(){
+			// 直接写入
+			add.param(temp.join(""));
+			if(ch === '\n'){
+				line++;
+				linePos = 0;
+			}
+			temp = [];
+			state = type.none;
+		},
+		// 如果出现解析错误
+		"error": function(){
+			// 报错，输出行号，字符位置
+			console.error("SyntaxError: " + (linePos-1) + " characters on line " + line);
+			// 遍历结束
+			i = codeLen;
+			// 返回值变为undefined
+			result = undefined;
+		}
+	};
+	// 开始遍历
+	for(;i < codeLen;i++,linePos++){
+		ch = code[i];
+		// 检查状态
+		switch(state){
+			// 如果无状态
+			case type.none:
+				// 如果是空格和制表符或者是';'
+				// 不理会
+				if(is.space(ch)||ch === ';');
+				// 如果是换行，上同
+				else if(ch === '\n'){
+					line++;
+					linePos = 0;
+				// 如果是标识符
+				}else if(is.identifier(ch)){
+					// 先存入临时字符组
+					temp.push(ch);
+					// 改变状态
+					state = type.identifier;
+				// 下同
+				}else if(is.number(ch)){
+					temp.push(ch);
+					state = type.number;
+				// 如果连那一堆符号都匹配不到
+				}else if(!is.symbol(ch)){
+					// 报错
+					running.error();
+				}
+			break;
+			// 如果是标识符
+			case type.identifier:
+				// 因为之前已经有一个字符为非数字字符了，所以可以匹配数字
+				if(is.identifier(ch)||is.number(ch)){
+					// 写入
+					temp.push(ch);
+				}else{
+					// 如果是空格||换行||代码结束||';'
+					if(is.space(ch)||ch === '\n'||is.end()||ch === ';'){
+						// 操作
+						running.identifier();
+					// 这里直接检查是不是在符号组里
+					}else if(is.symbol(ch,running.identifier));
+					// 否则
+					else{
+						// 报错
+						running.error();
+					}
+				}
+			break;
+			// 如果是数字
+			case type.number:
+				// 如果是空字符||代码结束||换行||';'
+				if(is.space(ch)||is.end()||
+					ch === '\n'||ch === ';'){
+					// 操作
+					running.number();
+				// 否则
+				}else{
+					// 是数字或者有点，因为前面已经匹配过数字了
+					// 所以可以匹配点，不过这里没做限制，导致能够匹配
+					// 附带多个点的莫名其妙的东西还不报错
+					if(is.number(ch)||ch === '.'){
+						// 写入
+						temp.push(ch);
+					// 否则
+					}else{
+						// 报错
+						running.error();
+					}
+				}
+			break;
+			// 如果是字符串
+			case type.string:
+				// 如果是'"'，先写入字符，检查是否为
+				// 符合正则匹配的字符串定义标准
+				if(ch === '\"'&&temp.push(ch)&&is.string(temp.join(""))){
+					// 操作
+					running.string();
+				// 否则
+				}else{
+					// 如果代码结束
+					if(is.end()){
+						// 报错，因为 ("xxx) 这样是错误的语法
+						running.error();
+					// 否则
+					}else{
+						// 写入字符
+						temp.push(ch);
+					}
+				}
+			break;
+			// 如果是参数
+			case type.param:
+				// 如果是')'，直接写入字符
+				if(ch === ')'&&temp.push(ch)){
+					// 操作
+					running.param();
+				}else{
+					// 上同
+					if(is.end()){
+						running.error();
+					}else{
+						temp.push(ch);
+					}
+				}
+			break;
+			// 如果是块级作用域
+			case type.block:
+				// 如果是右花括号}，直接写入
+				if(ch === '}'&&temp.push(ch)){
+					// 操作
+					running.block();
+				}else{
+					if(is.end()){
+						running.error();
+					}else{
+						temp.push(ch);
+					}
+				}
+			break;
+		}
+	}
+	// 返回
+	return result;
+}
+// 执行
+console.log(Lexed(code));
+
+
+</script>
+</html>
