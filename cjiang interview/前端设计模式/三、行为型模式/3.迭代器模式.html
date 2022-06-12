@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+        一个迭代器通常需要实现以下接口：
+        hasNext()：判断迭代是否结束，返回Boolean
+        next()：查找并返回下一个元素
+    */
+
+    const item = [1, 'red', false, 3.14];
+
+    function Iterator(items) {
+        this.items = items;
+        this.index = 0;
+    }
+
+    Iterator.prototype = {
+        hasNext: function () {
+            return this.index < this.items.length;
+        },
+        next: function () {
+            return this.items[this.index++];
+        }
+    }
+    const iterator = new Iterator(item);
+
+    // while (iterator.hasNext()) {
+    //     console.log(iterator.next());
+    // }
+
+
+
+
+function Range(start, end) {
+  return {
+    [Symbol.iterator]: function () {
+      return {
+        next() {
+          if (start < end) {
+            return { value: start++, done: false };
+          }
+          return { done: true, value: end };
+        }
+      }
+    }
+  }
+}
+
+for (num of Range(1, 5)) {
+  console.log(num);
+}
+
+</script>
+
+</html>
