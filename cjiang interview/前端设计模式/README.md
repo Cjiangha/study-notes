@@ -5,15 +5,15 @@
 [前端开发中常用的几种设计模式](https://blog.csdn.net/qq_32442973/article/details/119757216)
 
 
-
-### 设计模式是什么？
+# 前言
+## 设计模式是什么？
 
 > 设计模式是对软件设计开发过程中反复出现的某类问题的通用解决方案。设计模式更多的是指导思想和方法论，而不是现成的代码，当然每种设计模式都有每种语言中的具体实现方式。学习设计模式更多的是理解各种模式的内在思想和解决的问题，毕竟这是前人无数经验总结成的最佳实践，而代码实现则是对加深理解的辅助。
 > 
 
 
 
-#### 设计模式可以分为以下三种模式
+## 设计模式可以分为以下三种模式
 
 * 结构型模式(Structural Patterns): 通过识别系统中组件间的简单关系来简化系统的设计。
 
@@ -278,9 +278,320 @@ client.draw();
 2.设置红色边框
 ```
 
+### 2. 适配器模式
+
+适配器模式：旧接口格式和使用者不兼容，中间加一个适配转换接口。
+
+比如国外的插座跟国内的插座不一样，我们需要买个转换器去兼容。
+
+ 
+
+**上代码：**
+
+```javascript
+
+class Adaptee {
+    specificRequest() {
+        return '德国标准的插头';
+    }
+}
+ 
+class Target {
+    constructor() {
+        this.adaptee = new Adaptee();
+    }
+    request() {
+        let info = this.adaptee.specificRequest();
+        return `${info} -> 转换器 -> 中国标准的插头`
+    }
+}
+ 
+// 测试
+let client = new Target();
+client.request();
+```
+
+结果：
+
+```
+德国标准的插头 -> 转换器 -> 中国标准的插头
+```
+
+场景上可封装旧接口： 
+
+```javascript
+
+// 自己封装的ajax，使用方式如下：
+ajax({
+    url: '/getData',
+    type: 'Post',
+    dataType: 'json',
+    data: {
+        id: '123'
+    }
+}).done(function(){
+ 
+})
+// 但因为历史原因，代码中全都是：
+// $.ajax({...})
+
+```
+
+这个时候需要一个**适配器**： 
+
+```javascript
+// 做一层适配器
+var $ = {
+    ajax: function (options) {
+        return ajax(options)
+    }
+}
+
+```
+
+### 3. 代理模式
+
+代理模式：使用者无权访问目标对象，中间加代理，通过代理做授权和控制。
+
+明星经纪人：比如有个演出，要请明星，要先联系经纪人。
+
+![代理模式](https://img-blog.csdnimg.cn/20210817214325882.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyNDQyOTcz,size_16,color_FFFFFF,t_70) 
 
 
-2. 观察者模式
+
+```javascript
+
+/**
+ * pre:代理模式
+ * 小明追求A，B是A的好朋友,小明比不知道A什么时候心情好，不好意思直接将花交给A，
+ * 于是小明将花交给B，再由B交给A.
+ */
+ 
+// 花的类 
+class Flower{
+    constructor(name){
+        this.name = name 
+    }
+}
+ 
+// 小明拥有sendFlower的方法
+let Xioaming = {
+    sendFlower(target){
+        var flower = new Flower("玫瑰花")
+        target.receive(flower)
+    }
+}
+// B对象中拥有接受花的方法，同时接收到花之后，监听A的心情，并且传入A心情好的时候函数
+let B = {
+    receive(flower){
+        this.flower =flower
+        A.listenMood(()=>{
+            A.receive(this.flower)
+        })
+    }
+ 
+}
+// A接收到花之后输出花的名字
+let A = {
+    receive(flower){
+        console.log(`A收到了${flower.name} `)
+        // A收到了玫瑰花 
+    },
+    listenMood(func){
+        setTimeout(func,1000)
+    }
+}
+Xioaming.sendFlower(B)
+```
+
+**虚拟代理用于图片的预加载**
+
+图片很大，页面加载时会空白，体验不好，所以我们需要个占位符，来短暂替代这个图片，等图片加载好了放上去。
+
+```javascript
+
+let myImage = (function(){
+    let img = new Image
+    document.body.appendChild(img)
+    return {
+        setSrc:(src)=>{
+            img.src = src
+        }
+    }
+})()
+let imgProxy =(function(){
+    let imgProxy = new Image
+    // 这个地方我使用了setTimeout来增强演示效果，否则本地加载太快，根本看不到。
+    imgProxy.onload=function(){
+        setTimeout(()=>{
+            myImage.setSrc(this.src)
+        },2000)
+    }
+    
+    return (src)=>{
+        myImage.setSrc("../../img/bgimg.jpeg")
+        imgProxy.src=src
+    }
+})()
+ 
+imgProxy("../../img/background-cover.jpg")
+
+```
+
+
+
+**ES6 Proxy** 
+
+其实在ES6中，已经有了Proxy，这个内置的函数。我们来用一个例子来演示一下他的用法。这是一个明星代理的问题。
+
+```javascript
+
+let star={
+    name : "张XX",
+    age:25,
+    phone : "1300001111"
+}
+let agent = new Proxy(star,
+    {
+        get:function(target,key){
+            if(key === "phone"){
+                return  "18839552597"
+            }else if(key === "name"){
+                return "张XX"
+            }else if(key === "price"){
+                return "12W"
+            }else if(key === "customPrice"){
+                return target.customPrice
+            }
+        },
+        set:function(target,key,value){
+            if(key === "customPrice"){
+                if(value < "10"){
+                    console.log("太低了！！！")
+                    return false
+                }else{
+                    target[key] = value
+                    return true
+                }
+            }
+        }
+    }
+)
+ 
+console.log(agent.name)
+console.log(agent.price)
+console.log(agent.phone)
+console.log(agent.age)
+agent.customPrice = "12"
+console.log(agent)
+console.log(agent.customPrice)
+```
+
+**设计原则验证**
+
+代理类和目标类分离，隔离开目标类和使用者
+
+符合开放封闭原则
+
+
+
+
+
+
+
+## 行为型模式
+
+### 1. 策略模式
+
+策略模式是一种简单却常用的设计模式，它的应用场景非常广泛。我们先了解下策略模式的概念，再通过代码示例来更清晰的认识它。
+
+策略模式由两部分构成：一部分是封装不同策略的策略组，另一部分是 Context。通过组合和委托来让 Context 拥有执行策略的能力，从而实现可复用、可扩展和可维护，并且避免大量复制粘贴的工作。
+
+![策略模式](https://img-blog.csdnimg.cn/20210817215442546.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyNDQyOTcz,size_16,color_FFFFFF,t_70) 
+
+
+
+策略模式的典型应用场景是表单校验中，对于校验规则的封装。接下来我们就通过一个简单的例子具体了解一下： 
+
+
+
+```javascript
+
+/**
+ * 登录控制器
+ */
+function LoginController() {
+  this.strategy = undefined;
+  this.setStrategy = function (strategy) {
+    this.strategy = strategy;
+    this.login = this.strategy.login;
+  }
+}
+ 
+/**
+ * 用户名、密码登录策略
+ */
+function LocalStragegy() {
+  this.login = ({ username, password }) => {
+    console.log(username, password);
+    // authenticating with username and password... 
+  }
+}
+ 
+/**
+ * 手机号、验证码登录策略
+ */
+function PhoneStragety() {
+  this.login = ({ phone, verifyCode }) => {
+    console.log(phone, verifyCode);
+    // authenticating with hone and verifyCode... 
+  }
+}
+ 
+/**
+ * 第三方社交登录策略
+ */
+function SocialStragety() {
+  this.login = ({ id, secret }) => {
+    console.log(id, secret);
+    // authenticating with id and secret... 
+  }
+}
+ 
+const loginController = new LoginController();
+ 
+// 调用用户名、密码登录接口，使用LocalStrategy
+app.use('/login/local', function (req, res) {
+  loginController.setStrategy(new LocalStragegy());
+  loginController.login(req.body);
+});
+ 
+// 调用手机、验证码登录接口，使用PhoneStrategy
+app.use('/login/phone', function (req, res) {
+  loginController.setStrategy(new PhoneStragety());
+  loginController.login(req.body);
+});
+ 
+// 调用社交登录接口，使用SocialStrategy
+app.use('/login/social', function (req, res) {
+  loginController.setStrategy(new SocialStragety());
+  loginController.login(req.body);
+});
+
+```
+
+
+
+从以上示例可以得出使用策略模式有以下优势：
+
+1. 方便在运行时切换算法和策略
+2. 代码更简洁，避免使用大量的条件判断
+3. 关注分离，每个strategy类控制自己的算法逻辑，strategy和其使用者之间也相互独立 
+
+
+
+### 2. 观察者模式
+
   观察者模式又叫发布订阅模式（Publish/Subscribe），它定义了一种一或一对多的关系，让多个观察者对象同时监听某一个主题对象，这个主题对象的状态发生变化时就会通知所有的观察者对象，使得它们能够自动更新自己。典型代表vue/react等。
 
 使用观察者模式的好处：
@@ -372,7 +683,7 @@ subject.fire();
 Observer 1 Firing!
 ```
 
-3. 迭代器模式
+### 3. 迭代器模式
   ES6中的迭代器 Iterator 相信大家都不陌生，迭代器用于遍历容器（集合）并访问容器中的元素，而且无论容器的数据结构是什么（Array、Set、Map等），迭代器的接口都应该是一样的，都需要遵循 迭代器协议。
 
 迭代器模式解决了以下问题：
@@ -508,7 +819,7 @@ console.log(context.getState())
 
 ```
 
- **设计原则验证**
+**设计原则验证**
 
 将状态对象和主体对象分离，状态的变化逻辑单独处理
 
