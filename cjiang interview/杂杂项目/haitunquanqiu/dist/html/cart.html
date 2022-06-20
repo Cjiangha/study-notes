@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>购物车页</title><link rel="stylesheet" href="../images/iconfont/iconfont.css"><link rel="stylesheet" href="../css/base.css"><link rel="stylesheet" href="../css/head.css"><link rel="stylesheet" href="../css/shop.css"></head><body><div id="top1"><div class="w" style="width:990px"><div class="fl"><ul><li><a href="main.html">京东首页</a></li></ul></div><div class="fr"><ul><li class="fore1" id="welcome"><a href="###">你好,请登录</a> <a style="color:red;cursor:pointer">免费注册!</a></li><li class="fore1" style="display:none"></li><li class="spacer"></li><li><div class="dt"><a>我的订单</a></div></li><li class="spacer"></li><li><div class="dt"><a>我的海囤全球</a></div></li><li class="spacer"></li><li class="guanzhu"><div class="dt"><i class="iconfont">&#xe626;</i> 关注海囤全球 <i class="iconfont sjiantou">&#xe60b; </i><i class="iconfont xjiantou">&#xe74c;</i></div><div class="erweima" style="display:none"><div class="dd-spacer"></div><div class="erweima-bot"><i class="qrcode"></i><div>扫一扫</div><div class="cl">随时随地海囤全球</div></div></div></li><li class="spacer"></li><li><div class="dt"><a>帮助中心</a></div></li></ul></div></div></div><div class="middle clearfix" style="width:990px"><i class="logo"></i></div><div class="main clearfix" id="cart"><div class="w"><div class="shop-top"><div class="shop-l column"></div><span class="column t-goods">商品</span><div class="column t-props"></div><span class="column t-price">单价(元)</span> <span class="column t-num">数量</span> <span class="column t-totalprice">小计((元)</span> <span class="column t-action">操作</span></div><div class="shop-list-big clearfix"><ul class="liebiao"></ul></div><div class="options-box"><div class="select-all"><div class="cart-checkbox"><input type="checkbox" class="jdcheckbox all"> 全选</div></div><div class="operation"><a href="###" class="remove-batch">删除所选中的商品</a></div><div class="comm-right"><div class="btn-area"><a href="###" class="submit-btn">去结算</a></div><div class="price-sum"><div class="txt">总价（不含运费）：</div><div class="sumPrice"><em>￥</em> <em>0.00</em></div></div><div class="amount-sum">已经选中 <em>0</em> 件商品</div></div></div></div></div><div id="footer"></div></body><script src="../lib/jquery-1.10.1.min.js"></script><script src="../lib/j-common.js"></script><script src="../js/cart.js"></script><script>$('#footer').load('footer.html');
+    (function () {
+        /* 登入登出功能 */
+        let welcome = document.getElementById('welcome');
+        function init() {
+            let usernamecookie = getCookie('username');
+            if (usernamecookie) { //登陆中
+                welcome.innerHTML = `<a href="###">${usernamecookie},欢迎你</a>
+                        <a style="color: red; cursor: pointer; class="quit"">退出</a>`;
+            } else {
+                welcome.innerHTML = `
+                <a href="###" >你好,请登录</a>
+                <a href="###" style="color: red; cursor: pointer;">免费注册</a>`;
+            }
+        }
+        init();
+        welcome.onclick = function (ev) {
+            if (ev.target.innerHTML == '退出') {//点击退出
+                removeCookie('username');
+                removeCookie('url');
+            }
+            if (ev.target.innerHTML == '你好,请登录') {
+                location.href = 'login.html';
+                //把当前这个页面的url记录到cookie
+                setCookie('url', location.href, 7);
+            }
+            if (ev.target.innerHTML == '免费注册') {
+                location.href = 'register.html';
+            }
+            init();//重新渲染   
+        }
+
+    })();</script></html>
