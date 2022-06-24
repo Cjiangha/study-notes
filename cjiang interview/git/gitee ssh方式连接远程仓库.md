@@ -3,7 +3,7 @@
 ## git相关命令
 
 1. git init #初始化仓库
-2. 3、git pull origin master –allow-unrelated-histories # 首先将远程仓库master的文件pull下来git 
+2. git pull origin master –allow-unrelated-histories # 首先将远程仓库master的文件pull下来git 
 3. git add . #把我们要提交的本地文件添加到暂存区（.的意思就是所有的文件）
 4. git commit -m'备注的例子'  #发表我们本地的文件
 5. git push origin master# 推送我们的远端仓库
