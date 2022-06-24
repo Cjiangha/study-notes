@@ -1,4 +1,4 @@
-var str2 =var str = `- [Record the interview's questions:](#record-the-interviews-questions)
+var str2 = `- [Record the interview's questions:](#record-the-interviews-questions)
 - [面试题](#面试题)
   - [1、响应式数据原理](#1响应式数据原理)
   - [2、Vue.$nextTick()](#2vuenexttick)
@@ -8,9 +8,6 @@ var str2 =var str = `- [Record the interview's questions:](#record-the-interview
   - [6、Vue组件的传递方式](#6vue组件的传递方式)
   - [7、Vue中 props和data的区别](#7vue中-props和data的区别)
   - [8、Vue的生命周期](#8vue的生命周期)
-    - [写成自己理解就是](#写成自己理解就是)
-    - [*别人的解释：*](#别人的解释)
-    - [**具体案例**](#具体案例)
   - [9、封装过element-UI组件的二次组件吗？具体怎么做](#9封装过element-ui组件的二次组件吗具体怎么做)
   - [10、Vue的computed 和 watch的区别及应用](#10vue的computed-和-watch的区别及应用)
   - [11、js的数据类型](#11js的数据类型)
@@ -46,6 +43,7 @@ var str2 =var str = `- [Record the interview's questions:](#record-the-interview
   - [33、文档的加载顺序](#33文档的加载顺序)
     - [总结](#总结)
   - [34、ES6](#34es6)
+  - [35、路由守卫的钩子函数和created哪个优先级更高？](#35路由守卫的钩子函数和created哪个优先级更高)
 - [笔试题：](#笔试题)
   - [1、盒模型包括几部分，分别叫什么？](#1盒模型包括几部分分别叫什么)
   - [2、position包括几种属性？absolute和relative的区别？](#2position包括几种属性absolute和relative的区别)
@@ -63,41 +61,49 @@ var str2 =var str = `- [Record the interview's questions:](#record-the-interview
   - [10、ajax请求原理解析](#10ajax请求原理解析)
   - [11、http和https的区别](#11http和https的区别)
   - [12、小程序的实现原理是什么](#12小程序的实现原理是什么)
-  - [13、小程序生命周期函数](#13小程序生命周期函数)`;
+  - [13、小程序生命周期函数](#13小程序生命周期函数)
+`;
 
-        // reg1 /\(.*?\)/g  摸鱼
+// reg1 /\(.*?\)/g  摸鱼
 
-        var reg = /\(#.*?\)/g; //匹配正则 全局
-        var arr = str2.match(reg);
+var reg = /\(#.*?\)/g; //匹配正则 全局
+var arr = str2.match(reg);
 
-        // var reg2 = /- .*?\]/g;; //匹配正则 全局
-        // var arr2 = str2.match(reg2);
+// var reg2 = /- .*?\]/g;; //匹配正则 全局
+// var arr2 = str2.match(reg2);
 
-        // console.log(arr)
-        // console.log(arr2)
+// console.log(arr)
+// console.log(arr2)
 
-        // let sum = ``;
-        // let zong = ``;
-        // arr.forEach((item1,index1) => {
-        //     arr2.forEach((item2,index2) => {
-        //         if(index1 === index2){
-        //             sum = item2 + item1
-        //             zong = zong + sum;
-        //             // console.log(zong)
-        //             // console.log(sum)
-        //         }
-        //     })
-        // })
-        // console.log(zong)
+// let sum = ``;
+// let zong = ``;
+// arr.forEach((item1,index1) => {
+//     arr2.forEach((item2,index2) => {
+//         if(index1 === index2){
+//             sum = item2 + item1
+//             zong = zong + sum;
+//             // console.log(zong)
+//             // console.log(sum)
+//         }
+//     })
+// })
+// console.log(zong)
 
 
-        let bar = ``;
-        arr.forEach((item, index) => {
-            // bar = str2.replace(sum, `(#heading-)${$1$2}`)
-            bar = str2.replace(reg, '(#heading-1)');
-        })
-        console.log(bar)
+let bar = ``;
+let sub = 0;
+// arr.forEach((item, index) => {
+//     // bar = str2.replace(sum, `(#heading-)${$1$2}`)
+//     bar = str2.replace(reg, `(#heading-${sub++})`);
+// })
+// console.log(bar)
+
+
+// let sub = 1;
+const newStr = str2.replace(/\(\#.*\)/g, () => `(#heading-${sub++})`);
+console.log( newStr)
 
 
 //操作流程
 //  1、有vscode编辑器，安装插件 Markdown All in One，根据插件
+// ctrl + HOME 配合Markdown All in One +Ctrl / Cmd + Shift + p  输入 Create Table of Contents 回车，目录生成，看目录
