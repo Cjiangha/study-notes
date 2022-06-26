@@ -1,4 +1,7 @@
-# 下载地址
+- [下载地址](#下载地址)
+- [命令提示说明](#命令提示说明)
+
+## 下载地址
 https://github.com/coreybutler/nvm-windows/releases
 
 我的是windows的 会下载 nvm-setup.zip
@@ -7,7 +10,7 @@ https://github.com/coreybutler/nvm-windows/releases
 
 输入nvm会出现nvm相关的说明配置信息
 
-# 命令提示说明
+## 命令提示说明
 
 nvm arch [32|64]：显示node是运行在32位还是64位。
 nvm current： 显示活动版本。
@@ -24,7 +27,10 @@ nvm node_mirror [node_mirror_url]：设置node镜像。默认是https://nodejs.o
 nvm npm_mirror [npm_mirror_url]：设置npm镜像。默认是https://github.com/npm/cli/archive/。如果不写url，则使用默认url。设置后可至安装目录settings.txt文件查看，也可直接在该文件操作。
 
 
-
-
 **参考文章：**
 [使用nvm管理node版本，一条龙解决前端开发环境配置](https://juejin.cn/post/7011398696999288839)
+
+文章里面有我自己的踩坑记录 
+>npm config set registry registry.npm.taobao.org
+换成npm install cnpm -g --registry=registry.npm.taobao.org
+不要直接设置 cnpm cnpm有时候会有坑，比如node-sass的安装
