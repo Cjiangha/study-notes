@@ -1,3 +1,6 @@
+- [背景需求](#背景需求)
+- [怀疑](#怀疑)
+- [相关的npm包](#相关的npm包)
 ## 背景需求
 webpack 4 + vue 2.6.11 
 
@@ -122,8 +125,8 @@ package.json 的配置
 确实可以成功
 
 
-```
-已 windows 平台为例，管理员权限执行以下命令，安装完即可：
+```bash
+# 以 windows 平台为例，管理员权限执行以下命令，安装完即可：
 
 $ npm install --global --production windows-build-tools
 ```
@@ -136,16 +139,16 @@ cnpm官网 参考链接  https://npmmirror.com/package/node-sass
 会有一些版本的限制比较麻烦
 
 NodeJS	Supported node-sass version	Node Module
-Node 17	7.0+	102
-Node 16	6.0+	93
-Node 15	5.0+, <7.0	88
-Node 14	4.14+	83
-Node 13	4.13+, <5.0	79
-Node 12	4.12+	72
-Node 11	4.10+, <5.0	67
-Node 10	4.9+, <6.0	64
-Node 8	4.5.3+, <5.0	57
-Node <8	<5.0	<57
+Node 17	             7.0+	            102
+Node 16	             6.0+	             93
+Node 15	             5.0+, <7.0	88
+Node 14	             4.14+	83
+Node 13	             4.13+, <5.0	     79
+Node 12	             4.12+	72
+Node 11	             4.10+, <5.0	     67
+Node 10	             4.9+, <6.0	64
+Node 8	             4.5.3+, <5.0	     57
+Node <8	             <5.0	<57
 
 上面的截图的报错已经解决了，解决了之后，那么直接script
 ```bash
@@ -211,3 +214,13 @@ module.exports = {
 
 ```
 自己折腾折腾 webpack.dev.conf.js  没出来 ，over.
+
+
+## 相关的npm包
+```bash
+windows-build-tools
+cross-env
+node-sass
+```
+
+[cross-env的简介、原因、安装和用法](https://blog.csdn.net/weixin_45249263/article/details/123719280)
