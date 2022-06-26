@@ -72,23 +72,6 @@ var arr = str2.match(reg);
 // var reg2 = /- .*?\]/g;; //匹配正则 全局
 // var arr2 = str2.match(reg2);
 
-// console.log(arr)
-// console.log(arr2)
-
-// let sum = ``;
-// let zong = ``;
-// arr.forEach((item1,index1) => {
-//     arr2.forEach((item2,index2) => {
-//         if(index1 === index2){
-//             sum = item2 + item1
-//             zong = zong + sum;
-//             // console.log(zong)
-//             // console.log(sum)
-//         }
-//     })
-// })
-// console.log(zong)
-
 
 let bar = ``;
 let sub = 0;
