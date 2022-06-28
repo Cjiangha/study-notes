@@ -19,3 +19,4 @@ Markdown Preview Enhanced 是一款为 Atom 以及 Visual Studio Code 编辑器�
 
 ### 参考文章
 [vscode+github+picgo 搭建 markdown 图床](https://blog.csdn.net/qq_44314954/article/details/122951033)
+[你要是还学不会，请提刀来见 Typora+PicGo+Gitee + node.js 打造个人高效稳定优雅图床](https://segmentfault.com/a/1190000039295573)
