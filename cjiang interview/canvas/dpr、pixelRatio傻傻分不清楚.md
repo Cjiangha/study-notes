@@ -4,6 +4,11 @@
 [设备像素比(DPR)](https://www.jianshu.com/p/7184c56b6a48)
 [Viewport meta tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag)
 
+**补充知识点：**
+[移动视区用于响应式体验](https://experienceleague.adobe.com/docs/target/using/experiences/vec/mobile-viewports.html)
+
+讲了不同的设备不同的参数以及响应式的话具体该怎么做
+
 ## 1、dpr是什么？
 >dpr即设备像素比（Device Pixel Ratio, DPR）：其实指的是 window.devicePixelRatio, 被所有WebKit浏览器以及Opera所支持，一个设备的物理像素与逻辑像素之比。
 
