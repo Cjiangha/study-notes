@@ -4,13 +4,13 @@
 * git add . ------添加文件到暂存区
 * git commit -m '提交说明' -----提交暂存到当前分支
 * git clone 项目地址 ----从远程库克隆项目
+* git remote add gitee2 git@gitee.com:divhub/ErJieDuan.git ---关联一个远程仓库
 * git branch-----命令会列出所有分支，当前分支前面会标一个*号
 * git remote -v -----查看远程仓库
 * git remote remove origin -----删除远程仓库
 * git push 远程分支名 master -----提交本地分支到远程
 * git pull 远程分支名  本地分支名  -----拉取分支
 * git push -f gitee2 master -----强制提交覆盖远程分支
-* git remote add gitee2 git@gitee.com:divhub/ErJieDuan.git ---关联一个远程仓库
 * git config --global user.name "***" ----本地用户名
 * git config –-global user.email "*****"-----本地邮箱
 * git config user.name -----查看用户名
