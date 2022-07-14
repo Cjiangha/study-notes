@@ -6,6 +6,7 @@
 * git clone 项目地址 ----从远程库克隆项目
 * git branch-----命令会列出所有分支，当前分支前面会标一个*号
 * git remote -v -----查看远程仓库
+* git remote remove origin -----删除远程仓库
 * git push 远程分支名 master -----提交本地分支到远程
 * git pull 远程分支名  本地分支名  -----拉取分支
 * git push -f gitee2 master -----强制提交覆盖远程分支
