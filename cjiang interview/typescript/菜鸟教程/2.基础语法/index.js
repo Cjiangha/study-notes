@@ -20,3 +20,10 @@ var obj = new Site();
 obj.name();
 
 console.log(1111)
+
+// 合并如何解决冲突，上传master的test的console.log
+console.log('master test')
+console.log('master test')
+console.log('master test')
+console.log('master test')
+console.log('master test')
