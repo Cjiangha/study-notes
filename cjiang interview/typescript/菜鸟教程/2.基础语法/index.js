@@ -18,3 +18,5 @@ var Site = /** @class */ (function () {
 }());
 var obj = new Site();
 obj.name();
+
+console.log(1111)
