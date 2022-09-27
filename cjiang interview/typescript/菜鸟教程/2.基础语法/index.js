@@ -18,3 +18,11 @@ var Site = /** @class */ (function () {
 }());
 var obj = new Site();
 obj.name();
+
+
+// 合并如何解决冲突，上传master的test的console.log
+console.log('master test')
+console.log('master test')
+console.log('master test')
+console.log('master test')
+console.log('master test')
